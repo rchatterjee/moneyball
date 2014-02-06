@@ -1,1163 +1,1173 @@
-# Tackles, Sacks, Interceptions, Misc
-# Name, Team, G, Solo, Ast, Tot, Sacks, Yds, Int, Yds, TD, FrcdFum, PassDef
+# Tackles,Sacks,Interceptions,Misc
+# Name,Team,G,Solo,Ast,Tot,Sacks,Yds,Int,Yds,TD,FrcdFum,PassDef
 # Season:2001 week:1
 # Season:2001 week:2
 # Season:2001 week:3
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2001 week:4
-Casey Hampton, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2001 week:5
 # Season:2001 week:6
-Casey Hampton, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2001 week:7
-Casey Hampton, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2001 week:8
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2001 week:9
-Casey Hampton, PIT, 1, 2, 2, 4, 1.0, 6, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,2,2,4,1.0,6,0,0,0,0,0
 # Season:2001 week:10
-Casey Hampton, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2001 week:11
 # Season:2001 week:12
-Casey Hampton, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2001 week:13
 # Season:2001 week:14
-Casey Hampton, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2001 week:15
-Casey Hampton, PIT, 1, 0, 4, 4, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,0,4,4,0.0,0,0,0,0,0,0
 # Season:2001 week:16
-Casey Hampton, PIT, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,0,2,2,0.0,0,0,0,0,0,0
 # Season:2001 week:17
-Casey Hampton, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2002 week:1
-Ma'ake Kemoeatu, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2002 week:2
-Ma'ake Kemoeatu, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2002 week:3
 # Season:2002 week:4
-Casey Hampton, PIT, 1, 2, 4, 6, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,2,4,6,0.0,0,0,0,0,0,0
 # Season:2002 week:5
-Casey Hampton, PIT, 1, 4, 1, 5, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,4,1,5,0.0,0,0,0,0,0,0
 # Season:2002 week:6
-Ma'ake Kemoeatu, BAL, 1, 2, 0, 2, 1.0, 4, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,2,0,2,1.0,4,0,0,0,0,0
 # Season:2002 week:7
-Casey Hampton, PIT, 1, 0, 4, 4, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,0,4,4,0.0,0,0,0,0,0,0
 # Season:2002 week:8
-Ma'ake Kemoeatu, BAL, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2002 week:9
-Ma'ake Kemoeatu, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2002 week:10
-Ma'ake Kemoeatu, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,0,1,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2002 week:11
-Ma'ake Kemoeatu, BAL, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,1,1,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2002 week:12
-Ma'ake Kemoeatu, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,0,1,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2002 week:13
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2002 week:14
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2002 week:15
-Ma'ake Kemoeatu, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 1, 3, 1.0, 8, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,1,3,1.0,8,0,0,0,0,0
 # Season:2002 week:16
-Casey Hampton, PIT, 1, 3, 0, 3, 1.0, 5, 0, 0, 0, 2, 0
+Casey Hampton,PIT,1,3,0,3,1.0,5,0,0,0,2,0
 # Season:2002 week:17
-Ma'ake Kemoeatu, BAL, 1, 2, 0, 2, 1.0, 2, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,2,0,2,1.0,2,0,0,0,0,0
+Casey Hampton,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2003 week:1
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2003 week:2
-Ma'ake Kemoeatu, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 3, 0, 3, 1.0, 1, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,0,1,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,3,0,3,1.0,1,0,0,0,0,0
 # Season:2003 week:3
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2003 week:4
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2003 week:5
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2003 week:6
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 1
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,1
 # Season:2003 week:7
 # Season:2003 week:8
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2003 week:9
-Ma'ake Kemoeatu, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,3,0,3,0.0,0,0,0,0,0,0
 # Season:2003 week:10
-Casey Hampton, PIT, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,3,1,4,0.0,0,0,0,0,0,0
 # Season:2003 week:11
-Ma'ake Kemoeatu, BAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,2,0,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,2,4,0.0,0,0,0,0,0,0
 # Season:2003 week:12
-Casey Hampton, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2003 week:13
-Ma'ake Kemoeatu, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 3, 3, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,3,3,0.0,0,0,0,0,0,0
 # Season:2003 week:14
-Ma'ake Kemoeatu, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2003 week:15
-Casey Hampton, PIT, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,3,1,4,0.0,0,0,0,0,0,0
 # Season:2003 week:16
-Ma'ake Kemoeatu, BAL, 1, 4, 0, 4, 1.0, 7, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,4,0,4,1.0,7,0,0,0,0,0
+Casey Hampton,PIT,1,0,2,2,0.0,0,0,0,0,0,0
 # Season:2003 week:17
-Ma'ake Kemoeatu, BAL, 1, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 1
-Casey Hampton, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 1
+Ma'ake Kemoeatu,BAL,1,0,0,0,0.0,0,0,0,0,0,1
+Casey Hampton,PIT,1,2,0,2,0.0,0,0,0,0,0,1
 # Season:2004 week:1
-Ma'ake Kemoeatu, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,0,1,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2004 week:2
-Ma'ake Kemoeatu, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 3, 2, 5, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,3,2,5,0.0,0,0,0,0,0,0
 # Season:2004 week:3
-Ma'ake Kemoeatu, BAL, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,2,2,4,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,2,3,0.0,0,0,0,0,0,0
 # Season:2004 week:4
-Ma'ake Kemoeatu, BAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,2,0,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2004 week:5
-Casey Hampton, PIT, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,0,2,2,0.0,0,0,0,0,0,0
 # Season:2004 week:6
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2004 week:7
-Ma'ake Kemoeatu, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2004 week:8
 # Season:2004 week:9
-Ma'ake Kemoeatu, BAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,2,0,2,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2004 week:10
-Ma'ake Kemoeatu, BAL, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 3, 1, 4, 1.0, 6, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,1,1,2,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,3,1,4,1.0,6,0,0,0,0,0
 # Season:2004 week:11
-Ma'ake Kemoeatu, BAL, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,3,0,3,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2004 week:12
-Ma'ake Kemoeatu, BAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,2,0,2,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,2,3,0.0,0,0,0,0,0,0
 # Season:2004 week:13
-Ma'ake Kemoeatu, BAL, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 3, 2, 5, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,4,0,4,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,3,2,5,0.0,0,0,0,0,0,0
 # Season:2004 week:14
-Chris Hoke, PIT, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
+Chris Hoke,PIT,1,2,2,4,0.0,0,0,0,0,0,0
 # Season:2004 week:15
-Chris Hoke, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Chris Hoke,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2004 week:16
-Ma'ake Kemoeatu, BAL, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,2,2,4,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2004 week:17
-Ma'ake Kemoeatu, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2005 week:1
-Shaun Cody, DET, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Shaun Cody,DET,1,1,0,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,0,1,1,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,1,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2005 week:2
-Ma'ake Kemoeatu, BAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,2,0,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,3,0,3,0.0,0,0,0,0,0,0
 # Season:2005 week:3
-Casey Hampton, PIT, 1, 1, 3, 4, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,1,3,4,0.0,0,0,0,0,0,0
 # Season:2005 week:4
-Shaun Cody, DET, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Shaun Cody,DET,1,0,1,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2005 week:5
-Shaun Cody, DET, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
+Shaun Cody,DET,1,0,1,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,2,3,0.0,0,0,0,0,0,0
 # Season:2005 week:6
-Shaun Cody, DET, 1, 1, 2, 3, 1.5, 15, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
+Shaun Cody,DET,1,1,2,3,1.5,15,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,2,0,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,2,4,0.0,0,0,0,0,0,0
 # Season:2005 week:7
-Shaun Cody, DET, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Shaun Cody,DET,1,1,1,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,2,0,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2005 week:8
-Shaun Cody, DET, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 1, 0
-Ma'ake Kemoeatu, BAL, 1, 1, 3, 4, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 3, 2, 5, 0.0, 0, 0, 0, 0, 0, 0
+Shaun Cody,DET,1,4,0,4,0.0,0,0,0,0,1,0
+Ma'ake Kemoeatu,BAL,1,1,3,4,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,0,1,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,3,2,5,0.0,0,0,0,0,0,0
 # Season:2005 week:9
-Shaun Cody, DET, 1, 4, 1, 5, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Shaun Cody,DET,1,4,1,5,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,2,1,3,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,1,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2005 week:10
-Shaun Cody, DET, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
+Shaun Cody,DET,1,0,2,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,2,1,3,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,3,0,3,0.0,0,0,0,0,0,0
 # Season:2005 week:11
-Shaun Cody, DET, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
+Shaun Cody,DET,1,2,0,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,3,0,3,0.0,0,0,0,0,0,0
 # Season:2005 week:12
-Shaun Cody, DET, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
+Shaun Cody,DET,1,2,2,4,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,2,3,0.0,0,0,0,0,0,0
 # Season:2005 week:13
-Shaun Cody, DET, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 5, 2, 7, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
+Shaun Cody,DET,1,0,1,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,5,2,7,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,2,3,0.0,0,0,0,0,0,0
 # Season:2005 week:14
-Ma'ake Kemoeatu, BAL, 1, 5, 0, 5, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,5,0,5,0.0,0,0,0,0,0,0
 # Season:2005 week:15
-Shaun Cody, DET, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Shaun Cody,DET,1,1,0,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,2,0,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2005 week:16
-Shaun Cody, DET, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Shaun Cody,DET,1,1,0,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2005 week:17
-Ma'ake Kemoeatu, BAL, 1, 3, 1, 4, 1.0, 2, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,BAL,1,3,1,4,1.0,2,0,0,0,0,0
+Casey Hampton,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2006 week:1
-Barry Cofield, NYG, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,3,0,3,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,3,0,3,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,2,0,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2006 week:2
-Barry Cofield, NYG, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 1
-Shaun Cody, DET, 1, 4, 1, 5, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,1,0,1,0.0,0,0,0,0,0,1
+Shaun Cody,DET,1,4,1,5,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,1,0,1,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,2,0,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2006 week:3
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,3,1,4,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,2,1,3,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,3,0,3,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,2,4,0.0,0,0,0,0,0,0
 # Season:2006 week:4
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,1,2,3,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2006 week:5
-Barry Cofield, NYG, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 1
-Brodrick Bunkley, PHI, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,1,1,2,0.0,0,0,0,0,0,1
+Brodrick Bunkley,PHI,1,0,1,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,1,1,2,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,3,0,3,0.0,0,0,0,0,0,0
 # Season:2006 week:6
-Barry Cofield, NYG, 1, 5, 1, 6, 1.5, 14, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,5,1,6,1.5,14,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,1,1,2,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,0,1,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2006 week:7
-Barry Cofield, NYG, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,1,0,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,2,0,2,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2006 week:8
-Barry Cofield, NYG, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 1
-Brodrick Bunkley, PHI, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 1
-Chris Hoke, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,0,1,1,0.0,0,0,0,0,0,1
+Brodrick Bunkley,PHI,1,0,1,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,4,0,4,0.0,0,0,0,0,0,1
+Chris Hoke,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2006 week:9
-Barry Cofield, NYG, 1, 3, 2, 5, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,3,2,5,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2006 week:10
-Barry Cofield, NYG, 1, 3, 2, 5, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 5, 6, 0.0, 0, 0, 0, 0, 0, 1
+Barry Cofield,NYG,1,3,2,5,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,2,0,2,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,5,6,0.0,0,0,0,0,0,1
 # Season:2006 week:11
-Barry Cofield, NYG, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 3, 2, 5, 0.0, 0, 0, 0, 0, 1, 0
+Barry Cofield,NYG,1,4,0,4,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,3,2,5,0.0,0,0,0,0,1,0
 # Season:2006 week:12
-Barry Cofield, NYG, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 3, 4, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,2,2,4,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,2,2,4,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,1,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,3,4,0.0,0,0,0,0,0,0
 # Season:2006 week:13
-Barry Cofield, NYG, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,2,0,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,1,1,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2006 week:14
-Ma'ake Kemoeatu, CAR, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Ma'ake Kemoeatu,CAR,1,3,1,4,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2006 week:15
-Barry Cofield, NYG, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,2,0,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2006 week:16
-Barry Cofield, NYG, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,1,1,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,1,0,1,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,0,1,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,3,1,4,0.0,0,0,0,0,0,0
 # Season:2006 week:17
-Brandon McKinney, SDG, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 1
-Barry Cofield, NYG, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
+Brandon McKinney,SDG,1,2,0,2,0.0,0,0,0,0,0,1
+Barry Cofield,NYG,1,1,1,2,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,1,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,3,1,4,0.0,0,0,0,0,0,0
 # Season:2007 week:1
-Barry Cofield, NYG, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 1
-Chris Hoke, PIT, 1, 1, 1, 2, 0.5, 3, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,0,1,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,0,1,1,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,3,0,3,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,2,0,2,0.0,0,0,0,0,0,1
+Chris Hoke,PIT,1,1,1,2,0.5,3,0,0,0,0,0
 # Season:2007 week:2
-Barry Cofield, NYG, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 2, 0, 2, 0.0, 0, 1, -2, 0, 0, 1
-Ma'ake Kemoeatu, CAR, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,2,0,2,0.0,0,1,-2,0,0,1
+Ma'ake Kemoeatu,CAR,1,3,0,3,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,2,3,0.0,0,0,0,0,0,0
 # Season:2007 week:3
-Barry Cofield, NYG, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Brandon McKinney, SDG, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 4, 0, 4, 2.0, 12, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,2,0,2,0.0,0,0,0,0,0,0
+Brandon McKinney,SDG,1,1,1,2,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,4,0,4,2.0,12,0,0,0,0,0
+Shaun Cody,DET,1,2,0,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2007 week:4
-Barry Cofield, NYG, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 4, 1, 5, 0.0, 0, 0, 0, 0, 0, 2
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,2,0,2,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,1,0,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,4,1,5,0.0,0,0,0,0,0,2
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2007 week:5
-Brandon McKinney, SDG, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Brandon McKinney,SDG,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,2,0,2,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,0,1,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,0,1,1,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2007 week:6
-Brandon McKinney, SDG, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 1
-Brodrick Bunkley, PHI, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
+Brandon McKinney,SDG,1,2,1,3,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,1,1,2,0.0,0,0,0,0,0,1
+Brodrick Bunkley,PHI,1,1,1,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,3,0,3,0.0,0,0,0,0,0,0
 # Season:2007 week:7
-Barry Cofield, NYG, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 3, 3, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,0,1,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,0,1,1,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,3,3,0.0,0,0,0,0,0,0
 # Season:2007 week:8
-Brandon McKinney, SDG, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 4, 1, 5, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Brandon McKinney,SDG,1,2,1,3,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,2,1,3,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,4,1,5,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2007 week:9
-Brodrick Bunkley, PHI, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
+Brodrick Bunkley,PHI,1,3,0,3,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,1,0,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,2,0,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,2,3,0.0,0,0,0,0,0,0
 # Season:2007 week:10
-Barry Cofield, NYG, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,4,0,4,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,2,2,4,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,1,0,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,4,0,4,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2007 week:11
-Brandon McKinney, SDG, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Brandon McKinney,SDG,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,0,1,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,3,0,3,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2007 week:12
-Brandon McKinney, SDG, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 1
-Barry Cofield, NYG, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Brandon McKinney,SDG,1,1,0,1,0.0,0,0,0,0,0,1
+Barry Cofield,NYG,1,3,1,4,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,3,1,4,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,3,1,4,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2007 week:13
-Barry Cofield, NYG, 1, 4, 1, 5, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,4,1,5,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,1,1,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2007 week:14
-Brandon McKinney, SDG, 1, 3, 3, 6, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 2, 0, 2, 1.0, 7, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Brandon McKinney,SDG,1,3,3,6,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,2,0,2,1.0,7,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,1,1,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2007 week:15
-Barry Cofield, NYG, 1, 5, 0, 5, 0.0, 0, 0, 0, 0, 0, 0
-Brandon McKinney, SDG, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 1.0, 8, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 4, 4, 8, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,5,0,5,0.0,0,0,0,0,0,0
+Brandon McKinney,SDG,1,2,0,2,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,1.0,8,0,0,0,0,0
+Shaun Cody,DET,1,1,0,1,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,3,0,3,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,4,4,8,0.0,0,0,0,0,0,0
 # Season:2007 week:16
-Brandon McKinney, SDG, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 1, 2, 0.5, 5, 0, 0, 0, 0, 0
+Brandon McKinney,SDG,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,3,0,3,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,2,1,3,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,1,2,0.5,5,0,0,0,0,0
 # Season:2007 week:17
-Barry Cofield, NYG, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Brandon McKinney, SDG, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,3,0,3,0.0,0,0,0,0,0,0
+Brandon McKinney,SDG,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,1,0,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,4,0,4,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,3,1,4,0.0,0,0,0,0,0,0
 # Season:2008 week:1
-Brodrick Bunkley, PHI, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
+Brodrick Bunkley,PHI,1,0,1,1,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,2,0,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,3,1,4,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,2,2,0.0,0,0,0,0,0,0
 # Season:2008 week:2
-Barry Cofield, NYG, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,3,0,3,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,3,1,4,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,1,1,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2008 week:3
-Barry Cofield, NYG, 1, 3, 1, 4, 1.0, 6, 0, 0, 0, 0, 1
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 1.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,3,1,4,1.0,6,0,0,0,0,1
+Brodrick Bunkley,PHI,1,1,0,1,1.0,0,0,0,0,0,0
+Shaun Cody,DET,1,1,0,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,1,1,2,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2008 week:4
-Brodrick Bunkley, PHI, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Brodrick Bunkley,PHI,1,3,0,3,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,3,0,3,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2008 week:5
-Barry Cofield, NYG, 1, 5, 2, 7, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 1
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,5,2,7,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,3,1,4,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,3,1,4,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,1,0,1,0.0,0,0,0,0,0,1
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2008 week:6
-Brandon McKinney, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 2, 3, 5, 0.0, 0, 0, 0, 0, 0, 1
-Ma'ake Kemoeatu, CAR, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
+Brandon McKinney,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,3,0,3,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,2,3,5,0.0,0,0,0,0,0,1
+Ma'ake Kemoeatu,CAR,1,2,2,4,0.0,0,0,0,0,0,0
 # Season:2008 week:7
-Brandon McKinney, BAL, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 1, 1, 2, 1.0, 1, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 5, 0, 5, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
+Brandon McKinney,BAL,1,1,1,2,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,1,1,2,1.0,1,0,0,0,0,0
+Shaun Cody,DET,1,5,0,5,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,3,0,3,0.0,0,0,0,0,0,0
 # Season:2008 week:8
-Barry Cofield, NYG, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brandon McKinney, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 1, 0
-Casey Hampton, PIT, 1, 5, 1, 6, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,1,0,1,0.0,0,0,0,0,0,0
+Brandon McKinney,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,2,1,3,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,2,0,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,1,0,1,0.0,0,0,0,0,1,0
+Casey Hampton,PIT,1,5,1,6,0.0,0,0,0,0,0,0
 # Season:2008 week:9
-Barry Cofield, NYG, 1, 4, 1, 5, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,4,1,5,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,2,1,3,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,1,0,1,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2008 week:10
-Brandon McKinney, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 6, 1, 7, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 1
-Chris Hoke, PIT, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
+Brandon McKinney,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,6,1,7,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,3,1,4,0.0,0,0,0,0,0,1
+Chris Hoke,PIT,1,0,2,2,0.0,0,0,0,0,0,0
 # Season:2008 week:11
-Barry Cofield, NYG, 1, 5, 1, 6, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 3, 3, 6, 1.0, 1, 0, 0, 0, 0, 1
-Shaun Cody, DET, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 5, 0, 5, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,5,1,6,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,3,3,6,1.0,1,0,0,0,0,1
+Shaun Cody,DET,1,1,0,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,5,0,5,0.0,0,0,0,0,0,0
 # Season:2008 week:12
-Brodrick Bunkley, PHI, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
+Brodrick Bunkley,PHI,1,3,0,3,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,2,0,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,4,0,4,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,0,1,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,2,2,0.0,0,0,0,0,0,0
 # Season:2008 week:13
-Barry Cofield, NYG, 1, 3, 1, 4, 1.0, 7, 0, 0, 0, 1, 0
-Brandon McKinney, BAL, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 1
-Ma'ake Kemoeatu, CAR, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 0, 2, 1.0, 6, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,3,1,4,1.0,7,0,0,0,1,0
+Brandon McKinney,BAL,1,1,1,2,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,1,2,3,0.0,0,0,0,0,0,1
+Ma'ake Kemoeatu,CAR,1,3,0,3,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,4,0,4,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,0,2,1.0,6,0,0,0,0,0
 # Season:2008 week:14
-Barry Cofield, NYG, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Brandon McKinney, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 1, 4, 5, 0.0, 0, 0, 0, 0, 0, 1
-Ma'ake Kemoeatu, CAR, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 1
+Barry Cofield,NYG,1,2,2,4,0.0,0,0,0,0,0,0
+Brandon McKinney,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,3,0,3,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,1,4,5,0.0,0,0,0,0,0,1
+Ma'ake Kemoeatu,CAR,1,3,0,3,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,2,3,0.0,0,0,0,0,0,1
 # Season:2008 week:15
-Barry Cofield, NYG, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, CAR, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,1,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,CAR,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2008 week:16
-Barry Cofield, NYG, 1, 1, 3, 4, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 1
+Barry Cofield,NYG,1,1,3,4,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,2,2,4,0.0,0,0,0,0,0,1
 # Season:2008 week:17
-Brandon McKinney, BAL, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, DET, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 0, 1, 1, 0.5, 2, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Brandon McKinney,BAL,1,3,0,3,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,1,2,0.0,0,0,0,0,0,0
+Shaun Cody,DET,1,4,0,4,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,0,1,1,0.5,2,0,0,0,0,0
+Casey Hampton,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2009 week:1
-Barry Cofield, NYG, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 3, 5, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,1,1,2,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,1,2,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,2,2,4,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,1,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,3,5,0.0,0,0,0,0,0,0
 # Season:2009 week:2
-Ra'Shon Harris, CAR, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ron Brace, NWE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Ra'Shon Harris,CAR,1,0,1,1,0.0,0,0,0,0,0,0
+Ron Brace,NWE,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,2,3,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2009 week:3
-Ra'Shon Harris, CAR, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 0, 2, 1.0, 10, 0, 0, 0, 0, 0
+Ra'Shon Harris,CAR,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,2,1,3,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,0,1,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,0,2,1.0,10,0,0,0,0,0
 # Season:2009 week:4
-Casey Hampton, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Casey Hampton,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2009 week:5
-Barry Cofield, NYG, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,3,1,4,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,2,0,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2009 week:6
-Brandon McKinney, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Brandon McKinney,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,0,1,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,3,0,3,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2009 week:7
-Barry Cofield, NYG, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 1
-Brodrick Bunkley, PHI, 1, 3, 3, 6, 1.0, 4, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,2,0,2,0.0,0,0,0,0,0,1
+Brodrick Bunkley,PHI,1,3,3,6,1.0,4,0,0,0,0,0
+Shaun Cody,HOU,1,2,0,2,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,0,1,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,2,2,0.0,0,0,0,0,0,0
 # Season:2009 week:8
-Barry Cofield, NYG, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,2,0,2,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2009 week:9
-Barry Cofield, NYG, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,0,1,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2009 week:10
-Ron Brace, NWE, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
+Ron Brace,NWE,1,0,1,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,3,0,3,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,2,3,0.0,0,0,0,0,0,0
 # Season:2009 week:11
-Ron Brace, NWE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 3, 2, 5, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 1, 3, 1.0, 9, 0, 0, 0, 0, 0
+Ron Brace,NWE,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,3,2,5,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,3,0,3,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,3,0,3,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,1,3,1.0,9,0,0,0,0,0
 # Season:2009 week:12
-Brandon McKinney, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 1
-Shaun Cody, HOU, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
+Brandon McKinney,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,3,0,3,0.0,0,0,0,0,0,1
+Shaun Cody,HOU,1,0,1,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,2,3,0.0,0,0,0,0,0,0
 # Season:2009 week:13
-Barry Cofield, NYG, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 1
-Brodrick Bunkley, PHI, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 1
-Shaun Cody, HOU, 1, 0, 1, 1, 0.5, 1, 0, 0, 0, 0, 1
-Casey Hampton, PIT, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,3,0,3,0.0,0,0,0,0,0,1
+Brodrick Bunkley,PHI,1,2,0,2,0.0,0,0,0,0,0,1
+Shaun Cody,HOU,1,0,1,1,0.5,1,0,0,0,0,1
+Casey Hampton,PIT,1,1,2,3,0.0,0,0,0,0,0,0
 # Season:2009 week:14
-Barry Cofield, NYG, 1, 1, 3, 4, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 1
-Shaun Cody, HOU, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,1,3,4,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,2,0,2,0.0,0,0,0,0,0,1
+Shaun Cody,HOU,1,1,2,3,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,0,1,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2009 week:15
-Ron Brace, NWE, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 2, 0, 2, 1.0, 9, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 3, 2, 5, 0.5, 4, 0, 0, 0, 0, 0
+Ron Brace,NWE,1,3,1,4,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,2,0,2,1.0,9,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,3,2,5,0.5,4,0,0,0,0,0
 # Season:2009 week:16
-Ron Brace, NWE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Ron Brace,NWE,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,2,1,3,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2009 week:17
-Barry Cofield, NYG, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 1
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,2,2,4,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,1
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2010 week:1
-Barry Cofield, NYG, 1, 2, 2, 4, 0.5, 5, 0, 0, 0, 0, 0
-Ron Brace, NWE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 3, 2, 5, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, WAS, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Barry Cofield,NYG,1,2,2,4,0.5,5,0,0,0,0,0
+Ron Brace,NWE,1,1,0,1,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,2,0,2,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,3,2,5,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,1,2,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,0,2,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,WAS,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2010 week:2
-Ron Brace, NWE, 1, 1, 3, 4, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Brandon McKinney, BAL, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 3, 2, 5, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, WAS, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Ron Brace,NWE,1,1,3,4,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,1,1,2,0.0,0,0,0,0,0,0
+Brandon McKinney,BAL,1,0,2,2,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,3,2,5,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,WAS,1,2,0,2,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,2,1,3,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,2,0,2,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2010 week:3
-Ron Brace, NWE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Brandon McKinney, BAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 4, 2, 6, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, WAS, 1, 5, 0, 5, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Ron Brace,NWE,1,1,0,1,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,2,0,2,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,2,0,2,0.0,0,0,0,0,0,0
+Brandon McKinney,BAL,1,2,0,2,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,4,2,6,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,WAS,1,5,0,5,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,0,1,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2010 week:4
-Brandon McKinney, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ron Brace, NWE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 3, 1, 4, 1.5, 10, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, WAS, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 0, 1, 1.0, 6, 0, 0, 0, 1, 0
+Brandon McKinney,BAL,1,0,1,1,0.0,0,0,0,0,0,0
+Ron Brace,NWE,1,1,0,1,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,2,0,2,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,3,1,4,1.5,10,0,0,0,0,0
+Brodrick Bunkley,PHI,1,0,1,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,WAS,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,0,1,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,0,1,1.0,6,0,0,0,1,0
 # Season:2010 week:5
-Earl Mitchell, HOU, 1, 1, 4, 5, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brandon McKinney, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, WAS, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,1,4,5,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,1,0,1,0.0,0,0,0,0,0,0
+Brandon McKinney,BAL,1,0,1,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,4,0,4,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,2,3,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,WAS,1,0,2,2,0.0,0,0,0,0,0,0
 # Season:2010 week:6
-Josh Brent, DAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 3, 2, 5, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 5, 4, 9, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
+Josh Brent,DAL,1,0,1,1,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,1,2,3,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,3,2,5,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,5,4,9,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,2,2,0.0,0,0,0,0,0,0
 # Season:2010 week:7
-Josh Brent, DAL, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brandon McKinney, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 2, 0, 2, 1.0, 3, 0, 0, 0, 1, 1
-Ma'ake Kemoeatu, WAS, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Josh Brent,DAL,1,3,0,3,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,0,1,1,0.0,0,0,0,0,0,0
+Brandon McKinney,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,2,0,2,1.0,3,0,0,0,1,1
+Ma'ake Kemoeatu,WAS,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2010 week:8
-Ron Brace, NWE, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, WAS, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Ron Brace,NWE,1,2,2,4,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,2,0,2,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,2,3,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,WAS,1,2,0,2,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2010 week:9
-Terrence Cody, BAL, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ron Brace, NWE, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Terrence Cody,BAL,1,0,2,2,0.0,0,0,0,0,0,0
+Ron Brace,NWE,1,4,0,4,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2010 week:10
-Ron Brace, NWE, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 3, 2, 5, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, WAS, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Ron Brace,NWE,1,0,1,1,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,3,2,5,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,3,0,3,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,0,1,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,0,0,0,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,0,1,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,WAS,1,1,2,3,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,2,0,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2010 week:11
-Steve McLendon, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ron Brace, NWE, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, WAS, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Steve McLendon,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,2,1,3,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,1,0,1,0.0,0,0,0,0,0,0
+Ron Brace,NWE,1,2,2,4,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,2,0,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,WAS,1,2,0,2,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,2,2,4,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2010 week:12
-Earl Mitchell, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 1, 3, 4, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, WAS, 1, 0, 4, 4, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,1,3,4,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,WAS,1,0,4,4,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2010 week:13
-Brandon McKinney, BAL, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ron Brace, NWE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 7, 0, 7, 0.0, 0, 0, 0, 0, 0, 1
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, WAS, 1, 4, 1, 5, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Brandon McKinney,BAL,1,0,2,2,0.0,0,0,0,0,0,0
+Ron Brace,NWE,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,7,0,7,0.0,0,0,0,0,0,1
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,WAS,1,4,1,5,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2010 week:14
-Ron Brace, NWE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 2, 1, 3, 1.0, 9, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 3, 3, 0.0, 0, 0, 0, 0, 0, 0
+Ron Brace,NWE,1,1,0,1,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,0,1,1,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,3,1,4,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,2,1,3,1.0,9,0,0,0,0,0
+Brodrick Bunkley,PHI,1,3,0,3,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,1,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,3,3,0.0,0,0,0,0,0,0
 # Season:2010 week:15
-Earl Mitchell, HOU, 1, 1, 0, 1, 1.0, 8, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,1,0,1,1.0,8,0,0,0,0,0
+Josh Brent,DAL,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,2,1,3,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2010 week:16
-Ron Brace, NWE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 1
-Brodrick Bunkley, PHI, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Ron Brace,NWE,1,1,0,1,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,3,0,3,0.0,0,0,0,0,0,1
+Brodrick Bunkley,PHI,1,1,0,1,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2010 week:17
-Terrence Cody, BAL, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Brandon McKinney, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, NYG, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 1
-Chris Hoke, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, PHI, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 1
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Terrence Cody,BAL,1,2,2,4,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,0,1,1,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,2,0,2,0.0,0,0,0,0,0,0
+Brandon McKinney,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,NYG,1,2,2,4,0.0,0,0,0,0,0,1
+Chris Hoke,PIT,1,0,1,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,2,1,3,0.0,0,0,0,0,0,0
+Brodrick Bunkley,PHI,1,2,0,2,0.0,0,0,0,0,0,1
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2011 week:1
-Phil Taylor, CLE, 1, 5, 1, 6, 0.0, 0, 0, 0, 0, 0, 0
-Terrell McClain, CAR, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Neild, WAS, 1, 1, 2, 3, 1.5, 10, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, DEN, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Phil Taylor,CLE,1,5,1,6,0.0,0,0,0,0,0,0
+Terrell McClain,CAR,1,1,0,1,0.0,0,0,0,0,0,0
+Chris Neild,WAS,1,1,2,3,1.5,10,0,0,0,0,0
+Josh Brent,DAL,1,1,0,1,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,0,0,0,0.0,0,0,0,0,0,0
+Brodrick Bunkley,DEN,1,3,1,4,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2011 week:2
-Earl Mitchell, HOU, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 2, 3, 5, 0.0, 0, 0, 0, 0, 0, 1
-Terrence Cody, BAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 0, 1, 1, 0.5, 3, 0, 0, 0, 0, 0
-Brodrick Bunkley, DEN, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 1
-Shaun Cody, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,1,1,2,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,2,3,5,0.0,0,0,0,0,0,1
+Terrence Cody,BAL,1,2,0,2,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,0,1,1,0.5,3,0,0,0,0,0
+Brodrick Bunkley,DEN,1,1,1,2,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,1,0,1,0.0,0,0,0,0,0,1
+Shaun Cody,HOU,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2011 week:3
-Terrell McClain, CAR, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Neild, WAS, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 4, 3, 7, 1.0, 3, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 1
-Brodrick Bunkley, DEN, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Terrell McClain,CAR,1,1,2,3,0.0,0,0,0,0,0,0
+Chris Neild,WAS,1,2,0,2,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,4,3,7,1.0,3,0,0,0,0,0
+Barry Cofield,WAS,1,0,1,1,0.0,0,0,0,0,0,1
+Brodrick Bunkley,DEN,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2011 week:4
-Josh Brent, DAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 2, 0, 2, 1.0, 7, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 2
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Josh Brent,DAL,1,1,0,1,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,0,2,2,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,0,0,0,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,2,1,3,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,2,0,2,1.0,7,0,0,0,0,0
+Barry Cofield,WAS,1,0,0,0,0.0,0,0,0,0,0,2
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2011 week:5
-Terrell McClain, CAR, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Terrell McClain,CAR,1,1,0,1,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,1,1,2,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,2,0,2,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2011 week:6
-Josh Brent, DAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Martin Tevaseu, NYJ, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 3, 0, 3, 1.0, 1, 0, 0, 0, 0, 0
-Terrell McClain, CAR, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Neild, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 2, 0, 2, 1.0, 1, 0, 0, 0, 0, 1
-Brandon McKinney, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Hoke, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Josh Brent,DAL,1,0,1,1,0.0,0,0,0,0,0,0
+Martin Tevaseu,NYJ,1,0,1,1,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,3,0,3,1.0,1,0,0,0,0,0
+Terrell McClain,CAR,1,0,1,1,0.0,0,0,0,0,0,0
+Chris Neild,WAS,1,0,1,1,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,0,1,1,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,3,0,3,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,3,1,4,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,2,0,2,1.0,1,0,0,0,0,1
+Brandon McKinney,BAL,1,0,1,1,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,0,1,1,0.0,0,0,0,0,0,0
+Chris Hoke,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2011 week:7
-Earl Mitchell, HOU, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Terrell McClain, CAR, 1, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 4, 2, 6, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 4, 1, 5, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 3, 0, 3, 1.0, 3, 0, 0, 0, 0, 0
-Brandon McKinney, BAL, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 1, 0
-Brodrick Bunkley, DEN, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,0,1,1,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,2,0,2,0.0,0,0,0,0,0,0
+Terrell McClain,CAR,1,0,0,0,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,4,2,6,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,4,1,5,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,3,0,3,1.0,3,0,0,0,0,0
+Brandon McKinney,BAL,1,3,1,4,0.0,0,0,0,0,1,0
+Brodrick Bunkley,DEN,1,3,1,4,0.0,0,0,0,0,0,0
 # Season:2011 week:8
-Earl Mitchell, HOU, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 2, 0, 2, 1.0, 3, 0, 0, 0, 1, 0
-Terrell McClain, CAR, 1, 3, 1, 4, 1.0, 0, 0, 0, 0, 0, 0
-Brandon McKinney, BAL, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, DEN, 1, 5, 0, 5, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,0,1,1,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,2,0,2,1.0,3,0,0,0,1,0
+Terrell McClain,CAR,1,3,1,4,1.0,0,0,0,0,0,0
+Brandon McKinney,BAL,1,1,1,2,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,1,2,3,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,2,3,0.0,0,0,0,0,0,0
+Brodrick Bunkley,DEN,1,5,0,5,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2011 week:9
-Earl Mitchell, HOU, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Neild, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 1
-Steve McLendon, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ron Brace, NWE, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 3, 4, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,3,0,3,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,1,0,1,0.0,0,0,0,0,0,0
+Chris Neild,WAS,1,0,1,1,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,2,1,3,0.0,0,0,0,0,0,1
+Steve McLendon,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,1,2,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,1,0,1,0.0,0,0,0,0,0,0
+Ron Brace,NWE,1,0,2,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,3,4,0.0,0,0,0,0,0,0
 # Season:2011 week:10
-Terrence Cody, BAL, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 4, 1, 5, 1.0, 7, 0, 0, 0, 0, 0
-Terrell McClain, CAR, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Neild, WAS, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brandon McKinney, BAL, 1, 0, 3, 3, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, DEN, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 1
-Casey Hampton, PIT, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
+Terrence Cody,BAL,1,0,2,2,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,4,1,5,1.0,7,0,0,0,0,0
+Terrell McClain,CAR,1,3,0,3,0.0,0,0,0,0,0,0
+Chris Neild,WAS,1,1,0,1,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Brandon McKinney,BAL,1,0,3,3,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,DEN,1,2,0,2,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,3,0,3,0.0,0,0,0,0,0,1
+Casey Hampton,PIT,1,1,2,3,0.0,0,0,0,0,0,0
 # Season:2011 week:11
-Terrell McClain, CAR, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Neild, WAS, 1, 0, 1, 1, 0.5, 2, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 6, 3, 9, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brandon McKinney, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, DEN, 1, 4, 1, 5, 0.0, 0, 0, 0, 0, 0, 0
+Terrell McClain,CAR,1,2,1,3,0.0,0,0,0,0,0,0
+Chris Neild,WAS,1,0,1,1,0.5,2,0,0,0,0,0
+Phil Taylor,CLE,1,6,3,9,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,1,2,3,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,0,1,1,0.0,0,0,0,0,0,0
+Brandon McKinney,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,DEN,1,4,1,5,0.0,0,0,0,0,0,0
 # Season:2011 week:12
-Phil Taylor, CLE, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Terrell McClain, CAR, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Neild, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 1
-Brodrick Bunkley, DEN, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Phil Taylor,CLE,1,2,0,2,0.0,0,0,0,0,0,0
+Terrell McClain,CAR,1,0,1,1,0.0,0,0,0,0,0,0
+Chris Neild,WAS,1,0,1,1,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,2,0,2,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,0,1,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,3,0,3,0.0,0,0,0,0,0,1
+Brodrick Bunkley,DEN,1,4,0,4,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2011 week:13
-Terrell McClain, CAR, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 1, 5, 6, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 2
-Brodrick Bunkley, DEN, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Terrell McClain,CAR,1,2,0,2,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,1,5,6,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,0,1,1,0.0,0,0,0,0,0,2
+Brodrick Bunkley,DEN,1,2,1,3,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2011 week:14
-Terrence Cody, BAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 1, 1, 2, 0.5, 3, 0, 0, 0, 0, 0
-Ron Brace, NWE, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 1
-Brodrick Bunkley, DEN, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 2, 3, 5, 0.5, 3, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 3, 3, 6, 0.0, 0, 0, 0, 0, 0, 0
+Terrence Cody,BAL,1,2,0,2,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,0,1,1,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,0,1,1,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,1,1,2,0.5,3,0,0,0,0,0
+Ron Brace,NWE,1,0,1,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,0,2,2,0.0,0,0,0,0,0,1
+Brodrick Bunkley,DEN,1,3,1,4,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,2,3,5,0.5,3,0,0,0,0,0
+Casey Hampton,PIT,1,3,3,6,0.0,0,0,0,0,0,0
 # Season:2011 week:15
-Earl Mitchell, HOU, 1, 3, 2, 5, 1.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Ron Brace, NWE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 1, 0
-Shaun Cody, HOU, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, DEN, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,3,2,5,1.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,2,1,3,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,1,2,3,0.0,0,0,0,0,0,0
+Ron Brace,NWE,1,1,0,1,0.0,0,0,0,0,1,0
+Shaun Cody,HOU,1,1,1,2,0.0,0,0,0,0,0,0
+Brodrick Bunkley,DEN,1,3,1,4,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2011 week:16
-Terrence Cody, BAL, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 0, 4, 4, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 4, 1, 5, 0.0, 0, 0, 0, 0, 0, 0
-Brandon McKinney, BAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 0, 1, 1, 0.5, 1, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, DEN, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Terrence Cody,BAL,1,2,2,4,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,0,4,4,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,4,1,5,0.0,0,0,0,0,0,0
+Brandon McKinney,BAL,1,2,0,2,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,0,1,1,0.5,1,0,0,0,0,0
+Shaun Cody,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,DEN,1,2,1,3,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2011 week:17
-Earl Mitchell, HOU, 1, 5, 1, 6, 0.0, 0, 0, 0, 0, 0, 1
-Josh Brent, DAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Brandon McKinney, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, DEN, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,5,1,6,0.0,0,0,0,0,0,1
+Josh Brent,DAL,1,0,1,1,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,1,1,2,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,2,1,3,0.0,0,0,0,0,0,0
+Brandon McKinney,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,DEN,1,0,2,2,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2012 week:1
-Terrence Cody, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 2, 3, 5, 0.5, 3, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Terrence Cody,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,0,2,2,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,0,0,0,0.0,0,0,0,0,0,0
+Brodrick Bunkley,NOR,1,2,3,5,0.5,3,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,2,0,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2012 week:2
-Earl Mitchell, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 0, 3, 3, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ron Brace, NWE, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 1
-Shaun Cody, HOU, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,0,3,3,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,0,2,2,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,1,1,2,0.0,0,0,0,0,0,0
+Ron Brace,NWE,1,2,1,3,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,1,1,2,0.0,0,0,0,0,0,1
+Shaun Cody,HOU,1,1,1,2,0.0,0,0,0,0,0,0
+Brodrick Bunkley,NOR,1,0,2,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,2,3,0.0,0,0,0,0,0,0
 # Season:2012 week:3
-Terrence Cody, BAL, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 2
-Martin Tevaseu, IND, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Terrence Cody,BAL,1,1,1,2,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,1,0,1,0.0,0,0,0,0,0,2
+Martin Tevaseu,IND,1,3,0,3,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,1,0,1,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,1,1,2,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,0,1,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,0,1,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,NOR,1,1,1,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2012 week:4
-Josh Brent, DAL, 1, 4, 0, 4, 1.0, 6, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Josh Brent,DAL,1,4,0,4,1.0,6,0,0,0,0,0
+Earl Mitchell,HOU,1,2,1,3,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,1,1,2,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2012 week:5
-Terrence Cody, BAL, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 1, 0, 1, 1.0, 2, 0, 0, 0, 1, 0
-Ron Brace, NWE, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 2, 3, 5, 1.0, 7, 0, 0, 0, 0, 1
-Ma'ake Kemoeatu, BAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Terrence Cody,BAL,1,1,1,2,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,1,1,2,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,1,2,3,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,1,0,1,1.0,2,0,0,0,1,0
+Ron Brace,NWE,1,0,1,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,2,3,0.0,0,0,0,0,0,0
+Brodrick Bunkley,NOR,1,1,1,2,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,2,3,5,1.0,7,0,0,0,0,1
+Ma'ake Kemoeatu,BAL,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2012 week:6
-Earl Mitchell, HOU, 1, 4, 1, 5, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 0, 4, 4, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 3, 2, 5, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,4,1,5,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,1,1,2,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,1,2,3,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,0,4,4,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,3,2,5,0.0,0,0,0,0,0,0
 # Season:2012 week:7
-Earl Mitchell, HOU, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 2, 3, 5, 0.5, 4, 0, 0, 0, 0, 1
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,0,1,1,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,1,0,1,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,1,1,2,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,1,1,2,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,1,1,2,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,0,1,1,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,2,3,5,0.5,4,0,0,0,0,1
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2012 week:8
-Josh Brent, DAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Martin Tevaseu, IND, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Josh Brent,DAL,1,1,0,1,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,1,1,2,0.0,0,0,0,0,0,0
+Martin Tevaseu,IND,1,1,0,1,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,2,2,4,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2012 week:9
-Earl Mitchell, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 1, 1, 2, 0.5, 2, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 0, 3, 3, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 1
-Brodrick Bunkley, NOR, 1, 1, 0, 1, 1.0, 3, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,1,1,2,0.5,2,0,0,0,0,0
+Phil Taylor,CLE,1,1,0,1,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,0,3,3,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,0,0,0,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,1,1,2,0.0,0,0,0,0,0,1
+Brodrick Bunkley,NOR,1,1,0,1,1.0,3,0,0,0,0,0
+Barry Cofield,WAS,1,1,1,2,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,1,0,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2012 week:10
-Earl Mitchell, HOU, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,3,1,4,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,0,1,1,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,2,1,3,0.0,0,0,0,0,0,0
+Brodrick Bunkley,NOR,1,1,1,2,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,0,1,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2012 week:11
-Earl Mitchell, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 1
-Phil Taylor, CLE, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 1
-Barry Cofield, WAS, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 1, 0
-Ma'ake Kemoeatu, BAL, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 1
-Casey Hampton, PIT, 1, 1, 3, 4, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,0,1,1,0.0,0,0,0,0,0,1
+Phil Taylor,CLE,1,2,0,2,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,0,0,0,0.0,0,0,0,0,0,1
+Barry Cofield,WAS,1,2,1,3,0.0,0,0,0,0,1,0
+Ma'ake Kemoeatu,BAL,1,0,2,2,0.0,0,0,0,0,0,0
+Brodrick Bunkley,NOR,1,0,1,1,0.0,0,0,0,0,0,1
+Casey Hampton,PIT,1,1,3,4,0.0,0,0,0,0,0,0
 # Season:2012 week:12
-Earl Mitchell, HOU, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Martin Tevaseu, IND, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 1
-Josh Brent, DAL, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 1, 0, 1, 1.0, 6, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 2, 3, 5, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,1,1,2,0.0,0,0,0,0,0,0
+Martin Tevaseu,IND,1,0,2,2,0.0,0,0,0,0,0,1
+Josh Brent,DAL,1,3,1,4,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,1,0,1,1.0,6,0,0,0,0,0
+Terrence Cody,BAL,1,1,1,2,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,2,3,5,0.0,0,0,0,0,0,0
+Brodrick Bunkley,NOR,1,0,1,1,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,1,1,2,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2012 week:13
-Earl Mitchell, HOU, 1, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 1
-Martin Tevaseu, IND, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Josh Brent, DAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 1, 0
-Phil Taylor, CLE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 1
-Steve McLendon, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Shaun Cody, HOU, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 1
-Brodrick Bunkley, NOR, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 1
-Barry Cofield, WAS, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,0,0,0,0.0,0,0,0,0,0,1
+Martin Tevaseu,IND,1,0,1,1,0.0,0,0,0,0,0,0
+Josh Brent,DAL,1,2,0,2,0.0,0,0,0,0,1,0
+Phil Taylor,CLE,1,1,0,1,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,1,1,2,0.0,0,0,0,0,0,1
+Steve McLendon,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Shaun Cody,HOU,1,2,0,2,0.0,0,0,0,0,0,1
+Brodrick Bunkley,NOR,1,1,0,1,0.0,0,0,0,0,0,1
+Barry Cofield,WAS,1,1,1,2,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,1,2,3,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2012 week:14
-Earl Mitchell, HOU, 1, 0, 5, 5, 0.0, 0, 0, 0, 0, 1, 0
-Phil Taylor, CLE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 1, 1
-Shaun Cody, HOU, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 1
-Casey Hampton, PIT, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,0,5,5,0.0,0,0,0,0,1,0
+Phil Taylor,CLE,1,1,0,1,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,1,0,1,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,0,1,1,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,1,2,3,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,1,1,2,0.0,0,0,0,0,1,1
+Shaun Cody,HOU,1,0,2,2,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,2,2,4,0.0,0,0,0,0,0,1
+Casey Hampton,PIT,1,1,2,3,0.0,0,0,0,0,0,0
 # Season:2012 week:15
-Earl Mitchell, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 4, 1, 5, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 1, 1, 2, 1.0, 7, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,4,1,5,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,0,1,1,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,1,2,3,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,NOR,1,0,1,1,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,1,1,2,1.0,7,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2012 week:16
-Martin Tevaseu, IND, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 3
-Steve McLendon, PIT, 1, 0, 1, 1, 0.5, 4, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
+Martin Tevaseu,IND,1,2,1,3,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,1,0,1,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,0,1,1,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,1,0,1,0.0,0,0,0,0,0,3
+Steve McLendon,PIT,1,0,1,1,0.5,4,0,0,0,0,0
+Casey Hampton,PIT,1,2,2,4,0.0,0,0,0,0,0,0
 # Season:2012 week:17
-Earl Mitchell, HOU, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Martin Tevaseu, IND, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ian Williams, SFO, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 0, 1, 1, 0.5, 2, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ma'ake Kemoeatu, BAL, 1, 3, 1, 4, 1.0, 1, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 3, 2, 5, 1.0, 3, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Casey Hampton, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,2,1,3,0.0,0,0,0,0,0,0
+Martin Tevaseu,IND,1,1,1,2,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,1,1,2,0.0,0,0,0,0,0,0
+Ian Williams,SFO,1,3,0,3,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,0,1,1,0.5,2,0,0,0,0,0
+Chris Baker,WAS,1,0,1,1,0.0,0,0,0,0,0,0
+Ma'ake Kemoeatu,BAL,1,3,1,4,1.0,1,0,0,0,0,0
+Brodrick Bunkley,NOR,1,3,2,5,1.0,3,0,0,0,0,0
+Barry Cofield,WAS,1,0,1,1,0.0,0,0,0,0,0,0
+Casey Hampton,PIT,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2013 week:1
-Ian Williams, SFO, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-John Jenkins, NOR, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 2, 4, 6, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
+Ian Williams,SFO,1,1,0,1,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,0,1,1,0.0,0,0,0,0,0,0
+John Jenkins,NOR,1,1,1,2,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,0,2,2,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,2,1,3,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,0,1,1,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,2,4,6,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,2,1,3,0.0,0,0,0,0,0,0
 # Season:2013 week:2
-Ishmaa'ily Kitchen, CLE, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-John Jenkins, NOR, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Josh Chapman, IND, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Ishmaa'ily Kitchen,CLE,1,1,2,3,0.0,0,0,0,0,0,0
+John Jenkins,NOR,1,3,0,3,0.0,0,0,0,0,0,0
+Josh Chapman,IND,1,1,0,1,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,0,1,1,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,0,2,2,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,0,1,1,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2013 week:3
-Josh Chapman, IND, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-John Jenkins, NOR, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Neild, WAS, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 1, 1, 2, 1.0, 7, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 3, 2, 5, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
+Josh Chapman,IND,1,2,2,4,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,0,1,1,0.0,0,0,0,0,0,0
+John Jenkins,NOR,1,2,0,2,0.0,0,0,0,0,0,0
+Chris Neild,WAS,1,1,1,2,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,1,1,2,1.0,7,0,0,0,0,0
+Steve McLendon,PIT,1,3,2,5,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,0,2,2,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,1,2,3,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,1,2,3,0.0,0,0,0,0,0,0
 # Season:2013 week:4
-Terrell McClain, HOU, 1, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0
-Josh Chapman, IND, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-John Jenkins, NOR, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 0, 3, 3, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 2, 0, 2, 2.0, 8, 0, 0, 0, 0, 0
+Terrell McClain,HOU,1,0,0,0,0.0,0,0,0,0,0,0
+Josh Chapman,IND,1,1,0,1,0.0,0,0,0,0,0,0
+John Jenkins,NOR,1,2,0,2,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,2,0,2,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,0,2,2,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,0,3,3,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,4,0,4,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,2,0,2,2.0,8,0,0,0,0,0
 # Season:2013 week:5
-John Jenkins, NOR, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Terrell McClain, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
+John Jenkins,NOR,1,0,1,1,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,1,1,2,0.0,0,0,0,0,0,0
+Terrell McClain,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,2,2,4,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,0,2,2,0.0,0,0,0,0,0,0
 # Season:2013 week:6
-Josh Chapman, IND, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrell McClain, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Josh Chapman,IND,1,0,1,1,0.0,0,0,0,0,0,0
+Terrell McClain,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,0,0,0,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,3,1,4,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2013 week:7
-Phil Taylor, CLE, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 5, 0, 5, 1.0, 6, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 2, 1, 3, 1.0, 6, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 2, 1, 3, 0.5, 4, 0, 0, 0, 0, 0
+Phil Taylor,CLE,1,1,2,3,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,3,0,3,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,5,0,5,1.0,6,0,0,0,0,0
+Steve McLendon,PIT,1,3,0,3,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,2,1,3,1.0,6,0,0,0,0,0
+Barry Cofield,WAS,1,2,1,3,0.5,4,0,0,0,0,0
 # Season:2013 week:8
-John Jenkins, NOR, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 3, 0, 3, 1.0, 4, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+John Jenkins,NOR,1,0,1,1,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,3,0,3,1.0,4,0,0,0,0,0
+Steve McLendon,PIT,1,4,0,4,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,1,0,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,NOR,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2013 week:9
-Earl Mitchell, HOU, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 0, 3, 3, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,3,1,4,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,1,0,1,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,2,0,2,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,0,1,1,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,0,0,0,0.0,0,0,0,0,0,0
+Brodrick Bunkley,NOR,1,0,3,3,0.0,0,0,0,0,0,0
 # Season:2013 week:10
-Earl Mitchell, HOU, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 0
-John Jenkins, NOR, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
+Earl Mitchell,HOU,1,4,0,4,0.0,0,0,0,0,0,0
+John Jenkins,NOR,1,1,0,1,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,1,0,1,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,0,1,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,NOR,1,2,0,2,0.0,0,0,0,0,0,0
 # Season:2013 week:11
-Phil Taylor, CLE, 1, 0, 2, 2, 0.0, 0, 0, 0, 0, 0, 0
-John Jenkins, NOR, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 1, 0
-Brodrick Bunkley, NOR, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
+Phil Taylor,CLE,1,0,2,2,0.0,0,0,0,0,0,0
+John Jenkins,NOR,1,0,1,1,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,2,0,2,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,2,0,2,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,2,0,2,0.0,0,0,0,0,1,0
+Brodrick Bunkley,NOR,1,1,1,2,0.0,0,0,0,0,0,0
 # Season:2013 week:12
-Terrell McClain, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Josh Chapman, IND, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 1, 3, 4, 0.5, 4, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
+Terrell McClain,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Josh Chapman,IND,1,2,0,2,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,1,2,3,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,1,3,4,0.5,4,0,0,0,0,0
+Terrence Cody,BAL,1,1,2,3,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,2,1,3,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,3,0,3,0.0,0,0,0,0,0,0
+Brodrick Bunkley,NOR,1,0,1,1,0.0,0,0,0,0,0,0
 # Season:2013 week:13
-Josh Chapman, IND, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-John Jenkins, NOR, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 2, 1, 3, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 3, 2, 5, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 0, 0, 0, 0.0, 0, 0, 0, 0, 0, 0
+Josh Chapman,IND,1,1,0,1,0.0,0,0,0,0,0,0
+John Jenkins,NOR,1,0,1,1,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,2,0,2,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,2,1,3,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,3,2,5,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,0,0,0,0.0,0,0,0,0,0,0
+Brodrick Bunkley,NOR,1,0,0,0,0.0,0,0,0,0,0,0
 # Season:2013 week:14
-Chris Neild, WAS, 1, 2, 0, 2, 0.0, 0, 0, 0, 0, 0, 0
-Josh Chapman, IND, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-John Jenkins, NOR, 1, 2, 2, 4, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 1
-Earl Mitchell, HOU, 1, 3, 1, 4, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 0, 3, 3, 0.0, 0, 0, 0, 0, 0, 0
+Chris Neild,WAS,1,2,0,2,0.0,0,0,0,0,0,0
+Josh Chapman,IND,1,1,0,1,0.0,0,0,0,0,0,0
+John Jenkins,NOR,1,2,2,4,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,1,1,2,0.0,0,0,0,0,0,1
+Earl Mitchell,HOU,1,3,1,4,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,0,1,1,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,0,1,1,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,0,3,3,0.0,0,0,0,0,0,0
 # Season:2013 week:15
-Chris Neild, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Hebron Fangupo, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-John Jenkins, NOR, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrell McClain, HOU, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Phil Taylor, CLE, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 1, 3, 4, 0.0, 0, 0, 0, 0, 0, 1
-Earl Mitchell, HOU, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 3, 0, 3, 0.0, 0, 0, 0, 0, 0, 0
+Chris Neild,WAS,1,0,1,1,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,0,1,1,0.0,0,0,0,0,0,0
+Hebron Fangupo,PIT,1,0,1,1,0.0,0,0,0,0,0,0
+John Jenkins,NOR,1,1,0,1,0.0,0,0,0,0,0,0
+Terrell McClain,HOU,1,0,1,1,0.0,0,0,0,0,0,0
+Phil Taylor,CLE,1,1,0,1,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,1,2,3,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,1,3,4,0.0,0,0,0,0,0,1
+Earl Mitchell,HOU,1,1,2,3,0.0,0,0,0,0,0,0
+Brodrick Bunkley,NOR,1,3,0,3,0.0,0,0,0,0,0,0
 # Season:2013 week:16
-Phil Taylor, CLE, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrell McClain, HOU, 1, 4, 0, 4, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-John Jenkins, NOR, 1, 1, 1, 2, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, 1, 2, 3, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, 0, 1, 1, 0.0, 0, 0, 0, 0, 0, 0
-Brodrick Bunkley, NOR, 1, 1, 0, 1, 0.0, 0, 0, 0, 0, 0, 0
+Phil Taylor,CLE,1,0,1,1,0.0,0,0,0,0,0,0
+Terrell McClain,HOU,1,4,0,4,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,0,1,1,0.0,0,0,0,0,0,0
+John Jenkins,NOR,1,1,1,2,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,1,0,1,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,1,2,3,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,0,1,1,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,0,1,1,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,0,1,1,0.0,0,0,0,0,0,0
+Brodrick Bunkley,NOR,1,1,0,1,0.0,0,0,0,0,0,0
 # Season:2013 week:17
-Chris Neild, WAS, 1, N/A, N/A, N/A, 0.0, 0, 0, 0, 0, 0, 0
-Josh Chapman, IND, 1, N/A, N/A, N/A, 0.0, 0, 0, 0, 0, 0, 0
-Ishmaa'ily Kitchen, CLE, 1, N/A, N/A, N/A, 0.0, 0, 0, 0, 0, 0, 0
-Terrell McClain, HOU, 1, N/A, N/A, N/A, 0.0, 0, 0, 0, 0, 0, 0
-Earl Mitchell, HOU, 1, N/A, N/A, N/A, 0.0, 0, 0, 0, 0, 0, 0
-Chris Baker, WAS, 1, N/A, N/A, N/A, 0.0, 0, 0, 0, 0, 0, 0
-Steve McLendon, PIT, 1, N/A, N/A, N/A, 0.0, 0, 0, 0, 0, 0, 0
-Terrence Cody, BAL, 1, N/A, N/A, N/A, 0.0, 0, 0, 0, 0, 0, 0
-Barry Cofield, WAS, 1, N/A, N/A, N/A, 0.0, 0, 0, 0, 0, 0, 1
+Chris Neild,WAS,1,N/A,N/A,N/A,0.0,0,0,0,0,0,0
+Josh Chapman,IND,1,N/A,N/A,N/A,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,N/A,N/A,N/A,0.0,0,0,0,0,0,0
+Terrell McClain,HOU,1,N/A,N/A,N/A,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,N/A,N/A,N/A,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,N/A,N/A,N/A,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,N/A,N/A,N/A,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,N/A,N/A,N/A,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,N/A,N/A,N/A,0.0,0,0,0,0,0,1
+# Season:2013 week:17
+Chris Neild,WAS,1,1,0,1,0.0,0,0,0,0,0,0
+Josh Chapman,IND,1,1,3,4,0.0,0,0,0,0,0,0
+Ishmaa'ily Kitchen,CLE,1,1,2,3,0.0,0,0,0,0,0,0
+Terrell McClain,HOU,1,1,1,2,0.0,0,0,0,0,0,0
+Earl Mitchell,HOU,1,2,1,3,0.0,0,0,0,0,0,0
+Chris Baker,WAS,1,6,1,7,0.0,0,0,0,0,0,0
+Steve McLendon,PIT,1,1,2,3,0.0,0,0,0,0,0,0
+Terrence Cody,BAL,1,0,2,2,0.0,0,0,0,0,0,0
+Barry Cofield,WAS,1,3,2,5,0.0,0,0,0,0,0,1
