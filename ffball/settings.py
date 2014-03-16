@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'b-w%e=n_93=p0^2(b0oq$8u((zmlys_)t0p!g!x&0k81xl+4jy'
+SECRET_KEY = 'b-w%e=n_93=p0^2(//yupthisisthething0p!g!x&0k81xl+4jy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -57,10 +57,7 @@ WSGI_APPLICATION = 'ffball.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': '/home/rahul/moneyball/database.conf'
-            }
+        'ENGINE': 'django.db.backends.sqlite3'
         }
     }
 # Internationalization
