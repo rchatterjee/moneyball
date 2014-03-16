@@ -20,6 +20,35 @@ def parse_n_print(f, writein, week=1, year=2001):
     for s in data: writein.write(', '.join(s) + "\n")
 
 
+def espn_download():
+    teams = ['ari', 'atl', 'bal', 'buf', 'car', 'chi', 'cin', 'cle', 
+             'dal', 'den', 'det', 'gb', 'hou', 'ind', 'jax', 'kc', 
+             'mia', 'min', 'ne', 'no','nyg', 'nyj', 'oak', 'phi', 
+             'pit', 'sd', 'sf', 'sea', 'stl', 'tb', 'ten', 'wsh']
+    x = 1
+    for team in teams:
+        ofname='raw_data/team_data_%s.csv' % team.upper()
+        ofile = open(ofname, 'w')
+        for yr in range(2002, 2014):
+            base_url='http://espn.go.com/nfl/team/schedule/_/name/%s/year/%d'%(team, yr)
+            urlfile = urlopen(base_url)
+            s = BeautifulSoup(urlfile.read())
+            #if x>1: time.sleep(x); x=1/x;
+            table = s.find_all(class_='mod-content')[0]
+            rows = table.find_all("tr")
+            
+            data = [ filter(lambda x: x, [ h.text.strip() for h in row.find_all("td") ]) for row in rows ]
+            for r in data : 
+                if len(r) <=2: ofile.write('#'+','.join(r)+'\n')
+                elif r[2][:1] != '@': 
+                    r[2] = r[2][2:]
+                    ofile.write(','.join(r)+'\n')
+        ofile.close()
+        x += 1;
+        if x >5: time.sleep(2); x=0
+
+
+
 def download():
     position = ["QB", "RB", "WR", "TE", "DE", "DT", "NT", "LB", "CB", "S", "K", "P"]
     #position = ["QB", "RB", "WR", "TE", "DE", "DT"]
@@ -70,7 +99,6 @@ def getAllPlayers():
         except KeyError: counter[k] = 1
         pid = "%s%03d" % (k, counter[k])
         print "%s,%s,%s,<%s>" % ( pid, name.replace("'", "\\'"), p[-1], '|'.join(p[:-1]))
-
 
                                
  
@@ -125,6 +153,18 @@ def modifyDataFiles():
             wf.write(','.join(a)+'\n')
         wf.close()
 
-modifyDataFiles()
+def parse_nfl_pbp_data():
+    fl_name = './raw_data/2002_nfl_pbp_data.csv'
+    week = 1;
+    for line in open(fl_name):
+        if not line.strip(): continue
+        d = line.split()[0]
+        if d[:2] != '20': continue
+        d = d.split('_')
+        yr = d[0];
+        t1, t2 = d[1].split('@')
+        
+#modifyDataFiles()
 #download()
 #getAllPlayers();
+espn_download()

@@ -1,0 +1,11 @@
+Jalen Parmele,1,0,0,N/A,N/A,0,0,N/A,0,N/A,N/A,0,1,0
+Devin Moore,1,0,0,N/A,N/A,0,0,N/A,0,N/A,N/A,0,1,0
+Darius Reynaud,1,0,0,N/A,N/A,0,0,N/A,0,N/A,N/A,0,1,0
+Stefan Logan,1,0,0,N/A,N/A,0,0,N/A,0,N/A,N/A,0,1,0
+Jason Wright,1,0,0,N/A,N/A,0,0,N/A,0,N/A,N/A,0,1,1
+Bernard Scott,1,0,0,N/A,N/A,0,0,N/A,0,N/A,N/A,0,1,1
+Leon Washington,1,0,0,N/A,N/A,0,0,N/A,0,N/A,N/A,0,1,1
+Deji Karim,1,0,0,N/A,N/A,0,0,N/A,0,N/A,N/A,0,1,0
+Clifton Smith,1,0,0,N/A,N/A,0,0,N/A,0,N/A,N/A,0,1,0
+Deji Karim,1,0,0,N/A,N/A,0,0,N/A,0,N/A,N/A,0,1,0
+Quinn Porter,1,0,0,N/A,N/A,0,0,N/A,0,N/A,N/A,0,2,0

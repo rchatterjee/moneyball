@@ -1,0 +1,196 @@
+#2002 Postseason Schedule
+RND,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+#2002 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Thu, Sep 5,San Francisco,L16-13,Collins  342,Barber  29,Toomer  134
+3,Sun, Sep 22,Seattle,W9-6,Collins  282,Barber  50,Toomer  100
+6,Sun, Oct 13,Atlanta,L17-10,Collins  204,Barber  57,Hilliard  76
+#7,BYE WEEK
+9,Sun, Nov 3,Jacksonville,W24-17,Collins  228,Barber  101,Barber  62
+11,Sun, Nov 17,Washington,W19-17,Collins  211,Barber  64,Shockey  111
+13,Sun, Dec 1,Tennessee,L32-29 OT,Collins  283,Barber  64,Toomer  104
+15,Sun, Dec 15,Dallas,W37-7,Collins  190,Barber  81,Toomer  99
+17,Sat, Dec 28,Philadelphia,W10-7 OT,Collins  256,Barber  203,Shockey  98
+#2002 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+-1,Mon, Aug 5,Houston,W34-17,Box Score
+HOF,Sat, Aug 10,New England,W22-19,Box Score
+3,Thu, Aug 29,Baltimore,W13-0,Box Score
+#2003 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Sun, Sep 7,St. Louis,W23-13,Collins  202,Barber  146,Toomer  98
+2,Mon, Sep 15,Dallas,L35-32 OT,Collins  265,Barber  41,Toomer  126
+#4,BYE WEEK
+5,Sun, Oct 5,Miami,L23-10,Collins  276,Barber  71,Shockey  110
+7,Sun, Oct 19,Philadelphia,L14-10,Collins  174,Barber  79,Toomer  54
+10,Sun, Nov 9,Atlanta,L27-7,Collins  202,Barber  120,Carter  56
+13,Sun, Nov 30,Buffalo,L24-7,Collins  233,Barber  20,Toomer  110
+14,Sun, Dec 7,Washington,L20-7,Palmer  83,Barber  99,Barber  47
+17,Sun, Dec 28,Carolina,L37-24,Palmer  110,Barber  40,Toomer  47
+#2003 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+1,Fri, Aug 15,Carolina,L20-10,Box Score
+2,Sat, Aug 23,New York,L15-14,Box Score
+#2004 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+2,Sun, Sep 19,Washington,W20-14,Warner  232,Barber  42,Carter  63
+3,Sun, Sep 26,Cleveland,W27-10,Warner  286,Barber  106,Toomer  126
+#6,BYE WEEK
+7,Sun, Oct 24,Detroit,L28-13,Warner  270,Barber  70,Barber  102
+9,Sun, Nov 7,Chicago,L28-21,Warner  195,Barber  72,Shockey  64
+11,Sun, Nov 21,Atlanta,L14-10,Manning  162,Barber  107,Shockey  45
+12,Sun, Nov 28,Philadelphia,L27-6,Manning  148,Barber  110,Taylor  102
+15,Sat, Dec 18,Pittsburgh,L33-30,Manning  182,Barber  76,Tyree  49
+17,Sun, Jan 2,Dallas,W28-24,Manning  144,Barber  95,Tyree  71
+#2004 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+HOF,Fri, Aug 13,Kansas City,W34-24,Box Score
+3,Thu, Sep 2,Baltimore,L27-17,Box Score
+#2005 Postseason Schedule
+RND,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+WILD,Sun, Jan 8,Carolina,L23-0,Manning  113,Barber  41,Shockey  50
+#2005 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Sun, Sep 11,Arizona,W42-19,Manning  172,Barber  62,Burress  76
+4,Sun, Oct 2,St. Louis,W44-24,Manning  296,Barber  128,Burress  204
+#5,BYE WEEK
+7,Sun, Oct 23,Denver,W24-23,Manning  214,Barber  86,Burress  84
+8,Sun, Oct 30,Washington,W36-0,Manning  146,Barber  206,Toomer  43
+10,Sun, Nov 13,Minnesota,L24-21,Manning  291,Barber  95,Barber  111
+11,Sun, Nov 20,Philadelphia,W27-17,Manning  218,Barber  112,Burress  113
+13,Sun, Dec 4,Dallas,W17-10,Manning  152,Barber  115,Carter  48
+15,Sat, Dec 17,Kansas City,W27-17,Manning  186,Barber  220,Toomer  69
+#2005 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+1,Sat, Aug 20,Carolina,W27-21,Box Score
+2,Fri, Aug 26,New York,W15-14,Box Score
+#2006 Postseason Schedule
+RND,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+#2006 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Sun, Sep 10,Indianapolis,L26-21,Manning  247,Barber  110,Burress  80
+#4,BYE WEEK
+5,Sun, Oct 8,Washington,W19-3,Manning  256,Barber  123,Toomer  81
+8,Sun, Oct 29,Tampa Bay,W17-3,Manning  154,Barber  68,Burress  86
+9,Sun, Nov 5,Houston,W14-10,Manning  179,Barber  115,Shockey  66
+10,Sun, Nov 12,Chicago,L38-20,Manning  121,Barber  141,Burress  48
+13,Sun, Dec 3,Dallas,L23-20,Manning  270,Barber  90,Shockey  65
+15,Sun, Dec 17,Philadelphia,L36-22,Manning  282,Barber  75,Burress  120
+16,Sun, Dec 24,New Orleans,L30-7,Manning  74,Barber  71,Burress  55
+#2006 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+1,Thu, Aug 17,Kansas City,W17-0,Box Score
+3,Thu, Aug 31,New England,W31-23,Box Score
+#2007 Postseason Schedule
+RND,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+#2007 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+2,Sun, Sep 16,Green Bay,L35-13,Manning  211,Ward  90,Shockey  60
+4,Sun, Sep 30,Philadelphia,W16-3,Manning  135,Ward  80,Toomer  54
+5,Sun, Oct 7,New York,W35-24,Manning  186,Jacobs  100,Burress  124
+7,Sun, Oct 21,San Francisco,W33-15,Manning  146,Jacobs  107,Burress  43
+#9,BYE WEEK
+10,Sun, Nov 11,Dallas,L31-20,Manning  236,Jacobs  95,Shockey  129
+12,Sun, Nov 25,Minnesota,L41-17,Manning  273,Droughns  46,Burress  93
+15,Sun, Dec 16,Washington,L22-10,Manning  184,Jacobs  130,Moss  53
+17,Sat, Dec 29,New England,L38-35,Manning  251,Jacobs  67,Burress  84
+#2007 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+HOF,Sat, Aug 11,Carolina,L24-21,Box Score
+2,Sat, Aug 25,New York,L20-12,Box Score
+#2008 Postseason Schedule
+RND,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+DIV,Sun, Jan 11,Philadelphia,L23-11,Manning  169,Jacobs  92,Boss  52
+#2008 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Thu, Sep 4,Washington,W16-7,Manning  216,Jacobs  116,Burress  133
+3,Sun, Sep 21,Cincinnati,W26-23 OT,Manning  289,Ward  80,Toomer  64
+#4,BYE WEEK
+5,Sun, Oct 5,Seattle,W44-6,Manning  267,Jacobs  136,Hixon  102
+7,Sun, Oct 19,San Francisco,W29-17,Manning  161,Jacobs  69,Ward  50
+9,Sun, Nov 2,Dallas,W35-14,Manning  147,Jacobs  117,Burress  34
+11,Sun, Nov 16,Baltimore,W30-10,Manning  153,Bradshaw  96,Ward  54
+14,Sun, Dec 7,Philadelphia,L20-14,Manning  123,Jacobs  52,Smith  47
+16,Sun, Dec 21,Carolina,W34-28 OT,Manning  181,Ward  215,Hixon  71
+#2008 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+2,Mon, Aug 18,Cleveland,W37-34,Box Score
+4,Thu, Aug 28,New England,W19-14,Box Score
+#2009 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Sun, Sep 13,Washington,W23-17,Manning  256,Bradshaw  60,Smith  80
+5,Sun, Oct 11,Oakland,W44-7,Manning  173,Bradshaw  110,Smith  70
+7,Sun, Oct 25,Arizona,L24-17,Manning  243,Jacobs  76,Nicks  80
+9,Sun, Nov 8,San Diego,L21-20,Manning  215,Jacobs  67,Smith  57
+#10,BYE WEEK
+11,Sun, Nov 22,Atlanta,W34-31 OT,Manning  384,Jacobs  39,Manningham  126
+13,Sun, Dec 6,Dallas,W31-24,Manning  241,Bradshaw  47,Smith  110
+14,Sun, Dec 13,Philadelphia,L45-38,Manning  391,Jacobs  60,Nicks  110
+16,Sun, Dec 27,Carolina,L41-9,Manning  296,Bradshaw  53,Manningham  87
+#2009 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+1,Mon, Aug 17,Carolina,W24-17,Box Score
+3,Sat, Aug 29,New York,L27-25,Box Score
+#2010 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Sun, Sep 12,Carolina,W31-18,Manning  263,Bradshaw  76,Manningham  85
+3,Sun, Sep 26,Tennessee,L29-10,Manning  386,Bradshaw  88,Smith  103
+4,Sun, Oct 3,Chicago,W17-3,Manning  195,Bradshaw  129,Nicks  110
+6,Sun, Oct 17,Detroit,W28-20,Manning  177,Bradshaw  133,Smith  70
+#8,BYE WEEK
+10,Sun, Nov 14,Dallas,L33-20,Manning  373,Bradshaw  73,Manningham  91
+12,Sun, Nov 28,Jacksonville,W24-20,Manning  226,Jacobs  87,Boss  74
+13,Sun, Dec 5,Washington,W31-7,Manning  161,Jacobs  103,Hagan  65
+15,Sun, Dec 19,Philadelphia,L38-31,Manning  289,Bradshaw  66,Manningham  113
+#2010 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+2,Sat, Aug 21,Pittsburgh,L24-17,Box Score
+4,Thu, Sep 2,New England,W20-17,Box Score
+#2011 Postseason Schedule
+RND,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+WILD,Sun, Jan 8,Atlanta,W24-2,Manning  277,Jacobs  92,Nicks  115
+#2011 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+2,Mon, Sep 19,St. Louis,W28-16,Manning  223,Bradshaw  59,Manningham  56
+5,Sun, Oct 9,Seattle,L36-25,Manning  420,Bradshaw  58,Cruz  161
+6,Sun, Oct 16,Buffalo,W27-24,Manning  292,Bradshaw  104,Nicks  96
+#7,BYE WEEK
+8,Sun, Oct 30,Miami,W20-17,Manning  349,Bradshaw  50,Cruz  99
+11,Sun, Nov 20,Philadelphia,L17-10,Manning  264,Jacobs  21,Cruz  128
+13,Sun, Dec 4,Green Bay,L38-35,Manning  347,Jacobs  59,Cruz  119
+15,Sun, Dec 18,Washington,L23-10,Manning  257,Bradshaw  58,Nicks  73
+17,Sun, Jan 1,Dallas,W31-14,Manning  346,Bradshaw  57,Cruz  178
+#2011 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+2,Mon, Aug 22,Chicago,W41-13,Box Score
+3,Mon, Aug 29,New York,L17-3,Box Score
+#2012 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Wed, Sep 5,Dallas,L24-17,Manning  213,Bradshaw  78,Cruz  58
+2,Sun, Sep 16,Tampa Bay,W41-34,Manning  510,Brown  71,Nicks  199
+5,Sun, Oct 7,Cleveland,W41-27,Manning  259,Bradshaw  200,Randle  82
+7,Sun, Oct 21,Washington,W27-23,Manning  337,Bradshaw  43,Cruz  131
+9,Sun, Nov 4,Pittsburgh,L24-20,Manning  125,Bradshaw  48,Cruz  67
+#11,BYE WEEK
+12,Sun, Nov 25,Green Bay,W38-10,Manning  249,Brown  64,Nicks  77
+14,Sun, Dec 9,New Orleans,W52-27,Manning  259,Wilson  100,Cruz  121
+17,Sun, Dec 30,Philadelphia,W42-7,Manning  208,Bradshaw  107,Randle  58
+#2012 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+3,Fri, Aug 24,Chicago,L20-17,Box Score
+4,Wed, Aug 29,New England,W6-3,Box Score
+#2013 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+2,Sun, Sep 15,Denver,L41-23,Manning  362,Wilson  17,Cruz  118
+5,Sun, Oct 6,Philadelphia,L36-21,Manning  334,Jacobs  37,Nicks  142
+7,Mon, Oct 21,Minnesota,W23-7,Manning  200,Hillis  36,Cruz  50
+#9,BYE WEEK
+10,Sun, Nov 10,Oakland,W24-20,Manning  140,Brown  115,Randle  50
+11,Sun, Nov 17,Green Bay,W27-13,Manning  279,Brown  66,Cruz  110
+12,Sun, Nov 24,Dallas,L24-21,Manning  174,Brown  127,Randle  64
+15,Sun, Dec 15,Seattle,L23-0,Manning  156,Brown  17,Jernigan  67
+17,Sun, Dec 29,Washington,W20-6,Manning  152,Jernigan  57,Jernigan  90
+#2013 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+2,Sun, Aug 18,Indianapolis,L20-12,Box Score
+3,Sat, Aug 24,New York,L24-21 OT,Box Score

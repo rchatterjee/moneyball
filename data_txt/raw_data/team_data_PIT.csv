@@ -1,0 +1,204 @@
+#2002 Postseason Schedule
+RND,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+WILD,Sun, Jan 5,Cleveland,W36-33,Maddox  367,Zereoue  73,Ward  104
+#2002 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+2,Sun, Sep 15,Oakland,L30-17,Stewart  201,Bettis  41,Ward  92
+#3,BYE WEEK
+4,Sun, Sep 29,Cleveland,W16-13 OT,Stewart  143,Stewart  30,Ward  104
+7,Mon, Oct 21,Indianapolis,W28-10,Maddox  188,Zereoue  87,Burress  79
+10,Sun, Nov 10,Atlanta,T34-34 OT,Maddox  473,Zereoue  123,Burress  253
+12,Sun, Nov 24,Cincinnati,W29-21,Stewart  236,Bettis  79,Ward  125
+14,Sun, Dec 8,Houston,L24-6,Maddox  325,Zereoue  69,Randle El  88
+15,Sun, Dec 15,Carolina,W30-14,Maddox  209,Bettis  73,Burress  120
+17,Sun, Dec 29,Baltimore,W34-31,Maddox  194,Zereoue  104,Burress  52
+#2002 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+HOF,Thu, Aug 8,New York,L16-6,Box Score
+3,Thu, Aug 29,Minnesota,W17-14,Box Score
+#2003 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Sun, Sep 7,Baltimore,W34-15,Maddox  260,Zereoue  56,Burress  116
+4,Sun, Sep 28,Tennessee,L30-13,Maddox  332,Zereoue  51,Ward  76
+5,Sun, Oct 5,Cleveland,L33-13,Maddox  136,Zereoue  38,Zereoue  57
+#7,BYE WEEK
+8,Sun, Oct 26,St. Louis,L33-21,Maddox  159,Bettis  42,Ward  90
+10,Sun, Nov 9,Arizona,W28-15,Maddox  159,Bettis  54,Ward  64
+13,Sun, Nov 30,Cincinnati,L24-20,Maddox  313,Bettis  62,Ward  149
+14,Sun, Dec 7,Oakland,W27-7,Maddox  266,Bettis  106,Ward  67
+16,Sun, Dec 21,San Diego,W40-24,Maddox  160,Bettis  115,Ward  94
+#2003 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+1,Sat, Aug 16,Philadelphia,L21-16,Box Score
+2,Thu, Aug 21,Dallas,W15-14,Box Score
+#2004 Postseason Schedule
+RND,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+DIV,Sat, Jan 15,New York,W20-17 OT,Roethlisberger  181,Bettis  101,Ward  105
+CONF,Sun, Jan 23,New England,L41-27,Roethlisberger  226,Bettis  64,Ward  109
+#2004 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Sun, Sep 12,Oakland,W24-21,Maddox  142,Staley  91,Ward  99
+4,Sun, Oct 3,Cincinnati,W28-17,Roethlisberger  174,Staley  123,Burress  69
+5,Sun, Oct 10,Cleveland,W34-23,Roethlisberger  231,Staley  117,Burress  136
+#7,BYE WEEK
+8,Sun, Oct 31,New England,W34-20,Roethlisberger  196,Staley  125,Burress  63
+9,Sun, Nov 7,Philadelphia,W27-3,Roethlisberger  183,Bettis  149,Burress  70
+12,Sun, Nov 28,Washington,W16-7,Roethlisberger  131,Bettis  100,Ward  42
+14,Sun, Dec 12,New York,W17-6,Roethlisberger  144,Bettis  57,Mays  46
+16,Sun, Dec 26,Baltimore,W20-7,Roethlisberger  221,Bettis  117,Burress  97
+#2004 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+1,Sat, Aug 21,Houston,W38-3,Box Score
+3,Thu, Sep 2,Carolina,L16-13,Box Score
+#2005 Postseason Schedule
+RND,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+SB,Sun, Feb 5,Seattle,W21-10,Roethlisberger  123,Parker  93,Ward  123
+#2005 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Sun, Sep 11,Tennessee,W34-7,Roethlisberger  218,Parker  161,Randle El  89
+3,Sun, Sep 25,New England,L23-20,Roethlisberger  216,Parker  55,Ward  110
+#4,BYE WEEK
+6,Sun, Oct 16,Jacksonville,L23-17 OT,Maddox  154,Parker  55,Miller  72
+8,Mon, Oct 31,Baltimore,W20-19,Roethlisberger  177,Parker  63,Ward  75
+10,Sun, Nov 13,Cleveland,W34-21,Batch  150,Staley  64,Ward  124
+13,Sun, Dec 4,Cincinnati,L38-31,Roethlisberger  386,Parker  71,Ward  135
+14,Sun, Dec 11,Chicago,W21-9,Roethlisberger  173,Bettis  101,Parker  45
+17,Sun, Jan 1,Detroit,W35-21,Roethlisberger  135,Parker  135,Miller  62
+#2005 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+HOF,Mon, Aug 15,Philadelphia,W38-31,Box Score
+1,Sat, Aug 20,Miami,W17-3,Box Score
+#2006 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Thu, Sep 7,Miami,W28-17,Batch  209,Parker  115,Miller  101
+3,Sun, Sep 24,Cincinnati,L28-20,Roethlisberger  208,Parker  133,Wilson  73
+#4,BYE WEEK
+6,Sun, Oct 15,Kansas City,W45-7,Roethlisberger  238,Parker  109,Washington  68
+9,Sun, Nov 5,Denver,L31-20,Roethlisberger  433,Parker  70,Ward  127
+10,Sun, Nov 12,New Orleans,W38-31,Roethlisberger  264,Parker  213,Ward  86
+13,Sun, Dec 3,Tampa Bay,W20-3,Roethlisberger  198,Parker  61,Washington  78
+14,Thu, Dec 7,Cleveland,W27-7,Roethlisberger  225,Parker  223,Holmes  81
+16,Sun, Dec 24,Baltimore,L31-7,Roethlisberger  156,Roethlisberger  33,Holmes  90
+#2006 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+1,Sat, Aug 19,Minnesota,L17-10,Box Score
+3,Thu, Aug 31,Carolina,L15-13,Box Score
+#2007 Postseason Schedule
+RND,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+WILD,Sat, Jan 5,Jacksonville,L31-29,Roethlisberger  337,Davenport  25,Ward  135
+#2007 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+2,Sun, Sep 16,Buffalo,W26-3,Roethlisberger  242,Parker  126,Washington  60
+3,Sun, Sep 23,San Francisco,W37-16,Roethlisberger  160,Parker  133,Miller  82
+5,Sun, Oct 7,Seattle,W21-0,Roethlisberger  206,Parker  102,Wilson  69
+#6,BYE WEEK
+9,Mon, Nov 5,Baltimore,W38-7,Roethlisberger  209,Parker  42,Holmes  110
+10,Sun, Nov 11,Cleveland,W31-28,Roethlisberger  278,Parker  105,Ward  80
+12,Mon, Nov 26,Miami,W3-0,Roethlisberger  165,Parker  81,Ward  88
+13,Sun, Dec 2,Cincinnati,W24-10,Roethlisberger  184,Parker  87,Ward  90
+15,Sun, Dec 16,Jacksonville,L29-22,Roethlisberger  142,Parker  100,Holmes  34
+#2007 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+-1,Sun, Aug 5,New Orleans,W20-7,Box Score
+HOF,Sat, Aug 11,Green Bay,L13-9,Box Score
+2,Sun, Aug 26,Philadelphia,W27-13,Box Score
+#2008 Postseason Schedule
+RND,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+DIV,Sun, Jan 11,San Diego,W35-24,Roethlisberger  181,Parker  146,Ward  70
+CONF,Sun, Jan 18,Baltimore,W23-14,Roethlisberger  255,Parker  47,Holmes  70
+#2008 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Sun, Sep 7,Houston,W38-17,Roethlisberger  137,Parker  138,Ward  76
+4,Mon, Sep 29,Baltimore,W23-20 OT,Roethlisberger  191,Mendenhall  30,Holmes  61
+#6,BYE WEEK
+8,Sun, Oct 26,New York,L21-14,Roethlisberger  189,Moore  84,Washington  65
+10,Sun, Nov 9,Indianapolis,L24-20,Roethlisberger  280,Moore  57,Ward  112
+11,Sun, Nov 16,San Diego,W11-10,Roethlisberger  308,Parker  115,Ward  124
+12,Thu, Nov 20,Cincinnati,W27-10,Roethlisberger  243,Moore  56,Holmes  84
+14,Sun, Dec 7,Dallas,W20-13,Roethlisberger  204,Parker  25,Holmes  82
+17,Sun, Dec 28,Cleveland,W31-0,Roethlisberger  110,Parker  116,Ward  70
+#2008 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+1,Fri, Aug 8,Philadelphia,W16-10,Box Score
+4,Thu, Aug 28,Carolina,W19-16,Box Score
+#2009 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Thu, Sep 10,Tennessee,W13-10 OT,Roethlisberger  363,Parker  19,Holmes  131
+4,Sun, Oct 4,San Diego,W38-28,Roethlisberger  333,Mendenhall  165,Ward  113
+6,Sun, Oct 18,Cleveland,W27-14,Roethlisberger  417,Mendenhall  62,Ward  159
+7,Sun, Oct 25,Minnesota,W27-17,Roethlisberger  175,Mendenhall  69,Wallace  72
+#8,BYE WEEK
+10,Sun, Nov 15,Cincinnati,L18-12,Roethlisberger  174,Mendenhall  36,Holmes  88
+13,Sun, Dec 6,Oakland,L27-24,Roethlisberger  278,Mendenhall  103,Holmes  149
+15,Sun, Dec 20,Green Bay,W37-36,Roethlisberger  503,Mendenhall  38,Ward  126
+16,Sun, Dec 27,Baltimore,W23-20,Roethlisberger  259,Mendenhall  36,Holmes  86
+#2009 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+1,Thu, Aug 13,Arizona,W20-10,Box Score
+3,Sat, Aug 29,Buffalo,W17-0,Box Score
+#2010 Postseason Schedule
+RND,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+DIV,Sat, Jan 15,Baltimore,W31-24,Roethlisberger  226,Mendenhall  46,Brown  75
+CONF,Sun, Jan 23,New York,W24-19,Roethlisberger  133,Mendenhall  121,Miller  38
+#2010 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Sun, Sep 12,Atlanta,W15-9 OT,Dixon  236,Mendenhall  120,Ward  108
+4,Sun, Oct 3,Baltimore,L17-14,Batch  141,Mendenhall  79,Randle El  50
+#5,BYE WEEK
+6,Sun, Oct 17,Cleveland,W28-10,Roethlisberger  257,Mendenhall  84,Wallace  90
+10,Sun, Nov 14,New England,L39-26,Roethlisberger  387,Mendenhall  50,Wallace  136
+11,Sun, Nov 21,Oakland,W35-3,Roethlisberger  275,Mendenhall  59,Wallace  116
+14,Sun, Dec 12,Cincinnati,W23-7,Roethlisberger  258,Mendenhall  66,Ward  115
+15,Sun, Dec 19,New York,L22-17,Roethlisberger  264,Mendenhall  99,Wallace  102
+16,Thu, Dec 23,Carolina,W27-3
+#2010 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+1,Sat, Aug 14,Detroit,W23-7,Box Score
+4,Thu, Sep 2,Carolina,W19-3,Box Score
+#2011 Postseason Schedule
+RND,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+#2011 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+2,Sun, Sep 18,Seattle,W24-0,Roethlisberger  298,Mendenhall  66,Wallace  126
+5,Sun, Oct 9,Tennessee,W38-17,Roethlisberger  228,Dwyer  107,Wallace  82
+6,Sun, Oct 16,Jacksonville,W17-13,Roethlisberger  200,Mendenhall  146,Wallace  76
+8,Sun, Oct 30,New England,W25-17,Roethlisberger  365,Mendenhall  70,Miller  85
+9,Sun, Nov 6,Baltimore,L23-20,Roethlisberger  330,Mendenhall  52,Brown  109
+#11,BYE WEEK
+13,Sun, Dec 4,Cincinnati,W35-7,Roethlisberger  176,Mendenhall  60,Brown  67
+14,Thu, Dec 8,Cleveland,W14-3,Roethlisberger  280,Mendenhall  76,Brown  151
+16,Sat, Dec 24,St. Louis,W27-0,Batch  208,Mendenhall  116,Wallace  82
+#2011 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+2,Thu, Aug 18,Philadelphia,W24-14,Box Score
+3,Sat, Aug 27,Atlanta,W34-16,Box Score
+#2012 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+2,Sun, Sep 16,New York,W27-10,Roethlisberger  275,Dwyer  28,Brown  79
+#4,BYE WEEK
+5,Sun, Oct 7,Philadelphia,W16-14,Roethlisberger  220,Mendenhall  68,Brown  86
+8,Sun, Oct 28,Washington,W27-12,Roethlisberger  222,Dwyer  107,Wallace  62
+10,Mon, Nov 12,Kansas City,W16-13 OT,Roethlisberger  84,Dwyer  56,Miller  47
+11,Sun, Nov 18,Baltimore,L13-10,Leftwich  199,Dwyer  55,Sanders  82
+14,Sun, Dec 9,San Diego,L34-24,Roethlisberger  285,Dwyer  32,Wallace  112
+16,Sun, Dec 23,Cincinnati,L13-10,Roethlisberger  220,Mendenhall  50,Brown  97
+17,Sun, Dec 30,Cleveland,W24-10,Roethlisberger  134,Dwyer  52,Sanders  28
+#2012 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+2,Sun, Aug 19,Indianapolis,W26-24,Box Score
+4,Thu, Aug 30,Carolina,W17-16,Box Score
+#2013 Regular Season Schedule
+WK,DATE,PONENT,RESULT,HI PASSING,HI RUSHING,HI RECEIVING
+1,Sun, Sep 8,Tennessee,L16-9,Roethlisberger  191,Stephens-Howling  19,Brown  71
+3,Sun, Sep 22,Chicago,L40-23,Roethlisberger  406,Dwyer  39,Brown  196
+#5,BYE WEEK
+7,Sun, Oct 20,Baltimore,W19-16,Roethlisberger  160,Bell  93,Brown  50
+10,Sun, Nov 10,Buffalo,W23-10,Roethlisberger  204,Bell  57,Brown  104
+11,Sun, Nov 17,Detroit,W37-27,Roethlisberger  367,Bell  36,Brown  147
+14,Sun, Dec 8,Miami,L34-28,Roethlisberger  349,Bell  61,Brown  138
+15,Sun, Dec 15,Cincinnati,W30-20,Roethlisberger  191,Bell  57,Brown  66
+17,Sun, Dec 29,Cleveland,W20-7,Roethlisberger  179,Bell  90,Brown  87
+#2013 Preseason Schedule
+WK,DATE,PONENT,RESULT,RESOURCES
+1,Sat, Aug 10,New York,L18-13,Box Score
+3,Sat, Aug 24,Kansas City,L26-20 OT,Box Score
