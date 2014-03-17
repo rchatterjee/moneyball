@@ -23,6 +23,7 @@ SECRET_KEY = 'b-w%e=n_93=p0^2(//yupthisisthething0p!g!x&0k81xl+4jy'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'ffball/templates')]
 
 ALLOWED_HOSTS = []
 
@@ -36,6 +37,36 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_auth',
+)
+
+# django-social-auth settings
+
+FACEBOOK_APP_ID     = '254311618073113'
+FACEBOOK_API_SECRET = 'ee2aa55d2ee8a98166d12448d0a3e618'
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.facebook.FacebookBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+LOGIN_URL          = '/login-form/'
+LOGIN_REDIRECT_URL = '/logged-in/'
+LOGIN_ERROR_URL    = '/login-error/'
+
+SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
+SOCIAL_AUTH_UID_LENGTH = 16
+SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
+SOCIAL_AUTH_NONCE_SERVER_URL_LENGTH = 16
+SOCIAL_AUTH_ASSOCIATION_SERVER_URL_LENGTH = 16
+SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
+SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
+
+SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'social_auth.context_processors.social_auth_by_type_backends',
 )
 
 MIDDLEWARE_CLASSES = (
