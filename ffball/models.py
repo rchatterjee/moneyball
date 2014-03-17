@@ -106,3 +106,122 @@ class Teams(models.Model):
         managed = False
         db_table = 'TEAMS'
 
+# ---------------------------AUTHENTICATION MODELS--------------------------------------------------------------------
+#=====================================================================================================================
+
+class AuthGroup(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(unique=True, max_length=80)
+    class Meta:
+        managed = False
+        db_table = 'auth_group'
+
+class AuthGroupPermissions(models.Model):
+    id = models.IntegerField(primary_key=True)
+    group_id = models.IntegerField()
+    permission = models.ForeignKey('AuthPermission')
+    class Meta:
+        managed = False
+        db_table = 'auth_group_permissions'
+
+class AuthPermission(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=50)
+    content_type_id = models.IntegerField()
+    codename = models.CharField(max_length=100)
+    class Meta:
+        managed = False
+        db_table = 'auth_permission'
+
+class AuthUser(models.Model):
+    id = models.IntegerField(primary_key=True)
+    password = models.CharField(max_length=128)
+    last_login = models.DateTimeField()
+    is_superuser = models.BooleanField()
+    username = models.CharField(unique=True, max_length=30)
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    email = models.CharField(max_length=75)
+    is_staff = models.BooleanField()
+    is_active = models.BooleanField()
+    date_joined = models.DateTimeField()
+    class Meta:
+        managed = False
+        db_table = 'auth_user'
+
+class AuthUserGroups(models.Model):
+    id = models.IntegerField(primary_key=True)
+    user_id = models.IntegerField()
+    group = models.ForeignKey(AuthGroup)
+    class Meta:
+        managed = False
+        db_table = 'auth_user_groups'
+
+class AuthUserUserPermissions(models.Model):
+    id = models.IntegerField(primary_key=True)
+    user_id = models.IntegerField()
+    permission = models.ForeignKey(AuthPermission)
+    class Meta:
+        managed = False
+        db_table = 'auth_user_user_permissions'
+
+class DjangoAdminLog(models.Model):
+    id = models.IntegerField(primary_key=True)
+    action_time = models.DateTimeField()
+    user_id = models.IntegerField()
+    content_type_id = models.IntegerField(blank=True, null=True)
+    object_id = models.TextField(blank=True)
+    object_repr = models.CharField(max_length=200)
+    action_flag = models.PositiveSmallIntegerField()
+    change_message = models.TextField()
+    class Meta:
+        managed = False
+        db_table = 'django_admin_log'
+
+class DjangoContentType(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=100)
+    app_label = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
+    class Meta:
+        managed = False
+        db_table = 'django_content_type'
+
+class DjangoSession(models.Model):
+    session_key = models.CharField(unique=True, max_length=40)
+    session_data = models.TextField()
+    expire_date = models.DateTimeField()
+    class Meta:
+        managed = False
+        db_table = 'django_session'
+
+class SocialAuthAssociation(models.Model):
+    id = models.IntegerField(primary_key=True)
+    server_url = models.CharField(max_length=255)
+    handle = models.CharField(max_length=255)
+    secret = models.CharField(max_length=255)
+    issued = models.IntegerField()
+    lifetime = models.IntegerField()
+    assoc_type = models.CharField(max_length=64)
+    class Meta:
+        managed = False
+        db_table = 'social_auth_association'
+
+class SocialAuthNonce(models.Model):
+    id = models.IntegerField(primary_key=True)
+    server_url = models.CharField(max_length=255)
+    timestamp = models.IntegerField()
+    salt = models.CharField(max_length=40)
+    class Meta:
+        managed = False
+        db_table = 'social_auth_nonce'
+
+class SocialAuthUsersocialauth(models.Model):
+    id = models.IntegerField(primary_key=True)
+    user = models.ForeignKey(AuthUser)
+    provider = models.CharField(max_length=32)
+    uid = models.CharField(max_length=255)
+    extra_data = models.TextField()
+    class Meta:
+        managed = False
+        db_table = 'social_auth_usersocialauth'
