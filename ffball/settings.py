@@ -109,17 +109,20 @@ WSGI_APPLICATION = 'ffball.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'test': {
         'ENGINE': 'django_mysqlpool.backends.mysqlpool',
         'NAME'  : 'srgdb',
         'USER'  : 'saikat',
         'PASSWORD':'wisc13*tainaki!',
-        'HOST' : 'mysql.cs.wisc.edu'
+        'HOST' : 'mysql.cs.wisc.edu',
+        'OPTIONS': {
+            'secure-auth': False,
+            }
         },
-    'test': {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME'  : os.path.join(BASE_DIR, 'db.sqlite3')
-        }        
+        'NAME'  : os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
