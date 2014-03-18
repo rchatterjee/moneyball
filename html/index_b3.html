@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml" lang="en">
+  <head>
+    <title>Welcome to Moneyball!!!</title>
+    <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" media="screen">
+  </head>
+  <body style="background-color:#052203">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="bootstrap3/js/bootstrap.js"></script>
+	<div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '254311618073113',
+          status     : true,
+          xfbml      : true
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+	
+	
+	
+	<nav class="navbar navbar-inverse" role="navigation">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header ">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="#">Moneyball</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact Us</a></li>
+		  </ul>
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a href="#" id="login" data-container="body" data-toggle="popoverLogin" data-placement="bottom">Log in&nbsp;&nbsp;<span class="glyphicon glyphicon-off"></span></a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle"  data-toggle="dropdown">Setting&nbsp;&nbsp;<span class="glyphicon glyphicon-cog"></span><b class="caret"></b></a>
+				<ul class="dropdown-menu-inverse pull-right">
+				  <li><a href="#">Action</a></li>
+				  <li><a href="#">Another action</a></li>
+				  <li><a href="#">Something else here</a></li>
+				</ul>
+			  </li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	
+	<script type="text/javascript">
+	  $("#login").popoverLogin({
+		  html: 'true', //needed to show html of course
+		  content :  function() {
+						return $('#loginForm').html();}
+	});
+	
+		
+	$('#login').popoverLogin('toggle')
+
+	$('#login').popoverLogin('hide')
+	
+	</script>
+	
+	
+	<div id="loginForm" class="modal hide fade" tabindex="-1">
+		<table>
+			<tr>
+				<td>
+					<input type="text" id="inputEmail" placeholder="Email">
+				</td>
+			<tr>
+			<tr>
+				<td>
+					<input type="password" id="inputPassword" placeholder="Password">
+				</td>
+			<tr>
+			<tr>
+				<td>
+					<font color="#555555">
+				  <label class="checkbox">
+					<input type="checkbox"> Remember me
+				  </label>
+					</font>
+				</td>
+			<tr>
+			<tr>
+				<td>
+					<table align="right">
+						<tr>
+							<td>		
+							<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>		
+							</td>
+							<td>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+							</td>
+							<td>
+								<button class="btn btn-primary">Sign in</button>					
+							</td>
+						</tr>
+					</table>
+				</td>
+			<tr>
+		</table>
+	</div>
+	
+
+	
+	
+	
+	
+	
+	
+  </body>
+</html>

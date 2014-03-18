@@ -13,4 +13,9 @@ urlpatterns = patterns('',
     url(r'^logged-in/', ffball.views.logged_in, name='logged-in'),
     url(r'^login-error/', ffball.views.login_error, name='login-error'),
     url(r'^login-session/', ffball.views.login_session, name='login-session'),
+    url(r'^teams/', ffball.views.teams, name='teams'),
 )
+
+
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+urlpatterns += staticfiles_urlpatterns()

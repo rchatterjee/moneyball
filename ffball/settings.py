@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'django_admin_bootstrapped.bootstrap3',
+    'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +41,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'social_auth',
     'app',
+    'ffball',
+#    'check_constraints'
 )
 
 # django-social-auth settings
@@ -106,9 +110,16 @@ WSGI_APPLICATION = 'ffball.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django_mysqlpool.backends.mysqlpool',
+        'NAME'  : 'srgdb',
+        'USER'  : 'saikat',
+        'PASSWORD':'wisc13*tainaki!',
+        'HOST' : 'mysql.cs.wisc.edu'
+        },
+    'test': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME'  : os.path.join(BASE_DIR, 'db.sqlite3')
-        }
+        }        
     }
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -126,5 +137,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
-
-STATIC_URL = '/static/'
+# STATIC_ROOT = '/u/r/c/rchat/moneyball/html/'
+STATIC_URL = '/html/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'html/'),
+)
