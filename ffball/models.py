@@ -14,7 +14,7 @@ from django.db import models
 class Players(models.Model):
     pid = models.CharField(db_column='PID', primary_key=True, max_length=10) # Field name made lowercase.
     name = models.CharField(db_column='Name', max_length=100, blank=True) # Field name made lowercase.
-    tid = models.ForeignKey('Teams', db_column='TID', blank=True, null=True) # Field name made lowercase.
+    team = models.ForeignKey('Teams', db_column='TID', blank=True, null=True) # Field name made lowercase.
     position = models.CharField(db_column='Position', max_length=2, blank=True) # Field name made lowercase.
     other_teams = models.CharField(db_column='Other_Teams', max_length=100, blank=True) # Field name made lowercase.
     espnid = models.CharField(db_column='ESPNID', max_length=10, blank=True) # Field name made lowercase.
@@ -56,7 +56,7 @@ class Stats(models.Model):
     pass_td = models.IntegerField(db_column='PASS_TD', blank=True, null=True) # Field name made lowercase.
     pass_yds = models.IntegerField(db_column='PASS_Yds', blank=True, null=True) # Field name made lowercase.
     pass_ypa = models.FloatField(db_column='PASS_YPA', blank=True, null=True) # Field name made lowercase.
-    pid = models.ForeignKey(Players, db_column='PID') # Field name made lowercase.
+    player = models.ForeignKey(Players, db_column='PID') # Field name made lowercase.
     pr = models.IntegerField(db_column='PR', blank=True, null=True) # Field name made lowercase.
     pr_avg = models.FloatField(db_column='PR_Avg', blank=True, null=True) # Field name made lowercase.
     pr_long = models.IntegerField(db_column='PR_Long', blank=True, null=True) # Field name made lowercase.
