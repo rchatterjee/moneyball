@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_auth',
+    'app',
 )
 
 # django-social-auth settings
@@ -62,11 +63,28 @@ SOCIAL_AUTH_ASSOCIATION_SERVER_URL_LENGTH = 16
 SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
 SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
 
+SOCIAL_AUTH_PARTIAL_PIPELINE_KEY = 'partial_pipeline'
+SOCIAL_AUTH_PIPELINE_RESUME_ENTRY = 'social_auth.backends.pipeline.user.update_user_details'
+SOCIAL_AUTH_PIPELINE = (
+    'social_auth.backends.pipeline.social.social_auth_user',
+    'social_auth.backends.pipeline.user.get_username',
+    'social_auth.backends.pipeline.user.create_user',
+    'social_auth.backends.pipeline.social.associate_user',
+    'social_auth.backends.pipeline.social.load_extra_data',
+    'app.pipeline.user.extra_data',
+    'social_auth.backends.pipeline.misc.save_status_to_session',
+    'app.pipeline.user.session_save',
+    'social_auth.backends.pipeline.user.update_user_details',
+)
+
 SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
+    'social_auth.context_processors.social_auth_by_name_backends',
+    'social_auth.context_processors.social_auth_backends',
     'social_auth.context_processors.social_auth_by_type_backends',
+    'social_auth.context_processors.social_auth_login_redirect',
 )
 
 MIDDLEWARE_CLASSES = (

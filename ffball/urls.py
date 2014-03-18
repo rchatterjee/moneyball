@@ -12,4 +12,5 @@ urlpatterns = patterns('',
     url(r'^$', ffball.views.home, name='home'),
     url(r'^logged-in/', ffball.views.logged_in, name='logged-in'),
     url(r'^login-error/', ffball.views.login_error, name='login-error'),
+    url(r'^login-session/', ffball.views.login_session, name='login-session'),
 )
