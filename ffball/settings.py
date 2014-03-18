@@ -49,6 +49,7 @@ INSTALLED_APPS = (
 
 FACEBOOK_APP_ID     = '254311618073113'
 FACEBOOK_API_SECRET = 'ee2aa55d2ee8a98166d12448d0a3e618'
+FACEBOOK_EXTENDED_PERMISSIONS = ['email', 'user_location']
 
 AUTHENTICATION_BACKENDS = (
     'social_auth.backends.facebook.FacebookBackend',

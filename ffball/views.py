@@ -1,8 +1,9 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import Context, loader
 from django.shortcuts import render, render_to_response
 from models import *
 import pdb
+import pprint
 from historical_data_models import *
 
 #@render_to_response('teams.html')
@@ -18,13 +19,12 @@ def home(request):
 def logged_in(request):
     return render(request, 'logged-in.html',
             {"data":
-                request.session.items()})
+                pprint.pformat(request.session.items())})
 
 def login_error(request):
     return render(request, 'login-error.html')
 
 def login_session(request):
-    pdb.set_trace()
     pip = request.session.get('partial_pipeline')
     user = {}
     user['user_id'] = pip['kwargs']['user']['pk']
@@ -33,6 +33,7 @@ def login_session(request):
     user['username'] = pip['kwargs']['response']['username']
     user['access_token'] = pip['kwargs']['response']['access_token']
     user['avatar'] = pip['kwargs']['avatar']
+    #user['ppipe'] = pip
     # TODO: check if there is no avatar, then add a default silhouette.
     request.session['user'] = user
     return HttpResponseRedirect('/complete/' + user['backend'])
