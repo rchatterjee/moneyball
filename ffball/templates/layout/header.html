@@ -8,42 +8,39 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="brand" style="font-size:16px" href="#"><b><i>Moneyball</i></b></a>
+                <a class="brand" style="font-size:16px" href="#"><b><i>{% block brandname %}Moneyball{% endblock brandname%}</i></b></a>
                 <div class="nav-collapse collapse navbar-responsive-collapse">
                     <ul class="nav" style="font-size:14px">
                         <li class="divider-vertical"></li>
                         <li><a href="../"><i class="icon-home icon-white"></i>&nbsp;&nbsp;Home</a></li>
                         <li class="divider-vertical"></li>
+						{% if logged_in %}
                         <li><a href="draft/"><i class="icon-th-list icon-white"></i>&nbsp;&nbsp;Draft Central</a></li>
                         <li class="divider-vertical"></li>
                         <li><a href="#"><i class="icon-tasks icon-white"></i>&nbsp;&nbsp;My Teams</a></li>
                         <li class="divider-vertical"></li>
                         <li><a href="#"><i class="icon-bell icon-white"></i>&nbsp;&nbsp;Pick'em</a></li>
                         <li class="divider-vertical"></li>
-                        <!--<li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact Us</a></li> -->
+                        {% else %}
+                        <li><a href="#"><i class="icon-play icon-white"></i>&nbsp;&nbsp;Demo</a></li>
+                        <li class="divider-vertical"></li>
+                        {% endif %}
                     </ul>
-                    <!--
-                    <form class="navbar-search pull-left" action="" _lpchecked="1">
-                        <input type="text" class="search-query span2" placeholder="Search">
-                    </form> -->
                     <ul class="nav pull-right" style="font-size:14px">
                         {% if logged_in %}
-                        <li><a href="#settings">{{ user.firstname }} <img src="{{ user.avatar }}"/></a></li>
+                        <li align="right"><a href="#">Logged in as <i><b>{{ user.firstname }}</b></i> &nbsp; <img src="{{ user.avatar }}" height=10% width=10%></a></li>
                         <li class="divider-vertical"></li>
                         <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setting&nbsp;&nbsp;<i class="icon-cog icon-white"></i><b class="caret"></b></a>
                         <ul class="dropdown-menu dropdown-menu-inverse">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Change Theme</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
+                            <li><a href="/logout">Logout</a></li>
                         </ul>
-                        <li><a href="/logout">Logout</a></li>
                         {% else %}
                         <li><a href="{% url 'socialauth_begin' 'facebook' %}?next={{ next_page }}">Login with Facebook</a></li>
-                        {#<li><a href="#myModal" data-toggle="modal">Log in&nbsp;&nbsp;<i class="icon-off icon-white"></i></a></li>#}
+                        <li><a href="#myModal" data-toggle="modal">Log in&nbsp;&nbsp;<i class="icon-off icon-white"></i></a></li>
                         {% endif %}
                         </li>
                     </ul>
@@ -53,41 +50,4 @@
     </div><!-- /navbar -->
 </div>
 <!-- ###### Navigation bar end ###### -->	
-{% comment %}
-{% if not logged_in %}
-<!-- ###### Modal login begin ###### -->
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-        <h3 id="myModalLabel">Log In</h3>
-    </div>
-    <form class="form-horizontal">
-        <br>
-        <div class="control-group">
-            <label class="control-label" for="inputEmail">Email</label>
-            <div class="controls">
-                <input type="text" id="inputEmail" placeholder="Email">
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="inputPassword">Password</label>
-            <div class="controls">
-                <input type="password" id="inputPassword" placeholder="Password">
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <label class="checkbox">
-                    <input type="checkbox"> Remember me
-                </label>
-            </div>
-        </div>
-    </form>
-    <div class="modal-footer" align="right">
-        <button class="fb-login-button" data-max-rows="1" data-size="large"
-            data-show-faces="false" data-auto-logout-link="false"></button>
-    </div>
-</div>
-{% endif %}
-{% endcomment %}
-<!-- ###### Modal login end ###### -->
+
