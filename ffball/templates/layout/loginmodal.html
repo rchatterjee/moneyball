@@ -68,6 +68,9 @@
 		<div id="newUserLink">
 			<a href="#"><i>New User? Sign up for a new account!</i></a>
 		</div>
+		<div id="alreadyUserLink">
+			<a href="#"><i>Already a User? Sign in.</i></a>
+		</div>
     </div>
 </div>
 
@@ -77,12 +80,20 @@ $(document).ready(function(){
 		$(stdLoginCtl).hide();
 		$(newUserLink).hide();
 		$(newUserCtl).show();
+		$(alreadyUserLink).show();
 	});
 
 	$('#myModal').on('show', function () {	  
 		$(stdLoginCtl).show();
 		$(newUserLink).show();
 		$(newUserCtl).hide();
+		$(alreadyUserLink).hide();
+	})
+	$('#alreadyUserLink').click(function() {	  
+		$(stdLoginCtl).show();
+		$(newUserLink).show();
+		$(newUserCtl).hide();
+		$(alreadyUserLink).hide();
 	})
 });
 </script>
