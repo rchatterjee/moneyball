@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^logged-in/', ffball.views.logged_in, name='logged-in'),
     url(r'^login-error/', ffball.views.login_error, name='login-error'),
     url(r'^login-session/', ffball.views.login_session, name='login-session'),
+    url(r'^logout/', ffball.views.log_out, name='logout'),
     url(r'^teams/', ffball.views.teams, name='teams'),
 )
 
