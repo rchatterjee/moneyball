@@ -73,21 +73,17 @@
 
 <script>
 $(document).ready(function(){
-  $("#newUserLink").click(function(){
-	$(stdLoginCtl).hide();
-	$(newUserLink).hide();
-	$(newUserCtl).show();
-  });
+	$("#newUserLink").click(function(){
+		$(stdLoginCtl).hide();
+		$(newUserLink).hide();
+		$(newUserCtl).show();
+	});
 
-  $('#myModal').on('show', function () {	  
-	$(stdLoginCtl).show();
-	$(newUserLink).show();
-	$(newUserCtl).hide();
+	$('#myModal').on('show', function () {	  
+		$(stdLoginCtl).show();
+		$(newUserLink).show();
+		$(newUserCtl).hide();
 	})
-  
-  $("#show").click(function(){
-    $("p").show();
-  });
 });
 </script>
 <!-- ###### Modal login end ###### -->
