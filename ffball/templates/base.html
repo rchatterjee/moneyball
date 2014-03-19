@@ -1,14 +1,14 @@
-{% load static from staticfiles %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Welcome to Moneyball!!!</title>
-    <link href="{% static '/bootstrap/css/bootstrap.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet" media="screen">
   </head>
   <body style="background:linear-gradient(#052203, black)" >
   <!--<body style="background-color:#000000" > -->
     <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="{% static '/bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
 	<div id="fb-root"></div>
     <script>
       window.fbAsyncInit = function() {
@@ -29,10 +29,10 @@
     </script>
 	<script> 
     $(function(){
-      $("#includeHeader").load("{% static '/layout/header.html' %}"); 
+      $("#includeHeader").load("{% static 'layout/header.html' %}"); 
     });
     $(function(){
-      $("#includeFooter").load("{% static '/layout/footer.html' %}"); 
+      $("#includeFooter").load("{% static 'layout/footer.html' %}"); 
     });
     </script>
 	<div id="includeHeader"></div>
@@ -70,7 +70,7 @@
 							<tr>
 								<td>					
 									&nbsp;
-									<img src="{% static '/img/helmets/1.jpg' %}" width=45 class="img-rounded">
+									<img src="{% static 'img/helmets/1.jpg' %}" width=45 class="img-rounded">
 								</td>
 								<td width=%>			
 									<button class="btn  btn-success" type="button" draggable="true">Some Player</button>
@@ -79,7 +79,7 @@
 							<tr>
 								<td>					
 									&nbsp;			
-									<img src="{% static '/img/helmets/1.jpg' %}" width=45 class="img-rounded">
+									<img src="{% static 'img/helmets/1.jpg' %}" width=45 class="img-rounded">
 								</td>
 								<td width=%>			
 									<button class="btn  btn-warning" type="button" draggable="true">Some Player</button>
@@ -88,7 +88,7 @@
 							<tr>
 								<td>				
 									&nbsp;				
-									<img src="{% static '/img/helmets/2.jpg' %}" width=45 class="img-rounded">
+									<img src="{% static 'img/helmets/2.jpg' %}" width=45 class="img-rounded">
 								</td>
 								<td width=%>			
 									<button class="btn  btn-warning" type="button" draggable="true">Some Player</button>
@@ -97,7 +97,7 @@
 							<tr>
 								<td>				
 									&nbsp;				
-									<img src="{% static '/img/helmets/3.jpg' %}" width=45 class="img-rounded">
+									<img src="{% static 'img/helmets/3.jpg' %}" width=45 class="img-rounded">
 								</td>
 								<td width=%>			
 									<button class="btn btn-danger" type="button" draggable="true">Some Player</button>
@@ -106,7 +106,7 @@
 							<tr>
 								<td>					
 									&nbsp;			
-									<img src="{% static '/img/helmets/4.jpg' %}" width=45 class="img-rounded">
+									<img src="{% static 'img/helmets/4.jpg' %}" width=45 class="img-rounded">
 								</td>
 								<td width=%>			
 									<button class="btn  btn-danger" type="button" draggable="true">Some Player</button>
@@ -189,7 +189,7 @@
 						</div>
 					  </div>
 					  <div class="item">
-						<img src="{% static '/img/wall/4.jpeg' %}" width="85%" alt="">
+						<img src="{% static "img/wall/4.jpeg" %}" width="85%" alt="">
 						<div class="carousel-caption">
 						  <h4>First USP</h4>
 						  <p>This is where we tell you why we are better have have a better solution that you should take advantage of! Cheers!!!</p>
@@ -203,7 +203,7 @@
 				</div>
 			</td>
 			<td width=25% height=100%>
-				<img src="{% static '/img/wall/superbowl.png' %}" width=100%>
+				<img src="{% static 'img/wall/superbowl.png' %}" width=100%>
 				
 			</td>			
 		</tr>
