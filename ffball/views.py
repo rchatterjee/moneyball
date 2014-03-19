@@ -57,3 +57,8 @@ def teams(request):
             'teams' : all_teams
             })
     return HttpResponse(template.render(context))
+	
+
+def draft(request):
+    context = app.helpers.user_template_dict(request)
+    return render(request, 'draft.html', context)
