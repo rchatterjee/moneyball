@@ -23,6 +23,9 @@ def home(request):
     #        pprint.pformat(app.helpers.user_template_dict(request))
     return render(request, 'index.html', context)
 
+def draft(request):
+    return render(request, 'draft.html')
+
 def logged_in(request):
     return render(request, 'logged-in.html',
             {"data":

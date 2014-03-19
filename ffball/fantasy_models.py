@@ -6,7 +6,7 @@ Who is playing American Foot ball is a 'Player'
 
 from __future__ import unicode_literals
 from django.db import models as m
-from leage_settings_model import Leage_Settings
+from league_settings_model import Leage_Settings
 import historical_data_models
 #from check_constraints import Check, CheckConstraintMetaClass
 
