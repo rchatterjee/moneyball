@@ -7,20 +7,17 @@
     </head>
     <body style="background:linear-gradient(#052203, black)" >
             <script src="http://code.jquery.com/jquery.js"></script>
-            <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
-			
+            <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>			
             <div id="header">
                 {% include "layout/header.html" %}
             </div>
-            <br>
 			<div id="context">
                 {% block content %}{% endblock content %}
             </div>
             <br>
             <div id="footer">
                 {% include "layout/footer.html" %}
-            </div>
-			
+            </div>			
 			{% include "layout/loginmodal.html" %}
         </body>
     </html>
