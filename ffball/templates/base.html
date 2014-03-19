@@ -1,12 +1,12 @@
 {% load static from staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="min-height: 100%">
     <head>
         <title>{% block title %}Welcome to Moneyball - Django Version{% endblock title %}</title>
         <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet" media="screen">
     </head>
     <!--<body style="background-color:#000000">-->
-    <body style="background:linear-gradient(#052203, black)" height=100%>
+    <body style="background:linear-gradient(#052203, black)" >
             <script src="http://code.jquery.com/jquery.js"></script>
             <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>			
             <div id="header">
