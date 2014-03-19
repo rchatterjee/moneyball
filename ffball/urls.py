@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^logout/', ffball.views.log_out, name='logout'),
     url(r'^teams/', ffball.views.teams, name='teams'),
     url(r'^draft/', ffball.views.draft, name='draft'),
+    url(r'^settings/', ffball.views.settings, name='settings'),
 )
 
 
