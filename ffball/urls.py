@@ -1,6 +1,5 @@
 from django.conf.urls import patterns, include, url
 import ffball.views
-
 from django.contrib import admin
 admin.autodiscover()
 
@@ -15,7 +14,9 @@ urlpatterns = patterns('',
     url(r'^login-session/', ffball.views.login_session, name='login-session'),
     url(r'^logout/', ffball.views.log_out, name='logout'),
     url(r'^teams/', ffball.views.teams, name='teams'),
-    url(r'^draft/', ffball.views.draft, name='draft'),                       
+    url(r'^draft/',      ffball.views.draft, name='draft'),
+    url(r'^login/(\w*)', ffball.views.login, name='login'),  
+    url(r'^loginall/',   ffball.views.loginall, name='loginall'),
 )
 
 
