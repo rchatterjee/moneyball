@@ -24,9 +24,11 @@
                 {% block content %}{% endblock content %}
             </div>
             <br>
-            <div id="footer">
+            {% comment %}
+			<div id="footer">
                 {% include "layout/footer.html" %}
-            </div>			
+            </div>	
+			{% endcomment %}
 			{% include "layout/loginmodal.html" %}
         </body>
     </html>
