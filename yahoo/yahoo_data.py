@@ -40,7 +40,7 @@ class YahooData:
             dt = xmltodict.parse(a, namespaces={xmlns:None})
             dt = dt['fantasy_content']['league']['players']
             if not dt: break
-            else dt = dt['player']
+            else: dt = dt['player']
             n += len(dt)
             for p in dt:
                 #print p

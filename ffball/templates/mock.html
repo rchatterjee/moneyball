@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 
-{% block title %}General Account Settings{% endblock %}
+{% block title %}Welcome to Moneyball{% endblock %}
 
 {% block content %}
 
 	{% if logged_in %}
-		{% include "settingscontent.html" %}
+		{% include "mockcontent.html" %}
 	{% else %}
 		{% include "signin.html" %}
 	{% endif %}
