@@ -1,52 +1,439 @@
 {% load static from staticfiles %}
 	<br>
-	<br>
-	<br>	
 <center>
-<table width="600" style="background-color:#000000">		
+<font color="#999999">
+<table width="600" style="background-color:#181818">	
 	<tr>
-		<td>
-			<table class="table table-hover" style="background-color:#000000">
+		<td colspan=100%>
+			&nbsp;
+		</td>
+	</tr><tr>
+		<td colspan=100%>
+			<h4><center> Username: {{ user.username }} </center></h4>
+		</td>
+	</tr><tr>
+		<td colspan=100%>
+			&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td width=400 >
+			<!--<table class="table-hover" width=100%>-->
+			<table width=100%>
 				<tr>
-					<td >
-						Name
+					<td width=100>
+						&nbsp;&nbsp;&nbsp;<b>Name</b>
 					</td>
-					<td >
-						Saikat Raphael Gomes
+					<td width=250>
+						<div id="nameLess">
+							<br>
+							{{ user.ppipe.kwargs.details.fullname }}
+						</div>
+						<div id="nameMore" style="display:none;">
+							<br>
+							<div class="pull-right">
+								<button id="nameCancel" type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-white"></i></button>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="firstName">First</label>
+								<div class="controls">
+									<input type="text" id="firstName" placeholder="{{ user.ppipe.kwargs.details.first_name }}">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="middleName">Middle</label>
+								<div class="controls">
+									<input type="text" id="middleName" placeholder="{{ user.ppipe.kwargs.response.middle_name }}">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="lastName">Last</label>
+								<div class="controls">
+									<input type="text" id="lastName" placeholder="{{ user.ppipe.kwargs.details.last_name }}">
+								</div>
+							</div>
+							<div class="control-group">
+								<div class="controls">
+									<button id="nameSubmit" class="btn btn-primary">Save Changes</button>
+									<button id="nameCancel" class="btn btn-primary">Cancel</button>
+								</div>
+							</div>
+						</div>
+						<br>
+					</td>
+					<td width=50 >
+						<div id="nameEdit">
+							<br>
+								<a href="#>"><i class="icon-pencil icon-white"></i>&nbsp;Edit</a>
+							<br>
+							<br>	
+						</div>
 					</td>
 				</tr>
+				
 				<tr>
 					<td >
-						Username
+						&nbsp;&nbsp;&nbsp;<b>Email</b>
 					</td>
 					<td >
-						saikatgomes
+						<div id="emailLess">
+							<br>
+							{{ user.ppipe.kwargs.details.email }}
+						</div>
+						<div id="emailMore" style="display:none">	
+							<br>
+							<div class="pull-right">
+								<button  id="emailCancel" type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-white"></i></button>
+							</div>						
+							<div class="control-group">
+								<label class="control-label" ><i>Primary Email</i></label>
+								<div class="controls">
+									<label class="radio">
+									  <input type="radio" name="optionsRadios" id="email1" value="{{ user.ppipe.kwargs.details.email }}" checked>
+										{{ user.ppipe.kwargs.details.email }} <a href="#">delete</a>
+									</label>
+									<label class="radio">
+									  <input type="radio" name="optionsRadios" id="email2" value="option2">
+										saikat@cs.wisc.edu <a href="#">delete</a>
+									</label>
+									<label class="radio">
+									  <input type="radio" name="optionsRadios" id="email3" value="option3">
+										saikatgomes@hotmail.com <a href="#">delete</a>
+									</label>
+									<label class="radio">
+									  <input type="radio" name="optionsRadios" id="email4" value="option4">
+										saikat_gomes@yahoo.com <a href="#">delete</a>
+									</label>
+									<label class="radio">
+									  <input type="radio" name="optionsRadios" id="email4" value="option4">
+										srgomes@wisc.edu <a href="#">delete</a>
+									</label>
+								</div>
+							</div>
+							<div class="control-group">
+								<div id="addEmailLink">									
+									<label class="control-label"><a href="#>">Add another email</a></label>
+								</div>
+								<div id="addNewEmail">	
+									<div class="controls">
+										<input type="text" id="newEmail" placeholder="newemail@domain.com">
+									<button id="newEmailAddBtn" class="btn btn-mini btn-info">Add Email</button>
+									</div>									
+								</div>
+							</div>
+							<label class="checkbox">
+							  <input type="checkbox" value="hideEmail" checked>
+								Hide my email
+							</label>
+							<div class="control-group">
+								<div class="controls">
+									<button id="emailSubmit" class="btn btn-primary">Save Changes</button>
+									<button id="emailCancel" class="btn btn-primary">Cancel</button>
+								</div>
+							</div>
+						
+						</div>
+						<br>
+					</td>
+					<td>
+						<div id="emailEdit">
+							<br>
+								<a href="#>"><i class="icon-pencil icon-white"></i>&nbsp;Edit</a>
+							<br>
+							<br>	
+						</div>
 					</td>
 				</tr>
+				
 				<tr>
 					<td >
-						Email
+						&nbsp;&nbsp;&nbsp;<b>Password</b>
 					</td>
 					<td >
-						saikatgomes@gmail.com
+						<div id="passwordLess">
+							<br>
+							<i>(change password)</i>
+						</div>
+						<div id="passwordMore" style="display:none">
+							<br>
+							<div class="pull-right">
+								<button id="passwordCancel" type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-white"></i></button>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inputPassword">Current Password</label>
+								<div class="controls">
+									<input type="curpassword" id="inputPassword" placeholder="Password">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inputPassword">New Password</label>
+								<div class="controls">
+									<input type="newpassword" id="inputPassword" placeholder="Password">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inputPassword">Retype Password</label>
+								<div class="controls">
+									<input type="newpassword2" id="inputPassword" placeholder="Password">
+								</div>
+							</div>
+							<div class="control-group">
+								<div class="controls">
+									<button id="passwordSubmit" class="btn btn-primary">Save Changes</button>
+									<button id="passwordCancel" " class="btn btn-primary">Cancel</button>
+								</div>
+							</div>
+						</div>
+						<br>
+					</td>
+					<td>
+						<div id="passwordEdit">
+							<br>
+								<a href="#>"><i class="icon-pencil icon-white"></i>&nbsp;Edit</a>
+							<br>
+							<br>	
+						</div>
 					</td>
 				</tr>
-				<tr>
+				
+				<tr id="accountrow">
 					<td >
-						Password
+						&nbsp;&nbsp;&nbsp;<b>Accounts</b>
 					</td>
 					<td >
-						Moneyball
+						<div id="accountLess">
+							<br>
+							<ul>
+							  <li>saikat16 (Yahoo)</li>
+							  <li>sgomes (NFL)</li>
+							</ul>
+						</div>
+						<div id="accountMore" style="display:none">
+							<br>
+							<div class="pull-right">
+								<button id="accountCancel" type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-white"></i></button>
+							</div>		
+							<label class="control-label"><i>Current Accounts</i></label>
+							<ul>
+							  <li>saikat16 (Yahoo) <a href="#">delete</a></li>
+							  <li>sgomes (ESPN) <a href="#">delete</a></li>
+							</ul>
+							<div id="importAcc">
+								<label class="control-label">Import more Accounts</label>
+							</div>
+							<div id="accList">								
+								<button id="newAcc" class="btn btn-mini btn-success">NFL</button>
+								<button id="newAcc" class="btn btn-mini disabled">Yahoo</button>
+								<button id="newAcc" class="btn btn-mini btn-success">CBS</button>
+								<button id="newAcc" class="btn btn-mini disabled">ESPN</button>
+							</div>
+							<div id="newAccInfo" style="display:none">	
+								<br>
+								<div class="control-group">
+									<label class="control-label" for="firstName">Vendor Username</label>
+									<div class="controls">
+										<input type="text" id="accUserName" placeholder="username">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="firstName">Vendor Password</label>
+									<div class="controls">
+										<input type="password" id="accPassword" placeholder="">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="firstName">Vendor League ID</label>
+									<div class="controls">
+										<input type="text" id="accLeagueID" placeholder="League ID">
+									</div>
+								</div>
+								<div class="control-group">
+									<div class="controls">
+									<button id="accImport" class="btn btn-mini btn-info">Import Account</button>
+									</div>
+								</div>
+							</div>
+							<br>
+							<div class="control-group">
+								<div class="controls">
+									<button id="accountSubmit" class="btn btn-primary">Save Changes</button>
+									<button id="accountCancel" class="btn btn-primary">Cancel</button>
+								</div>
+							</div>
+							<br>
+						</div>
+					</td>
+					<td>
+						<div id="accountEdit">
+							<br>
+								<a href="#>"><i class="icon-pencil icon-white"></i>&nbsp;Edit</a>
+							<br>
+							<br>	
+						</div>
+					</td>
+				</tr>
+				
+			</table>
+		</td>
+		<td width=15 rowspan=100%>
+			&nbsp;
+		</td>
+		<td width=155 valign=top align=center>
+			<!--<table class="table-hover" width=100% valign=middle align=center>-->
+			<table width=100% valign=middle align=center>
+				<tr>
+					<td valign=top align=center>
+						<br>							
+						<a href="#"><img src="{{ user.avatar }}" class="img-rounded"></a>
+						<!--<a href="#"><img src="{% static 'img/tiger.jpg' %}" class="img-rounded"></a>-->
+						<br>
+						<a href="#">Change Picture</a>
+							<br>
+							<br>
 					</td>
 				</tr>
 			</table>
 		</td>
-		<td valign=middle align=center>
-			<img src="{% static 'img/tiger.jpg' %}" class="img-rounded">
-			<br>
-			<a href="#">Change Picture</a>
+		<td width=15 rowspan=100%>
+			&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td colspan=100%>
+			&nbsp;
 		</td>
 	</tr>
 </table>
+</font>
 </center>
+
+
+<script>
+
+	function hideNameMore(){
+		$(nameMore).hide();
+		$(nameLess).show();
+		$(nameEdit).show();	
+	}
+	function hideEmailMore(){	
+		$(emailMore).hide();
+		$(emailLess).show();
+		$(emailEdit).show();
+	}
+	function hideAddEmailMore(){	
+		$(addNewEmail).hide();
+	}	
+	function hidePasswordMore(){	
+		$(passwordMore).hide();
+		$(passwordLess).show();
+		$(passwordEdit).show();
+	}
+	function hideAccountMore(){	
+		$(accountMore).hide();
+		$(accountLess).show();
+		$(accountEdit).show();
+	}
+	function hideNewAccInfo(){	
+		$(newAccInfo).hide();
+	}
+	
+	function showNameMore(){
+		$(nameMore).show();
+		$(nameLess).hide();
+		$(nameEdit).hide();
+	}
+	function showEmailMore(){
+		$(emailMore).show();
+		$(emailLess).hide();
+		$(emailEdit).hide();
+	}
+	function showAddEmailMore(){	
+		$(addNewEmail).show();
+	}	
+	function showPasswordMore(){
+		$(passwordMore).show();
+		$(passwordLess).hide();
+		$(passwordEdit).hide();
+	}
+	function showAccountMore(){
+		$(accountMore).show();
+		$(accountLess).hide();
+		$(accountEdit).hide();
+	}
+	function showNewAccInfo(){		
+		$(newAccInfo).show();
+	}
+	
+	window.onload=function(){	
+		hideNameMore();
+		hideEmailMore();
+		hidePasswordMore();
+		hideAccountMore();
+		hideAddEmailMore();
+		hideNewAccInfo();
+	};
+	
+	$("#nameEdit").click(function(){
+		showNameMore();
+	});	
+	$("#emailEdit").click(function(){
+		showEmailMore();
+	});
+	$("#passwordEdit").click(function(){
+		showPasswordMore();
+	});
+	$("#accountEdit").click(function(){
+		showAccountMore();
+	});
+	
+	
+	$(nameSubmit).click(function(){
+		hideNameMore();
+	});	
+	$(nameCancel).click(function(){
+		hideNameMore();
+	});
+
+	$(emailSubmit).click(function(){
+		hideAddEmailMore();
+		hideEmailMore();
+	});	
+	$(emailCancel).click(function(){
+		hideAddEmailMore();
+		hideEmailMore();
+	});		
+	
+	$(passwordSubmit).click(function(){
+		hidePasswordMore();
+	});	
+	$(passwordCancel).click(function(){
+		hidePasswordMore();
+	});	
+	
+	$(accountSubmit).click(function(){
+		hideNewAccInfo();
+		hideAccountMore();
+	});	
+	$(accountCancel).click(function(){
+		hideNewAccInfo();
+		hideAccountMore();
+	});	
+	
+	$(addEmailLink).click(function(){
+		showAddEmailMore();
+	});	
+	$(newEmailAddBtn).click(function(){
+		hideAddEmailMore();
+	});	
+	
+	
+	$(newAcc).click(function(){
+		showNewAccInfo();
+	});	
+	
+	$(accImport).click(function(){
+		hideNewAccInfo();
+	});	
+	
+</script>
 
