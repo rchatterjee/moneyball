@@ -66,3 +66,7 @@ def draft(request):
 def settings(request):
     context = app.helpers.user_template_dict(request)
     return render(request, 'settings.html', context)
+	
+def mock(request):
+    context = app.helpers.user_template_dict(request)
+    return render(request, 'mock.html', context)
