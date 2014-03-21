@@ -61,8 +61,10 @@
     </form>
     <div class="modal-footer" align="right">
 		<br>
-		<a href="{% url 'socialauth_begin' 'facebook' %}?next={{ next_page }}"><button class="btn btn-small btn-primary">Login with Facebook</button></a>
-		<button class="btn btn-small btn-primary">Login with Google</button><button class="btn btn-small btn-primary">Login with Yahoo</button>
+		Login with
+		<a href="{% url 'socialauth_begin' 'facebook' %}?next={{ next_page }}"><button class="btn btn-small btn-primary">Facebook</button></a>
+		<a href="#"><button class="btn btn-small btn-primary">Google</button></a>
+		<a href="#"><button class="btn btn-small btn-primary">Yahoo</button></a>
 		<br>
 		<br>
 		<div id="newUserLink">
