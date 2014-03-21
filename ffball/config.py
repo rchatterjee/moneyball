@@ -37,6 +37,7 @@ CONFIG = {
         # mywebsite.com
         'consumer_key': 'dj0yJmk9Q0RNYUNNZVBTVGtOJmQ9WVdrOWRIcHhlSGd5TXpnbWNHbzlNVEEwTXpRME9EazJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD04Zg--',
         'consumer_secret': 'a002d18b1e30837716aa23aa85f7952aafb7c35d',
+        'short_name': 1
    },
     
     'gae_oi': {

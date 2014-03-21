@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'social_auth',
     'app',
     'ffball',
+    'yahoo'
 #    'check_constraints'
 )
 
@@ -124,8 +125,16 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME'  : os.path.join(BASE_DIR, 'db.sqlite3'),
+        },
+    'mongo_db':{
+        'ENGINE' : 'django_mongodb_engine',
+        'NAME' : 'pymongo'
         }
     }
+
+DATABASE_APP_MAPPING = { 'ffball': 'default', 'yahoo' : 'mongo_db' }
+DATABASE_ROUTERS = ['ffball.db_router.DbRouter']
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -147,3 +156,5 @@ STATIC_URL = '/html/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'html/'),
 )
+
+

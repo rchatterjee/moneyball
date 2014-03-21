@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 import ffball.views
 from django.contrib import admin
 admin.autodiscover()
+import yahoo.views
 
 urlpatterns = patterns('',
     # Examples:
@@ -16,8 +17,8 @@ urlpatterns = patterns('',
     url(r'^teams/', ffball.views.teams, name='teams'),
     url(r'^draft/',      ffball.views.draft, name='draft'),
     url(r'^settings/', ffball.views.settings, name='settings'),
-    url(r'^login/(\w*)', ffball.views.login, name='login'),  
-    url(r'^loginall/',   ffball.views.loginall, name='loginall'),
+    url(r'^login/(\w*)', yahoo.views.login, name='login'),  
+    url(r'^loginall/',   yahoo.views.loginall, name='loginall'),
 )
 
 
