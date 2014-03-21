@@ -62,7 +62,8 @@
     <div class="modal-footer" align="right">
 		<br>
 		<a href="{% url 'socialauth_begin' 'facebook' %}?next={{ next_page }}"><button class="btn btn-small btn-primary">Login with Facebook</button></a>
-		<button class="btn btn-small btn-primary">Login with Google</button><button class="btn btn-small btn-primary">Login with Yahoo</button>
+      <button class="btn btn-small btn-primary">Login with Google</button>
+      <a href="/login/ya?next={{ next_page }}"><button class="btn btn-small btn-primary">Login with Yahoo</button></a>
 		<br>
 		<br>
 		<div id="newUserLink">

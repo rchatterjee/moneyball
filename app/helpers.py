@@ -8,6 +8,7 @@ def user_template_dict(request):
 
 
 def is_logged_in(request):
-    if request.user.is_authenticated():
+    if hasattr(request.user, 'is_authenticated') and request.user.is_authenticated():
         return True
+    elif 'user' in request.session: return True
     return False

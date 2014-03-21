@@ -17,30 +17,27 @@ from ffball.config import CONFIG
 
 authomatic = Authomatic(config=CONFIG, secret='This is a really string')
 
-from yahoo_data import YahooData 
-
 def login(request, provider_name):
-    url = 'http://fantasysports.yahooapis.com/fantasy/v2/league/273.l.421159/players;start=25'
     response = HttpResponse()
     result = authomatic.login(DjangoAdapter(request, response), provider_name)
     if result:
-        response.write('<a href="..">Home</a>')
+        #response.write('<a href="..">Home</a>')
         if result.error:
             response.write('<h2>Damn that error: {}</h2>'.format(result.error.message))
         elif result.user:
-            y = YahooData(result)
-            data = result.provider.access(url)
-            # print data.content[:1000]
-            open('out.txt', 'w').write(data.content)
-            response.write('<h2>data.data:<h2><p>{}<p>'.format(data.read()))
-            
+            #data = result.provider.access(url)
             if not (result.user.name and result.user.id):
                 result.user.update()
-            response.write('<h1>Hi {}</h1>'.format(result.user.name))
-            response.write('<h2>Your id is: {}</h2>'.format(result.user.id))
-            response.write('<h2>Your email is: {}</h2>'.format(result.user.email)) 
-            response.write('<h3>Your Info: %s' % vars(result))
-    return response
+            print pprint.pformat(vars(result.user))
+            print pprint.pformat(vars(request.session))
+            request.session['user'] = result.user.to_dict()
+            request.session['user']['avatar'] = result.user.picture
+        return HttpResponseRedirect(request.GET.get('next', '/'))
+    else:
+        print "Sorry Authentication Failed!"
+        return response
+
+
     
 
 def loginall(request):

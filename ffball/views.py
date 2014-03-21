@@ -14,9 +14,6 @@ import json
 #     def get_teams_data():
 
 
-def draft(request):
-    return render(request, 'draft.html')
-
 def logged_in(request):
     return render(request, 'logged-in.html',
             {"data":
