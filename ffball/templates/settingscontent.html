@@ -9,7 +9,7 @@
 		</td>
 	</tr><tr>
 		<td colspan=100%>
-			<h4><center> Username: {{ user.username }} </center></h4>
+			<h4><center><b>General Account Settings</b></center></h4>
 		</td>
 	</tr><tr>
 		<td colspan=100%>
@@ -20,6 +20,23 @@
 		<td width=400 >
 			<!--<table class="table-hover" width=100%>-->
 			<table width=100%>
+				<tr>
+					<td width=100>
+						&nbsp;&nbsp;&nbsp;<b>Username</b>
+					</td>
+					<td width=250>
+						<div id="userName">
+							{{ user.username }}
+							<br>
+						</div>
+					</td>
+					<td width=50 >
+						<div id="usernameEdit">
+							&nbsp;	
+							<br>
+						</div>
+					</td>
+				</tr>
 				<tr>
 					<td width=100>
 						&nbsp;&nbsp;&nbsp;<b>Name</b>
@@ -66,7 +83,6 @@
 							<br>
 								<a href="#>"><i class="icon-pencil icon-white"></i>&nbsp;Edit</a>
 							<br>
-							<br>	
 						</div>
 					</td>
 				</tr>
