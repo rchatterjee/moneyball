@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fantasy_content xml:lang="en-US" yahoo:uri="http://fantasysports.yahooapis.com/fantasy/v2/users;use_login=1/games;game_keys=273/teams" time="86.607933044434ms" copyright="Data provided by Yahoo! and STATS, LLC" refresh_rate="60" xmlns:yahoo="http://www.yahooapis.com/v1/base.rng" xmlns="http://fantasysports.yahooapis.com/fantasy/v2/base.rng">
+ <users count="1">
+  <user>
+   <guid>REAQNZAKI7HMLYREWQ62JSADTY</guid>
+   <games count="1">
+    <game>
+     <game_key>273</game_key>
+     <game_id>273</game_id>
+     <name>Football</name>
+     <code>nfl</code>
+     <type>full</type>
+     <url>http://football.fantasysports.yahoo.com/f1</url>
+     <season>2012</season>
+     <teams count="1">
+      <team>
+       <team_key>273.l.421159.t.1</team_key>
+       <team_id>1</team_id>
+       <name>SRG I</name>
+       <is_owned_by_current_login>1</is_owned_by_current_login>
+       <url>http://football.fantasysports.yahoo.com/archive/nfl/2012/421159/1</url>
+       <team_logos>
+        <team_logo>
+         <size>large</size>
+         <url>http://l.yimg.com/dh/ap/fantasy/img/profile_96.png</url>
+        </team_logo>
+       </team_logos>
+       <waiver_priority>10</waiver_priority>
+       <number_of_moves>17</number_of_moves>
+       <number_of_trades>2</number_of_trades>
+       <roster_adds>
+        <coverage_type>week</coverage_type>
+        <coverage_value>17</coverage_value>
+        <value>0</value>
+       </roster_adds>
+       <clinched_playoffs>1</clinched_playoffs>
+       <managers>
+        <manager>
+         <manager_id>1</manager_id>
+         <nickname>saikat</nickname>
+         <guid>REAQNZAKI7HMLYREWQ62JSADTY</guid>
+         <is_commissioner>1</is_commissioner>
+         <is_current_login>1</is_current_login>
+        </manager>
+       </managers>
+      </team>
+     </teams>
+    </game>
+   </games>
+  </user>
+ </users>
+</fantasy_content>
