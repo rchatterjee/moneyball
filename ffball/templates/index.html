@@ -16,7 +16,8 @@
 {% block content %}
 <br>
 <br>
-<table width=100% height=100%>
+<center>
+<table width=90% height=90%>
 	<tr>
 		<td width=25% valign=top align=center>
 			{% if logged_in %}
@@ -29,7 +30,7 @@
 					</div>
 					<div id="collapseThree" class="accordion-body collapse in">
 						<div class="accordion-inner">
-							<div class="fb-comments" data-href="http://www.fantasycrystalball.com" data-width="450" data-numposts="5" data-colorscheme="dark"></div>
+							<div class="fb-comments" data-href="http://www.fantasycrystalball.com" data-width="400" data-numposts="5" data-colorscheme="dark"></div>
 						</div>
 					</div>
 				</div>
@@ -160,33 +161,34 @@
 			<div class="fb-like" data-href="https://www.facebook.com/fantasycrystalball" data-layout="box_count" data-action="like" data-show-faces="false" data-share="true"></div>
 			{% endif %}
 		</td>
-		<td width=75% height=80% valign=top align=center>
+		<td width=75% valign=top align=center>
 			<div class="bs-docs-example" >
 				<center>
 					<div id="myCarousel" class="carousel slide">
 						<div class="carousel-inner">
-							<div class="item">
-								<img src="{% static "img/wall/1.jpg" %}" width="85%" alt="">
+							
+							<div class="item" >
+								<img src="{% static 'img/wall/1.jpg' %}" width="85%" alt="">
 								<div class="carousel-caption">
 									<h4>First USP</h4>
 									<p>This is where we tell you why we are better have have a better solution that you should take advantage of! Cheers!!!</p>
 								</div>
 							</div>
-							<div class="item active">
-								<img src="{% static "img/wall/2.jpg" %}" width="85%" alt="">
-								<div class="carousel-caption">
-									<h4>Second USP</h4>
-									<p>This is where we tell you why we are better have have a better solution that you should take advantage of! Cheers!!!</p>
-								</div>
-							</div>
-							<div class="item">
-								<img src="{% static "img/wall/3.jpg" %}" width="85%" alt="">
+							<div class="item active" >
+								<img src="{% static 'img/wall/2.jpg' %}" width="85%" alt="">
 								<div class="carousel-caption">
 									<h4>First USP</h4>
 									<p>This is where we tell you why we are better have have a better solution that you should take advantage of! Cheers!!!</p>
 								</div>
 							</div>
-							<div class="item">
+							<div class="item" >
+								<img src="{% static 'img/wall/3.jpg' %}" width="85%" alt="">
+								<div class="carousel-caption">
+									<h4>First USP</h4>
+									<p>This is where we tell you why we are better have have a better solution that you should take advantage of! Cheers!!!</p>
+								</div>
+							</div>
+							<div class="item" >
 								<img src="{% static 'img/wall/4.jpeg' %}" width="85%" alt="">
 								<div class="carousel-caption">
 									<h4>First USP</h4>
@@ -201,7 +203,8 @@
 			</div>
 		</td>
 	</tr>
-	</table>
+</table>
 
+</center>
 
 {% endblock content %}
