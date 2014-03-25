@@ -42,7 +42,7 @@ INSTALLED_APPS = (
     'social_auth',
     'app',
     'ffball',
-    'yahoo'
+ #   'yahoo'
 #    'check_constraints'
 )
 
