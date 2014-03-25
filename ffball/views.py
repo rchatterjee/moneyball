@@ -15,9 +15,10 @@ import json
 
 
 def logged_in(request):
-    return render(request, 'logged-in.html',
-            {"data":
-                pprint.pformat(request.session.items())})
+    return HttpResponseRedirect(request.GET.get('next', '/'))
+    #return render(request, 'logged-in.html',
+    #        {"data":
+    #            pprint.pformat(request.session.items())})
 
 def login_error(request):
     return render(request, 'login-error.html')
@@ -29,13 +30,17 @@ def log_out(request):
 def login_session(request):
     pip = request.session.get('partial_pipeline')
     user = {}
+    backend = pip['kwargs']['backend']
     user['user_id'] = pip['kwargs']['user']['pk']
     user['social_user_id'] = pip['kwargs']['social_user']['pk']
     user['backend'] = pip['backend']
-    user['username'] = pip['kwargs']['response']['username']
-    user['firstname'] = pip['kwargs']['response']['first_name']
-    user['name'] = user['firstname']
-    user['access_token'] = pip['kwargs']['response']['access_token']
+    
+    if backend.name=='yahoo':
+        user['username'] = pip['kwargs']['username']
+        user.update(pip['kwargs']['details'])
+    elif backend.name=='facebook':
+        user.update(pip['kwargs']['response'])
+    user['name'] = user['first_name']
     user['avatar'] = pip['kwargs']['avatar']
     user['ppipe'] = pip
     # TODO: check if there is no avatar, then add a default silhouette.
@@ -65,6 +70,7 @@ def settings(request):
 def home(request):
     context = app.helpers.user_template_dict(request)
     context['next_page'] = request.get_full_path
+    context['providers'] = ['facebook', 'yahoo', 'google', 'github']
     #context['debug'] = pprint.pformat(request.session.items())
     #context['debug'] += '\n' + \
     #        pprint.pformat(app.helpers.user_template_dict(request))

@@ -110,8 +110,3 @@ class Team(models.Model):
         managed = False
         db_table = 'TEAMS'
 
-class User(models.Model):
-    first_name = models.CharField(max_length=20, blank=True)
-    last_name  = models.CharField(max_length=20, blank=True)
-    username   = models.CharField(max_length=20, blank=True)
-    

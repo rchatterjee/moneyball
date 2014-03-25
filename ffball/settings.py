@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_auth',
+#    'social.apps.django_app.default',
     'app',
     'ffball',
 #    'yahoo'
@@ -47,13 +48,16 @@ INSTALLED_APPS = (
 )
 
 # django-social-auth settings
-
 FACEBOOK_APP_ID     = '254311618073113'
 FACEBOOK_API_SECRET = 'ee2aa55d2ee8a98166d12448d0a3e618'
 FACEBOOK_EXTENDED_PERMISSIONS = ['email', 'user_location']
+YAHOO_CONSUMER_KEY = 'dj0yJmk9Q0RNYUNNZVBTVGtOJmQ9WVdrOWRIcHhlSGd5TXpnbWNHbzlNVEEwTXpRME9EazJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD04Zg--'
+YAHOO_CONSUMER_SECRET = 'a002d18b1e30837716aa23aa85f7952aafb7c35d'
 
 AUTHENTICATION_BACKENDS = (
     'social_auth.backends.facebook.FacebookBackend',
+    'social_auth.backends.google.GoogleBackend',
+    'social_auth.backends.yahoo.YahooBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -62,11 +66,10 @@ LOGIN_REDIRECT_URL = '/logged-in/'
 LOGIN_ERROR_URL    = '/login-error/'
 
 SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
-SOCIAL_AUTH_UID_LENGTH = 16
-SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
-SOCIAL_AUTH_NONCE_SERVER_URL_LENGTH = 16
-SOCIAL_AUTH_ASSOCIATION_SERVER_URL_LENGTH = 16
-SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
+SOCIAL_AUTH_UID_LENGTH = 100
+SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 150
+SOCIAL_AUTH_NONCE_SERVER_URL_LENGTH = 120
+SOCIAL_AUTH_ASSOCIATION_SERVER_URL_LENGTH = 120
 SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
 
 SOCIAL_AUTH_PARTIAL_PIPELINE_KEY = 'partial_pipeline'
@@ -116,11 +119,11 @@ DATABASES = {
         'ENGINE': 'django_mysqlpool.backends.mysqlpool',
         'NAME'  : 'srgdb',
         'USER'  : 'saikat',
-        'PASSWORD':'wisc13*tainaki!',
-        'HOST' : 'mysql.cs.wisc.edu',
-        'OPTIONS': {
-            'secure-auth': False,
-            }
+        'PASSWORD': 'wisc13*tainaki!',
+        'HOST' : 'mysql.cs.wisc.edu'
+#        'OPTIONS': {
+#            'secure-auth': False,
+#            }
         },
     'test': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -129,7 +132,8 @@ DATABASES = {
 #    'mongo_db':{
     #        'ENGINE' : 'django_mongodb_engine',
     #        'NAME' : 'pymongo'
-    }
+    # }
+}
 
 # DATABASE_APP_MAPPING = { 'ffball': 'default', 'yahoo' : 'mongo_db' }
 # DATABASE_ROUTERS = ['ffball.db_router.DbRouter']

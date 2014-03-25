@@ -15,7 +15,7 @@ DRAFT_TYPE_CHOICES = (
 
 
 
-class Leage_Settings(m.Model):
+class League_Settings(m.Model):
     number_of_teams = m.IntegerField(blank=True,  null=True)
     scoreing_type   = m.CharField(max_length=30, default="Head to Head Points")
 

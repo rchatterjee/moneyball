@@ -9,7 +9,11 @@ import pprint
 FB_GRAPH_DP = \
     'http://graph.facebook.com/%s?fields=id,picture.width(100).height(100),location'
 
-
+class Yahoo:
+    YAHOO_API = 'https://social.yahooapis.com/v1/user/{guid}/profile'
+    def get_user_data():
+        pass
+    
 def update_user(social_user, pic, loc, gender, link):
     (e, created) = UserExtraData.objects.get_or_create(
         user=social_user.user,
@@ -80,6 +84,8 @@ def extra_data(backend, response, user, *args, **kwargs):
             location = extract_location(data)
         except StandardError:
             pass
+    elif backend.name == 'yahoo':
+        pass
     else:
         raise ValueError()
     gender = extract_gender(response)
