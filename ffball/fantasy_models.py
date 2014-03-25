@@ -6,9 +6,10 @@ Who is playing American Foot ball is a 'Player'
 
 from __future__ import unicode_literals
 from django.db import models as m
-from league_settings_model import Leage_Settings
+from league_settings_model import League_Settings
 import historical_data_models
 #from check_constraints import Check, CheckConstraintMetaClass
+from django.contrib.auth.models import User
 
 PLAYER_STATUS_COICES = (
     ('A', 'active'),
@@ -39,11 +40,11 @@ class League(m.Model):
     vendor = m.ForeignKey(Vendor)
     league_id = m.CharField(max_length=50, blank=True)
     # settings 
-    settings = m.ForeignKey(Leage_Settings)
+    settings = m.ForeignKey(League_Settings)
 
 class Team(m.Model):
     league         = m.ForeignKey(League)
-    user           = m.ForeignKey(historical_data_models.User) 
+    user           = m.ForeignKey(User) 
     vendor_team_id = m.CharField(max_length=30, blank=True)
     user_id        = m.CharField(max_length=40, blank=False)
     team_name      = m.CharField(max_length=100, blank=False)

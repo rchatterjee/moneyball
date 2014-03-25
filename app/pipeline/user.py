@@ -84,6 +84,8 @@ def extra_data(backend, response, user, *args, **kwargs):
             location = extract_location(data)
         except StandardError:
             pass
+    elif backend.name == 'yahoo':
+        pass
     else:
         raise ValueError()
     gender = extract_gender(response)

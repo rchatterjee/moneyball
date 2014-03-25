@@ -56,10 +56,9 @@ YAHOO_CONSUMER_SECRET = 'a002d18b1e30837716aa23aa85f7952aafb7c35d'
 
 AUTHENTICATION_BACKENDS = (
     'social_auth.backends.facebook.FacebookBackend',
+    'social_auth.backends.google.GoogleBackend',
+    'social_auth.backends.yahoo.YahooBackend',
     'django.contrib.auth.backends.ModelBackend',
-    'social.backends.google.GoogleOAuth',
-    'social.backends.twitter.TwitterOAuth',
-    'social.backends.yahoo.YahooOpenId',
 )
 
 LOGIN_URL          = '/login-form/'
@@ -67,11 +66,10 @@ LOGIN_REDIRECT_URL = '/logged-in/'
 LOGIN_ERROR_URL    = '/login-error/'
 
 SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
-SOCIAL_AUTH_UID_LENGTH = 16
-SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
-SOCIAL_AUTH_NONCE_SERVER_URL_LENGTH = 16
-SOCIAL_AUTH_ASSOCIATION_SERVER_URL_LENGTH = 16
-SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
+SOCIAL_AUTH_UID_LENGTH = 100
+SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 150
+SOCIAL_AUTH_NONCE_SERVER_URL_LENGTH = 120
+SOCIAL_AUTH_ASSOCIATION_SERVER_URL_LENGTH = 120
 SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
 
 SOCIAL_AUTH_PARTIAL_PIPELINE_KEY = 'partial_pipeline'
