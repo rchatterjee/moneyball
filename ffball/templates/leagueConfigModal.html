@@ -9,6 +9,12 @@
         <br>
 		<div id="stdOptions">
 			<div class="control-group">
+				<label class="control-label" for="leagueID">League ID</label>
+				<div class="controls" >
+					<label class="control-label" id="leagueID">[2344423]</label>
+				</div>
+			</div>
+			<div class="control-group">
 				<label class="control-label" for="leagueName">Name</label>
 				<div class="controls">
 					<input type="text" id="leagueName" placeholder="League Name">
@@ -31,11 +37,15 @@
 			<label class="control-label" for="teamCount">Teams</label>
 			<div class="controls " id="teamCount">
 				<label class="radio inline">
-				  <input type="radio" name="optionsRadios" id="team8" value="8" checked>
+				  <input type="radio" name="optionsRadios" id="team6" value="6" >
+					6
+				</label>
+				<label class="radio inline">
+				  <input type="radio" name="optionsRadios" id="team8" value="8" >
 					8
 				</label>
 				<label class="radio inline">
-				  <input type="radio" name="optionsRadios" id="team10" value="10">
+				  <input type="radio" name="optionsRadios" id="team10" value="10" checked>
 					10
 				</label>
 				<label class="radio inline">
@@ -73,7 +83,7 @@
     <div class="modal-footer" align="right">
 		<div class="control-group">
 			<div class="controls">
-				<button type="submit" class="btn btn-primary">Create Room</button>
+				<a href="/draftroom"><button type="submit" class="btn btn-primary">Create Room</button></a>
 			</div>
 		</div>
     </div>
@@ -81,24 +91,18 @@
 
 <script>
 $(document).ready(function(){
-	$("#newUserLink").click(function(){
-		$(stdOptions).hide();
-		$(newUserLink).hide();
-		$(privateOptions).show();
-		$(alreadyUserLink).show();
-	});
 
-	$('#myModal').on('show', function () {	  
+	$('#leagueConfig').on('show', function () {	  
 		$(stdOptions).show();
-		$(newUserLink).show();
 		$(privateOptions).hide();
-		$(alreadyUserLink).hide();
 	})
-	$('#alreadyUserLink').click(function() {	  
-		$(stdOptions).show();
-		$(newUserLink).show();
-		$(privateOptions).hide();
-		$(alreadyUserLink).hide();
+	$('#isPrivate').click(function() {
+		var $this = $(this);
+		if ($this.is(':checked')) {
+			$(privateOptions).show();
+		} else {
+			$(privateOptions).hide();
+		}
 	})
 });
 </script>

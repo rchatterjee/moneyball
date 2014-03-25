@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 
-{% block title %}Moneyball Draft{% endblock %}
+{% block title %}Draft Room{% endblock %}
 
 {% block content %}
 
 	{% if logged_in %}
-		{% include "draftcontent.html" %}
+		{% include "draftroomcontent.html" %}
 	{% else %}
 		{% include "signin.html" %}
 	{% endif %}

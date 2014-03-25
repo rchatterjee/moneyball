@@ -73,5 +73,12 @@ def home(request):
 	
 def mock(request):
     context = app.helpers.user_template_dict(request)
+    context['next_page'] = request.get_full_path
     return render(request, 'mock.html', context)
+	
+	
+def draftroom(request):
+    context = app.helpers.user_template_dict(request)
+    context['next_page'] = request.get_full_path
+    return render(request, 'draftroom.html', context)
 

@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 
+<script src="{% static 'bootstrap/js/jquery.slimscroll.min.js' %}"></script>	
+
 {% block title %}Welcome to Moneyball{% endblock %}
 
 {% block content %}
 
-	{% if logged_in %}
-		{% include "mockcontent.html" %}
-	{% else %}
-		{% include "signin.html" %}
-	{% endif %}
+	{% include "mockcontent.html" %}
+	{% include "leagueConfigModal.html" %}
 
 {% endblock content %}

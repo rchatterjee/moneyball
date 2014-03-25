@@ -1,4 +1,6 @@
 {% load static from staticfiles %}
+
+<script src="{% static 'bootstrap/js/jquery.slimscroll.min.js' %}"></script>	
 <br>
 <center>
 
@@ -7,14 +9,16 @@
 		<td colspan=6 align=left>
 			<input type="text" class="search-query span3" data-provide="typeahead" placeholder="Search Mock Draft Rooms"><br><br>
 		</td>
-		<td rowspan=100% width=10>
+		<td rowspan=100% width=5>
 			&nbsp;		
 		</td>
-		<td width=200 rowspan=100% valign=top align=left>
-			<button class="btn btn-large btn-primary" type="button">Create Room</button>		
+		<td width=180 rowspan=100% valign=top align=left>
+			{% if logged_in %}
+			<button class="btn btn-large btn-primary" type="button" href="#leagueConfig" data-toggle="modal">Create Room</button>		
 			<br>	
 			<br>
-			<button class="btn btn-large btn-primary" type="button">Go To Room</button>			
+			{% endif %}
+			<button class="btn btn-large btn-primary" type="button">Find Random</button>			
 			<br>	
 			<br>
 			<button class="btn btn-large btn-primary" type="button">Invite Others</button>	
@@ -53,199 +57,480 @@
 		</td>
 	</tr>
 	<tr valign=middle>
-		<td width=800 valign=middle>
-			<div class="alert ">
-				<table width=100%>
-					<tr>
-						<td colspan=100%>
-							&nbsp;
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h4>&nbsp;Draft Room 1</h4>
-						</td>
-						<td width=125>
-							ID: [23423334]
-						</td>
-						<td width=75>
-							Standard
-						</td>
-						<td width=50>
-							3/10
-						</td>
-						<td width=125>
-							Begins in 2:45
-						</td>
-						<td align=right width=160>
-							<button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white"></i>&nbsp;Join</button>
-							<button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button>
-						</td>
-					</tr>
-					<tr>
-						<td colspan=100%>
-							&nbsp;
-						</td>
-					</tr>
-				</table>							
-			</div>
-		</td>
-	</tr>
-	<tr valign=middle>
-		<td width=800 valign=middle>
-			<div class="alert ">
-				<table width=100%>
-					<tr>
-						<td colspan=100%>
-							&nbsp;
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h4>&nbsp;Party@MoJo223</h4>
-						</td>
-						<td width=125>
-							ID: [23423334]
-						</td>
-						<td width=75>
-							Standard
-						</td>
-						<td width=50>
-							3/10
-						</td>
-						<td width=125>
-							Begins in 2:45
-						</td>
-						<td align=right width=160>
-							<button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white"></i>&nbsp;Join</button>
-							<button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button>
-						</td>
-					</tr>
-					<tr>
-						<td colspan=100%>
-							&nbsp;
-						</td>
-					</tr>
-				</table>							
-			</div>
-		</td>
-	</tr>
-	<tr valign=middle>
-		<td width=800 valign=middle>
-			<div class="alert ">
-				<table width=100%>
-					<tr>
-						<td colspan=100%>
-							&nbsp;
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h4>&nbsp;New Hires</h4>
-						</td>
-						<td width=125>
-							ID: [23423334]
-						</td>
-						<td width=75>
-							Standard
-						</td>
-						<td width=50>
-							3/10
-						</td>
-						<td width=125>
-							Begins in 2:45
-						</td>
-						<td align=right width=160>
-							<button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white"></i>&nbsp;Join</button>
-							<button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button>
-						</td>
-					</tr>
-					<tr>
-						<td colspan=100%>
-							&nbsp;
-						</td>
-					</tr>
-				</table>							
-			</div>
-		</td>
-	</tr>
-	<tr valign=middle>
-		<td width=800 valign=middle>
-			<div class="alert ">
-				<table width=100%>
-					<tr>
-						<td colspan=100%>
-							&nbsp;
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h4>&nbsp;Draft Room 2</h4>
-						</td>
-						<td width=125>
-							ID: [23423334]
-						</td>
-						<td width=75>
-							Standard
-						</td>
-						<td width=50>
-							3/10
-						</td>
-						<td width=125>
-							Begins in 2:45
-						</td>
-						<td align=right width=160>
-							<button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white"></i>&nbsp;Join</button>
-							<button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button>
-						</td>
-					</tr>
-					<tr>
-						<td colspan=100%>
-							&nbsp;
-						</td>
-					</tr>
-				</table>							
-			</div>
-		</td>
-	</tr>
-	<tr valign=middle>
-		<td width=800 valign=middle>
-			<div class="alert ">
-				<table width=100%>
-					<tr>
-						<td colspan=100%>
-							&nbsp;
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h4>&nbsp;To the Bowl</h4>
-						</td>
-						<td width=125>
-							ID: [23423334]
-						</td>
-						<td width=75>
-							Standard
-						</td>
-						<td width=50>
-							3/10
-						</td>
-						<td width=125>
-							Begins in 2:45
-						</td>
-						<td align=right width=160>
-							<button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white"></i>&nbsp;Join</button>
-							<button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button>
-						</td>
-					</tr>
-					<tr>
-						<td colspan=100%>
-							&nbsp;
-						</td>
-					</tr>
-				</table>							
+		<td width=815 valign=middle>
+			<div class="some-content-related-div" align="left">
+				<div id="inner-content-div">
+					<table width=800>
+						<tr valign=middle>
+							<td width=800 valign=middle>
+								<div class="alert ">
+									<table width=100%>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h4>&nbsp;Draft Room 1</h4>
+											</td>
+											<td width=125>
+												ID: [23423334]
+											</td>
+											<td width=75>
+												Standard
+											</td>
+											<td width=50>
+												<span class="badge badge-success">2/10</span>
+											</td>
+											<td width=125>
+												<span class="badge badge-important">Begins in 0:35</span>
+											</td>
+											<td align=right width=160>
+												{% if logged_in %}
+												<a href="/draftroom"><button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white" ></i>&nbsp;Join</button></a>
+												{% endif %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button></a>
+											</td>
+										</tr>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+									</table>							
+								</div>
+							</td>
+						</tr>
+						<tr valign=middle>
+							<td width=800 valign=middle>
+								<div class="alert ">
+									<table width=100%>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h4>&nbsp;Party@MoJo223</h4>
+											</td>
+											<td width=125>
+												ID: [23423334]
+											</td>
+											<td width=75>
+												Standard
+											</td>
+											<td width=50>
+												<span class="badge badge-warning">6/10</span>
+											</td>
+											<td width=125>
+												<span class="badge badge-important">Begins in 0:35</span>
+											</td>
+											<td align=right width=160>
+												{% if logged_in %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white" ></i>&nbsp;Join</button></a>
+												{% endif %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button></a>
+											</td>
+										</tr>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+									</table>							
+								</div>
+							</td>
+						</tr>
+						<tr valign=middle>
+							<td width=800 valign=middle>
+								<div class="alert ">
+									<table width=100%>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h4>&nbsp;July New Hires</h4>
+											</td>
+											<td width=125>
+												ID: [23423334]
+											</td>
+											<td width=75>
+												Standard
+											</td>
+											<td width=50>
+												<span class="badge badge-important">9/10</span>
+											</td>
+											<td width=125>
+												<span class="badge badge-warning">Begins in 1:13</span>
+											</td>
+											<td align=right width=160>
+												{% if logged_in %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white" ></i>&nbsp;Join</button></a>
+												{% endif %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button></a>
+											</td>
+										</tr>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+									</table>							
+								</div>
+							</td>
+						</tr>
+						<tr valign=middle>
+							<td width=800 valign=middle>
+								<div class="alert ">
+									<table width=100%>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h4>&nbsp;Draft Room 2</h4>
+											</td>
+											<td width=125>
+												ID: [23423334]
+											</td>
+											<td width=75>
+												Standard
+											</td>
+											<td width=50>
+												<span class="badge badge-warning">7/10</span>
+											</td>
+											<td width=125>
+												<span class="badge badge-warning">Begins in 1:55</span>
+											</td>
+											<td align=right width=160>
+												{% if logged_in %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white" ></i>&nbsp;Join</button></a>
+												{% endif %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button></a>
+											</td>
+										</tr>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+									</table>							
+								</div>
+							</td>
+						</tr>
+						<tr valign=middle>
+							<td width=800 valign=middle>
+								<div class="alert ">
+									<table width=100%>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h4>&nbsp;To the Bowl</h4>
+											</td>
+											<td width=125>
+												ID: [23423334]
+											</td>
+											<td width=75>
+												Standard
+											</td>
+											<td width=50>
+												<span class="badge badge-success">3/10</span>
+											</td>
+											<td width=125>
+												<span class="badge badge-success">Begins in 3:35</span>
+											</td>
+											<td align=right width=160>
+												{% if logged_in %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white" ></i>&nbsp;Join</button></a>
+												{% endif %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button></a>
+											</td>
+										</tr>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+									</table>							
+								</div>
+							</td>
+						</tr>
+						<tr valign=middle>
+							<td width=800 valign=middle>
+								<div class="alert ">
+									<table width=100%>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h4>&nbsp;To the Bowl</h4>
+											</td>
+											<td width=125>
+												ID: [23423334]
+											</td>
+											<td width=75>
+												Standard
+											</td>
+											<td width=50>
+												<span class="badge badge-success">3/10</span>
+											</td>
+											<td width=125>
+												<span class="badge badge-success">Begins in 3:35</span>
+											</td>
+											<td align=right width=160>
+												{% if logged_in %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white" ></i>&nbsp;Join</button></a>
+												{% endif %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button></a>
+											</td>
+										</tr>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+									</table>							
+								</div>
+							</td>
+						</tr>
+						<tr valign=middle>
+							<td width=800 valign=middle>
+								<div class="alert ">
+									<table width=100%>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h4>&nbsp;To the Bowl</h4>
+											</td>
+											<td width=125>
+												ID: [23423334]
+											</td>
+											<td width=75>
+												Standard
+											</td>
+											<td width=50>
+												<span class="badge badge-success">3/10</span>
+											</td>
+											<td width=125>
+												<span class="badge badge-success">Begins in 3:35</span>
+											</td>
+											<td align=right width=160>
+												{% if logged_in %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white" ></i>&nbsp;Join</button></a>
+												{% endif %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button></a>
+											</td>
+										</tr>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+									</table>							
+								</div>
+							</td>
+						</tr>
+						<tr valign=middle>
+							<td width=800 valign=middle>
+								<div class="alert ">
+									<table width=100%>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h4>&nbsp;To the Bowl</h4>
+											</td>
+											<td width=125>
+												ID: [23423334]
+											</td>
+											<td width=75>
+												Standard
+											</td>
+											<td width=50>
+												<span class="badge badge-success">3/10</span>
+											</td>
+											<td width=125>
+												<span class="badge badge-success">Begins in 3:35</span>
+											</td>
+											<td align=right width=160>
+												{% if logged_in %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white" ></i>&nbsp;Join</button></a>
+												{% endif %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button></a>
+											</td>
+										</tr>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+									</table>							
+								</div>
+							</td>
+						</tr>
+						<tr valign=middle>
+							<td width=800 valign=middle>
+								<div class="alert ">
+									<table width=100%>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h4>&nbsp;To the Bowl</h4>
+											</td>
+											<td width=125>
+												ID: [23423334]
+											</td>
+											<td width=75>
+												Standard
+											</td>
+											<td width=50>
+												<span class="badge badge-success">3/10</span>
+											</td>
+											<td width=125>
+												<span class="badge badge-success">Begins in 3:35</span>
+											</td>
+											<td align=right width=160>
+												{% if logged_in %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white" ></i>&nbsp;Join</button></a>
+												{% endif %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button></a>
+											</td>
+										</tr>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+									</table>							
+								</div>
+							</td>
+						</tr>
+						<tr valign=middle>
+							<td width=800 valign=middle>
+								<div class="alert ">
+									<table width=100%>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h4>&nbsp;To the Bowl</h4>
+											</td>
+											<td width=125>
+												ID: [23423334]
+											</td>
+											<td width=75>
+												Standard
+											</td>
+											<td width=50>
+												<span class="badge badge-success">3/10</span>
+											</td>
+											<td width=125>
+												<span class="badge badge-success">Begins in 3:35</span>
+											</td>
+											<td align=right width=160>
+												{% if logged_in %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white" ></i>&nbsp;Join</button></a>
+												{% endif %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button></a>
+											</td>
+										</tr>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+									</table>							
+								</div>
+							</td>
+						</tr>
+						<tr valign=middle>
+							<td width=800 valign=middle>
+								<div class="alert ">
+									<table width=100%>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<h4>&nbsp;To the Bowl</h4>
+											</td>
+											<td width=125>
+												ID: [23423334]
+											</td>
+											<td width=75>
+												Standard
+											</td>
+											<td width=50>
+												<span class="badge badge-success">3/10</span>
+											</td>
+											<td width=125>
+												<span class="badge badge-success">Begins in 3:35</span>
+											</td>
+											<td align=right width=160>
+												{% if logged_in %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white" ></i>&nbsp;Join</button></a>
+												{% endif %}
+												<a href="/draftroom/roomId=someLeagueID"><button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i>&nbsp;Watch</button></a>
+											</td>
+										</tr>
+										<tr>
+											<td colspan=100%>
+												&nbsp;
+											</td>
+										</tr>
+									</table>							
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
 			</div>
 		</td>
 	</tr>
 </table>
 </center>
+
+<script>
+$(function(){
+    $('#inner-content-div').slimScroll({
+        height: '500px',
+		width: 'width',
+		alwaysVisible: true,
+		railVisible: true,
+		size: '9px',
+		color: '#ffffff',	
+		railColor: '#999999',	
+		disableFadeOut: false
+    });
+});
+</script>
