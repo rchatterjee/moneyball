@@ -42,7 +42,7 @@ INSTALLED_APPS = (
     'social_auth',
     'app',
     'ffball',
-    'yahoo'
+#    'yahoo'
 #    'check_constraints'
 )
 
@@ -112,7 +112,7 @@ WSGI_APPLICATION = 'ffball.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
-    'test': {
+    'default': {
         'ENGINE': 'django_mysqlpool.backends.mysqlpool',
         'NAME'  : 'srgdb',
         'USER'  : 'saikat',
@@ -122,7 +122,7 @@ DATABASES = {
             'secure-auth': False,
             }
         },
-    'default': {
+    'test': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME'  : os.path.join(BASE_DIR, 'db.sqlite3'),
         },
