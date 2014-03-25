@@ -15,9 +15,10 @@ import json
 
 
 def logged_in(request):
-    return render(request, 'logged-in.html',
-            {"data":
-                pprint.pformat(request.session.items())})
+    return HttpResponseRedirect(request.GET.get('next', '/'))
+    #return render(request, 'logged-in.html',
+    #        {"data":
+    #            pprint.pformat(request.session.items())})
 
 def login_error(request):
     return render(request, 'login-error.html')
@@ -65,6 +66,7 @@ def settings(request):
 def home(request):
     context = app.helpers.user_template_dict(request)
     context['next_page'] = request.get_full_path
+    context['providers'] = ['facebook', 'yahoo', 'google', 'github']
     #context['debug'] = pprint.pformat(request.session.items())
     #context['debug'] += '\n' + \
     #        pprint.pformat(app.helpers.user_template_dict(request))

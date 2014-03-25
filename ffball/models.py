@@ -9,4 +9,4 @@ from django.db import models as m
 from league_settings_model import Leage_Settings
 from historical_data_models import *
 import fantasy_models 
-from yahoo.yahoo_data import *
+#from yahoo.yahoo_data import *
