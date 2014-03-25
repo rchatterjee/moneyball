@@ -1,0 +1,106 @@
+{% if logged_in %}
+<!-- ###### Modal login begin ###### -->
+<div id="leagueConfig" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3 id="myModalLabel">Create Mock Draft Room</h3>
+    </div>
+    <form class="form-horizontal">
+        <br>
+		<div id="stdOptions">
+			<div class="control-group">
+				<label class="control-label" for="leagueName">Name</label>
+				<div class="controls">
+					<input type="text" id="leagueName" placeholder="League Name">
+					
+					<label class="checkbox">
+						<input type="checkbox" id="isPrivate"> <i>Private</i>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div id="privateOptions" style="display:none;">
+			<div class="control-group">
+				<label class="control-label" for="entryKey">Secret Entry Key</label>
+				<div class="controls">
+					<input type="text" id="entryKey" placeholder="Secret">
+				</div>
+			</div>
+		</div>
+		<div class="control-group " align=left>
+			<label class="control-label" for="teamCount">Teams</label>
+			<div class="controls " id="teamCount">
+				<label class="radio inline">
+				  <input type="radio" name="optionsRadios" id="team8" value="8" checked>
+					8
+				</label>
+				<label class="radio inline">
+				  <input type="radio" name="optionsRadios" id="team10" value="10">
+					10
+				</label>
+				<label class="radio inline">
+				  <input type="radio" name="optionsRadios" id="team12" value="12">
+					12
+				</label>
+				<label class="radio inline">
+				  <input type="radio" name="optionsRadios" id="team14" value="14">
+					14
+				</label>
+			</div>
+		</div>
+		<div class="control-group" align=left>
+			<label class="control-label" for="draftType">Draft Type</label>
+			<div class="controls" id="draftType">
+				<label class="radio">
+				  <input type="radio" name="optionsRadios" id="draftType1" value="1" checked>
+					Standard
+				</label>
+				<label class="radio">
+				  <input type="radio" name="optionsRadios" id="draftType2" value="2">
+					Standard PPR
+				</label>
+				<label class="radio">
+				  <input type="radio" name="optionsRadios" id="draftType3" value="3">
+					Auction
+				</label>
+				<label class="radio">
+				  <input type="radio" name="optionsRadios" id="draftType4" value="4">
+					Auction PPR
+				</label>
+			</div>
+		</div>
+    </form>
+    <div class="modal-footer" align="right">
+		<div class="control-group">
+			<div class="controls">
+				<button type="submit" class="btn btn-primary">Create Room</button>
+			</div>
+		</div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+	$("#newUserLink").click(function(){
+		$(stdOptions).hide();
+		$(newUserLink).hide();
+		$(privateOptions).show();
+		$(alreadyUserLink).show();
+	});
+
+	$('#myModal').on('show', function () {	  
+		$(stdOptions).show();
+		$(newUserLink).show();
+		$(privateOptions).hide();
+		$(alreadyUserLink).hide();
+	})
+	$('#alreadyUserLink').click(function() {	  
+		$(stdOptions).show();
+		$(newUserLink).show();
+		$(privateOptions).hide();
+		$(alreadyUserLink).hide();
+	})
+});
+</script>
+<!-- ###### Modal login end ###### -->
+{% endif %}
