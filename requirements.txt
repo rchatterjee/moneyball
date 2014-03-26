@@ -9,7 +9,6 @@ dj-static==0.0.5
 django-admin-bootstrapped==1.6.4
 django-mysqlpool==0.1-9
 django-social-auth==0.7.28
-django-toolbelt==0.0.1
 ez-setup==0.9
 gunicorn==18.0
 honcho==0.5.0
@@ -18,7 +17,6 @@ ipaddr==2.1.11
 ipython==1.2.1
 oauth2==1.5.211
 oauthlib==0.6.1
-psycopg2==2.5.2
 pystache==0.5.3
 python-openid==2.2.5
 python-social-auth==0.1.22
