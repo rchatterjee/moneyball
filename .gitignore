@@ -3,4 +3,3 @@ venv
 *.pyc
 staticfiles
 .idea/*
-html/*
