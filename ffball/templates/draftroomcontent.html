@@ -1,1 +1,325 @@
 {% load static from staticfiles %}
+
+<script src="{% static 'bootstrap/js/jquery.slimscroll.min.js' %}"></script>	
+<br>
+<center>
+	<table width=1000>
+		<tr>
+			<td Width=300 valign=top >
+				<div id="listOfRooms" >
+					<font color="#999999">
+					<table width=100% class="table-hover">
+						<tr>
+							<td>
+								&nbsp;
+							</td>
+							<td>
+								<h4>#1</h4>
+							</td>
+							<td>					
+								<img src="{% static 'img/tiger.jpg' %}" width=50 class="img-rounded">
+							</td>
+							<td >			
+								<h4>Royal Bengal Tiger </h4>		
+							</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;
+							</td>
+							<td>
+								<h4>#2</h4>
+							</td>
+							<td>					
+								<img src="{% static 'img/helmets/1.jpg' %}" width=50 class="img-rounded">
+							</td>
+							<td >			
+								<h4>Jae Lee</h4>		
+							</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;
+							</td>
+							<td>
+								<h4>#3</h4>
+							</td>
+							<td>					
+								<img src="{% static 'img/helmets/2.jpg' %}" width=50 class="img-rounded">
+							</td>
+							<td >			
+								<h4>Another Packer Fan</h4>		
+							</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;
+							</td>
+							<td>
+								<h4>#4</h4>
+							</td>
+							<td>					
+								<img src="{% static 'img/helmets/3.jpg' %}" width=50 class="img-rounded">
+							</td>
+							<td >			
+								<h4>Roman Army</h4>		
+							</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;
+							</td>
+							<td>
+								<h4>#5</h4>
+							</td>
+							<td>					
+								<img src="{% static 'img/helmets/4.jpg' %}" width=50 class="img-rounded">
+							</td>
+							<td >			
+								<h4>ChrisZ</h4>		
+							</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;
+							</td>
+							<td>
+								<h4>#6</h4>
+							</td>
+							<td>					
+								<img src="{% static 'img/helmets/5.jpg' %}" width=50 class="img-rounded">
+							</td>
+							<td >			
+								<h4>Knight Rider</h4>		
+							</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;
+							</td>
+							<td>
+								<h4>#7</h4>
+							</td>
+							<td>					
+								<img src="{% static 'img/helmets/6.jpg' %}" width=50 class="img-rounded">
+							</td>
+							<td >			
+								<h4>Taco</h4>		
+							</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;
+							</td>
+							<td>
+								<h4>#8</h4>
+							</td>
+							<td>					
+								<img src="{% static 'img/helmets/7.jpg' %}" width=50 class="img-rounded">
+							</td>
+							<td >			
+								<h4>Pay Me</h4>		
+							</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;
+							</td>
+							<td>
+								<h4>#9</h4>
+							</td>
+							<td>					
+								<img src="{% static 'img/helmets/8.jpg' %}" width=50 class="img-rounded">
+							</td>
+							<td >			
+								<h4>$$$Baller</h4>		
+							</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;
+							</td>
+							<td>
+								<h4>#10</h4>
+							</td>
+							<td>					
+								<img src="{% static 'img/helmets/9.jpg' %}" width=50 class="img-rounded">
+							</td>
+							<td >			
+								<h4>Another Team</h4>		
+							</td>
+						</tr>
+					</table>
+					</font>
+				</div>
+			</td>
+			<td valign=top width=700>			
+				<font color="#999999">
+				<table width=100%>
+					<tr >
+						<td align=right>
+							<img src="{% static 'img/clock.jpg' %}" class="img-rounded">
+							<font color="#ffffff">
+								<br>
+								Draft starts in 9 min
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<div class="accordion" id="accordion3">
+						  <div class="accordion-group">
+							<div class="accordion-heading">
+							  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#leftcollapseOne">
+								<h4>General Draft Settings</h4>
+							  </a>
+							</div>
+							<div id="leftcollapseOne" class="accordion-body collapse in">
+							  <div class="accordion-inner">
+								<form class="form-horizontal">
+									<br>
+									<div id="stdLoginCtl">
+										<div class="control-group">
+											<label class="control-label" for="inputEmail">Email</label>
+											<div class="controls">
+												<input type="text" id="inputEmail" placeholder="Email">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputPassword">Password</label>
+											<div class="controls">
+												<input type="password" id="inputPassword" placeholder="Password">
+											</div>
+										</div>
+										<div class="control-group">
+											<div class="controls">
+												<label class="checkbox">
+													<input type="checkbox"> <i>Remember me</i>
+												</label>
+											</div>
+										</div>
+										<div class="control-group">
+											<div class="controls">
+												<button type="submit" class="btn btn-primary">Sign in</button>
+											</div>
+										</div>
+									</div>
+									<div id="newUserCtl">
+										<div class="control-group">
+											<label class="control-label" for="inputEmail">Email</label>
+											<div class="controls">
+												<input type="text" id="inputEmail" placeholder="Email">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputPassword">Password</label>
+											<div class="controls">
+												<input type="password" id="inputPassword" placeholder="Password">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputPassword">Retype Password</label>
+											<div class="controls">
+												<input type="password" id="inputPassword" placeholder="Password">
+											</div>
+										</div>
+										<div class="control-group">
+											<div class="controls">
+												<button type="submit" class="btn btn-primary">Sign Up</button>
+											</div>
+										</div>
+									</div>
+								</form>								
+							  </div>
+							</div>
+						  </div>
+						  <div class="accordion-group">
+							<div class="accordion-heading">
+							  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#leftcollapseTwo">
+								<h4>Advanced Settings</h4>
+							  </a>
+							</div>
+							<div id="leftcollapseTwo" class="accordion-body collapse">
+							  <div class="accordion-inner">
+								<form class="form-horizontal">
+									<br>
+									<div id="stdLoginCtl">
+										<div class="control-group">
+											<label class="control-label" for="inputEmail">Email</label>
+											<div class="controls">
+												<input type="text" id="inputEmail" placeholder="Email">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputPassword">Password</label>
+											<div class="controls">
+												<input type="password" id="inputPassword" placeholder="Password">
+											</div>
+										</div>
+										<div class="control-group">
+											<div class="controls">
+												<label class="checkbox">
+													<input type="checkbox"> <i>Remember me</i>
+												</label>
+											</div>
+										</div>
+										<div class="control-group">
+											<div class="controls">
+												<button type="submit" class="btn btn-primary">Sign in</button>
+											</div>
+										</div>
+									</div>
+									<div id="newUserCtl">
+										<div class="control-group">
+											<label class="control-label" for="inputEmail">Email</label>
+											<div class="controls">
+												<input type="text" id="inputEmail" placeholder="Email">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputPassword">Password</label>
+											<div class="controls">
+												<input type="password" id="inputPassword" placeholder="Password">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="inputPassword">Retype Password</label>
+											<div class="controls">
+												<input type="password" id="inputPassword" placeholder="Password">
+											</div>
+										</div>
+										<div class="control-group">
+											<div class="controls">
+												<button type="submit" class="btn btn-primary">Sign Up</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							  </div>
+							</div>
+						  </div>
+						</div>
+						</td>
+					</tr>
+				</table>
+				</font>
+			</td>
+		</tr>
+	</table>
+</center>
+
+
+<script>
+$(function(){
+    $('#listOfRooms').slimScroll({
+		height: '600px',
+		width: 'auto',
+		alwaysVisible: false,
+		railVisible: true,
+		size: '9px',
+		color: '#ffffff',	
+		railColor: '#999999',	
+		disableFadeOut: false
+    });
+});
+</script>
