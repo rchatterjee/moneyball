@@ -44,6 +44,8 @@ INSTALLED_APPS = (
     'team',
     'app',
     'ffball',
+    'league', # League page structure
+    'data',   # JSON-based data API for AJAX
 #    'yahoo'
 #    'check_constraints'
 )
@@ -116,7 +118,7 @@ WSGI_APPLICATION = 'ffball.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'test': {
         'ENGINE': 'django_mysqlpool.backends.mysqlpool',
         'NAME'  : 'srgdb',
         'USER'  : 'saikat',
@@ -126,7 +128,7 @@ DATABASES = {
 #            'secure-auth': False,
 #            }
         },
-    'test': {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME'  : os.path.join(BASE_DIR, 'db.sqlite3'),
         },

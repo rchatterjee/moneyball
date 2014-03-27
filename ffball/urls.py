@@ -20,6 +20,8 @@ urlpatterns = patterns('',
     url(r'^draftroom/', ffball.views.draftroom, name='draftroom'),
     url(r'^mock/', ffball.views.mock, name='mock'),
     url(r'^settings/', ffball.views.settings, name='settings'),
+    url(r'^league/', include('league.urls')),
+    url(r'^data/', include('data.urls')),
 #    url(r'^login/(\w*)', yahoo.views.login, name='login'),  
 #    url(r'^loginall/',   yahoo.views.loginall, name='loginall'),
 )
