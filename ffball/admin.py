@@ -1,6 +1,5 @@
 from django.contrib import admin
-from historical_data_models import *
-import league
+from data.models import *
 
 admin.site.register(Team)
 admin.site.register(Stat)

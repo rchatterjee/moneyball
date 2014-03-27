@@ -5,7 +5,7 @@ from django.contrib.auth import logout
 from models import *
 import pdb
 import pprint
-from historical_data_models import *
+from data.models import *
 import app.helpers
 import json
 #@render_to_response('teams.html')
