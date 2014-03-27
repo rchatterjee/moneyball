@@ -5,6 +5,10 @@ class Vendor(m.Model):
     name    = m.CharField(max_length=40, blank=False)
     website = m.CharField(max_length=250, blank=False)
 
+
+v = Vendor('fantasyfucker', 'http://fantasyolympus.com')
+v.save()
+
 FLEX = [ 'RB', 'WR', 'TE' ]
 TEAM_DEFENSE = ['D', 'ST']
 DRAFT_TYPE_CHOICES = (
