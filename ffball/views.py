@@ -50,11 +50,11 @@ def login_session(request):
 def teams(request):
     all_teams = [] #Team.objects.all():
     template  = loader.get_template('teams.html')
-    context   = Context( {
-            'teams' : all_teams
+    context   = Context({
+            'teams': all_teams
             })
     return HttpResponse(template.render(context))
-	
+
 
 def draft(request):
     context = app.helpers.user_template_dict(request)

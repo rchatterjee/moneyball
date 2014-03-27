@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'social_auth',
 #    'social.apps.django_app.default',
+    'team',
     'app',
     'ffball',
 #    'yahoo'

@@ -9,7 +9,7 @@ from django.db import models as m
 from league_settings_model import League_Settings
 import historical_data_models
 #from check_constraints import Check, CheckConstraintMetaClass
-from django.contrib.auth.models import User
+from team.models import Team
 
 PLAYER_STATUS_COICES = (
     ('A', 'active'),
@@ -42,14 +42,6 @@ class League(m.Model):
     # settings 
     settings = m.ForeignKey(League_Settings)
 
-class Team(m.Model):
-    league         = m.ForeignKey(League)
-    user           = m.ForeignKey(User) 
-    vendor_team_id = m.CharField(max_length=30, blank=True)
-    user_id        = m.CharField(max_length=40, blank=False)
-    team_name      = m.CharField(max_length=100, blank=False)
-    waiver_priority= m.IntegerField(null=True)
-    division       = m.CharField(max_length=10,null=True)
 
 class Player(m.Model):
     roster_info = m.OneToOneField(historical_data_models.Player)
