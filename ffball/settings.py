@@ -43,7 +43,8 @@ INSTALLED_APPS = (
 #    'social.apps.django_app.default',
     'app',
     'ffball',
-    'league',
+    'league', # League page structure
+    'data',   # JSON-based data API for AJAX
 #    'yahoo'
 #    'check_constraints'
 )
