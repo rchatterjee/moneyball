@@ -6,6 +6,8 @@ from models import *
 import pdb
 import pprint
 from historical_data_models import *
+from league.models import *
+from data.models import *
 import app.helpers
 import json
 #@render_to_response('teams.html')
@@ -62,9 +64,13 @@ def draft(request):
     return render(request, 'draft.html', context)
 	
 def settings(request):
-    context = app.helpers.user_template_dict(request)
-    context['next_page'] = request.get_full_path
-    return render(request, 'settings.html', context)
+	playerList = Player.objects.filter(pid__startswith='ARI')
+	playerList=playerList.filter(position__startswith='Q')
+	context = app.helpers.user_template_dict(request)
+	context.update({'next_page' : request.get_full_path,
+				'playerList': playerList})
+	#{"data": pprint.pformat(request.session.items())})
+	return render(request, 'settings.html', context)
 
 
 def home(request):
@@ -79,7 +85,6 @@ def home(request):
     else:
 	return log_out(request)
 
-	
 	
 def draftroom(request):
     context = app.helpers.user_template_dict(request)

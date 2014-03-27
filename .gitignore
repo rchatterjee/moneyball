@@ -4,3 +4,11 @@ venv
 staticfiles
 .idea/*
 db.sqlite3
+ffball/templates/.idea/.name
+ffball/templates/.idea/encodings.xml
+ffball/templates/.idea/misc.xml
+ffball/templates/.idea/modules.xml
+ffball/templates/.idea/scopes/scope_settings.xml
+ffball/templates/.idea/templates.iml
+ffball/templates/.idea/vcs.xml
+ffball/templates/.idea/workspace.xml
