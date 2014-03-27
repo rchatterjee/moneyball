@@ -4,27 +4,6 @@ import re
 from django.contrib.auth.models import User
 from team.models import Team
 
-redirect_map = { '' : index,
-            'create/' : create,
-             'delete/' : delete,
-             'edit/'   : edit
-}
-
-def redirect(request, action):
-    try:
-        if not request.user.is_authenticated():
-            raise KeyError;
-    except KeyError:
-        return HttpResponse("<error>Sorry! You dont look like an authorised user for this action.<error>")
-    try:
-        return redirect_map[action] ( request)
-    except KeyError:
-        m = re.match(r'\d+')
-        if m:
-            id = int(m.group(1))
-            return desc(request, id)
-    return HttpResponse("<error>Page Not Found.<error>")
-
 
 def index(request):
     context = { 'teams': request.user.Teams }
@@ -72,5 +51,30 @@ def edit(request):
 
 
 def desc(request, _id):
-    if _id in request.user.team_set.all()
-    return
+    if _id in request.user.team_set():
+        context = vars(request.user.team_set())
+        return HttpResponse(context)
+    return HttpResponse("OMG! this is you %s", str(request.user))
+
+
+redirect_map = { '' : index,
+            'create' : create,
+             'delete' : delete,
+             'edit'   : edit
+}
+
+def redirect(request, action):
+    try:
+        if not request.user.is_authenticated():
+            raise KeyError;
+    except KeyError:
+        return HttpResponse("<error>Sorry! You dont look like an authorised user for this action.<error>")
+    try:
+        action = action.strip('/')
+        return redirect_map[action] ( request)
+    except KeyError:
+        m = re.match(r'(?P<id>\d+)', action)
+        if m:
+            id = int(m.group('id'))
+            return desc(request, id)
+    return HttpResponse("<error>Page Not Found.<error>")
