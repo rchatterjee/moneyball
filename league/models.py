@@ -1,9 +1,15 @@
 from __future__ import unicode_literals
 from django.db import models as m
+from django.contrib.auth.models import User
+from django.utils import timezone
 
 class Vendor(m.Model):
     name    = m.CharField(max_length=40, blank=False)
     website = m.CharField(max_length=250, blank=False)
+
+    def __str__(self):
+        return "%s - %s" % ( self.name, self.website)
+
 
 
 FLEX = [ 'RB', 'WR', 'TE' ]
@@ -14,13 +20,13 @@ DRAFT_TYPE_CHOICES = (
 )
 
 class League_Settings(m.Model):
-    number_of_teams = m.IntegerField(blank=True,  null=True)
+    number_of_teams = m.IntegerField(blank=True,  null=True, default=12)
     scoreing_type   = m.CharField(max_length=30, default="Head to Head Points")
 
     # Roster Settings
-    size     = m.IntegerField()
-    starters = m.IntegerField()
-    benched  = m.IntegerField()
+    size     = m.IntegerField(default=12)
+    starters = m.IntegerField(default=16)
+    benched  = m.IntegerField(default=9)
 
     count_QB_min=m.IntegerField(default=1)
     count_QB_max=m.IntegerField(default=4)
@@ -86,12 +92,12 @@ class League_Settings(m.Model):
     lineup_changes = m.CharField("Lineup Changes", max_length=50, default="Lock Individually at Scheduled Gametime")
     player_acquisition_system = m.CharField("Player Acquisition System", max_length=20, default="Waivers")
     season_acquisition_limit  = m.CharField("Season Acquisition Limit",  max_length=20, default="No Limit")
-    waiver_period = m.CharField(max_length=20, verbose_name= "Waiver Period", default="1 Day")
-    waiver_order  = m.CharField(max_length=20, verbose_name= "Waiver Order", default ="Move to last after claim")
+    waiver_period = m.CharField(max_length=20, verbose_name="Waiver Period", default="1 Day")
+    waiver_order  = m.CharField(max_length=40, verbose_name="Waiver Order", default="Move to last after claim")
 
     #TRADE RULES
     trade_limit = m.CharField(max_length=20, verbose_name= "Trade Limit", default="No Limit")
-    trade_deadline = m.DateTimeField("Trade Deadline")
+    trade_deadline = m.DateTimeField("Trade Deadline", default=timezone.now, blank=True)
     trade_review_period = m.CharField(max_length=20, verbose_name= "Trade Review Period", default="2 Days")
     votes_required_to_veto_trade = m.IntegerField("Votes Required to Veto Trade", default=4)
 
@@ -115,16 +121,23 @@ class League_Settings(m.Model):
     playoff_home_field_advantage = m.BooleanField(default=False)
 
     # DRAFT SETTINGS (Edit)
-    draft_type = m.CharField(max_length=1, choices=DRAFT_TYPE_CHOICES,
-                             default = 'S')
-    draft_date = m.DateTimeField("Draft Date")
+    draft_type = m.CharField(max_length=1, choices=DRAFT_TYPE_CHOICES, default = 'S')
+    draft_date = m.DateTimeField("Draft Date", default=timezone.now)
     seconds_per_pick = m.IntegerField(default=120)
     draft_order = m.CharField(max_length=50, default="Randomized 1 Hour Prior to DraftTime")
+    
 
+    def __str__(self):
+        self.save()
+        return "League - %d" % (self.id)
 
 class League(m.Model):
     name   = m.CharField(max_length=100, blank=False)
     vendor = m.ForeignKey(Vendor)
     league_id = m.CharField(max_length=50, blank=True)
+    league_owner    = m.ForeignKey(User)
     settings = m.ForeignKey(League_Settings)
+
+    def __str__(self):
+        return "%s - %s (%s)" % ( self.name, self.vendor, self.league_id)
 

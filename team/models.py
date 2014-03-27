@@ -10,3 +10,7 @@ class Team(m.Model):
     team_name      = m.CharField(max_length=100, blank=False)
     waiver_priority= m.IntegerField(null=True)
     division       = m.CharField(max_length=10,null=True)
+    is_commisionar = m.BooleanField(default=False)
+
+    def __str__(self):
+        return "%s - %s" % ( self.team_name, self.league )

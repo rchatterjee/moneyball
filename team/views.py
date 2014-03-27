@@ -6,7 +6,7 @@ from team.models import Team
 
 
 def index(request):
-    context = { 'teams': request.user.Teams }
+    context = { 'teams': Team.objects.filter(user=request.user) }
     return HttpResponse("<h1>Teams:<h1>%s" % context['teams'])
     #return render(request, 'views.html', context);
 
@@ -27,7 +27,7 @@ def create(request):
         T = Team.create(league_id, user, vendor_team_id, vendor_user_id, team_name,
                         waiver_priority, division)
         T.save()
-        h = HttpResponse("<b>Succefully created the team %s" % team_name)
+        h = HttpResponse("<b>Successfully created the team %s" % team_name)
         context = []
         return render(request, h, context)
     else:
@@ -51,10 +51,11 @@ def edit(request):
 
 
 def desc(request, _id):
-    if _id in request.user.team_set():
-        context = vars(request.user.team_set())
-        return HttpResponse(context)
-    return HttpResponse("OMG! this is you %s", str(request.user))
+    t = Team.objects.filter(user=request.user, id=_id)
+    if t:
+        context = {'team': t}
+        return HttpResponse(context['team'])
+    return HttpResponse("OMG! this is you %s" % str(request.user))
 
 
 redirect_map = { '' : index,
@@ -68,10 +69,10 @@ def redirect(request, action):
         if not request.user.is_authenticated():
             raise KeyError;
     except KeyError:
-        return HttpResponse("<error>Sorry! You dont look like an authorised user for this action.<error>")
+        return HttpResponse("<error>Sorry! You don't look like an authorised user for this action.<error>")
     try:
         action = action.strip('/')
-        return redirect_map[action] ( request)
+        return redirect_map[action](request)
     except KeyError:
         m = re.match(r'(?P<id>\d+)', action)
         if m:

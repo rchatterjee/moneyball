@@ -77,10 +77,13 @@ def settings(request):
 
 def home(request):
     context = app.helpers.user_template_dict(request)
-    context['next_page'] = request.get_full_path
-    context['providers'] = ['facebook', 'yahoo', 'google', 'github']
+    if context:
+        context['next_page'] = request.get_full_path
+        context['providers'] = ['facebook', 'yahoo', 'google', 'github']
     #context['debug'] = pprint.pformat(request.session.items())
     #context['debug'] += '\n' + \
     #        pprint.pformat(app.helpers.user_template_dict(request))
-    return render(request, 'index.html', context)
+        return render(request, 'index.html', context)
+    else:
+	return log_out(request)
 
