@@ -46,6 +46,8 @@ INSTALLED_APPS = (
     'ffball',
     'league', # League page structure
     'data',   # JSON-based data API for AJAX
+    'draft',
+    'settings'
 #    'yahoo'
 #    'check_constraints'
 )

@@ -6,7 +6,7 @@ from django.db.models import Count
 from models import *
 import pdb
 import pprint
-from historical_data_models import *
+from data.models import *
 from league.models import *
 from team.models import *
 from data.models import *
@@ -50,29 +50,6 @@ def login_session(request):
     # TODO: check if there is no avatar, then add a default silhouette.
     request.session['user'] = user
     return HttpResponseRedirect('/complete/' + user['backend'])
-
-def teams(request):
-    all_teams = [] #Team.objects.all():
-    template  = loader.get_template('teams.html')
-    context   = Context({
-            'teams': all_teams
-            })
-    return HttpResponse(template.render(context))
-
-
-def draft(request):
-    context = app.helpers.user_template_dict(request)
-    context['next_page'] = request.get_full_path
-    return render(request, 'draft.html', context)
-	
-def settings(request):
-	playerList = Player.objects.filter(pid__startswith='ARI')
-	playerList=playerList.filter(position__startswith='Q')
-	context = app.helpers.user_template_dict(request)
-	context.update({'next_page' : request.get_full_path,
-				'playerList': playerList})
-	#{"data": pprint.pformat(request.session.items())})
-	return render(request, 'settings.html', context)
 
 
 def home(request):
