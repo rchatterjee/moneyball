@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import re
 from django.contrib.auth.models import User
+from team.models import Team
 
 redirect_map = { '' : index,
             'create/' : create,
@@ -32,16 +33,44 @@ def index(request):
 
 
 def create(request):
-    
-    request.user.Team.create()
-    pass
+    user_id = request.user.id
+    error = ''
+    league_id         = request.POST.get('league_id', None)
+    if not league_id or not league_id.isdigit():
+        error = "%s\nLeagueId is not in correct format or not present." % error
+    user          = request.user
+    vendor_team_id = request.POST.get('vender_team_id', None)
+    vendor_user_id = request.POST.get('vendor_user_id', None)
+    team_name      = request.POST.get('team_name', '')
+    waiver_priority= request.POST.get('waiver_priority', None)
+    division       = request.POST.get('division', None)
+    if not error:
+        T = Team.create(league_id, user, vendor_team_id, vendor_user_id, team_name,
+                        waiver_priority, division)
+        T.save()
+        h = HttpResponse("<b>Succefully created the team %s" % team_name)
+        context = []
+        return render(request, h, context)
+    else:
+        return HttpResponse("<error>ERRORS! %s.<error>" % error)
 
 def delete(request):
-    pass
+    t_id = request.POST.get('id', 0)
+    team = request.user.Teams.all(id=t_id)
+    if request.user.is_authenticated() and team:
+        team.delete()
+        h = HttpResponse("<b>Successfully deleted the team %s" % team_name)
+        context = []
+        return render(request, h, context)
+    else:
+        return HttpResponse("<error>Sorry Dude! Tumse na ho payega!!.<error>")
+
+
 
 def edit(request):
     pass
 
 
-def desc(request, id):
-    pass
+def desc(request, _id):
+    if _id in request.user.team_set.all()
+    return

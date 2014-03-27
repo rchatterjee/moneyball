@@ -1,7 +1,7 @@
 from django.contrib import admin
-from ffball import models as ffm
+from historical_data_models import *
 
-admin.site.register(ffm.Team)
-admin.site.register(ffm.Stat)
-admin.site.register(ffm.Player)
+admin.site.register(Team)
+admin.site.register(Stat)
+admin.site.register(Player)
 
