@@ -2,5 +2,5 @@
 
 set -x
 rm -rf db.sqlite3
-python manage.py syncdb --noinput
+(cd ..; python manage.py syncdb --noinput)
 ./dump2sqlite.sh mysql_sqlite3.sql | sqlite3 db.sqlite3

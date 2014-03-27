@@ -9,5 +9,5 @@ urlpatterns = patterns('',
     url(r'^proteam/(?P<team_id>\w+)/players$',
         tviews.players, name='proteam.players'),
     url(r'^proplayer/$', pviews.index, name='index'),
-    url(r'^proplayer/(?P<player_id>\d+)/$', pviews.info, name='index'),
+    url(r'^proplayer/(?P<player_id>\w+)/$', pviews.info, name='index'),
 )
