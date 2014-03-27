@@ -51,6 +51,7 @@ def edit(request):
 
 
 def desc(request, _id):
+<<<<<<< HEAD
     if _id in request.user.team_set():
         context = vars(request.user.team_set())
         return HttpResponse(context)
