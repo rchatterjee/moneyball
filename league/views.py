@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import Context, loader
 from django.shortcuts import render, render_to_response
 from league.models import *
+from django.db.models import Count
 import app
 import string, random
 
@@ -11,8 +12,12 @@ def index(request):
     if request.method == 'POST':
         return HttpResponseRedirect('create/')
     context = app.helpers.user_template_dict(request)
+    if not context: context = {}
     context['next_page'] = request.get_full_path
     context['providers'] = ['facebook', 'yahoo', 'google', 'github']
+    draftList = League.objects.filter(vendor__name = 'fantasyfans')
+    draftList = draftList.annotate(teamCount=Count('team'))
+    context['draftList'] = draftList
     return render(request, 'mock.html', context)
 
 
