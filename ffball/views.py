@@ -2,11 +2,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import Context, loader
 from django.shortcuts import render, render_to_response
 from django.contrib.auth import logout
+from django.db.models import Count
 from models import *
 import pdb
 import pprint
 from historical_data_models import *
 from league.models import *
+from team.models import *
 from data.models import *
 import app.helpers
 import json
@@ -81,19 +83,4 @@ def home(request):
     #context['debug'] += '\n' + \
     #        pprint.pformat(app.helpers.user_template_dict(request))
     return render(request, 'index.html', context)
-
-	
-def mock(request):
-	draftList = League.objects.filter(vendor__name = 'uwbadgers')
-	context = app.helpers.user_template_dict(request)
-	context['next_page'] = request.get_full_path
-	context['providers'] = ['facebook', 'yahoo', 'google', 'github']
-	context['draftList'] = draftList
-	return render(request, 'mock.html', context)
-	
-	
-def draftroom(request):
-    context = app.helpers.user_template_dict(request)
-    context['next_page'] = request.get_full_path
-    return render(request, 'draftroom.html', context)
 

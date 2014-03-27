@@ -15,3 +15,18 @@ def league(request, league_id):
 
 def join(request, league_id):
     return HttpResponse("Join league id (%s)." % league_id)
+
+def mock(request):
+    draftList = League.objects.filter(vendor__name = 'uwbadgers')
+    draftList = draftList.annotate(teamCount=Count('team'))
+    context = app.helpers.user_template_dict(request)
+    context['next_page'] = request.get_full_path
+    context['providers'] = ['facebook', 'yahoo', 'google', 'github']
+    context['draftList'] = draftList
+    return render(request, 'mock.html', context)
+
+
+def draftroom(request):
+    context = app.helpers.user_template_dict(request)
+    context['next_page'] = request.get_full_path
+    return render(request, 'draftroom.html', context)
