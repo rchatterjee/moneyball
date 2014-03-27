@@ -3,7 +3,10 @@ def user_template_dict(request):
     r[u'logged_in'] = is_logged_in(request)
     if not r[u'logged_in']:
         return r
-    r[u'user'] = request.session['user']
+    try:
+        r[u'user'] = request.session['user']
+    except KeyError:
+        return None;
     return r
 
 
