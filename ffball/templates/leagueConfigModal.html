@@ -6,15 +6,9 @@
         <h3 id="myModalLabel">Create Mock Draft Room</h3>
     </div>
     <form class="form-horizontal" action="/league/" method="post">
-      {% csrf_token %}
+        {% csrf_token %}
         <br>
 		<div id="stdOptions">
-			<!--div class="control-group">
-				<label class="control-label" for="leagueID">League ID</label>
-				<div class="controls" >
-					<label class="control-label" id="leagueID">[2344423]</label>
-				</div>
-			</div-->
 			<div class="control-group">
 				<label class="control-label" for="leagueName">Name</label>
 				<div class="controls">
@@ -38,55 +32,58 @@
 			<label class="control-label" for="teamCount">Teams</label>
 			<div class="controls " id="teamCount">
 				<label class="radio inline">
-				  <input type="radio" name="optionsRadios" id="team6" value="6" >
+				  <input type="radio" name="teamCountName" id="team6" value="6" >
 					6
 				</label>
 				<label class="radio inline">
-				  <input type="radio" name="optionsRadios" id="team8" value="8" >
+				  <input type="radio" name="teamCountName" id="team8" value="8" >
 					8
 				</label>
 				<label class="radio inline">
-				  <input type="radio" name="optionsRadios" id="team10" value="10" checked>
+				  <input type="radio" name="teamCountName" id="team10" value="10" checked>
 					10
 				</label>
 				<label class="radio inline">
-				  <input type="radio" name="optionsRadios" id="team12" value="12">
+				  <input type="radio" name="teamCountName" id="team12" value="12">
 					12
 				</label>
 				<label class="radio inline">
-				  <input type="radio" name="optionsRadios" id="team14" value="14">
+				  <input type="radio" name="teamCountName" id="team14" value="14">
 					14
 				</label>
 			</div>
 		</div>
-		<!--div class="control-group" align=left>
-			<label class="control-label" for="draftType">Draft Type</label>
-			<div class="controls" id="draftType">
-				<label class="radio">
-				  <input type="radio" name="optionsRadios" id="draftType1" value="1" checked>
+		<div class="control-group" align=left>
+			<label class="control-label" for="LeagueType">Draft Type</label>
+			<div class="controls" id="LeagueType">
+				<label class="radio inline">
+				  <input type="radio" name="leagueTypeName" id="LeagueType1" value="1" checked>
 					Standard
 				</label>
-				<label class="radio">
-				  <input type="radio" name="optionsRadios" id="draftType2" value="2">
-					Standard PPR
+				<label class="radio inline">
+				  <input type="radio" name="leagueTypeName" id="LeagueType2" value="2">
+					PPR
 				</label>
-				<label class="radio">
-				  <input type="radio" name="optionsRadios" id="draftType3" value="3">
-					Auction
-				</label>
-				<label class="radio">
-				  <input type="radio" name="optionsRadios" id="draftType4" value="4">
-					Auction PPR
-				</label>
-			</div>
-		</div-->
-    <div class="modal-footer" align="right">
-		<div class="control-group">
-			<div class="controls">
-				<button type="submit" class="btn btn-primary" formmethod="post">Create Room</button>
 			</div>
 		</div>
-    </div>
+		<div class="control-group" align=left>
+			<label class="control-label" for="draftType">Draft Type</label>
+			<div class="controls" id="draftType">
+				<label class="radio inline">
+				  <input type="radio" name="draftTypeName" id="draftType1" value="1" checked>
+					Snake
+				</label>
+				<label class="radio inline">
+				  <input type="radio" name="draftTypeName" id="draftType2" value="2">
+                    Linear
+				</label>
+			</div>
+		</div>
+        <div class="modal-footer" align="right">
+            <div class="controls">
+                <button type="submit" class="btn btn-primary" formmethod="post">Create Room</button>
+            </div>
+        </div>
     </form>
 </div>
 

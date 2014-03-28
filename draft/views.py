@@ -16,6 +16,7 @@ def joinleague(request, league_id):
 def mockdraft(request):
     draftList = League.objects.filter(vendor__name = 'fantasyfans')
     draftList = draftList.annotate(teamCount=Count('team'))
+    draftList = draftList.order_by('settings__draft_date','teamCount')
     context = app.helpers.user_template_dict(request)
     context['next_page'] = request.get_full_path
     context['providers'] = ['facebook', 'yahoo', 'google', 'github']
