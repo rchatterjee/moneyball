@@ -285,12 +285,20 @@
                                         <label class="control-label" for="pickTime">Pick Time</label>
                                         <div class="controls">
                                         {% if thisLeague.league_owner == me %}
-                                            <input type="text" id="lName" name="lName" value=" {{ thisLeague.settings.seconds_per_pick }} ">
+                                            <input type="text" id="pickTime" name="pickTime" value=" {{ thisLeague.settings.seconds_per_pick }} ">
                                         {% else %}
                                             <label class="control-label" id="pickTimeNE">{{ thisLeague.settings.seconds_per_pick }}</label>
                                         {% endif %}
                                         </div>
                                     </div>
+                                    {% if thisLeague.league_owner == me %}
+                                    <div class="control-group">
+                                         <div class="controls">
+                                            <button type="submit" class="btn btn-primary" formmethod="post">Save</button>
+                                            <button type="submit" class="btn btn-primary" formmethod="post">Reset</button>
+                                         </div>
+                                    </div>
+                                    {% endif %}
 								</form>								
 							  </div>
 							</div>
