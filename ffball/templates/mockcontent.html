@@ -71,7 +71,11 @@
 											</tr>
 											<tr>
 												<td>
-													<h4>&nbsp;{{ oneRoom.name }}&nbsp;&nbsp;&nbsp; <i>[{{ oneRoom.league_id }}]</i></h4>
+													<h4>&nbsp;{{ oneRoom.name }}&nbsp;&nbsp;&nbsp; <i>[{{ oneRoom.league_id }}]</i>
+                                                    {% if oneRoom.league_owner.username == "moneyball" %}
+                                                        <i class="icon-globe icon-black"></i>
+                                                    {% endif %}
+                                                    </h4>
 												</td>
 												<td width=50>
 													{{ oneRoom.settings.draft_type }}
