@@ -162,11 +162,25 @@
 				<table width=100%>
 					<tr >
 						<td align=right>
-							<img src="{% static 'img/clock.jpg' %}" class="img-rounded">
-							<font color="#ffffff">
-								<br>
-								Draft starts in 9 min
-							</font>
+                            <table width="100%">
+                                <tr>
+                                    <td>
+			                            <button class="btn btn-large btn-primary" type="button">Invite Others</button>
+                                    </td>
+                                    <td>
+                                        {% if thisLeague.league_owner == me %}
+                                        <button class="btn btn-large btn-primary" type="button">Delete Room</button>
+                                        {% endif %}
+                                    </td>
+                                    <td align="right">
+                                        <img src="{% static 'img/clock.jpg' %}" class="img-rounded">
+                                        <font color="#ffffff">
+                                            <br>
+                                            Draft starts in 9 min
+                                        </font>
+                                    </td>
+                                </tr>
+                            </table>
 						</td>
 					</tr>
 					<tr>
