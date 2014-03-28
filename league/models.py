@@ -130,7 +130,7 @@ class League_Settings(m.Model):
     draft_date = m.DateTimeField("Draft Date", default=timezone.now)
     seconds_per_pick = m.IntegerField(default=120)
     draft_order = m.CharField(max_length=50, default="Randomized 1 Hour Prior to DraftTime")
-    
+    is_draft_done = m.IntegerField(default=0)
 
     def __str__(self):
         self.save()
@@ -145,6 +145,6 @@ class League(m.Model):
     settings = m.ForeignKey(League_Settings)
 
     def __str__(self):
-        return str(self.__dict__)
-#return "%s - %s (%s)" % ( self.name, self.vendor, self.league_id)
+        #return str(self.__dict__)
+        return "%s - %s (%s)" % ( self.name, self.vendor, self.league_id)
 
