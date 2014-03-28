@@ -12,18 +12,18 @@
 				<div id="listOfRooms" >
 					<font color="#999999">
 					<table width=100% class="table-hover">
-                        {% for team in draft_order %}
-                       <tr name="teams" id="team-{{ forloop.counter }}" draggable="true">
+                       {% for team in draft_order %}
+                       <tr>
                            <td>
-                           <div draggable="true">
+                                &nbsp;
+                           </td>
+                           <td>
+                                <h4>#{{ forloop.counter }}</h4>
+                           </td>
+                           <td>
+                           <div  name="teams" id="team-{{ forloop.counter }}" draggable="true">
                                <table>
                                    <tr>
-                                       <td>
-                                            &nbsp;
-                                       </td>
-                                        <td>
-                                            <h4>#{{ forloop.counter }}</h4>
-                                        </td>
                                        {% if team %}
                                         <td>
                                             <img src="{% static 'img/tiger.jpg' %}" width=50 class="img-rounded">
@@ -44,7 +44,7 @@
                            </div>
                            </td>
                        </tr>
-                        {% endfor %}
+                       {% endfor %}
 
 					</table>
 					</font>
