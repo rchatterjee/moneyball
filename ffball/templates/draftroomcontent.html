@@ -185,10 +185,15 @@
                                     <div class="control-group">
                                         <label class="control-label" for="lName">League Name</label>
                                         <div class="controls">
+                                        {% if thisLeague.league_owner == me %}
                                             <input type="text" id="lName" name="lName" value="{{ thisLeague.name}}">
+                                        {% else %}
+                                            <label class="control-label" id="lNameNE">{{ thisLeague.name}}</label>
+                                        {% endif %}
                                         </div>
                                     </div>
                                     {% if thisLeague.password != "" %}
+                                    {% if thisLeague.league_owner == me %}
                                     <div class="control-group">
                                         <label class="control-label" for="entryKey">Secret Entry Key</label>
                                         <div class="controls">
@@ -196,9 +201,11 @@
                                         </div>
                                     </div>
                                     {% endif %}
+                                    {% endif %}
                                     <div class="control-group " align=left>
                                         <label class="control-label" for="teamCount">Teams</label>
                                         <div class="controls " id="teamCount">
+                                        {% if thisLeague.league_owner == me %}
                                             <label class="radio inline">
                                               <input type="radio" name="teamCountName" id="team6" value="6" {% if thisLeague.settings.number_of_teams == 6 %} checked {% endif %} >
                                                 6
@@ -219,11 +226,15 @@
                                               <input type="radio" name="teamCountName" id="team14" value="14" {% if thisLeague.settings.number_of_teams == 14 %} checked {% endif %}>
                                                 14
                                             </label>
+                                        {% else %}
+                                            <label class="control-label" id="teamCountNE">{{ thisLeague.settings.number_of_teams }}</label>
+                                        {% endif %}
                                         </div>
                                     </div>
                                     <div class="control-group" align=left>
                                         <label class="control-label" for="LeagueType">League Type</label>
                                         <div class="controls" id="LeagueType">
+                                        {% if thisLeague.league_owner == me %}
                                             <label class="radio inline">
                                               <input type="radio" name="leagueTypeName" id="LeagueType1" value="STD" {% if thisLeague.settings.league_type == 'STD' %} checked {% endif %}>
                                                 Standard
@@ -232,11 +243,15 @@
                                               <input type="radio" name="leagueTypeName" id="LeagueType2" value="PPR" {% if thisLeague.settings.league_type == 'PPR' %} checked {% endif %}>
                                                 PPR
                                             </label>
+                                        {% else %}
+                                            <label class="control-label" id="teamCountNE">{{ thisLeague.settings.league_type }}</label>
+                                        {% endif %}
                                         </div>
                                     </div>
                                     <div class="control-group" align=left>
                                         <label class="control-label" for="draftType">Draft Type</label>
                                         <div class="controls" id="draftType">
+                                        {% if thisLeague.league_owner == me %}
                                             <label class="radio inline">
                                               <input type="radio" name="draftTypeName" id="draftType1" value="S" {% if thisLeague.settings.draft_type == 'S' %} checked {% endif %}>
                                               Snake
@@ -245,11 +260,15 @@
                                               <input type="radio" name="draftTypeName" id="draftType2" value="L" {% if thisLeague.settings.draft_type == 'L' %} checked {% endif %}>
                                               Linear
                                             </label>
+                                        {% else %}
+                                            <label class="control-label" id="teamCountNE">{{ thisLeague.settings.draft_type }}</label>
+                                        {% endif %}
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label" for="draftTime">Draft Time</label>
                                         <div class="controls">
+                                        {% if thisLeague.league_owner == me %}
                                             <div id="draftTime" class="input-append">
                                                 <input name="draftDateName" data-format="yyyy-MM-dd HH:MM:ss" type="text" value="{{ thisLeague.settings.draft_date }}"></input>
                                                 <span class="add-on">
@@ -257,6 +276,19 @@
                                                   </i>
                                                 </span>
                                             </div>
+                                        {% else %}
+                                            <label class="control-label" id="teamCountNE">{{ thisLeague.settings.draft_date|date:"M-d H:m:s" }}</label>
+                                        {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="pickTime">Pick Time</label>
+                                        <div class="controls">
+                                        {% if thisLeague.league_owner == me %}
+                                            <input type="text" id="lName" name="lName" value=" {{ thisLeague.settings.seconds_per_pick }} ">
+                                        {% else %}
+                                            <label class="control-label" id="pickTimeNE">{{ thisLeague.settings.seconds_per_pick }}</label>
+                                        {% endif %}
                                         </div>
                                     </div>
 								</form>								
