@@ -14,7 +14,7 @@ def joinleague(request, league_id):
     return HttpResponse("Join league id (%s)." % league_id)
 
 def mockdraft(request):
-    draftList = League.objects.filter(vendor__name = 'fantasyfans')
+    draftList = League.objects.filter(vendor__name = 'moneyball')
     draftList = draftList.annotate(teamCount=Count('team'))
     context = app.helpers.user_template_dict(request)
     context['next_page'] = request.get_full_path
