@@ -35,9 +35,9 @@ def create(request):
         name = request.POST.get('leagueName', '');
         vendor = Vendor.objects.get(name='moneyball')
         password = request.POST.get('entryKey', '')
-        number_of_teams = request.POST.get('teamCount', 10)
-        league_type = request.POST.get('leagueType', 'STD')
-        draft_type = request.POST.get('draftType', 'S')
+        number_of_teams = request.POST.get('teamCountName', 10)
+        league_type = request.POST.get('leagueTypeName', 'STD')
+        draft_type = request.POST.get('draftTypeName', 'S')
         draft_date =request.POST.get('draftDateName', '')
 
         error = ''

@@ -46,7 +46,10 @@ def draft_room(request, draft_room_id):
         print request.POST
         d = request.POST.getlist('draft_order')
         set_draft_order(draft_room_id, d)
+    myLeague = League.objects.filter(league_id = draft_room_id)
     context['me'] = request.user
+    context['myLeague'] = myLeague
+    print myLeague
     return render(request, 'draftroom.html', context)
 
 

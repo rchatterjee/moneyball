@@ -1,5 +1,8 @@
 {% load static from staticfiles %}
 
+<link href="{% static 'bootstrap/css/bootstrap-datetimepicker.min.css' %}" rel="stylesheet" media="screen">
+<script src="{% static 'bootstrap/js/bootstrap-datetimepicker.min.js' %}"></script>
+
 <script src="{% static 'bootstrap/js/jquery.slimscroll.min.js' %}"></script>	
 <br>
 <center>
@@ -43,14 +46,29 @@
             </td>
 			<td valign=top width=700>			
 				<font color="#999999">
+                {% for thisLeague in myLeague %}
 				<table width=100%>
 					<tr >
 						<td align=right>
-							<img src="{% static 'img/clock.jpg' %}" class="img-rounded">
-							<font color="#ffffff">
-								<br>
-								Draft starts in 9 min
-							</font>
+                            <table width="100%">
+                                <tr>
+                                    <td>
+			                            <button class="btn btn-large btn-primary" type="button">Invite Others</button>
+                                    </td>
+                                    <td>
+                                        {% if thisLeague.league_owner == me %}
+                                        <button class="btn btn-large btn-primary" type="button">Delete Room</button>
+                                        {% endif %}
+                                    </td>
+                                    <td align="right">
+                                        <img src="{% static 'img/clock.jpg' %}" class="img-rounded">
+                                        <font color="#ffffff">
+                                            <br>
+                                            Draft starts in 9 min
+                                        </font>
+                                    </td>
+                                </tr>
+                            </table>
 						</td>
 					</tr>
 					<tr>
@@ -66,57 +84,123 @@
 							  <div class="accordion-inner">
 								<form class="form-horizontal">
 									<br>
-									<div id="stdLoginCtl">
-										<div class="control-group">
-											<label class="control-label" for="inputEmail">Email</label>
-											<div class="controls">
-												<input type="text" id="inputEmail" placeholder="Email">
-											</div>
-										</div>
-										<div class="control-group">
-											<label class="control-label" for="inputPassword">Password</label>
-											<div class="controls">
-												<input type="password" id="inputPassword" placeholder="Password">
-											</div>
-										</div>
-										<div class="control-group">
-											<div class="controls">
-												<label class="checkbox">
-													<input type="checkbox"> <i>Remember me</i>
-												</label>
-											</div>
-										</div>
-										<div class="control-group">
-											<div class="controls">
-												<button type="submit" class="btn btn-primary">Sign in</button>
-											</div>
-										</div>
-									</div>
-									<div id="newUserCtl">
-										<div class="control-group">
-											<label class="control-label" for="inputEmail">Email</label>
-											<div class="controls">
-												<input type="text" id="inputEmail" placeholder="Email">
-											</div>
-										</div>
-										<div class="control-group">
-											<label class="control-label" for="inputPassword">Password</label>
-											<div class="controls">
-												<input type="password" id="inputPassword" placeholder="Password">
-											</div>
-										</div>
-										<div class="control-group">
-											<label class="control-label" for="inputPassword">Retype Password</label>
-											<div class="controls">
-												<input type="password" id="inputPassword" placeholder="Password">
-											</div>
-										</div>
-										<div class="control-group">
-											<div class="controls">
-												<button type="submit" class="btn btn-primary">Sign Up</button>
-											</div>
-										</div>
-									</div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="lName">League Name</label>
+                                        <div class="controls">
+                                        {% if thisLeague.league_owner == me %}
+                                            <input type="text" id="lName" name="lName" value="{{ thisLeague.name}}">
+                                        {% else %}
+                                            <label class="control-label" id="lNameNE">{{ thisLeague.name}}</label>
+                                        {% endif %}
+                                        </div>
+                                    </div>
+                                    {% if thisLeague.password != "" %}
+                                    {% if thisLeague.league_owner == me %}
+                                    <div class="control-group">
+                                        <label class="control-label" for="entryKey">Secret Entry Key</label>
+                                        <div class="controls">
+                                            <input type="text" id="entryKey" name="entryKey" value="{{ thisLeague.password}}">
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    {% endif %}
+                                    <div class="control-group " align=left>
+                                        <label class="control-label" for="teamCount">Teams</label>
+                                        <div class="controls " id="teamCount">
+                                        {% if thisLeague.league_owner == me %}
+                                            <label class="radio inline">
+                                              <input type="radio" name="teamCountName" id="team6" value="6" {% if thisLeague.settings.number_of_teams == 6 %} checked {% endif %} >
+                                                6
+                                            </label>
+                                            <label class="radio inline">
+                                              <input type="radio" name="teamCountName" id="team8" value="8" {% if thisLeague.settings.number_of_teams == 8 %} checked {% endif %}>
+                                                8
+                                            </label>
+                                            <label class="radio inline">
+                                              <input type="radio" name="teamCountName" id="team10" value="10" {% if thisLeague.settings.number_of_teams == 10 %} checked {% endif %}>
+                                                10
+                                            </label>
+                                            <label class="radio inline">
+                                              <input type="radio" name="teamCountName" id="team12" value="12" {% if thisLeague.settings.number_of_teams == 12 %} checked {% endif %}>
+                                                12
+                                            </label>
+                                            <label class="radio inline">
+                                              <input type="radio" name="teamCountName" id="team14" value="14" {% if thisLeague.settings.number_of_teams == 14 %} checked {% endif %}>
+                                                14
+                                            </label>
+                                        {% else %}
+                                            <label class="control-label" id="teamCountNE">{{ thisLeague.settings.number_of_teams }}</label>
+                                        {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="control-group" align=left>
+                                        <label class="control-label" for="LeagueType">League Type</label>
+                                        <div class="controls" id="LeagueType">
+                                        {% if thisLeague.league_owner == me %}
+                                            <label class="radio inline">
+                                              <input type="radio" name="leagueTypeName" id="LeagueType1" value="STD" {% if thisLeague.settings.league_type == 'STD' %} checked {% endif %}>
+                                                Standard
+                                            </label>
+                                            <label class="radio inline">
+                                              <input type="radio" name="leagueTypeName" id="LeagueType2" value="PPR" {% if thisLeague.settings.league_type == 'PPR' %} checked {% endif %}>
+                                                PPR
+                                            </label>
+                                        {% else %}
+                                            <label class="control-label" id="teamCountNE">{{ thisLeague.settings.league_type }}</label>
+                                        {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="control-group" align=left>
+                                        <label class="control-label" for="draftType">Draft Type</label>
+                                        <div class="controls" id="draftType">
+                                        {% if thisLeague.league_owner == me %}
+                                            <label class="radio inline">
+                                              <input type="radio" name="draftTypeName" id="draftType1" value="S" {% if thisLeague.settings.draft_type == 'S' %} checked {% endif %}>
+                                              Snake
+                                            </label>
+                                            <label class="radio inline">
+                                              <input type="radio" name="draftTypeName" id="draftType2" value="L" {% if thisLeague.settings.draft_type == 'L' %} checked {% endif %}>
+                                              Linear
+                                            </label>
+                                        {% else %}
+                                            <label class="control-label" id="teamCountNE">{{ thisLeague.settings.draft_type }}</label>
+                                        {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="draftTime">Draft Time</label>
+                                        <div class="controls">
+                                        {% if thisLeague.league_owner == me %}
+                                            <div id="draftTime" class="input-append">
+                                                <input name="draftDateName" data-format="yyyy-MM-dd HH:MM:ss" type="text" value="{{ thisLeague.settings.draft_date }}"></input>
+                                                <span class="add-on">
+                                                  <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                                                  </i>
+                                                </span>
+                                            </div>
+                                        {% else %}
+                                            <label class="control-label" id="teamCountNE">{{ thisLeague.settings.draft_date|date:"M-d H:m:s" }}</label>
+                                        {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="pickTime">Pick Time</label>
+                                        <div class="controls">
+                                        {% if thisLeague.league_owner == me %}
+                                            <input type="text" id="pickTime" name="pickTime" value=" {{ thisLeague.settings.seconds_per_pick }} ">
+                                        {% else %}
+                                            <label class="control-label" id="pickTimeNE">{{ thisLeague.settings.seconds_per_pick }}</label>
+                                        {% endif %}
+                                        </div>
+                                    </div>
+                                    {% if thisLeague.league_owner == me %}
+                                    <div class="control-group">
+                                         <div class="controls">
+                                            <button type="submit" class="btn btn-primary" formmethod="post">Save</button>
+                                            <button type="submit" class="btn btn-primary" formmethod="post">Reset</button>
+                                         </div>
+                                    </div>
+                                    {% endif %}
 								</form>								
 							  </div>
 							</div>
@@ -190,12 +274,22 @@
 						</td>
 					</tr>
 				</table>
-				</font>
+                {% endfor %}
+                </font>
 			</td>
 		</tr>
 	</table>
 </center>
-<text>0</text>
+
+<script type="text/javascript">
+  $(function() {
+    $('#draftTime').datetimepicker({
+      language: 'en',
+      pick12HourFormat: true
+    });
+  });
+</script>
+
 <script>
 $(function(){
     $('#listOfRooms').slimScroll({
