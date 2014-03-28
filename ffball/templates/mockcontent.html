@@ -1,12 +1,16 @@
 {% load static from staticfiles %}
 
-<script src="{% static 'bootstrap/js/jquery.slimscroll.min.js' %}"></script>	
+<script src="{% static 'bootstrap/js/jquery.slimscroll.min.js' %}"></script>
+<script>
+    var roomList = new Array();
+    var roomCount =0;
+</script>
 <br>
 <center>
 <table width=1000>	
 	<tr>
 		<td colspan=6 align=left>
-			<input type="text" class="search-query span3" data-provide="typeahead" placeholder="Search Mock Draft Rooms"><br><br>
+			<input type="text" class="search-query span3" data-provide="typeahead" placeholder="Search Rooms"><br><br>
 		</td>
 		<td rowspan=100% width=5>
 			&nbsp;		
@@ -35,19 +39,7 @@
 					</label>
 					<label class="checkbox">
 					  <input type="checkbox" value="" checked>
-					  Standard PPR
-					</label>
-					<label class="checkbox">
-					  <input type="checkbox" value="">
-					  Auction
-					</label>
-					<label class="checkbox">
-					  <input type="checkbox" value="">
-					  Auction PPR
-					</label>
-					<label class="checkbox">
-					  <input type="checkbox" value="">
-					  Pool
+					  PPR
 					</label>
 				</div>
 			</div>
@@ -71,26 +63,41 @@
 											</tr>
 											<tr>
 												<td>
-													<h4>&nbsp;{{ oneRoom.name }}&nbsp;&nbsp;&nbsp; <i>[{{ oneRoom.league_id }}]</i>
-                                                    {% if oneRoom.league_owner.username == "moneyball" %}
-                                                        <i class="icon-globe icon-black"></i>
-                                                    {% endif %}
-                                                    </h4>
+													<h4>&nbsp;{{ oneRoom.name }}&nbsp;&nbsp;&nbsp; <i></i></h4>
+                                                    <script>
+                                                        roomCount = roomCount+1;
+                                                        roomList[roomCount]="{{ oneRoom.name }}";
+                                                    </script>
+
 												</td>
+												<td width=90>
+													ID: {{ oneRoom.league_id }}
+												</td>
+												<td width=25>
+													{% if oneRoom.league_owner.username == "moneyball" %}
+                                                        <i class="icon-globe icon-black"></i>
+                                                    {% else %}
+                                                        <i class="icon-briefcase icon-black"></i>
+                                                    {% endif %}
+                                                </td>
 												<td width=50>
 													{{ oneRoom.settings.draft_type }}
 												</td>
-												<td width=75>
+												<td width=50>
 													<span class="badge badge-success">{{ oneRoom.teamCount }}/{{ oneRoom.settings.number_of_teams }}</span>
 												</td>
-												<td width=150>
+												<td width=125>
 													<span class="badge badge-important">Begins at {{ oneRoom.settings.draft_date|date:"H-m" }}</span>
 												</td>
-												<td align=right width=100>
-													{% if logged_in %}
-													<a href="/draftroom/{{ oneRoom.league_id }}"><button class="btn btn btn-primary" type="button"><i class="icon-plus icon-white" ></i></button></a>
-													{% endif %}
+												<td align=right width=45>
+                                                    {% if oneRoom.league_owner.username == "moneyball" %}
 													<a href="/draftroom/{{ oneRoom.league_id }}"><button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i></button></a>
+                                                    {% endif %}
+												</td>
+												<td align=right width=45>
+													{% if logged_in %}
+													<button id="joinRoom" class="btn btn btn-primary" type="button" href="#leagueJoin_{{ oneRoom.league_id }}" data-toggle="modal"><i class="icon-plus icon-white" ></i></button>
+                                                    {% endif %}
 												</td>
 											</tr>
 											<tr style="height:10px;">
@@ -100,8 +107,8 @@
 										</table>							
 									</div>
 								</td>
-							</tr>							
-						{% endfor %}						
+							</tr>
+					{% endfor %}
 					</table>
 				</div>
 			</div>
@@ -110,6 +117,49 @@
 </table>
 </center>
 
+
+{% for oneRoom in draftList %}
+    <div id="leagueJoin_{{ oneRoom.league_id }}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            <h3><i>Joining</i> "{{ oneRoom.name }}"</h3>
+        </div>
+        <form class="form-horizontal">
+            <br>
+            <div>
+                <div class="control-group">
+                    <label class="control-label" for="joinLeagueID">League ID</label>
+                    <div class="controls" >
+                        <label class="control-label" id="joinLeagueID">{{ oneRoom.league_id }}</label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="teamName">Team Name</label>
+                    <div class="controls">
+                        <input type="text" id="teamName" placeholder="Team Name">
+                    </div>
+                </div>
+            </div>
+            {% if oneRoom.league_owner.username != "moneyball" %}
+                <div id="secretKey">
+                    <div class="control-group">
+                        <label class="control-label" for="entryKey">Secret Entry Key</label>
+                        <div class="controls">
+                            <input type="text" id="entryKey" placeholder="Secret">
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </form>
+        <div class="modal-footer" align="right">
+            <div class="control-group">
+                <div class="controls">
+                    <a href="/draftroom/{{ oneRoom.league_id }}"><button type="submit" class="btn btn-primary">Join Room</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
 <script>
 $(function(){
     $('#listOfRooms').slimScroll({
@@ -122,5 +172,6 @@ $(function(){
 		railColor: '#999999',	
 		disableFadeOut: false
     });
+
 });
 </script>
