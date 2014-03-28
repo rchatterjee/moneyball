@@ -20,7 +20,7 @@
                            <td>
                                 <h4>#{{ forloop.counter }}</h4>
                            </td>
-                           <td bgcolor="#ffffff">
+                           <td >
                            <div class="srgtest" name="teams" id="team-{{ forloop.counter }}" draggable="true">
                                <table>
                                    <tr>
@@ -293,10 +293,8 @@
 var dragSrcEl = null;
 
 function handleDragStart(e) {
-  this.style.opacity = '0.4';  // this / e.target is the source node.
-
+  //this.style.opacity = '0.4';  // this / e.target is the source node.
   dragSrcEl = this;
-
   e.dataTransfer.effectAllowed = 'move';
   e.dataTransfer.setData('text/html', this.innerHTML);
 }
