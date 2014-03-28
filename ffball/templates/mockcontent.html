@@ -97,7 +97,17 @@ function isPartOfLeague(leagueId){
 													{{ oneRoom.settings.draft_type }}
 												</td>
 												<td width=50>
-													<span class="badge badge-success">{{ oneRoom.teamCount }}/{{ oneRoom.settings.number_of_teams }}</span>
+													{{ oneRoom.settings.league_type }}
+												</td>
+												<td width=50>
+                                                    <script>
+                                                        if( {{ oneRoom.teamCount }} / {{ oneRoom.settings.number_of_teams }} < 0.6){
+                                                            document.write(" <span class='badge badge-success'>");
+                                                        }else {
+                                                    	    document.write(" <span class='badge badge-warning'>");
+                                                        }
+                                                    </script>
+                                                    {{ oneRoom.teamCount }}/{{ oneRoom.settings.number_of_teams }}</span>
 												</td>
 												<td width=125>
 													<span class="badge badge-important">Begins at {{ oneRoom.settings.draft_date|date:"H-m" }}</span>
