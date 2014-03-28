@@ -167,3 +167,4 @@ STATICFILES_DIRS = (
 )
 
 
+errors = []
