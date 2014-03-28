@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 class Vendor(m.Model):
-    name    = m.CharField(max_length=40, blank=False)
+    name    = m.CharField(max_length=40, blank=False, unique=True)
     website = m.CharField(max_length=250, blank=False)
 
     def __str__(self):
@@ -18,10 +18,15 @@ DRAFT_TYPE_CHOICES = (
     ('S', 'Snake'),
     ('L', 'Linear')
 )
+LEAGUE_TYPE_CHOICES = (
+    ('STD', 'Standard'),
+    ('PPR', 'PPR')
+)
 
 class League_Settings(m.Model):
     number_of_teams = m.IntegerField(blank=True,  null=True, default=12)
     scoreing_type   = m.CharField(max_length=30, default="Head to Head Points")
+    league_type = m.CharField(max_length=3, choices=DRAFT_TYPE_CHOICES, default = 'STD')
 
     # Roster Settings
     size     = m.IntegerField(default=12)
@@ -136,8 +141,10 @@ class League(m.Model):
     vendor = m.ForeignKey(Vendor)
     league_id = m.CharField(max_length=50, blank=True)
     league_owner    = m.ForeignKey(User)
+    password = m.CharField(max_length=15, default='', blank=True)
     settings = m.ForeignKey(League_Settings)
 
     def __str__(self):
-        return "%s - %s (%s)" % ( self.name, self.vendor, self.league_id)
+        return str(self.__dict__)
+#return "%s - %s (%s)" % ( self.name, self.vendor, self.league_id)
 
