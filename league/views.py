@@ -6,7 +6,7 @@ from league.models import *
 from django.db.models import Count
 import app
 import string, random
-
+from team.models import Team
 
 def index(request):
     context = app.helpers.user_template_dict(request)
@@ -17,13 +17,11 @@ def index(request):
 def generate_random_id(n = 6): 
     chars = string.ascii_uppercase + string.digits
     return ''.join([random.choice(chars) for x in xrange(n)])
-                        
 
 
 def create(request):
     print request.POST
     error = ''
-    
     name = request.POST.get('leagueName', '');
     vendor = Vendor.objects.get(name='moneyball')
     password = request.POST.get('entryKey', '')
@@ -47,8 +45,14 @@ def create(request):
     league = League(name=name, vendor=vendor, password=password, 
                     league_id=league_id, league_owner=league_owner, 
                     settings=settings)
+    error = 'ERROR@!'
     if not league.save():
-        return HttpResponseRedirect( '/draftroom/%s' % league_id )
+        from team.views import create_team
+        t, error = create_team(request, 1, league_id)
+        if t and not t.save():
+            return HttpResponseRedirect( '/draftroom/%s' % league_id )
+        if league: league.delete()
+    return HttpResponse("Something went wrong ==> <br/> %s" % error);
     
 
 def league(request, league_id):

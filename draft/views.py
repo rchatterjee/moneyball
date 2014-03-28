@@ -7,11 +7,18 @@ from django.db.models import Count
 import app
 import string, random
 from  league.models import *
+from team.views import *
+from team.models import Team
 # Create your views here.
 
 
-def joinleague(request, league_id):
-    return HttpResponse("Join league id (%s)." % league_id)
+def joinleague(request):
+    t, error = create_team(request,0)
+    print t, error
+    if t and not t.save():
+        return HttpResponseRedirect( '/draftroom/%s' % t.league.league_id )
+    else:
+        return HttpResponse("Something went wrong ==> <br/> %s" % error);
 
 def mockdraft(request):
     draftList = League.objects.filter(vendor__name = 'moneyball')
@@ -37,3 +44,4 @@ def draft(request, draft_id=0):
     context = app.helpers.user_template_dict(request)
     context['next_page'] = request.get_full_path
     return render(request, 'draft.html', context)
+

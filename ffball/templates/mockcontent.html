@@ -125,8 +125,10 @@
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
             <h3><i>Joining</i> "{{ oneRoom.name }}"</h3>
         </div>
-        <form class="form-horizontal">
+        <form class="form-horizontal" action="join/" method="POST">
+            {% csrf_token %}
             <br>
+            <input type="hidden" value="{{ oneRoom.league_id}}" name="leagueId">
             <div>
                 <div class="control-group">
                     <label class="control-label" for="joinLeagueID">League ID</label>
@@ -137,28 +139,27 @@
                 <div class="control-group">
                     <label class="control-label" for="teamName">Team Name</label>
                     <div class="controls">
-                        <input type="text" id="teamName" placeholder="Team Name">
+                        <input type="text" id="teamName" name="teamName" placeholder="Team Name">
                     </div>
                 </div>
             </div>
-            {% if oneRoom.league_owner.username != "moneyball" %}
+            {% if oneRoom.password != "" %}
                 <div id="secretKey">
                     <div class="control-group">
                         <label class="control-label" for="entryKey">Secret Entry Key</label>
                         <div class="controls">
-                            <input type="text" id="entryKey" placeholder="Secret">
+                            <input type="text" id="entryKey" name="entryKey" placeholder="Secret">
                         </div>
                     </div>
                 </div>
             {% endif %}
-        </form>
-        <div class="modal-footer" align="right">
-            <div class="control-group">
+            <div class="modal-footer" align="right">
                 <div class="controls">
-                    <a href="/draftroom/{{ oneRoom.league_id }}"><button type="submit" class="btn btn-primary">Join Room</button></a>
+                    <button type="submit" class="btn btn-primary">Join Room</button>
                 </div>
             </div>
         </div>
+        </form>
     </div>
 {% endfor %}
 <script>

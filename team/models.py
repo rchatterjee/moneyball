@@ -9,9 +9,11 @@ class Team(m.Model):
     vendor_user_id = m.CharField(max_length=40, blank=False)
     team_name      = m.CharField(max_length=100, blank=False)
     waiver_priority= m.IntegerField(null=True)
-    division       = m.CharField(max_length=10,null=True)
+    division       = m.CharField(max_length=10, blank=True, null=True)
     is_commisionar = m.BooleanField(default=False)
     draft_pick_number = m.IntegerField(default=-1, null=True)
 
     def __str__(self):
         return "%s - %s" % ( self.team_name, self.league )
+
+
