@@ -79,10 +79,10 @@ function isPartOfLeague(leagueId){
 												<td>
 													<h4>&nbsp;{{ oneRoom.name }}</h4>
 												</td>
-												<td width=90>
+												<td width=85>
 													ID: {{ oneRoom.league_id }}
 												</td>
-												<td width=25>
+												<td width=20>
 													{% if oneRoom.password == "" %}
                                                         <i class="icon-globe icon-black"></i>
                                                     {% else %}
@@ -90,10 +90,18 @@ function isPartOfLeague(leagueId){
                                                     {% endif %}
                                                 </td>
 												<td width=50>
-													{{ oneRoom.settings.draft_type }}
+													{% if oneRoom.settings.draft_type == "S" %}
+                                                        Snake
+                                                    {% else %}
+                                                        Cycle
+                                                    {% endif %}
 												</td>
-												<td width=50>
-													{{ oneRoom.settings.league_type }}
+												<td width=60>
+													{% if oneRoom.settings.league_type == "STD" %}
+                                                        Standard
+                                                    {% else %}
+                                                        PPR
+                                                    {% endif %}
 												</td>
 												<td width=50>
                                                     <script>
