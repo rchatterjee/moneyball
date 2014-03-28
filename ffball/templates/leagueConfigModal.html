@@ -1,4 +1,7 @@
+{% load static from staticfiles %}
 {% if logged_in %}
+<link href="{% static 'bootstrap/css/bootstrap-datetimepicker.min.css' %}" rel="stylesheet" media="screen">
+<script src="{% static 'bootstrap/js/bootstrap-datetimepicker.min.js' %}"></script>
 <!-- ###### Modal login begin ###### -->
 <div id="leagueConfig" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
@@ -83,6 +86,18 @@
 				</label>
 			</div>
 		</div>
+        <div class="control-group">
+            <label class="control-label" for="draftTime">Draft Time</label>
+            <div class="controls">
+                <div id="draftTime" class="input-append">
+                    <input name="draftDateName" data-format="yyyy-MM-dd HH:MM:ss" type="text"></input>
+                    <span class="add-on">
+                      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                      </i>
+                    </span>
+                </div>
+            </div>
+        </div>
         <div class="modal-footer" align="right">
             <div class="controls">
                 <button type="submit" class="btn btn-primary" formmethod="post">Create Room</button>
@@ -90,6 +105,15 @@
         </div>
     </form>
 </div>
+
+<script type="text/javascript">
+  $(function() {
+    $('#draftTime').datetimepicker({
+      language: 'en',
+      pick12HourFormat: true
+    });
+  });
+</script>
 
 <script>
 $(document).ready(function(){
