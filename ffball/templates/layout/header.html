@@ -12,22 +12,22 @@
                 <div class="nav-collapse collapse navbar-responsive-collapse">
                     <ul class="nav" style="font-size:14px">
                         <li class="divider-vertical"></li>
-			{% if logged_in %}
-                        <li><a href="/"><i class="icon-home icon-white"></i>&nbsp;&nbsp;Home</a></li>
-                        <li class="divider-vertical"></li>
-                        <li><a href="/draft"><i class="icon-th-list icon-white"></i>&nbsp;&nbsp;Draft Central</a></li>
-                        <li class="divider-vertical"></li>
-                        <li><a href="/mockdraft"><i class="icon-th-list icon-white"></i>&nbsp;&nbsp;Mock Draft</a></li>
-                        <li class="divider-vertical"></li>
-                        <li><a href="#"><i class="icon-tasks icon-white"></i>&nbsp;&nbsp;My Teams</a></li>
-                        <!--<li class="divider-vertical"></li>
-                        <li><a href="#"><i class="icon-bell icon-white"></i>&nbsp;&nbsp;Pick'em</a></li> -->
-                        <li class="divider-vertical"></li>
+			            {% if logged_in %}
+                            <li><a href="/"><i class="icon-home icon-white"></i>&nbsp;&nbsp;Home</a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a href="/draft"><i class="icon-th-list icon-white"></i>&nbsp;&nbsp;Draft Central</a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a href="/mockdraft"><i class="icon-th-list icon-white"></i>&nbsp;&nbsp;Mock Draft</a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a href="#"><i class="icon-tasks icon-white"></i>&nbsp;&nbsp;My Teams</a></li>
+                            <!--<li class="divider-vertical"></li>
+                            <li><a href="#"><i class="icon-bell icon-white"></i>&nbsp;&nbsp;Pick'em</a></li> -->
+                            <li class="divider-vertical"></li>
                         {% else %}
-                        <li><a href="/mock"><i class="icon-th-list icon-white"></i>&nbsp;&nbsp;Mock Draft</a></li>
-                        <li class="divider-vertical"></li>
-                        <li><a href="#"><i class="icon-play icon-white"></i>&nbsp;&nbsp;Demo</a></li>
-                        <li class="divider-vertical"></li>
+                            <li><a href="/mockdraft"><i class="icon-th-list icon-white"></i>&nbsp;&nbsp;Mock Draft</a></li>
+                            <li class="divider-vertical"></li>
+                            <li><a href="#"><i class="icon-play icon-white"></i>&nbsp;&nbsp;Demo</a></li>
+                            <li class="divider-vertical"></li>
                         {% endif %}
                     </ul>
                     <ul class="nav pull-right" style="font-size:14px">

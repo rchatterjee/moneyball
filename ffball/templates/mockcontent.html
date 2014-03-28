@@ -94,11 +94,12 @@
 													<a href="/draftroom/{{ oneRoom.league_id }}"><button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i></button></a>
                                                     {% endif %}
 												</td>
-												<td align=right width=45>
-													{% if logged_in %}
-													<button id="joinRoom" class="btn btn btn-primary" type="button" href="#leagueJoin_{{ oneRoom.league_id }}" data-toggle="modal"><i class="icon-plus icon-white" ></i></button>
-                                                    {% endif %}
-												</td>
+												{% if logged_in %}
+                                                    <td align=right width=45>
+                                                        <button id="joinRoom" class="btn btn btn-primary" type="button" href="#leagueJoin_{{ oneRoom.league_id }}" data-toggle="modal"><i class="icon-plus icon-white" ></i></button>
+
+                                                    </td>
+                                                {% endif %}
 											</tr>
 											<tr style="height:10px;">
 												<td colspan=100%>
