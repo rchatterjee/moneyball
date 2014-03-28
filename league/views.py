@@ -38,6 +38,7 @@ def create(request):
         number_of_teams = request.POST.get('teamCount', 10)
         league_type = request.POST.get('leagueType', 'STD')
         draft_type = request.POST.get('draftType', 'S')
+        draft_date =request.POST.get('draftDateName', '')
 
         error = ''
         if not name:
@@ -49,7 +50,8 @@ def create(request):
         league_id = generate_random_id()
         settings = League_Settings(number_of_teams=number_of_teams,
                                    league_type = league_type,
-                                   draft_type = draft_type
+                                   draft_type = draft_type,
+                                   draft_date = draft_date
                                    )
         print settings
         league_owner = request.user

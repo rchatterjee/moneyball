@@ -2,8 +2,22 @@
 
 <script src="{% static 'bootstrap/js/jquery.slimscroll.min.js' %}"></script>
 <script>
-    var roomList = new Array();
-    var roomCount =0;
+    var myLeagues = new Array();
+    var count =0;
+    {% for oneL in myTeamList %}
+           myLeagues[count]="{{ oneL.league.league_id }}";
+            count=count+1;
+    {% endfor %}
+
+function isPartOfLeague(leagueId){
+    var r=0;
+    for(var i=0;i<count;i++){
+        if(myLeagues[i]==leagueId){
+            r=1;
+        }
+    }
+    return r;
+}
 </script>
 <br>
 <center>
@@ -63,17 +77,12 @@
 											</tr>
 											<tr>
 												<td>
-													<h4>&nbsp;{{ oneRoom.name }}&nbsp;&nbsp;&nbsp; <i></i></h4>
-                                                    <script>
-                                                        roomCount = roomCount+1;
-                                                        roomList[roomCount]="{{ oneRoom.name }}";
-                                                    </script>
-
+													<h4>&nbsp;{{ oneRoom.name }}</h4>
 												</td>
-												<td width=90>
+												<td width=85>
 													ID: {{ oneRoom.league_id }}
 												</td>
-												<td width=25>
+												<td width=20>
 													{% if oneRoom.password == "" %}
                                                         <i class="icon-globe icon-black"></i>
                                                     {% else %}
@@ -81,25 +90,62 @@
                                                     {% endif %}
                                                 </td>
 												<td width=50>
-													{{ oneRoom.settings.draft_type }}
-												</td>
-												<td width=50>
-													<span class="badge badge-success">{{ oneRoom.teamCount }}/{{ oneRoom.settings.number_of_teams }}</span>
-												</td>
-												<td width=125>
-													<span class="badge badge-important">Begins at {{ oneRoom.settings.draft_date|date:"H-m" }}</span>
-												</td>
-												<td align=right width=45>
-                                                    {% if oneRoom.password == "" %}
-													<a href="/draftroom/{{ oneRoom.league_id }}"><button class="btn btn btn-primary" type="button"><i class="icon-eye-open icon-white"></i></button></a>
+													{% if oneRoom.settings.draft_type == "S" %}
+                                                        Snake
+                                                    {% else %}
+                                                        Cycle
                                                     {% endif %}
 												</td>
-												{% if logged_in %}
-                                                    <td align=right width=45>
-                                                        <button id="joinRoom" class="btn btn btn-primary" type="button" href="#leagueJoin_{{ oneRoom.league_id }}" data-toggle="modal"><i class="icon-plus icon-white" ></i></button>
-
-                                                    </td>
-                                                {% endif %}
+												<td width=70>
+													{% if oneRoom.settings.league_type == "STD" %}
+                                                        Standard
+                                                    {% else %}
+                                                        PPR
+                                                    {% endif %}
+												</td>
+												<td width=60>
+                                                    <script>
+                                                        if( {{ oneRoom.teamCount }} / {{ oneRoom.settings.number_of_teams }} == 1){
+                                                            document.write(" <span class='badge badge-important'>");
+                                                        }else if( {{ oneRoom.teamCount }} / {{ oneRoom.settings.number_of_teams }} < 0.6){
+                                                            document.write(" <span class='badge badge-success'>");
+                                                        }else {
+                                                    	    document.write(" <span class='badge badge-warning'>");
+                                                        }
+                                                    </script>
+                                                    {{ oneRoom.teamCount }}/{{ oneRoom.settings.number_of_teams }}</span>
+												</td>
+												<td width=50>
+													Start in
+												</td>
+												<td width=60>
+													<span class="badge badge-important">{{ oneRoom.settings.draft_date|date:"h-m-s" }}</span>
+												</td>
+                                                <script>
+                                                    if(isPartOfLeague("{{ oneRoom.league_id }}")==1){
+                                                        document.write(" <td align=right width=45>");
+                                                            {% if oneRoom.league_owner == me  %}
+                                                                document.write("<i class='icon-star icon-black'></i>");
+                                                            {% else %}
+                                                                document.write("<i class='icon-user icon-black'></i>");
+                                                            {% endif %}
+                                                        document.write("</td>");
+                                                        document.write("<td align=right width=45>");
+                                                            document.write("<a href='/draftroom/{{ oneRoom.league_id }}'><button id='goToRoom' class='btn btn btn-primary' type='button'><i class='icon-plus icon-white' ></i></button></a>");
+                                                        document.write("</td>");
+                                                    }else {
+                                                       document.write(" <td align=right width=45>");
+                                                            {% if oneRoom.password == "" %}
+                                                            document.write("<a href='/draftroom/{{ oneRoom.league_id }}'><button class='btn btn btn-primary' type='button'><i class='icon-eye-open icon-white'></i></button></a>");
+                                                            {% endif %}
+                                                       document.write("</td>");
+                                                        {% if logged_in %}
+                                                            document.write("<td align=right width=45>");
+                                                                document.write("<button id='joinRoom' class='btn btn btn-primary' type='button' href='#leagueJoin_{{ oneRoom.league_id }}' data-toggle='modal'><i class='icon-plus icon-white' ></i></button>");
+                                                            document.write("</td>");
+                                                       {% endif %}
+                                                    }
+                                                </script>
 											</tr>
 											<tr style="height:10px;">
 												<td colspan=100%>
@@ -117,7 +163,6 @@
 	</tr>
 </table>
 </center>
-
 
 {% for oneRoom in draftList %}
     <div id="leagueJoin_{{ oneRoom.league_id }}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -163,6 +208,7 @@
     </div>
 {% endfor %}
 <script>
+
 $(function(){
     $('#listOfRooms').slimScroll({
         height: '550px',
@@ -174,6 +220,5 @@ $(function(){
 		railColor: '#999999',	
 		disableFadeOut: false
     });
-
 });
 </script>
