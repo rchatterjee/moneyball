@@ -16,6 +16,11 @@ def joinleague(request, league_id):
 def mockdraft(request):
     draftList = League.objects.filter(vendor__name = 'moneyball')
     draftList = draftList.annotate(teamCount=Count('team'))
+    draftList = draftList.order_by('settings__draft_date','teamCount')
+    for i in range(len(draftList)):
+        if draftList[i].password:
+            draftList[i].password = '*'
+        else : draftList[i].password = ''
     context = app.helpers.user_template_dict(request)
     context['next_page'] = request.get_full_path
     context['providers'] = ['facebook', 'yahoo', 'google', 'github']

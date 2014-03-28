@@ -9,8 +9,6 @@ import string, random
 
 
 def index(request):
-    if request.method == 'POST':
-        return HttpResponseRedirect('create/')
     context = app.helpers.user_template_dict(request)
     if not context: context = {}
     return HttpResponse("<h1> In Construction </h1>")
@@ -21,28 +19,36 @@ def generate_random_id(n = 6):
     return ''.join([random.choice(chars) for x in xrange(n)])
                         
 
+
 def create(request):
     print request.POST
     error = ''
+    
     name = request.POST.get('leagueName', '');
-    try:
-        vendor = Vendor.objects.get(name='fantasyfans')
-    except Vendor.DoesNotExist:
-        vendor = Vendor.objects.get(name='moneyball')
+    vendor = Vendor.objects.get(name='moneyball')
+    password = request.POST.get('entryKey', '')
+    number_of_teams = request.POST.get('teamCount', 10)
+    league_type = request.POST.get('leagueType', 'STD')
+    draft_type = request.POST.get('draftType', 'S')
 
+    if not name:
+        return HttpResponse("<alert>Sorry Dude! something is messed up</alert><br/><b>ERROR</b> - {error}".format(error=error))
+        
     if not vendor:
         error = "%sI doubt there is any vendor with this id %s" % (error, vendor)
+
     league_id = generate_random_id()
-    team_count = int(request.POST.get('teamCount', '0'));
-    settings = League_Settings(number_of_teams=team_count)
+    settings = League_Settings(number_of_teams=number_of_teams,
+                               league_type = league_type,
+                               draft_type = draft_type
+                               )
     print settings
     league_owner = request.user
-    league = League(name=name, vendor=vendor, league_id=league_id, 
-                    league_owner=league_owner, settings=settings)
-    if league.save():
-        return HttpResponse("Created LEAGUE page. with this info, %s" % ( str(league) ))
-    else:
-        return HttpResponse("<alert>Sorry Dude! something is messed up</alert><br/><b>ERROR</b> - {error}".format(error=error))
+    league = League(name=name, vendor=vendor, password=password, 
+                    league_id=league_id, league_owner=league_owner, 
+                    settings=settings)
+    if not league.save():
+        return HttpResponseRedirect( '/draftroom/%s' % league_id )
     
 
 def league(request, league_id):
