@@ -114,7 +114,7 @@ function isPartOfLeague(leagueId){
                                                     {{ oneRoom.teamCount }}/{{ oneRoom.settings.number_of_teams }}</span>
 												</td>
 												<td width=125>
-													<span class="badge badge-important">Begins at {{ oneRoom.settings.draft_date|date:"H-m" }}</span>
+													<span class="badge badge-important">Begins at {{ oneRoom.settings.draft_date|date:"h-m-s" }}</span>
 												</td>
                                                 <script>
                                                     if(isPartOfLeague("{{ oneRoom.league_id }}")==1){
