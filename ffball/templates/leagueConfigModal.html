@@ -8,24 +8,16 @@
     <form class="form-horizontal" action="create/" method="post">
       {% csrf_token %}
       <br>
-		<div id="stdOptions">
-			<div class="control-group">
-				<label class="control-label" for="leagueName">League Name</label>
-				<div class="controls">
-					<input type="text" name="leagueName" id="leagueName" placeholder="League Name">
-					
-					<label class="checkbox">
-						<input type="checkbox" id="isPrivate" name=id="isPrivate"> <i>Private</i>
-					</label>
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label" for="teamName">Team Name</label>
-				<div class="controls">
-					<input type="text" name="teamName" id="teamName" placeholder="Team Name">
-				</div>
-			</div>
-		</div>
+        <div class="control-group">
+            <label class="control-label" for="leagueName">League Name</label>
+            <div class="controls">
+                <input type="text" name="leagueName" id="leagueName" placeholder="League Name">
+
+                <label class="checkbox">
+                    <input type="checkbox" id="isPrivate" name=id="isPrivate"> <i>Private</i>
+                </label>
+            </div>
+        </div>
 		<div id="privateOptions" style="display:none;">
 			<div class="control-group">
 				<label class="control-label" for="entryKey">Secret Entry Key</label>
@@ -34,6 +26,12 @@
 				</div>
 			</div>
 		</div>
+        <div class="control-group">
+            <label class="control-label" for="teamName">Team Name</label>
+            <div class="controls">
+                <input type="text" name="teamName" id="teamName" placeholder="Team Name">
+            </div>
+        </div>
 		<div class="control-group " align=left>
 			<label class="control-label" for="teamCount">Teams</label>
 			<div class="controls " id="teamCount">
@@ -96,8 +94,7 @@
 <script>
 $(document).ready(function(){
 
-	$('#leagueConfig').on('show', function () {	  
-		$(stdOptions).show();
+	$('#leagueConfig').on('show', function () {
 		$(privateOptions).hide();
 	})
 	$('#isPrivate').click(function() {
