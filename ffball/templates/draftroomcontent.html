@@ -28,15 +28,15 @@
                                         <td>
                                             <img src="{% static 'img/tiger.jpg' %}" width=50 class="img-rounded">
                                         </td>
-                                        <td >
-                                            <h4>{{ team.team_name }}</h4>
+                                       <td >
+                                           <h4 id="tid-{{ team.id }}">{{ team.team_name }}</h4>
                                         </td>
                                        {% else %}
                                         <td>
                                             <img src="{% static 'img/no_photo.png' %}" width=50 class="img-rounded">
                                         </td>
                                         <td >
-                                            <h6>&lt; Empty Place &gt;</h6>
+                                            <h4 id="tid-0">&lt;None&gt;</h4>
                                         </td>
                                        {% endif %}
                                    </tr>
@@ -49,7 +49,7 @@
 					</table>
 					</font>
 				</div>
-                <button class="btn btn-primary" type="submit" formmethod="post" onclick="save('{{ draft_room_id }}')" name="saveOrder" value="Save Order">SaveOrder </button>
+                <button class="btn btn-primary" type="submit" formmethod="post" onclick="save_draftorder('{{ draft_room_id }}')" name="saveOrder" value="Save Order">SaveOrder</button>
             </td>
 			<td valign=top width=700>			
 				<font color="#999999">
@@ -89,10 +89,11 @@
 							</div>
 							<div id="leftcollapseOne" class="accordion-body collapse in">
 							  <div class="accordion-inner">
-								<form class="form-horizontal">
+								<form name="general-settings" class="form-horizontal">
+                                    {% csrf_token %}
 									<br>
                                     <div class="control-group">
-                                        <label class="control-label" for="lName">League Name</label>
+                                        <label class="control-label" for="lName" name="lName">League Name</label>
                                         <div class="controls">
                                         {% if thisLeague.league_owner == me %}
                                             <input type="text" id="lName" name="lName" value="{{ thisLeague.name}}">
@@ -179,7 +180,7 @@
                                         <div class="controls">
                                         {% if thisLeague.league_owner == me %}
                                             <div id="draftTime" class="input-append">
-                                                <input name="draftDateName" data-format="yyyy-MM-dd HH:MM:ss" type="text" value="{{ thisLeague.settings.draft_date }}"></input>
+                                                <input name="draftDateName" data-format="yyyy-MM-dd HH:MM" type="text" value="{{ thisLeague.settings.draft_date|date:'Y-m-d H:i' }}"></input>
                                                 <span class="add-on">
                                                   <i data-time-icon="icon-time" data-date-icon="icon-calendar">
                                                   </i>
@@ -203,8 +204,8 @@
                                     {% if thisLeague.league_owner == me %}
                                     <div class="control-group">
                                          <div class="controls">
-                                            <button type="submit" class="btn btn-primary" formmethod="post">Save</button>
-                                            <button type="submit" class="btn btn-primary" formmethod="post">Reset</button>
+                                            <button type="submit" class="btn btn-primary" formmethod="post" onsubmit="settings_save(this)" >Save</button>
+                                            <button type="submit" class="btn btn-primary" formmethod="post" onsubmit="settings_reset(this)">Reset</button>
                                          </div>
                                     </div>
                                     {% endif %}
@@ -220,7 +221,7 @@
 							</div>
 							<div id="leftcollapseTwo" class="accordion-body collapse">
 							  <div class="accordion-inner">
-								<form class="form-horizontal">
+								<form class="form-horizontal" name="advanced-settings">
 									<br>
 									<div id="stdLoginCtl">
 										<div class="control-group">
@@ -328,7 +329,7 @@ function handleDrop(e) {
     dragSrcEl.innerHTML = this.innerHTML;
     this.innerHTML = e.dataTransfer.getData('text/html');
   }
-
+  $('button[name=saveOrder]').html('SaveOrder')
   return false;
 }
 
@@ -338,6 +339,7 @@ function handleDragEnd(e) {
   [].forEach.call(cols, function (col) {
     col.classList.remove('over');
   });
+  $('button[name=saveOrder]').html('SaveOrder')
 }
 
 var cols = document.querySelectorAll('#listOfTeams .srgtest');
@@ -422,26 +424,33 @@ $.ajaxSetup({
     }
 });
 
-function save( page_id ) {
+function settings_save( e ) {
+   $('form[name=general-settings]').submit( 
+       function(event) {
+         alert($("input:first").val())
+       }
+    )
+    return true;
+}
+
+function save_draftorder( page_id ) {
     a=[]
 //    $('.saveOrder').click(function () {
-    alert("here");
+    teams = [];
+    $.each($('h4[id^=tid]'), function(i, v) {
+          teams[i] = $(v).attr('id');
+    });
+    if ( $('button[name=saveOrder]').html()=="Saved") {
+    return false;
+    }
         $.ajax({
             type: "POST",
             url: page_id,
-            data: "{draft_order : abcdefg }",
-            contentType: "application/json; charset=utf-8",
             dataType: "json",
+            data: {'draft_order' : JSON.stringify(teams)},
             success: function (response) {
-
-                var result = response.d;
-                var value = '';
-                $.each(result, function (index, res) {
-                    value = value + res.id + res.name;
-                });
-
-                alert(value);
-                alert("Record was updated successfully,,");
+               $('button[name=saveOrder]').html('Saved');
+               return true;
             },
             error: function (msg) {
                 alert("Error while calling web service," + msg.Message);

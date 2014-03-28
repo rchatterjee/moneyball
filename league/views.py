@@ -38,7 +38,7 @@ def create(request):
         number_of_teams = request.POST.get('teamCountName', 10)
         league_type = request.POST.get('leagueTypeName', 'STD')
         draft_type = request.POST.get('draftTypeName', 'S')
-        draft_date =request.POST.get('draftDateName', '')
+        draft_date = request.POST.get('draftDateName', '')
 
         error = ''
         if not name:
