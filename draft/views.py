@@ -10,7 +10,6 @@ from  league.models import *
 from team.views import *
 from team.models import Team
 from ffball.settings import errors
-# Create your views here.
 
 
 def join_league(request):
@@ -36,12 +35,15 @@ def mock_draft(request):
     return render(request, 'mock.html', context)
 
 
+
 def draft_room(request, draft_room_id):
     context = app.helpers.user_template_dict(request)
     context['next_page'] = request.get_full_path
+    context['draft_room_id'] = draft_room_id
     if request.method == "GET":
         context['draft_order'] = get_draft_order(draft_room_id)
     elif request.method == 'POST':
+        print request.POST
         d = request.POST.getlist('draft_order')
         set_draft_order(draft_room_id, d)
     context['me'] = request.user

@@ -9,150 +9,38 @@
 				<div id="listOfRooms" >
 					<font color="#999999">
 					<table width=100% class="table-hover">
-						<tr>
-							<td>
+                        {% for team in draft_order %}
+                       <tr name="teams" id="team-{{ forloop.counter }}">
+                           <td>
 								&nbsp;
-							</td>
+                           </td>
 							<td>
-								<h4>#1</h4>
+								<h4>#{{ forloop.counter }}</h4>
 							</td>
-							<td>					
+                           {% if team %}
+							<td>
 								<img src="{% static 'img/tiger.jpg' %}" width=50 class="img-rounded">
 							</td>
-							<td >			
-								<h4>Royal Bengal Tiger </h4>		
+							<td >
+								<h4>{{ team.team_name }}</h4>
 							</td>
-						</tr>
-						<tr>
+                           {% else %}
 							<td>
-								&nbsp;
+								<img src="{% static 'img/no_photo.png' %}" width=50 class="img-rounded">
 							</td>
-							<td>
-								<h4>#2</h4>
+							<td >
+								<h6>&lt; Empty Place &gt;</h6>
 							</td>
-							<td>					
-								<img src="{% static 'img/helmets/1.jpg' %}" width=50 class="img-rounded">
-							</td>
-							<td >			
-								<h4>Jae Lee</h4>		
-							</td>
-						</tr>
-						<tr>
-							<td>
-								&nbsp;
-							</td>
-							<td>
-								<h4>#3</h4>
-							</td>
-							<td>					
-								<img src="{% static 'img/helmets/2.jpg' %}" width=50 class="img-rounded">
-							</td>
-							<td >			
-								<h4>Another Packer Fan</h4>		
-							</td>
-						</tr>
-						<tr>
-							<td>
-								&nbsp;
-							</td>
-							<td>
-								<h4>#4</h4>
-							</td>
-							<td>					
-								<img src="{% static 'img/helmets/3.jpg' %}" width=50 class="img-rounded">
-							</td>
-							<td >			
-								<h4>Roman Army</h4>		
-							</td>
-						</tr>
-						<tr>
-							<td>
-								&nbsp;
-							</td>
-							<td>
-								<h4>#5</h4>
-							</td>
-							<td>					
-								<img src="{% static 'img/helmets/4.jpg' %}" width=50 class="img-rounded">
-							</td>
-							<td >			
-								<h4>ChrisZ</h4>		
-							</td>
-						</tr>
-						<tr>
-							<td>
-								&nbsp;
-							</td>
-							<td>
-								<h4>#6</h4>
-							</td>
-							<td>					
-								<img src="{% static 'img/helmets/5.jpg' %}" width=50 class="img-rounded">
-							</td>
-							<td >			
-								<h4>Knight Rider</h4>		
-							</td>
-						</tr>
-						<tr>
-							<td>
-								&nbsp;
-							</td>
-							<td>
-								<h4>#7</h4>
-							</td>
-							<td>					
-								<img src="{% static 'img/helmets/6.jpg' %}" width=50 class="img-rounded">
-							</td>
-							<td >			
-								<h4>Taco</h4>		
-							</td>
-						</tr>
-						<tr>
-							<td>
-								&nbsp;
-							</td>
-							<td>
-								<h4>#8</h4>
-							</td>
-							<td>					
-								<img src="{% static 'img/helmets/7.jpg' %}" width=50 class="img-rounded">
-							</td>
-							<td >			
-								<h4>Pay Me</h4>		
-							</td>
-						</tr>
-						<tr>
-							<td>
-								&nbsp;
-							</td>
-							<td>
-								<h4>#9</h4>
-							</td>
-							<td>					
-								<img src="{% static 'img/helmets/8.jpg' %}" width=50 class="img-rounded">
-							</td>
-							<td >			
-								<h4>$$$Baller</h4>		
-							</td>
-						</tr>
-						<tr>
-							<td>
-								&nbsp;
-							</td>
-							<td>
-								<h4>#10</h4>
-							</td>
-							<td>					
-								<img src="{% static 'img/helmets/9.jpg' %}" width=50 class="img-rounded">
-							</td>
-							<td >			
-								<h4>Another Team</h4>		
-							</td>
-						</tr>
+                           {% endif %}
+
+                       </tr>
+                        {% endfor %}
+
 					</table>
 					</font>
 				</div>
-			</td>
+                <button type="submit" formmethod="post" onclick="save('{{ draft_room_id }}')" name="saveOrder" value="Save Order">SaveOrder </button>
+            </td>
 			<td valign=top width=700>			
 				<font color="#999999">
 				<table width=100%>
@@ -307,8 +195,7 @@
 		</tr>
 	</table>
 </center>
-
-{{ draft_order }}
+<text>0</text>
 <script>
 $(function(){
     $('#listOfRooms').slimScroll({
@@ -322,4 +209,83 @@ $(function(){
 		disableFadeOut: false
     });
 });
+
+
+// using jQuery
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+var csrftoken = getCookie('csrftoken');
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+
+function sameOrigin(url) {
+    // test that a given url is a same-origin URL
+    // url could be relative or scheme relative or absolute
+    var host = document.location.host; // host + port
+    var protocol = document.location.protocol;
+    var sr_origin = '//' + host;
+    var origin = protocol + sr_origin;
+    // Allow absolute or scheme relative URLs to same origin
+    return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+        (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+        // or any other URL that isn't scheme relative or absolute i.e relative.
+        !(/^(\/\/|http:|https:).*/.test(url));
+}
+
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+            // Send the token to same-origin, relative URLs only.
+            // Send the token only if the method warrants CSRF protection
+            // Using the CSRFToken value acquired earlier
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+
+function save( page_id ) {
+    a=[]
+//    $('.saveOrder').click(function () {
+    alert("here");
+        $.ajax({
+            type: "POST",
+            url: page_id,
+            data: "{draft_order : abcdefg }",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+
+                var result = response.d;
+                var value = '';
+                $.each(result, function (index, res) {
+                    value = value + res.id + res.name;
+                });
+
+                alert(value);
+                alert("Record was updated successfully,,");
+            },
+            error: function (msg) {
+                alert("Error while calling web service," + msg.Message);
+            }
+        });
+
+//    });
+}
+
 </script>

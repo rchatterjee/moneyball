@@ -16,7 +16,7 @@ def get_draft_pick_number( l ):
     teams_dpn = [t.draft_pick_number for t in l.team_set.all()]
     teams_dpn.sort()
     for i in range(1, l.settings.number_of_teams+1):
-        if i>len(teams_dpn) or i<teams_dpn[i]: 
+        if i>=len(teams_dpn) or i<teams_dpn[i]:
             return i    
 
 
