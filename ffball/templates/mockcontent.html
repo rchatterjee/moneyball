@@ -9,19 +9,15 @@
             count=count+1;
     {% endfor %}
 
-
 function isPartOfLeague(leagueId){
     var r=0;
-
     for(var i=0;i<count;i++){
         if(myLeagues[i]==leagueId){
             r=1;
         }
     }
-
     return r;
 }
-
 </script>
 <br>
 <center>
@@ -137,8 +133,6 @@ function isPartOfLeague(leagueId){
                                                        {% endif %}
                                                     }
                                                 </script>
-
-
 											</tr>
 											<tr style="height:10px;">
 												<td colspan=100%>
@@ -156,7 +150,6 @@ function isPartOfLeague(leagueId){
 	</tr>
 </table>
 </center>
-
 
 {% for oneRoom in draftList %}
     <div id="leagueJoin_{{ oneRoom.league_id }}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -214,6 +207,5 @@ $(function(){
 		railColor: '#999999',	
 		disableFadeOut: false
     });
-
 });
 </script>
