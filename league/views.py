@@ -25,7 +25,7 @@ def create(request):
     print request.POST
     error = ''
     name = request.POST.get('leagueName', '');
-    vendor = Vendor.objects.get(name='fantasyfans')
+    vendor = Vendor.objects.get(name='moneyball')
     if not vendor:
         error = "%sI doubt there is any vendor with this id %s" % (error, vendor)
     league_id = generate_random_id()
