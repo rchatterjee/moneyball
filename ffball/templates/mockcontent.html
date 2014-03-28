@@ -96,16 +96,18 @@ function isPartOfLeague(leagueId){
                                                         Cycle
                                                     {% endif %}
 												</td>
-												<td width=60>
+												<td width=70>
 													{% if oneRoom.settings.league_type == "STD" %}
                                                         Standard
                                                     {% else %}
                                                         PPR
                                                     {% endif %}
 												</td>
-												<td width=50>
+												<td width=60>
                                                     <script>
-                                                        if( {{ oneRoom.teamCount }} / {{ oneRoom.settings.number_of_teams }} < 0.6){
+                                                        if( {{ oneRoom.teamCount }} / {{ oneRoom.settings.number_of_teams }} == 1){
+                                                            document.write(" <span class='badge badge-important'>");
+                                                        }else if( {{ oneRoom.teamCount }} / {{ oneRoom.settings.number_of_teams }} < 0.6){
                                                             document.write(" <span class='badge badge-success'>");
                                                         }else {
                                                     	    document.write(" <span class='badge badge-warning'>");
@@ -113,8 +115,11 @@ function isPartOfLeague(leagueId){
                                                     </script>
                                                     {{ oneRoom.teamCount }}/{{ oneRoom.settings.number_of_teams }}</span>
 												</td>
-												<td width=125>
-													<span class="badge badge-important">Begins at {{ oneRoom.settings.draft_date|date:"h-m-s" }}</span>
+												<td width=50>
+													Start in
+												</td>
+												<td width=60>
+													<span class="badge badge-important">{{ oneRoom.settings.draft_date|date:"h-m-s" }}</span>
 												</td>
                                                 <script>
                                                     if(isPartOfLeague("{{ oneRoom.league_id }}")==1){
