@@ -59,8 +59,9 @@ def draft_room(request, draft_room_id):
         else:
             return HttpResponse( "ERROR" + errors )
     myLeague = League.objects.filter(league_id = draft_room_id)
+    thisLeague = myLeague[0]
     context['me'] = request.user
-    context['myLeague'] = myLeague
+    context['thisLeague'] = thisLeague
     return render(request, 'draftroom.html', context)
 
 

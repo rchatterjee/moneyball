@@ -2,42 +2,64 @@
 
 <link href="{% static 'bootstrap/css/bootstrap-datetimepicker.min.css' %}" rel="stylesheet" media="screen">
 <script src="{% static 'bootstrap/js/bootstrap-datetimepicker.min.js' %}"></script>
-
-<script src="{% static 'bootstrap/js/jquery.slimscroll.min.js' %}"></script>	
+<script src="{% static 'bootstrap/js/jquery.slimscroll.min.js' %}"></script>
 <br>
 <center>
 	<table width=1000>
-		<tr>
+		<tr >
 			<td Width=300 valign=top >
 				<div id="listOfTeams" >
 					<font color="#999999">
-					<table width=100% >
+					<table width=100% valign=top >
+                        <tr style=" color:#0088CC" valign=top >
+                            <td colspan="100%">
+                                <h3>Draft Order
+                                {% if thisLeague.league_owner == me %}
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button class="btn btn-primary" type="submit" formmethod="post" onclick="save_draftorder('{{ draft_room_id }}')" name="saveOrder" value="Save Order">SaveOrder</button>
+                                    <h6 style=" color:#999999"><i>Drag and drop to change draft order</i></h6>
+                                {% endif %}
+                                </h3>
+                            </td>
+                        </tr>
                        {% for team in draft_order %}
                        <tr>
                            <td>
                                 &nbsp;
                            </td>
-                           <td>
+                           <td width="30">
                                 <h4>#{{ forloop.counter }}</h4>
                            </td>
                            <td >
-                           <div class="srgtest" name="teams" id="team-{{ forloop.counter }}" draggable="true">
-                               <table>
+                           {% if thisLeague.league_owner == me %}
+                               <div class="srgtest" name="teams" id="team-{{ forloop.counter }}" draggable="true" >
+                           {% else %}
+                                <div name="teams" id="team-{{ forloop.counter }}">
+                           {% endif %}
+                               <table width="100%">
                                    <tr>
                                        {% if team %}
-                                        <td>
-                                            <img src="{% static 'img/tiger.jpg' %}" width=50 class="img-rounded">
-                                        </td>
-                                       <td >
-                                           <h4 id="tid-{{ team.id }}">{{ team.team_name }}</h4>
-                                        </td>
+                                           <td width="40">
+                                                <img src="{% static 'img/tiger.jpg' %}" width=35 class="img-rounded">
+                                           </td>
+                                           <td width="%" >
+                                               <h5 id="tid-{{ team.id }}">&nbsp;{{ team.team_name }}</h5>
+                                            </td>
+                                           <td width="50">
+                                                {% if thisLeague.league_owner == me %}
+                                                    <button id="remove-{{ forloop.counter }}" class="btn btn-mini btn-danger"><i class='icon-minus icon-white'></i></button>
+                                                {% endif %}
+                                           </td>
                                        {% else %}
-                                        <td>
-                                            <img src="{% static 'img/no_photo.png' %}" width=50 class="img-rounded">
-                                        </td>
-                                        <td >
-                                            <h4 id="tid-0">&lt;None&gt;</h4>
-                                        </td>
+                                            <td width="40">
+                                                <img src="{% static 'img/no_photo.png' %}" width=35 class="img-rounded">
+                                            </td>
+                                            <td width="%" >
+                                                <h5 id="tid-0">&lt; Vacant &gt; </h5>
+                                            </td>
+                                           <td width="50">
+                                                <button id="switch-{{ forloop.counter }}" class="btn btn-mini btn-success"><i class='icon-plus icon-white'></i></button>
+                                           </td>
                                        {% endif %}
                                    </tr>
                                </table>
@@ -49,22 +71,21 @@
 					</table>
 					</font>
 				</div>
-                <button class="btn btn-primary" type="submit" formmethod="post" onclick="save_draftorder('{{ draft_room_id }}')" name="saveOrder" value="Save Order">SaveOrder</button>
+
             </td>
 			<td valign=top width=700>			
 				<font color="#999999">
-                {% for thisLeague in myLeague %}
 				<table width=100%>
-					<tr >
-						<td align=right>
+					<tr valign="top" >
+						<td>
                             <table width="100%">
-                                <tr>
-                                    <td>
+                                <tr valign="top">
+                                    <td align="left">
 			                            <button class="btn btn-large btn-primary" type="button">Invite Others</button>
-                                    </td>
-                                    <td>
                                         {% if thisLeague.league_owner == me %}
-                                        <button class="btn btn-large btn-primary" type="button">Delete Room</button>
+                                        <button class="btn btn-large btn-danger" type="button">Delete Room</button>
+                                        {% else %}
+                                        <button class="btn btn-large btn-danger" type="button">Leave Room</button>
                                         {% endif %}
                                     </td>
                                     <td align="right">
@@ -154,7 +175,13 @@
                                                 PPR
                                             </label>
                                         {% else %}
-                                            <label class="control-label" id="teamCountNE">{{ thisLeague.settings.league_type }}</label>
+                                            <label class="control-label" id="teamCountNE">
+                                                {% if thisLeague.settings.league_type == 'STD' %}
+                                                    Standard
+                                                {% else %}
+                                                    PPR
+                                                {% endif %}
+                                            </label>
                                         {% endif %}
                                         </div>
                                     </div>
@@ -168,10 +195,16 @@
                                             </label>
                                             <label class="radio inline">
                                               <input type="radio" name="draftTypeName" id="draftType2" value="L" {% if thisLeague.settings.draft_type == 'L' %} checked {% endif %}>
-                                              Linear
+                                              Cycle
                                             </label>
                                         {% else %}
-                                            <label class="control-label" id="teamCountNE">{{ thisLeague.settings.draft_type }}</label>
+                                            <label class="control-label" id="drafTypetNE">
+                                                {% if thisLeague.settings.draft_type == 'S' %}
+                                                    Snake
+                                                {% else %}
+                                                    Cycle
+                                                {% endif %}
+                                            </label>
                                         {% endif %}
                                         </div>
                                     </div>
@@ -225,52 +258,33 @@
 									<br>
 									<div id="stdLoginCtl">
 										<div class="control-group">
-											<label class="control-label" for="inputEmail">Email</label>
+											<label class="control-label" for="s1">Setting 1</label>
 											<div class="controls">
-												<input type="text" id="inputEmail" placeholder="Email">
+												<input type="text" id="s1" placeholder="Setting">
 											</div>
 										</div>
 										<div class="control-group">
-											<label class="control-label" for="inputPassword">Password</label>
+											<label class="control-label" for="s2">Setting 2</label>
 											<div class="controls">
-												<input type="password" id="inputPassword" placeholder="Password">
+												<input type="text" id="s2" placeholder="Setting">
 											</div>
 										</div>
 										<div class="control-group">
+											<label class="control-label" for="s3">Setting 3</label>
 											<div class="controls">
-												<label class="checkbox">
-													<input type="checkbox"> <i>Remember me</i>
-												</label>
+												<input type="text" id="s3" placeholder="Setting">
 											</div>
 										</div>
 										<div class="control-group">
+											<label class="control-label" for="s4">Setting 4</label>
 											<div class="controls">
-												<button type="submit" class="btn btn-primary">Sign in</button>
-											</div>
-										</div>
-									</div>
-									<div id="newUserCtl">
-										<div class="control-group">
-											<label class="control-label" for="inputEmail">Email</label>
-											<div class="controls">
-												<input type="text" id="inputEmail" placeholder="Email">
-											</div>
-										</div>
-										<div class="control-group">
-											<label class="control-label" for="inputPassword">Password</label>
-											<div class="controls">
-												<input type="password" id="inputPassword" placeholder="Password">
-											</div>
-										</div>
-										<div class="control-group">
-											<label class="control-label" for="inputPassword">Retype Password</label>
-											<div class="controls">
-												<input type="password" id="inputPassword" placeholder="Password">
+												<input type="text" id="s4" placeholder="Setting">
 											</div>
 										</div>
 										<div class="control-group">
 											<div class="controls">
-												<button type="submit" class="btn btn-primary">Sign Up</button>
+                                            <button type="submit" class="btn btn-primary" >Save</button>
+                                            <button type="submit" class="btn btn-primary" >Reset</button>
 											</div>
 										</div>
 									</div>
@@ -282,7 +296,6 @@
 						</td>
 					</tr>
 				</table>
-                {% endfor %}
                 </font>
 			</td>
 		</tr>
