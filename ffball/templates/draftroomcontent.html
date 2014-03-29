@@ -306,9 +306,10 @@
 <script type="text/javascript">
 
 var dragSrcEl = null;
+var cols = document.querySelectorAll('#listOfTeams .srgtest');
 
 function handleDragStart(e) {
-  //this.style.opacity = '0.4';  // this / e.target is the source node.
+  this.style.opacity = '0.4';  // this / e.target is the source node.
   dragSrcEl = this;
   e.dataTransfer.effectAllowed = 'move';
   e.dataTransfer.setData('text/html', this.innerHTML);
@@ -342,6 +343,8 @@ function handleDrop(e) {
     // Set the source column's HTML to the HTML of the column we dropped on.
     dragSrcEl.innerHTML = this.innerHTML;
     this.innerHTML = e.dataTransfer.getData('text/html');
+    this.style.opacity = '1.0';
+    dragSrcEl.style.opacity = '1.0';
   }
   $('button[name=saveOrder]').html('SaveOrder')
   return false;
@@ -349,14 +352,13 @@ function handleDrop(e) {
 
 function handleDragEnd(e) {
   // this/e.target is the source node.
-
   [].forEach.call(cols, function (col) {
     col.classList.remove('over');
+    col.style.opacity = '1.0';
   });
   $('button[name=saveOrder]').html('SaveOrder')
 }
 
-var cols = document.querySelectorAll('#listOfTeams .srgtest');
 [].forEach.call(cols, function(col) {
   col.addEventListener('dragstart', handleDragStart, false);
   col.addEventListener('dragenter', handleDragEnter, false);
