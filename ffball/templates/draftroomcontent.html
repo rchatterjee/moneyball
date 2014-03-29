@@ -29,7 +29,7 @@
                            </td>
                            <td >
                            {% if thisLeague.league_owner == me %}
-                               <div class="srgtest" name="teams" id="team-{{ forloop.counter }}" draggable="true" >
+                               <div class="dndcontainer" name="teams" id="team-{{ forloop.counter }}" draggable="true" >
                            {% else %}
                                 <div name="teams" id="team-{{ forloop.counter }}">
                            {% endif %}
@@ -306,7 +306,7 @@
 <script type="text/javascript">
 
 var dragSrcEl = null;
-var cols = document.querySelectorAll('#listOfTeams .srgtest');
+var cols = document.querySelectorAll('#listOfTeams .dndcontainer');
 
 function handleDragStart(e) {
   this.style.opacity = '0.4';  // this / e.target is the source node.
