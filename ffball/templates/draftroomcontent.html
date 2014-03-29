@@ -237,7 +237,7 @@
                                     {% if thisLeague.league_owner == me %}
                                     <div class="control-group">
                                          <div class="controls">
-                                            <button type="submit" class="btn btn-primary" formmethod="post" onsubmit="settings_save(this)" >Save</button>
+                                            <button type="submit" class="btn btn-primary" formmethod="post" onclick="save_draftorder('{{ draft_room_id }}');" >Save</button>
                                             <button type="submit" class="btn btn-primary" formmethod="post" onsubmit="settings_reset(this)">Reset</button>
                                          </div>
                                     </div>
@@ -440,7 +440,7 @@ $.ajaxSetup({
 function settings_save( e ) {
    $('form[name=general-settings]').submit( 
        function(event) {
-         alert($("input:first").val())
+        alert($("input:first").val())
        }
     )
     return true;
@@ -450,7 +450,7 @@ function save_draftorder( page_id ) {
     a=[]
 //    $('.saveOrder').click(function () {
     teams = [];
-    $.each($('h4[id^=tid]'), function(i, v) {
+    $.each($('h5[id^=tid]'), function(i, v) {
           teams[i] = $(v).attr('id');
     });
     if ( $('button[name=saveOrder]').html()=="Saved") {
@@ -466,7 +466,7 @@ function save_draftorder( page_id ) {
                return true;
             },
             error: function (msg) {
-                alert("Error while calling web service," + msg.Message);
+                //alert("Error while calling web service," + msg.Message);
             }
         });
 

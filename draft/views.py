@@ -38,6 +38,7 @@ def mock_draft(request):
 
 
 def draft_room(request, draft_room_id):
+    global errors
     context = app.helpers.user_template_dict(request)
     if not context:
         return HttpResponseRedirect('/')
@@ -50,7 +51,7 @@ def draft_room(request, draft_room_id):
         result = "error"
         if d and set_draft_order(json.loads(d)):
             result = "successful"
-        to_json = {'result':result}
+        to_json = {'result':result, 'errors' : errors}
         return HttpResponse(json.dumps(to_json), mimetype='application/json')
     else:
         s = request.POST
@@ -65,11 +66,23 @@ def draft_room(request, draft_room_id):
     return render(request, 'draftroom.html', context)
 
 
+def set_draft_order(d_list):
+    # http://stackoverflow.com/questions/18045867/post-jquery-array-to-django
+    for i,t in enumerate(d_list):
+        t = int(t.split('-')[1])
+        if t<=0:
+            continue
+        x = Team.objects.get(id=t)
+        x.draft_pick_number = i+1
+        x.save()
+    return True
+
+
 def get_draft_order(draft_room_id):
     l = League.objects.get(league_id=draft_room_id)
     d = [None for x in range(l.settings.number_of_teams)]
     teams = l.team_set.all()
-    print [t.draft_pick_number for t in teams]
+#print [t.draft_pick_number for t in teams]
     for t in teams:
         try:
             d[t.draft_pick_number-1] = t
@@ -95,7 +108,6 @@ def fix_draft_order(teams, old_size, new_size, forced=False):
             del td[x]
         assert len(td) == new_size
         td.reverse()
-        print td
         for i, o in enumerate(td):
             if o:
                 o.draft_pick_number = i+1
@@ -122,18 +134,6 @@ def set_league_settings(league_id, set_dict):
             return False;
     s.save()
     l.save()
-    return True
-
-
-def set_draft_order(d_list):
-    # http://stackoverflow.com/questions/18045867/post-jquery-array-to-django
-    for i,t in enumerate(d_list):
-        t = int(t.split('-')[1])
-        if t<=0:
-            continue
-        x = Team.objects.get(id=t)
-        x.draft_pick_number = i+1
-        x.save()
     return True
 
 
