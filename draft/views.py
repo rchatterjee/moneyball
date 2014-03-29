@@ -1,8 +1,4 @@
-from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from django.template import Context, loader
-from django.shortcuts import render, render_to_response
-from league.models import *
 from django.db.models import Count
 import app, json
 from team.views import *
