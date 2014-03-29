@@ -204,19 +204,19 @@
                     <div id="collapseOne" class="accordion-body collapse in">
                       <div class="accordion-inner">
                         <div id="listOfWatchPlayers" >
-                            {% if player %}
+                            {% if myteam_queue %}
                                 {% for player in myteam_queue %}
-                                <div class="dndcontainer" name="watchPlayers" id="watchplayer-{{ forloop.counter }}" draggable="true" >
+                                <div class="dndcontainer" name="watchPlayers" id="watchplayer-{{ player.player.pid }}" draggable="true" >
                                     <table width=100% >
                                         <tr>
                                             <td width="25">
                                                 #{{ forloop.counter }}
                                             </td>
                                             <td width=%>
-                                                <button class="btn btn-small btn-success" type="button" >player.player.name</button>
+                                                <button class="btn btn-small btn-success" type="button" > {{ player.player.name }} </button>
                                             </td>
                                             <td width="25" align="right">
-                                                <a href=""><i class='icon-minus icon-white'></i></a>
+                                                <a><i id="deletequeue-{{ player.player.pid }}" onclick="delete_from_watchlist(this)" class='icon-minus icon-white'></i></a>
                                             </td>
                                         </tr>
                                     </table>
@@ -667,7 +667,6 @@ function get_info( pid ) {
 }
 
 function addToQ() {
-alert(added);
    res = { 'player_id' : current_selected['player_id'],
            'league_id' : current_selected['league_id'],
            'func' : 'add_player',
@@ -681,9 +680,10 @@ alert(added);
     dataType: "json",
     data: {'data' : JSON.stringify(res)},
     success: function (response) {
-       alert(JSON.stringify(response));
-       div_elem = '<div class="dndcontainer" name="watchPlayers" id="watchplayer-' + added.length + ' draggable="true" ><table width=100% ><tr><td width="25"> #' + response['msg']['rank'] +
-       '</td><td width=%><button class="btn btn-small btn-success" type="button" >' + response['msg']['name']+ '</button></td></tr></table></div>';
+       //alert(JSON.stringify(response));
+       div_elem = '<div class="dndcontainer" name="watchPlayers" id="watchplayer-' + current_selected['player_id'] + '" draggable="true" ><table width=100% ><tr><td width="25"> #' + response['msg']['rank'] +
+       '</td><td width=%><button class="btn btn-small btn-success" type="button" >' + response['msg']['name']+ '</button></td><td width="25" align="right">' +
+       '<a><i id="deletequeue-' + current_selected['player_id'] +'" onclick="delete_from_watchlist(this)" class="icon-minus icon-white"></i></a></td></tr></table></div>';
        $(div_elem).appendTo('#listOfWatchPlayers')
        added.push(current_selected['player_id'])
        return true;
@@ -693,7 +693,33 @@ alert(added);
     }
   });
 }
-    
+
+
+function delete_from_watchlist( elem ) {
+   pid = elem.id.split('-')[1];
+   w_id = "#watchplayer-" + pid;
+   res = { 'player_id' : pid,
+           'league_id' : '{{ league_id }}',
+           'func'      : 'delete_from_queue'
+         }
+  $.ajax({
+    type: "POST",
+    url: "/jquery/",
+    dataType: "json",
+    data: {'data' : JSON.stringify(res)},
+    success: function (response) {
+       //alert('Done!Mother Fucker' + JSON.stringify(response) + w_id);
+       $(w_id).remove();
+       var a = added.indexOf(res['player_id']);
+       if ( a>=0 ) { added.splice(a, 1) }
+       return true;
+    },
+    error: function (msg) {
+      //alert("Error while calling web service," + msg.Message);
+    }
+  });
+
+}
 
 
 function add_to_watchlist( pid, position, status, rank ) {
@@ -703,14 +729,13 @@ function add_to_watchlist( pid, position, status, rank ) {
            'rank'      : rank || 0,
            'league_id' : '{{ league_id }}'
          }
-  alert(res);
   $.ajax({
     type: "POST",
     url: "/jquery/",
     dataType: "json",
     data: {'data' : JSON.stringify(res)},
     success: function (response) {
-       alert('Done!Mother Fucker' + JSON.stringify(response));
+       //alert('Done!Mother Fucker' + JSON.stringify(response));
        $('#myplayers').append('<td width=%><button class="btn btn-small btn-success" width: 300px type="button">' + response['msg']['name']+'</button></td>');
        return true;
     },

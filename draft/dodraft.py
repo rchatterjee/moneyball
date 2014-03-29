@@ -36,8 +36,9 @@ def process_jquery_request(request):
             func_map = {
                 'add_player' : add_player,
                 'save_queue_order' : save_queue_order,
-                'get_player_info'  : get_player_info
-                }
+                'get_player_info'  : get_player_info,
+                'delete_from_queue'  : delete_from_queue
+            }
             msg = func_map[func](data, request.user, l)
             result = 'success'
         except KeyError:
@@ -129,17 +130,25 @@ def get_player_info(data, user, league):
 
 def delete_from_queue(data, user, l):
     team = get_my_team(l,user)
-    removed_buddy = team.fantasyplayer_set.filter(pid=data['player_id'])
-    players = team.fantasyplayer_set.filter(status='W').order_by('rank')
-    rank = removed_buddy.rank
-    for p in players[rank:]:
-        p.rank=rank-1
-        p.save()
-    removed_buddy.delete()
-    assert players[-1].rank==len(players)-1
-    print players
-    msg={"Deleted %s" % removed_buddy}
+    print team
+    removed_buddy = team.fantasyplayer_set.filter(player__pid=data['player_id'])[0]
 
+    players = [ x for x in team.fantasyplayer_set.filter(status='W').order_by('rank')]
+    print '\n'.join([str(x) for x in players])
+    print "Removing:", removed_buddy
+    rank = removed_buddy.rank
+    if len(players)>rank+1:
+        print players[rank:]
+        for i,p in enumerate(players[rank:]):
+            print i, p, p.rank, rank
+            p.rank = rank-1+i+1
+            p.save()
+    removed_buddy.delete()
+
+   #if len(players)>0:
+   #     assert players[-1].rank==len(players)-1
+    msg= "Deleted %s" % removed_buddy
+    return msg
 
 def autodrafting(data, user):
     pass
