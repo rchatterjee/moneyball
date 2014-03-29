@@ -37,7 +37,7 @@
                 </center>
             </td>
             <td width="200">
-                <div class="img-rounded accordion-group">
+                <div class="accordion-group">
                     <br>
                     <center>[clock here]</center>
                     <br>
@@ -276,14 +276,22 @@
         </tr>
         <tr>
             <td>
+                  <label class="checkbox">
+                      <input type="checkbox"><h4><font color="#ffffff">Autodraft</font></h4>
+                  </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
 				<font color="#ffffff">
+                <div class="accordion-group">
 				<table id="srgTable" width=100%>
 					<tr>
 						<td>
 							<table width=100%>
 								<tr>
 									<td>
-										<img src="{% static 'img/team_thumbs/'%}{{ myteam.image_name }}" width=50 class="img-rounded">
+										<img src="{% static 'img/team_thumbs/'%}{{ myteam.image_name }}" width=40 class="img-rounded">
 									</td>
 									<td width=%>
 										<h4>{{ myteam.team_name }}</h4>
@@ -377,11 +385,6 @@
 									</td>
 								</tr>
 								<tr>
-									<td colspan=2>
-										<hr>
-									</td>
-								</tr>
-								<tr>
 									<td>
 										&nbsp;
 										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
@@ -440,7 +443,8 @@
 						</td>
 					</tr>
 				</table>
-				</font>
+				</div>
+                </font>
             </td>
         </tr>
     </table>
