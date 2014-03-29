@@ -94,16 +94,16 @@
                                         <button class="btn btn-mini btn-success" type="button"><i class="icon-plus icon-black"></i></button>
                                     </td>
                                     <td>
-                                        1
+                                        {{ forloop.counter }}
                                     </td>
                                     <td>
                                         {{ player.name }}
                                     </td>
                                     <td>
-                                        QB
+                                        {{ player.position }}
                                     </td>
                                     <td>
-                                        NYG
+                                        {{ player.team.tid }}
                                     </td>
                                     <td>
                                         345
@@ -185,123 +185,20 @@
                     <div id="collapseOne" class="accordion-body collapse in">
                       <div class="accordion-inner">
                         <div id="listOfWatchPlayers" >
-
-                            <div class="dndcontainer" name="watchPlayers" id="watchplayer-1" draggable="true" >
+                            {% for player in myteam_queue %}
+                            <div class="dndcontainer" name="watchPlayers" id="watchplayer-{{ forloop.counter }}" draggable="true" >
                                 <table width=100% >
                                     <tr>
                                         <td width="25">
-                                            #1
+                                            #{{ forloop.counter }}
                                         </td>
                                         <td width=%>
-                                            <button class="btn btn-small btn-success" type="button" >Player 1</button>
+                                            <button class="btn btn-small btn-success" type="button" >player.player.name</button>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
-
-                            <div class="dndcontainer" name="watchPlayers" id="watchplayer-2" draggable="true" >
-                                <table width=100% >
-                                    <tr>
-                                        <td width="25">
-                                            #1
-                                        </td>
-                                        <td width=%>
-                                            <button class="btn btn-small btn-success" type="button">Player 2</button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-
-                            <div class="dndcontainer" name="watchPlayers" id="watchplayer-3" draggable="true" >
-                                <table width=100% >
-                                    <tr>
-                                        <td width="25">
-                                            #1
-                                        </td>
-                                        <td width=%>
-                                            <button class="btn btn-small btn-success" type="button" >Player 3</button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-
-                            <div class="dndcontainer" name="watchPlayers" id="watchplayer-4" draggable="true" >
-                                <table width=100% >
-                                    <tr>
-                                        <td width="25">
-                                            #1
-                                        </td>
-                                        <td width=%>
-                                            <button class="btn btn-small btn-warning" type="button" >Player 4</button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-
-                            <div class="dndcontainer" name="watchPlayers" id="watchplayer-5" draggable="true" >
-                                <table width=100% >
-                                    <tr>
-                                        <td width="25">
-                                            #1
-                                        </td>
-                                        <td width=%>
-                                            <button class="btn btn-small btn-warning" type="button">Player 5</button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-
-                            <div class="dndcontainer" name="watchPlayers" id="watchplayer-6" draggable="true" >
-                                <table width=100% >
-                                    <tr>
-                                        <td width="25">
-                                            #1
-                                        </td>
-                                        <td width=%>
-                                            <button class="btn btn-small btn-warning" type="button">Player 6</button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-
-                            <div class="dndcontainer" name="watchPlayers" id="watchplayer-7" draggable="true" >
-                                <table width=100% >
-                                    <tr>
-                                        <td width="25">
-                                            #1
-                                        </td>
-                                        <td width=%>
-                                            <button class="btn btn-small btn-danger" type="button">Player 7</button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-
-                            <div class="dndcontainer" name="watchPlayers" id="watchplayer-8" draggable="true" >
-                                <table width=100% >
-                                    <tr>
-                                        <td width="25">
-                                            #1
-                                        </td>
-                                        <td width=%>
-                                            <button class="btn btn-small btn-danger" type="button">Player 8</button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-
-                            <div class="dndcontainer" name="watchPlayers" id="watchplayer-9" draggable="true" >
-                                <table width=100% >
-                                    <tr>
-                                        <td width="25">
-                                            #1
-                                        </td>
-                                        <td width=%>
-                                            <button class="btn btn-small btn-danger" type="button">Player 9</button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
+                            {% endfor %}
 
                         </div>
                       </div>

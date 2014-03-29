@@ -25,7 +25,7 @@ LEAGUE_TYPE_CHOICES = (
 
 class League_Settings(m.Model):
     number_of_teams = m.IntegerField(blank=True,  null=True, default=12)
-    scoreing_type   = m.CharField(max_length=30, default="Head to Head Points")
+    scoring_type   = m.CharField(max_length=30, default="Head to Head Points")
     league_type = m.CharField(max_length=3, choices=DRAFT_TYPE_CHOICES, default = 'STD')
 
     # Roster Settings
