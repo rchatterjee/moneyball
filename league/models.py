@@ -25,7 +25,7 @@ LEAGUE_TYPE_CHOICES = (
 
 class League_Settings(m.Model):
     number_of_teams = m.IntegerField(blank=True,  null=True, default=12)
-    scoring_type   = m.CharField(max_length=30, default="Head to Head Points")
+    scoreing_type   = m.CharField(max_length=30, default="Head to Head Points")
     league_type = m.CharField(max_length=3, choices=DRAFT_TYPE_CHOICES, default = 'STD')
 
     # Roster Settings
@@ -42,8 +42,8 @@ class League_Settings(m.Model):
     count_WR_min=m.IntegerField(default=2)
     count_WR_max=m .IntegerField(default=8)
 
-    count_TE_max=m.IntegerField(default=1)
-    count_TE_min=m.IntegerField(default=3)
+    count_TE_min=m.IntegerField(default=1)
+    count_TE_max=m.IntegerField(default=3)
 
     count_FLEX_min=m.IntegerField(default=1)
     count_FLEX_max=m.IntegerField(default=1)
@@ -135,7 +135,6 @@ class League_Settings(m.Model):
     def __str__(self):
         self.save()
         return "League - %d" % (self.id)
-
 
 class League(m.Model):
     name   = m.CharField(max_length=100, blank=False)
