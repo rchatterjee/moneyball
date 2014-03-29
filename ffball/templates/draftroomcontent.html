@@ -11,8 +11,9 @@
                 <div style="color:#0088CC" >
                     <h3>Draft Order
                     {% if thisLeague.league_owner == me %}
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <button class="btn btn-primary" type="submit" formmethod="post" onclick="save_draftorder('{{ draft_room_id }}')" name="saveOrder" value="Save Order">SaveOrder</button>
+                        &nbsp;
+                        <button class="btn btn-primary" name="randomOrder"><i class='icon-random icon-white'></i></button>
+                        <button class="btn btn-primary " type="submit" formmethod="post" onclick="save_draftorder('{{ draft_room_id }}')" name="saveOrder" value="Save Order">Save</button>
                     {% endif %}
                     </h3>
                 </div>
@@ -37,7 +38,7 @@
                                    <tr>
                                        {% if team %}
                                            <td width="40">
-                                                <img src="{% static 'img/tiger.jpg' %}" width=35 class="img-rounded">
+                                                <img src="{% static 'img/team_thumbs/'%}{{ team.image_name }}" width=35 class="img-rounded">
                                            </td>
                                            <td width="%" >
                                                <h5 id="tid-{{ team.id }}">&nbsp;{{ team.team_name }}</h5>
@@ -49,7 +50,7 @@
                                            </td>
                                        {% else %}
                                             <td width="40">
-                                                <img src="{% static 'img/no_photo.png' %}" width=35 class="img-rounded">
+                                                <img src="{% static 'img/team_thumbs/none.jpg' %}" width=35 class="img-rounded">
                                             </td>
                                             <td width="%" >
                                                 <h5 id="tid-0">&lt; Vacant &gt; </h5>
@@ -82,6 +83,7 @@
                             <table width="100%">
                                 <tr valign="top">
                                     <td align="left">
+			                            <a href="/draft/{{ thisLeague.league_id }}"><button class="btn btn-large btn-success" type="button">Go to Draft</button></a>
 			                            <button class="btn btn-large btn-primary" type="button">Invite Others</button>
                                         {% if thisLeague.league_owner == me %}
                                         <button class="btn btn-large btn-danger" type="button">Delete Room</button>
@@ -346,7 +348,7 @@ function handleDrop(e) {
     this.style.opacity = '1.0';
     dragSrcEl.style.opacity = '1.0';
   }
-  $('button[name=saveOrder]').html('SaveOrder')
+  $('button[name=saveOrder]').html('Save')
   return false;
 }
 
@@ -356,7 +358,7 @@ function handleDragEnd(e) {
     col.classList.remove('over');
     col.style.opacity = '1.0';
   });
-  $('button[name=saveOrder]').html('SaveOrder')
+  $('button[name=saveOrder]').html('Save')
 }
 
 [].forEach.call(cols, function(col) {
@@ -456,7 +458,7 @@ function save_draftorder( page_id ) {
     $.each($('h5[id^=tid]'), function(i, v) {
           teams[i] = $(v).attr('id');
     });
-    if ( $('button[name=saveOrder]').html()=="Saved") {
+    if ( $('button[name=saveOrder]').html()=="Saved!") {
     return false;
     }
         $.ajax({
@@ -465,7 +467,7 @@ function save_draftorder( page_id ) {
             dataType: "json",
             data: {'draft_order' : JSON.stringify(teams)},
             success: function (response) {
-               $('button[name=saveOrder]').html('Saved');
+               $('button[name=saveOrder]').html('Saved!');
                return true;
             },
             error: function (msg) {
