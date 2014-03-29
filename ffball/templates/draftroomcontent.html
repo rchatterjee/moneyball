@@ -11,12 +11,23 @@
 				<div id="listOfTeams" >
 					<font color="#999999">
 					<table width=100% >
+                        <tr style=" color:#0088CC">
+                            <td colspan="100%">
+                                <h4>Draft Order
+                                {% if thisLeague.league_owner == me %}
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button class="btn btn-primary" type="submit" formmethod="post" onclick="save_draftorder('{{ draft_room_id }}')" name="saveOrder" value="Save Order">SaveOrder</button>
+                                    <h6 style=" color:#999999"><i>Drag and drop to change draft order</i></h6>
+                                {% endif %}
+                                </h4>
+                            </td>
+                        </tr>
                        {% for team in draft_order %}
                        <tr>
                            <td>
                                 &nbsp;
                            </td>
-                           <td>
+                           <td width="30">
                                 <h4>#{{ forloop.counter }}</h4>
                            </td>
                            <td >
@@ -29,14 +40,14 @@
                                    <tr>
                                        {% if team %}
                                         <td>
-                                            <img src="{% static 'img/tiger.jpg' %}" width=50 class="img-rounded">
+                                            <img src="{% static 'img/tiger.jpg' %}" width=35 class="img-rounded">
                                         </td>
                                        <td >
-                                           <h4 id="tid-{{ team.id }}">{{ team.team_name }}</h4>
+                                           <h4 id="tid-{{ team.id }}">&nbsp;{{ team.team_name }}</h4>
                                         </td>
                                        {% else %}
                                         <td>
-                                            <img src="{% static 'img/no_photo.png' %}" width=50 class="img-rounded">
+                                            <img src="{% static 'img/no_photo.png' %}" width=35 class="img-rounded">
                                         </td>
                                         <td >
                                             <h4 id="tid-0">&lt;None&gt;</h4>
@@ -52,7 +63,7 @@
 					</table>
 					</font>
 				</div>
-                <button class="btn btn-primary" type="submit" formmethod="post" onclick="save_draftorder('{{ draft_room_id }}')" name="saveOrder" value="Save Order">SaveOrder</button>
+
             </td>
 			<td valign=top width=700>			
 				<font color="#999999">
