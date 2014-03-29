@@ -681,7 +681,7 @@ function addToQ() {
     data: {'data' : JSON.stringify(res)},
     success: function (response) {
        //alert(JSON.stringify(response));
-       div_elem = '<div class="dndcontainer" name="watchPlayers" id="watchplayer-' + current_selected['player_id'] + '" draggable="true" ><table width=100% ><tr><td width="25"> #' + response['msg']['rank'] +
+       div_elem = '<div class="dndcontainer" name="watchPlayers" id="watchplayer-' + current_selected['player_id'] + '" draggable=true ><table width=100% ><tr><td width="25"> #' + response['msg']['rank'] +
        '</td><td width=%><button class="btn btn-small btn-success" type="button" >' + response['msg']['name']+ '</button></td><td width="25" align="right">' +
        '<a><i id="deletequeue-' + current_selected['player_id'] +'" onclick="delete_from_watchlist(this)" class="icon-minus icon-white"></i></a></td></tr></table></div>';
        $(div_elem).appendTo('#listOfWatchPlayers')
