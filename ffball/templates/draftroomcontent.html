@@ -38,7 +38,7 @@
                                    <tr>
                                        {% if team %}
                                            <td width="40">
-                                                <img src="{% static 'img/tiger.jpg' %}" width=35 class="img-rounded">
+                                                <img src="{% static 'img/team_thumbs/'%}{{ team.image_name }}" width=35 class="img-rounded">
                                            </td>
                                            <td width="%" >
                                                <h5 id="tid-{{ team.id }}">&nbsp;{{ team.team_name }}</h5>
@@ -50,7 +50,7 @@
                                            </td>
                                        {% else %}
                                             <td width="40">
-                                                <img src="{% static 'img/no_photo.png' %}" width=35 class="img-rounded">
+                                                <img src="{% static 'img/team_thumbs/none.jpg' %}" width=35 class="img-rounded">
                                             </td>
                                             <td width="%" >
                                                 <h5 id="tid-0">&lt; Vacant &gt; </h5>

@@ -23,7 +23,11 @@
                                 </td>
                                 {% for team in teams %}
                                 <td width=8% bordercolor="#006600">
-                                    <img src="{% static 'img/team_thumbs/'%}{{ team.image_name }}" width=60 class="img-rounded">
+                                    {% if team %}
+                                        <img src="{% static 'img/team_thumbs/'%}{{ team.image_name }}" width=60 class="img-rounded">
+                                    {% else %}
+                                        <img src="{% static 'img/team_thumbs/none.jpg'%}" width=60 class="img-rounded">
+                                    {% endif %}
                                 </td>
                                 {% endfor %}
                                 <td width=10%>
@@ -44,6 +48,7 @@
         <tr valign="top">
             <td width="650">
                 <!-- table -->
+                <font color="#999999">
                 <table width=100%>
                     <tr>
                         <td>
@@ -128,6 +133,7 @@
                         </td>
                     </tr>
                 </table>
+                </font>
             </td>
             <td width="150">
                 <!-- watchlist -->
