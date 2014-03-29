@@ -9,7 +9,6 @@ urlpatterns = patterns('',
     url(r'^mockdraft/create/$', lviews.create, name='mockcreate'),
     url(r'^mockdraft/join/$', dviews.join_league, name='mockjoin'),
 #    url(r'^mockdraft/(?P<league_id>\w+)/save/$', lviews.savesettings, name='savesettings'),
-    url(r'^draft/(?P<draft_id>\d+)$', dviews.draft, name='draft'),
-    url(r'^draft/$', dviews.draft, name='draft'),
+    url(r'^draft/(?P<draft_id>\w+)$', dviews.draft, name='draft'),
 )
 

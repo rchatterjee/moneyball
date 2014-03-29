@@ -137,9 +137,11 @@ def set_league_settings(league_id, set_dict):
     return True
 
 
-def draft(request, draft_id=0):
+def draft(request, draft_id):
+    from dodraft import *
     context = app.helpers.user_template_dict(request)
     context['next_page'] = request.get_full_path
     context['me'] = request.user
+    context.update(populate_draft_page(draft_id, request.user))
     return render(request, 'draft.html', context)
 
