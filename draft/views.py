@@ -55,8 +55,9 @@ def draft_room(request, draft_room_id):
         if s and set_league_settings(draft_room_id, s):
             return HttpResponseRedirect('/draftroom/%s' % draft_room_id )
     myLeague = League.objects.filter(league_id = draft_room_id)
+    thisLeague = myLeague[0]
     context['me'] = request.user
-    context['myLeague'] = myLeague
+    context['thisLeague'] = thisLeague
     return render(request, 'draftroom.html', context)
 
 
