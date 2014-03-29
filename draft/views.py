@@ -142,11 +142,16 @@ def draft(request, draft_id):
         return HttpResponseRedirect('/')
     myLeague = League.objects.filter(league_id = draft_id)
     thisLeague = myLeague[0]
+    totTeamCount = thisLeague.settings.number_of_teams
+    middleIdx = totTeamCount/2
+    W=(600-130)/(totTeamCount-1)
     myTeamList = Team.objects.filter(user = request.user).only('league')
     context['next_page'] = request.get_full_path
     context['me'] = request.user
     context['thisLeague'] = thisLeague
     context['myTeamList'] = myTeamList
+    context['normalWidth'] = W
+    context['drafterIdx'] = middleIdx
     context.update(populate_draft_page(draft_id, request.user))
     return render(request, 'draft.html', context)
 

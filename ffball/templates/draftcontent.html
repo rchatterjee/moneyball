@@ -7,41 +7,43 @@
 <!-- col1 -->
     <table width="100%">
         <tr height="100">
-            <td colspan="100%">
+            <td width="600">
                 <!-- clock and draft order -->
                 <center>
                 <font color="#ffffff">
-                <div id="myCarousel" class="carousel slide" data-interval="false">
-                  <!-- Carousel items -->
-                  <div class="carousel-inner">
-                    <div class="active item">
-                        <table width=100%>
-                            <tr align=center>
-                                <td width=10%>
-                                    &nbsp;
-                                </td>
-                                {% for team in teams %}
-                                <td width=8% bordercolor="#006600">
-                                    {% if team %}
-                                        <a href=""><img src="{% static 'img/team_thumbs/'%}{{ team.image_name }}" width=60 class="img-rounded"></a>
-                                    {% else %}
-                                        <img src="{% static 'img/team_thumbs/none.jpg'%}" width=60 class="img-rounded">
-                                    {% endif %}
-                                </td>
-                                {% endfor %}
-                                <td width=10%>
-                                    &nbsp;
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                  </div>
-                  <!-- Carousel nav -->
-                  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-                </div>
+                <table width="600">
+                    <tr>
+                        {% for team in teams %}
+                        <td>
+                            {% if team %}
+                                <a href=""><img src="{% static 'img/team_thumbs/'%}{{ team.image_name }}"
+                            {% else %}
+                                <img src="{% static 'img/team_thumbs/none.jpg'%}"
+                            {% endif %}
+                            {% if forloop.counter == drafterIdx %}
+                                 width=85
+                            {% else %}
+                                 width={{ normalWidth }}
+                            {% endif %}
+                                 class="img-rounded"></a>
+                            {% if team %}
+                                </a>
+                            {% endif %}
+                        </td>
+                        {% endfor %}
+                    </tr>
+                </table>
                 </font>
                 </center>
+            </td>
+            <td width="200">
+                <div class="accordion-group">
+                    <br>
+                    <center><img src="{% static 'img/clock2.jpg' %}" width="190" >
+                    @TODO
+                    </center>
+                    <br>
+                </div>
             </td>
         </tr>
         <tr valign="top">
@@ -54,16 +56,33 @@
                             <table width=100%>
                                 <tr>
                                     <td align=left>
-                                        <input type="text" class="search-query span3" data-provide="typeahead" placeholder="Search Players">
+                                        <input type="text" class="search-query span3" style="height:15px;" data-provide="typeahead" placeholder="Search Players">
                                     </td>
                                     <td align=right>
-                                        <button class="btn btn-mini btn-success" type="button"><img src="{% static 'img/player_icon2.png' %}" width=20 class="img-rounded"></button>
-                                        <button class="btn btn-mini btn-success" type="button"><img src="{% static 'img/player_icon2.png' %}" width=20 class="img-rounded"></button>
-                                        <button class="btn btn-mini" type="button"><img src="{% static 'img/player_icon2.png' %}" width=20 class="img-rounded"></button>
-                                        <button class="btn btn-mini" type="button"><img src="{% static 'img/player_icon2.png' %}" width=20 class="img-rounded"></button>
-                                        <button class="btn btn-mini btn-success" type="button"><img src="{% static 'img/player_icon2.png' %}" width=20 class="img-rounded"></button>
-                                        <button class="btn btn-mini" type="button"><img src="{% static 'img/player_icon2.png' %}" width=20 class="img-rounded"></button>
-                                        <button class="btn btn-mini" type="button"><img src="{% static 'img/player_icon2.png' %}" width=20 class="img-rounded"></button>
+                                        <b>Filter by position: </b>
+                                    </td>
+                                    <td align=right>
+                                        <a href="">QB</a>
+                                    </td>
+                                    <td align=right>
+                                        <a href="">RB</a>
+                                    </td>
+                                    <td align=right>
+                                        <a href="">WR</a>
+                                    </td>
+                                    <td align=right>
+                                        <a href="">TE</a>
+                                    </td>
+                                    <td align=right>
+                                        <a href="">Flex</a>
+                                    </td>
+                                    <td align=right>
+                                        <a href="">K</a>
+                                    </td>
+                                    <td align=right>
+                                        <a href="">Def</a>
+                                    </td>
+                                    <td align=right>
                                         <button class="btn btn-mini" type="button"><i class="icon-cog icon-black"></i></button>
                                     </td>
                                 </tr>
@@ -142,7 +161,7 @@
                     <table width="180" id="selected_player">
                         <tr>
                            <td colspan="100%">
-                                <div style="color:#0088CC" name="name">
+                                <div style="color:#999999" name="name">
                                     <h4>&nbsp;Albert Einstein</h4>
                                 </div>
                            </td>
@@ -185,21 +204,29 @@
                     <div id="collapseOne" class="accordion-body collapse in">
                       <div class="accordion-inner">
                         <div id="listOfWatchPlayers" >
-                            {% for player in myteam_queue %}
-                            <div class="dndcontainer" name="watchPlayers" id="watchplayer-{{ forloop.counter }}" draggable="true" >
-                                <table width=100% >
-                                    <tr>
-                                        <td width="25">
-                                            #{{ forloop.counter }}
-                                        </td>
-                                        <td width=%>
-                                            <button class="btn btn-small btn-success" type="button" >{{ player.player.name }}</button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            {% endfor %}
-
+                            {% if player %}
+                                {% for player in myteam_queue %}
+                                <div class="dndcontainer" name="watchPlayers" id="watchplayer-{{ forloop.counter }}" draggable="true" >
+                                    <table width=100% >
+                                        <tr>
+                                            <td width="25">
+                                                #{{ forloop.counter }}
+                                            </td>
+                                            <td width=%>
+                                                <button class="btn btn-small btn-success" type="button" >player.player.name</button>
+                                            </td>
+                                            <td width="25" align="right">
+                                                <a href=""><i class='icon-minus icon-white'></i></a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                {% endfor %}
+                            {% else %}
+                                <div align="center">
+                                    Queue is empty!
+                                </div>
+                            {% endif %}
                         </div>
                       </div>
                     </div>
@@ -224,7 +251,7 @@
                   <div class="accordion-group">
                     <div class="accordion-heading">
                       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                        <h5>Statistics</h5>
+                        <h5>Transactions</h5>
                       </a>
                     </div>
                     <div id="collapseThree" class="accordion-body collapse">
@@ -266,17 +293,25 @@
         </tr>
         <tr>
             <td>
+                  <label class="checkbox">
+                      <input type="checkbox"><h4><font color="#ffffff">Autodraft</font></h4>
+                  </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
 				<font color="#ffffff">
+                <div class="accordion-group">
 				<table id="srgTable" width=100%>
 					<tr>
 						<td>
 							<table width=100%>
 								<tr>
 									<td>
-										<img src="{% static 'img/team_thumbs/'%}{{ myteam.image_name }}" width=50 class="img-rounded">
+										<img src="{% static 'img/team_thumbs/'%}{{ myteam.image_name }}" width=40 class="img-rounded">
 									</td>
 									<td width=%>
-										<h3>{{ myteam.team_name }}</h3>
+										<h4>{{ myteam.team_name }}</h4>
 									</td>
 								</tr>
 							</table>
@@ -285,141 +320,144 @@
 					<tr>
 						<td>
 							<table  width=100% cellpadding=0 cellspacing=0>
-								<tr>
+								<tr style="height:10px;">
+									<td colspan="100%">
+									</td>
+								</tr>
+								<tr style="height:30px;">
 									<td>
 										&nbsp;
-										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
+                                        <font color="#999999"><b>QB</b></font>
 									</td>
 									<td width=%>
 										<button class="btn btn-small btn-success" width: 300px type="button">Peyton Manning</button>
 									</td>
 								</tr>
-								<tr>
+								<tr style="height:30px;">
 									<td>
 										&nbsp;
-										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
+                                        <font color="#999999"><b>RB1</b></font>
 									</td>
 									<td width=%>
 										<button class="btn btn-small btn-success" width: 300px type="button">Alfred Morris</button>
 									</td>
 								</tr>
-								<tr>
+								<tr style="height:30px;">
 									<td>
 										&nbsp;
-										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
+                                        <font color="#999999"><b>RB2</b></font>
 									</td>
 									<td width=%>
 										<button class="btn btn-small btn-warning" width: 300px type="button">Ryan Mathews</button>
 									</td>
 								</tr>
-								<tr>
+								<tr style="height:30px;">
 									<td>
 										&nbsp;
-										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
+                                        <font color="#999999"><b>WR1</b></font>
 									</td>
 									<td width=%>
 										<button class="btn btn-small btn-success" type="button">Dez Bryant</button>
 									</td>
 								</tr>
-								<tr>
+								<tr style="height:30px;">
 									<td>
 										&nbsp;
-										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
+                                        <font color="#999999"><b>WR2</b></font>
 									</td>
 									<td width=%>
 										<button class="btn btn-small btn-danger" type="button">Pierre Garcon</button>
 									</td>
 								</tr>
-								<tr>
+								<tr style="height:30px;">
 									<td>
 										&nbsp;
-										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
+                                        <font color="#999999"><b>TE</b></font>
 									</td>
 									<td width=%>
 										<button class="btn btn-small btn-success" type="button">Jimmy Graham</button>
 									</td>
 								</tr>
-								<tr>
+								<tr style="height:30px;">
 									<td>
 										&nbsp;
-										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
+                                        <font color="#999999"><b>Flex</b></font>
 									</td>
 									<td width=%>
 										<button class="btn btn-small btn-danger" type="button">Denarius Moore</button>
 									</td>
 								</tr>
-								<tr>
+								<tr style="height:30px;">
 									<td>
 										&nbsp;
-										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
+                                        <font color="#999999"><b>K</b></font>
 									</td>
 									<td width=%>
 										<button class="btn btn-small" type="button">[EMPTY]</button>
 									</td>
 								</tr>
-								<tr>
+								<tr style="height:30px;">
 									<td>
 										&nbsp;
-										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
+                                        <font color="#999999"><b>Def</b></font>
 									</td>
 									<td width=%>
 										<button class="btn btn-small btn-success" type="button">Seahawks D/ST</button>
 									</td>
 								</tr>
-								<tr>
-									<td colspan=2>
-										<hr>
+								<tr style="height:10px;">
+									<td colspan="100%">
 									</td>
 								</tr>
-								<tr>
+								<tr style="height:30px;">
 									<td>
 										&nbsp;
-										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
+                                        <font color="#999999"><b>BN</b></font>
 									</td>
 									<td width=%>
 										<button class="btn btn-small btn-success" type="button">Roddy White</button>
 									</td>
 								</tr>
-								<tr>
+								<tr style="height:30px;">
 									<td>
 										&nbsp;
-										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
+                                        <font color="#999999"><b>BN</b></font>
 									</td>
 									<td width=%>
 										<button class="btn btn-small btn-warning" type="button">Brian Hartline</button>
 									</td>
 								</tr>
-								<tr>
+								<tr style="height:30px;">
 									<td>
 										&nbsp;
-										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
+                                        <font color="#999999"><b>BN</b></font>
 									</td>
 									<td width=%>
 										<button class="btn btn-small btn-warning" type="button">Michael Crabtree</button>
 									</td>
 								</tr>
-								<tr>
+								<tr style="height:30px;">
 									<td>
 										&nbsp;
-										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
+                                        <font color="#999999"><b>BN</b></font>
 									</td>
 									<td width=%>
 										<button class="btn btn-small btn-danger" type="button">Andre Brown</button>
 									</td>
 								</tr>
-								<tr>
+								<tr style="height:30px;">
 									<td>
 										&nbsp;
-										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
+                                        <font color="#999999"><b>BN</b></font>
 									</td>
 									<td width=%>
 										<button class="btn btn-small" type="button">[EMPTY]</button>
 									</td>
 								</tr>
-								<tr>
+								<tr style="height:30px;">
 									<td>
 										&nbsp;
-										<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
+                                        <font color="#999999"><b>BN</b></font>
 									</td>
 									<td width=%>
 										<button class="btn btn-small" type="button">[EMPTY]</button>
@@ -430,7 +468,8 @@
 						</td>
 					</tr>
 				</table>
-				</font>
+				</div>
+                </font>
             </td>
         </tr>
     </table>
