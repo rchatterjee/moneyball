@@ -1,4 +1,5 @@
 {% load static from staticfiles %}
+<script src="{% static 'bootstrap/js/jquery.slimscroll.min.js' %}"></script>
 <center>
 	<table width=100% border=0>
 		<tr align=right>
@@ -104,7 +105,7 @@
 												&nbsp;
 											</td>
 											<td>
-												<button class="btn btn-small btn-success" width: 150px type="button"><i class="icon-ok icon-white"></i></button>
+												<button class="btn btn-small btn-success width: 150px"  type="button"><i class="icon-ok icon-white"></i></button>
 											</td>
 											<td>
 												<h4>Strategy 4</h4>
@@ -216,10 +217,10 @@
 											<td width=10%>
 												&nbsp;										
 											</td>
-											<td width=8%>
+											<td width=8% bordercolor="#006600">
 												<img src="{% static 'img/helmets/1.jpg' %}" width=60 class="img-rounded">
 												<br>
-												Team 1										
+												Team 1
 											</td>
 											<td width=8%>
 												<img src="{% static 'img/helmets/2.jpg' %}" width=60 class="img-rounded">
@@ -1063,82 +1064,127 @@
 											</div>
 											<div id="collapseOne" class="accordion-body collapse in">
 											  <div class="accordion-inner">
-												
-												<table width=100% >
-													<tr>
-														<td>					
-															&nbsp;
-															<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
-														</td>
-														<td width=%>			
-															<button class="btn btn-small btn-success" type="button" draggable="true">Some Player</button>
-														</td>
-													</tr>
-													<tr>
-														<td>					
-															&nbsp;			
-															<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
-														</td>
-														<td width=%>			
-															<button class="btn btn-small btn-warning" type="button" draggable="true">Some Player</button>
-														</td>
-													</tr>
-													<tr>
-														<td>				
-															&nbsp;				
-															<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
-														</td>
-														<td width=%>			
-															<button class="btn btn-small btn-warning" type="button" draggable="true">Some Player</button>
-														</td>
-													</tr>
-													<tr>
-														<td>				
-															&nbsp;				
-															<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
-														</td>
-														<td width=%>			
-															<button class="btn btn-small btn-danger" type="button" draggable="true">Some Player</button>
-														</td>
-													</tr>
-													<tr>
-														<td>					
-															&nbsp;			
-															<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
-														</td>
-														<td width=%>			
-															<button class="btn btn-small btn-danger" type="button" draggable="true">Some Player</button>
-														</td>
-													</tr>
-													<tr>
-														<td>					
-															&nbsp;			
-															<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
-														</td>
-														<td width=%>			
-															<button class="btn btn-small btn-danger" type="button" draggable="true">Some Player</button>
-														</td>
-													</tr>
-													<tr>
-														<td>					
-															&nbsp;			
-															<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
-														</td>
-														<td width=%>			
-															<button class="btn btn-small btn-danger" type="button" draggable="true">Some Player</button>
-														</td>
-													</tr>
-													<tr>
-														<td>					
-															&nbsp;			
-															<img src="{% static 'img/player_icon2.png' %}" width=30 class="img-rounded">
-														</td>
-														<td width=%>			
-															<button class="btn btn-small btn-danger" type="button" draggable="true">Some Player</button>
-														</td>
-													</tr>
-												</table>
-											  </div>
+												<div id="listOfWatchPlayers" >
+
+                                                    <div class="dndcontainer" name="watchPlayers" id="watchplayer-1" draggable="true" >
+                                                        <table width=100% >
+                                                            <tr>
+                                                                <td width="40">
+                                                                    <img src="{% static 'img/helmets/1.jpg' %}" width=30 class="img-rounded">
+                                                                </td>
+                                                                <td width=%>
+                                                                    <button class="btn btn-small btn-success" type="button" >Player 1</button>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+
+                                                    <div class="dndcontainer" name="watchPlayers" id="watchplayer-2" draggable="true" >
+                                                        <table width=100% >
+                                                            <tr>
+                                                                <td width="40">
+                                                                    <img src="{% static 'img/helmets/2.jpg' %}" width=30 class="img-rounded">
+                                                                </td>
+                                                                <td width=%>
+                                                                    <button class="btn btn-small btn-success" type="button">Player 2</button>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+
+                                                    <div class="dndcontainer" name="watchPlayers" id="watchplayer-3" draggable="true" >
+                                                        <table width=100% >
+                                                            <tr>
+                                                                <td width="40">
+                                                                    <img src="{% static 'img/helmets/3.jpg' %}" width=30 class="img-rounded">
+                                                                </td>
+                                                                <td width=%>
+                                                                    <button class="btn btn-small btn-success" type="button" >Player 3</button>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+
+                                                    <div class="dndcontainer" name="watchPlayers" id="watchplayer-4" draggable="true" >
+                                                        <table width=100% >
+                                                            <tr>
+                                                                <td width="40">
+                                                                    <img src="{% static 'img/helmets/4.jpg' %}" width=30 class="img-rounded">
+                                                                </td>
+                                                                <td width=%>
+                                                                    <button class="btn btn-small btn-warning" type="button" >Player 4</button>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+
+                                                    <div class="dndcontainer" name="watchPlayers" id="watchplayer-5" draggable="true" >
+                                                        <table width=100% >
+                                                            <tr>
+                                                                <td width="40">
+                                                                    <img src="{% static 'img/helmets/5.jpg' %}" width=30 class="img-rounded">
+                                                                </td>
+                                                                <td width=%>
+                                                                    <button class="btn btn-small btn-warning" type="button">Player 5</button>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+
+                                                    <div class="dndcontainer" name="watchPlayers" id="watchplayer-6" draggable="true" >
+                                                        <table width=100% >
+                                                            <tr>
+                                                                <td width="40">
+                                                                    <img src="{% static 'img/helmets/6.jpg' %}" width=30 class="img-rounded">
+                                                                </td>
+                                                                <td width=%>
+                                                                    <button class="btn btn-small btn-warning" type="button">Player 6</button>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+
+                                                    <div class="dndcontainer" name="watchPlayers" id="watchplayer-7" draggable="true" >
+                                                        <table width=100% >
+                                                            <tr>
+                                                                <td width="40">
+                                                                    <img src="{% static 'img/helmets/7.jpg' %}" width=30 class="img-rounded">
+                                                                </td>
+                                                                <td width=%>
+                                                                    <button class="btn btn-small btn-danger" type="button">Player 7</button>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+
+                                                    <div class="dndcontainer" name="watchPlayers" id="watchplayer-8" draggable="true" >
+                                                        <table width=100% >
+                                                            <tr>
+                                                                <td width="40">
+                                                                    <img src="{% static 'img/helmets/8.jpg' %}" width=30 class="img-rounded">
+                                                                </td>
+                                                                <td width=%>
+                                                                    <button class="btn btn-small btn-danger" type="button">Player 8</button>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+
+                                                    <div class="dndcontainer" name="watchPlayers" id="watchplayer-9" draggable="true" >
+                                                        <table width=100% >
+                                                            <tr>
+                                                                <td width="40">
+                                                                    <img src="{% static 'img/helmets/9.jpg' %}" width=30 class="img-rounded">
+                                                                </td>
+                                                                <td width=%>
+                                                                    <button class="btn btn-small btn-danger" type="button">Player 9</button>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+
+                                                </div>
+                                              </div>
 											</div>
 										  </div>
 										  <div class="accordion-group">
@@ -1353,3 +1399,83 @@
 		</tr>
 	</table>
 </center>
+
+
+<script type="text/javascript">
+
+$(function(){
+    $('#listOfWatchPlayers').slimScroll({
+		height: '300px',
+		width: 'auto',
+		alwaysVisible: false,
+		railVisible: true,
+		size: '9px',
+		color: '#ffffff',
+		railColor: '#999999',
+		disableFadeOut: false
+    });
+});
+
+
+var dragSrcEl = null;
+var cols = document.querySelectorAll('#listOfWatchPlayers .dndcontainer');
+
+function handleDragStart(e) {
+  this.style.opacity = '0.4';  // this / e.target is the source node.
+  dragSrcEl = this;
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/html', this.innerHTML);
+}
+function handleDragOver(e) {
+  if (e.preventDefault) {
+    e.preventDefault(); // Necessary. Allows us to drop.
+  }
+  e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
+  return false;
+}
+
+function handleDragEnter(e) {
+  // this / e.target is the current hover target.
+  this.classList.add('over');
+}
+
+function handleDragLeave(e) {
+  this.classList.remove('over');  // this / e.target is previous target element.
+}
+
+function handleDrop(e) {
+  // this/e.target is current target element.
+
+  if (e.stopPropagation) {
+    e.stopPropagation(); // Stops some browsers from redirecting.
+  }
+
+  // Don't do anything if dropping the same column we're dragging.
+  if (dragSrcEl != this) {
+    // Set the source column's HTML to the HTML of the column we dropped on.
+    dragSrcEl.innerHTML = this.innerHTML;
+    this.innerHTML = e.dataTransfer.getData('text/html');
+    this.style.opacity = '1.0';
+    dragSrcEl.style.opacity = '1.0';
+  }
+  return false;
+}
+
+function handleDragEnd(e) {
+  // this/e.target is the source node.
+  [].forEach.call(cols, function (col) {
+    col.classList.remove('over');
+    col.style.opacity = '1.0';
+  });
+}
+
+[].forEach.call(cols, function(col) {
+  col.addEventListener('dragstart', handleDragStart, false);
+  col.addEventListener('dragenter', handleDragEnter, false);
+  col.addEventListener('dragover', handleDragOver, false);
+  col.addEventListener('dragleave', handleDragLeave, false);
+  col.addEventListener('drop', handleDrop, false);
+  col.addEventListener('dragend', handleDragEnd, false);
+});
+
+</script>
