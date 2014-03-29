@@ -35,7 +35,8 @@ FANTASY_PLAYER_POSITION_CHOICES = (
 
 FANTASY_PLAYER_STATUS_CHOICES = (
     ('A', 'Active'),
-    ('B', 'Bench' )
+    ('B', 'Bench' ),
+    ('Q', 'Queue')
 )
 
 class FantasyPlayer(m.Model):
