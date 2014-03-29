@@ -76,18 +76,16 @@
 			<td valign=top width=700>			
 				<font color="#999999">
 				<table width=100%>
-					<tr >
-						<td align=right>
+					<tr valign="top" >
+						<td>
                             <table width="100%">
-                                <tr>
-                                    <td>
+                                <tr valign="top">
+                                    <td align="left">
 			                            <button class="btn btn-large btn-primary" type="button">Invite Others</button>
-                                    </td>
-                                    <td>
                                         {% if thisLeague.league_owner == me %}
-                                        <button class="btn btn-large btn-primary" type="button">Delete Room</button>
+                                        <button class="btn btn-large btn-danger" type="button">Delete Room</button>
                                         {% else %}
-                                        <button class="btn btn-large btn-primary" type="button">Leave Room</button>
+                                        <button class="btn btn-large btn-danger" type="button">Leave Room</button>
                                         {% endif %}
                                     </td>
                                     <td align="right">
@@ -177,7 +175,13 @@
                                                 PPR
                                             </label>
                                         {% else %}
-                                            <label class="control-label" id="teamCountNE">{{ thisLeague.settings.league_type }}</label>
+                                            <label class="control-label" id="teamCountNE">
+                                                {% if thisLeague.settings.league_type == 'STD' %}
+                                                    Standard
+                                                {% else %}
+                                                    PPR
+                                                {% endif %}
+                                            </label>
                                         {% endif %}
                                         </div>
                                     </div>
@@ -191,10 +195,16 @@
                                             </label>
                                             <label class="radio inline">
                                               <input type="radio" name="draftTypeName" id="draftType2" value="L" {% if thisLeague.settings.draft_type == 'L' %} checked {% endif %}>
-                                              Linear
+                                              Cycle
                                             </label>
                                         {% else %}
-                                            <label class="control-label" id="teamCountNE">{{ thisLeague.settings.draft_type }}</label>
+                                            <label class="control-label" id="drafTypetNE">
+                                                {% if thisLeague.settings.draft_type == 'S' %}
+                                                    Snake
+                                                {% else %}
+                                                    Cycle
+                                                {% endif %}
+                                            </label>
                                         {% endif %}
                                         </div>
                                     </div>
@@ -248,52 +258,33 @@
 									<br>
 									<div id="stdLoginCtl">
 										<div class="control-group">
-											<label class="control-label" for="inputEmail">Email</label>
+											<label class="control-label" for="s1">Setting 1</label>
 											<div class="controls">
-												<input type="text" id="inputEmail" placeholder="Email">
+												<input type="text" id="s1" placeholder="Setting">
 											</div>
 										</div>
 										<div class="control-group">
-											<label class="control-label" for="inputPassword">Password</label>
+											<label class="control-label" for="s2">Setting 2</label>
 											<div class="controls">
-												<input type="password" id="inputPassword" placeholder="Password">
+												<input type="text" id="s2" placeholder="Setting">
 											</div>
 										</div>
 										<div class="control-group">
+											<label class="control-label" for="s3">Setting 3</label>
 											<div class="controls">
-												<label class="checkbox">
-													<input type="checkbox"> <i>Remember me</i>
-												</label>
+												<input type="text" id="s3" placeholder="Setting">
 											</div>
 										</div>
 										<div class="control-group">
+											<label class="control-label" for="s4">Setting 4</label>
 											<div class="controls">
-												<button type="submit" class="btn btn-primary">Sign in</button>
-											</div>
-										</div>
-									</div>
-									<div id="newUserCtl">
-										<div class="control-group">
-											<label class="control-label" for="inputEmail">Email</label>
-											<div class="controls">
-												<input type="text" id="inputEmail" placeholder="Email">
-											</div>
-										</div>
-										<div class="control-group">
-											<label class="control-label" for="inputPassword">Password</label>
-											<div class="controls">
-												<input type="password" id="inputPassword" placeholder="Password">
-											</div>
-										</div>
-										<div class="control-group">
-											<label class="control-label" for="inputPassword">Retype Password</label>
-											<div class="controls">
-												<input type="password" id="inputPassword" placeholder="Password">
+												<input type="text" id="s4" placeholder="Setting">
 											</div>
 										</div>
 										<div class="control-group">
 											<div class="controls">
-												<button type="submit" class="btn btn-primary">Sign Up</button>
+                                            <button type="submit" class="btn btn-primary" >Save</button>
+                                            <button type="submit" class="btn btn-primary" >Reset</button>
 											</div>
 										</div>
 									</div>
