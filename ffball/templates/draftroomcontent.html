@@ -15,7 +15,7 @@
                             <td colspan="100%">
                                 <h4>Draft Order
                                 {% if thisLeague.league_owner == me %}
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <button class="btn btn-primary" type="submit" formmethod="post" onclick="save_draftorder('{{ draft_room_id }}')" name="saveOrder" value="Save Order">SaveOrder</button>
                                     <h6 style=" color:#999999"><i>Drag and drop to change draft order</i></h6>
                                 {% endif %}
@@ -36,22 +36,30 @@
                            {% else %}
                                 <div name="teams" id="team-{{ forloop.counter }}">
                            {% endif %}
-                               <table>
+                               <table width="100%">
                                    <tr>
                                        {% if team %}
-                                        <td>
-                                            <img src="{% static 'img/tiger.jpg' %}" width=35 class="img-rounded">
-                                        </td>
-                                       <td >
-                                           <h4 id="tid-{{ team.id }}">&nbsp;{{ team.team_name }}</h4>
-                                        </td>
+                                           <td width="40">
+                                                <img src="{% static 'img/tiger.jpg' %}" width=35 class="img-rounded">
+                                           </td>
+                                           <td width="%" >
+                                               <h4 id="tid-{{ team.id }}">&nbsp;{{ team.team_name }}</h4>
+                                            </td>
+                                           <td width="50">
+                                                {% if thisLeague.league_owner == me %}
+                                                    <button id="remove-{{ forloop.counter }}" class="btn btn-mini btn-danger"><i class='icon-minus icon-white'></i></button>
+                                                {% endif %}
+                                           </td>
                                        {% else %}
-                                        <td>
-                                            <img src="{% static 'img/no_photo.png' %}" width=35 class="img-rounded">
-                                        </td>
-                                        <td >
-                                            <h4 id="tid-0">&lt;None&gt;</h4>
-                                        </td>
+                                            <td width="40">
+                                                <img src="{% static 'img/no_photo.png' %}" width=35 class="img-rounded">
+                                            </td>
+                                            <td width="%" >
+                                                <h4 id="tid-0">&lt; Vacant &gt; </h4>
+                                            </td>
+                                           <td width="50">
+                                                <button id="switch-{{ forloop.counter }}" class="btn btn-mini btn-success"><i class='icon-plus icon-white'></i></button>
+                                           </td>
                                        {% endif %}
                                    </tr>
                                </table>
@@ -78,6 +86,8 @@
                                     <td>
                                         {% if thisLeague.league_owner == me %}
                                         <button class="btn btn-large btn-primary" type="button">Delete Room</button>
+                                        {% else %}
+                                        <button class="btn btn-large btn-primary" type="button">Leave Room</button>
                                         {% endif %}
                                     </td>
                                     <td align="right">
