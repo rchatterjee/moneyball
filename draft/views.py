@@ -25,13 +25,15 @@ def mock_draft(request):
     draftList = draftList.annotate(teamCount=Count('team'))
     draftList = draftList.order_by('settings__draft_date','teamCount')
     context = app.helpers.user_template_dict(request)
-    if context["logged_in"]:
+    if context and context["logged_in"]:
         myTeamList = Team.objects.filter(user = request.user).only('league')
         context['myTeamList'] = myTeamList
+        context['me'] = request.user
+    else:
+        context={};
     context['next_page'] = request.get_full_path
     context['providers'] = ['facebook', 'yahoo', 'google', 'github']
     context['draftList'] = draftList
-    context['me'] = request.user
     context['random_league'] = random.choice([x.league_id for x in draftList[:10]])
     return render(request, 'mock.html', context)
 
