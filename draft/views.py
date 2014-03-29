@@ -140,8 +140,13 @@ def draft(request, draft_id):
     context = app.helpers.user_template_dict(request)
     if not context or not context['logged_in']:
         return HttpResponseRedirect('/')
+    myLeague = League.objects.filter(league_id = draft_id)
+    thisLeague = myLeague[0]
+    myTeamList = Team.objects.filter(user = request.user).only('league')
     context['next_page'] = request.get_full_path
     context['me'] = request.user
+    context['thisLeague'] = thisLeague
+    context['myTeamList'] = myTeamList
     context.update(populate_draft_page(draft_id, request.user))
     return render(request, 'draft.html', context)
 
