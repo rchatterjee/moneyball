@@ -137,11 +137,48 @@
             <td width="200">
                 <!-- watchlist -->
                 <font color="#999999">
+                <div class="accordion-group">
+                    <center>
+                    <table width="180">
+                        <tr>
+                           <td colspan="100%">
+                                <div style="color:#0088CC">
+                                    <h4>&nbsp;Albert Einstein</h4>
+                                </div>
+                           </td>
+                        </tr>
+                        <tr>
+                            <td width="90">
+                                <img src="{% static 'img/icon/defPlayer.png' %}" width="90" class="img-rounded accordion-group">
+                            </td>
+                            <td width="80">
+                                <div>
+                                    &nbsp;<b>QB</b>
+                                </div>
+                                <div>
+                                    &nbsp;Green Bay
+                                </div>
+                                <div>
+                                    &nbsp;Rank #1
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                           <td colspan="100%">
+                                <div align="center">
+                                    <button class="btn btn-primary" name="addToQ"><i class='icon-download-alt icon-white'></i></button>
+                                    <button class="btn btn-primary" name="addToTeam"><i class='icon-plus icon-white'></i></button>
+                                </div>
+                           </td>
+                        </tr>
+                    </table>
+                    </center>
+                </div>
                 <div class="accordion" id="accordion2">
                   <div class="accordion-group">
                     <div class="accordion-heading">
                       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                        <h4>Queue</h4>
+                        <h4><center>My Queue</center></h4>
                       </a>
                     </div>
                     <div id="collapseOne" class="accordion-body collapse in">
@@ -323,7 +360,7 @@
                   </button>
                   <ul class="dropdown-menu dropdown-menu-inverse pull-right btn-inverse">
                       {% for oneTeam in myTeamList %}
-                        <li><a href="/draft/{{ oneTeam.league.league_id }}">{{ oneTeam.team_name }} [{{ oneTeam.league.name }}]</a></li>
+                        <li><a href="/draft/{{ oneTeam.league.league_id }}"><b>{{ oneTeam.team_name }}</b> [{{ oneTeam.league.name }}]</a></li>
                       {% endfor %}
                   </ul>
                 </div>
@@ -507,8 +544,8 @@
 <script type="text/javascript">
 
 $(function(){
-    $('#listOfWatchPlayers').slimScroll({
-		height: '300px',
+    $('#listOfWatchPlayers2').slimScroll({
+		height: '200px',
 		width: 'auto',
 		alwaysVisible: false,
 		railVisible: true,
@@ -519,7 +556,7 @@ $(function(){
     });
 
     $('#newsbox').slimScroll({
-		height: '300px',
+		height: '200px',
 		width: 'auto',
 		alwaysVisible: false,
 		railVisible: true,
@@ -529,7 +566,7 @@ $(function(){
 		disableFadeOut: false
     });
     $('#newsbox2').slimScroll({
-		height: '300px',
+		height: '200px',
 		width: 'auto',
 		alwaysVisible: false,
 		railVisible: true,
