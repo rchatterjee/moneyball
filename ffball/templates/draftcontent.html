@@ -1,7 +1,7 @@
 {% load static from staticfiles %}
 <script src="{% static 'bootstrap/js/jquery.slimscroll.min.js' %}"></script>
 <center>
-<table width="1000" height="700" style="background-color:#000000">
+<table width="1000" height="700" >
 <tr valign="top">
 <td width="800">
 <!-- col1 -->
@@ -23,7 +23,7 @@
                                 {% for team in teams %}
                                 <td width=8% bordercolor="#006600">
                                     {% if team %}
-                                        <img src="{% static 'img/team_thumbs/'%}{{ team.image_name }}" width=60 class="img-rounded">
+                                        <a href=""><img src="{% static 'img/team_thumbs/'%}{{ team.image_name }}" width=60 class="img-rounded"></a>
                                     {% else %}
                                         <img src="{% static 'img/team_thumbs/none.jpg'%}" width=60 class="img-rounded">
                                     {% endif %}
@@ -166,8 +166,9 @@
                         <tr>
                            <td colspan="100%">
                                 <div align="center">
-                                    <button class="btn btn-primary" name="addToQ"><i class='icon-download-alt icon-white'></i></button>
-                                    <button class="btn btn-primary" name="addToTeam"><i class='icon-plus icon-white'></i></button>
+                                    <a href="#" id="moreOnPlayer" class="btn btn-primary btn-mini" rel="popover" data-placement="left" data-content="We can show more status and news here" data-original-title="Albert Einstein">More</a>
+                                    <button class="btn btn-primary btn-mini" name="addToQ">Queue</button>
+                                    <button class="btn btn-success btn-mini" name="addToTeam">Add</button>
                                 </div>
                            </td>
                         </tr>
@@ -542,6 +543,10 @@
 </table>
 
 <script type="text/javascript">
+
+$(function ()
+{ $("#moreOnPlayer").popover();
+});
 
 $(function(){
     $('#listOfWatchPlayers2').slimScroll({
