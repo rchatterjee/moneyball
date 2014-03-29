@@ -6,20 +6,20 @@
 <br>
 <center>
 	<table width=1000>
-		<tr>
+		<tr >
 			<td Width=300 valign=top >
 				<div id="listOfTeams" >
 					<font color="#999999">
-					<table width=100% >
-                        <tr style=" color:#0088CC">
+					<table width=100% valign=top >
+                        <tr style=" color:#0088CC" valign=top >
                             <td colspan="100%">
-                                <h4>Draft Order
+                                <h3>Draft Order
                                 {% if thisLeague.league_owner == me %}
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
                                     <button class="btn btn-primary" type="submit" formmethod="post" onclick="save_draftorder('{{ draft_room_id }}')" name="saveOrder" value="Save Order">SaveOrder</button>
                                     <h6 style=" color:#999999"><i>Drag and drop to change draft order</i></h6>
                                 {% endif %}
-                                </h4>
+                                </h3>
                             </td>
                         </tr>
                        {% for team in draft_order %}
@@ -43,7 +43,7 @@
                                                 <img src="{% static 'img/tiger.jpg' %}" width=35 class="img-rounded">
                                            </td>
                                            <td width="%" >
-                                               <h4 id="tid-{{ team.id }}">&nbsp;{{ team.team_name }}</h4>
+                                               <h5 id="tid-{{ team.id }}">&nbsp;{{ team.team_name }}</h5>
                                             </td>
                                            <td width="50">
                                                 {% if thisLeague.league_owner == me %}
@@ -55,7 +55,7 @@
                                                 <img src="{% static 'img/no_photo.png' %}" width=35 class="img-rounded">
                                             </td>
                                             <td width="%" >
-                                                <h4 id="tid-0">&lt; Vacant &gt; </h4>
+                                                <h5 id="tid-0">&lt; Vacant &gt; </h5>
                                             </td>
                                            <td width="50">
                                                 <button id="switch-{{ forloop.counter }}" class="btn btn-mini btn-success"><i class='icon-plus icon-white'></i></button>
