@@ -41,7 +41,7 @@ def process_jquery_request(request):
             result = 'success'
         except KeyError:
             result = 'error'
-            in not msg: msg = 'Some player information is not sent! Cannot save the player.'
+            if not msg: msg = 'Some player information is not sent! Cannot save the player.'
             print "Why the fuck: ", msg
         to_json = {'result': result, 'msg': msg}
         return HttpResponse(json.dumps(to_json), content_type='application/json')
@@ -149,8 +149,8 @@ def populate_draft_page(league_id, user):
     res = {
         'teams' :  teams,
         'myteam': myteam,
-        'myteam_watchlist': myteam.fantasyplayer_set.filter(rank=0),
-        'myteam_players'  : myteam.fantasyplayer_set.filter(~Q(rank=0)),
+        'myteam_queue': myteam.fantasyplayer_set.filter(status='W'),
+        'myteam_players'  : myteam.fantasyplayer_set.filter(Q(status='A')| Q(status='B')),
         'players' : players,
         'league_id':league_id
     }
