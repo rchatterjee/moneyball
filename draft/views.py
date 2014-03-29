@@ -140,6 +140,8 @@ def set_league_settings(league_id, set_dict):
 def draft(request, draft_id):
     from dodraft import *
     context = app.helpers.user_template_dict(request)
+    if not context or not context['logged_in']:
+        return HttpResponseRedirect('/')
     context['next_page'] = request.get_full_path
     context['me'] = request.user
     context.update(populate_draft_page(draft_id, request.user))

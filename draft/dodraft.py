@@ -16,8 +16,9 @@ def populate_draft_page(league_id, user):
     for t in rteams:
         teams[t.draft_pick_number-1] = t
     # TODO
-    players = Player.objects.filter(pk__lte=100)
-    myteam  = l.team_set.filter(user=user)
+    players = Player.objects.filter()[:20]
+    myteam  = l.team_set.filter(user=user)[0]
+    print "MY TEAM NAME:", myteam.team_name
     res = {
         'teams' :  teams,
         'myteam': myteam,

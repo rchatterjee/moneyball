@@ -13,10 +13,10 @@ class Team(m.Model):
     division       = m.CharField(max_length=10, blank=True, null=True)
     is_commisionar = m.BooleanField(default=False)
     draft_pick_number = m.IntegerField(default=-1, null=True)
-    image_name = m.CharField(max_length=5, blank=True, null=True)
+    image_name = m.CharField(max_length=15, blank=True, null=True, default='0.jpg')
 
     #draft time updates
-    watch_list = m.ManyToManyField(Player, related_name='team_watchlist')
+    watch_list = m.ManyToManyField(Player, related_name='team_watchlist', null=True, blank=True, default = None)
 
     def __str__(self):
         return "(%d)%s - %s" % ( self.pk, self.team_name, self.league )
