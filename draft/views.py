@@ -10,6 +10,8 @@ from team.models import Team
 from ffball.settings import errors
 import random
 
+
+errors=''
 def join_league(request):
     t = create_team(request,0)
     print t, errors
@@ -54,6 +56,8 @@ def draft_room(request, draft_room_id):
         s = request.POST
         if s and set_league_settings(draft_room_id, s):
             return HttpResponseRedirect('/draftroom/%s' % draft_room_id )
+        else:
+            return HttpResponse( "ERROR" + errors )
     myLeague = League.objects.filter(league_id = draft_room_id)
     context['me'] = request.user
     context['myLeague'] = myLeague
@@ -64,9 +68,38 @@ def get_draft_order(draft_room_id):
     l = League.objects.get(league_id=draft_room_id)
     d = [None for x in range(l.settings.number_of_teams)]
     teams = l.team_set.all()
+    print [t.draft_pick_number for t in teams]
     for t in teams:
-        d[t.draft_pick_number-1] = t
+        try:
+            d[t.draft_pick_number-1] = t
+        except IndexError:
+            fix_draft_order(teams, l.settings.number_of_teams, l.settings.number_of_teams, True)
+            return get_draft_order(draft_room_id)
     return d
+
+def fix_draft_order(teams, old_size, new_size, forced=False):
+    if old_size>new_size: return True
+    global errors
+    if len(teams)>new_size and not forced: # ERROR
+        errors += "you have more number of teams than current team size. Cannot Save!"
+        return False;
+    else:
+        if forced: old_size = 16;
+        td = [None for x in range(old_size)]
+        for t in teams:
+            td[t.draft_pick_number-1] = t
+        td.reverse()
+        for i in range(old_size - new_size):
+            x = td.index(None)
+            del td[x]
+        assert len(td) == new_size
+        td.reverse()
+        print td
+        for i, o in enumerate(td):
+            if o:
+                o.draft_pick_number = i+1
+                o.save()
+    return True
 
 
 def set_league_settings(league_id, set_dict):
@@ -74,10 +107,18 @@ def set_league_settings(league_id, set_dict):
     s = l.settings
     print( set_dict )
     s.draft_date = set_dict.get('draftDateName', s.draft_date)
-    s.league_type  = set_dict.get('leaueTypeName', s.league_type);
+    s.league_type  = set_dict.get('leagueTypeName', s.league_type);
     l.name  = set_dict.get('lName', l.name);
     s.seconds_per_pick = set_dict.get('pickTime', s.seconds_per_pick)
-    s.number_of_teams = set_dict.get('teamCountName', s.number_of_teams)
+    old_number_of_teams = s.number_of_teams;
+    s.number_of_teams = int(set_dict.get('teamCountName', s.number_of_teams))
+    # team size has changed now do something with the teams
+    # it already has
+    if old_number_of_teams > s.number_of_teams:
+        teams = l.team_set.all()
+        if not fix_draft_order(teams, old_number_of_teams, s.number_of_teams):
+            s.number_of_teams = old_number_of_teams
+            return False;
     s.save()
     l.save()
     return True
