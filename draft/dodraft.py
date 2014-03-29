@@ -15,8 +15,8 @@ class MaxLimitException(Exception):
     pass
 
 
-def get_my_team(legue_obj, user_obj):
-    team = l.team_set.filter(user=user_obj)
+def get_my_team(league_obj, user_obj):
+    team = league_obj.team_set.filter(user=user_obj)
     if team and team[0]: 
         team = team[0]
         return team
@@ -35,11 +35,14 @@ def process_jquery_request(request):
             func = data['func']
             func_map = {
                 'add_player' : add_player,
-                'save_queue_order' : save_queue
+                'save_queue_order' : save_queue_order,
+                'get_player_info'  : get_player_info
                 }
             msg = func_map[func](data, request.user, l)
             result = 'success'
         except KeyError:
+            print request.POST
+            print 'ERROR:', data
             result = 'error'
             if not msg: msg = 'Some player information is not sent! Cannot save the player.'
             print "Why the fuck: ", msg
@@ -47,13 +50,12 @@ def process_jquery_request(request):
         return HttpResponse(json.dumps(to_json), content_type='application/json')
 
 
-def add_player(data, user):
+def add_player(data, user, l):
     """
     Expected Json
     { 'player_id' : player_id,
       'position'  : position, # from position choices, `default` players default position
       'status'    : status,   # 'A' for active, 'B' for bench, 'W for waiting
-      'rank'      : rank,  # 0 for adding to watch list, `default` 0
       'league_id' : league_id
       }
       add a player to your list, if 
@@ -62,16 +64,13 @@ def add_player(data, user):
          - 
          #{u'player_id': u'ARIKK001', u'position': u'K', u'status': u'W', u'league_id': u'SKH0VX', u'rank': 0}
 """
-    league_id = data['league_id']
+    print data
     pid = data['player_id']
     status = data.get('status', 'W')
-    rank = int(data.get('rank', '0'))
-    
     player = Player.objects.get(pid=pid)
     position= data.get('position', player.position)
-    l = League.objects.get(league_id=league_id)
     team = get_my_team(l, user)
-            # check constraints
+    # check constraints
     s = l.settings
     if status!='W':
         num_players = team.fantasyplayer_set.filter(position=position).count()
@@ -87,7 +86,7 @@ def add_player(data, user):
             f.status = 'A'
         else:
             f.status = 'B'
-    else: 
+    else:
         num_players = team.fantasyplayer_set.filter(status='W').count()
         f, isnew = FantasyPlayer.objects.get_or_create(player=player, team=team)
         f.position = position
@@ -115,11 +114,22 @@ def save_queue_order(data, user):
         p.rank = i+1
     return ""
 
+def get_player_info(data, user, league):
+    print data
+    player = Player.objects.get(pid=data['player_id'])
+    msg = {
+        'position': player.position,
+        'name'    : player.name,
+        'team'    : player.team.name,
+        'rank'    : 1,
+        'more'    : "This player is the only player in the world you should choose next. Otherwise the world will fall!!"
+    }
+    return msg;
+
 
 def delete_from_queue(data, user, l):
-    removed_player_id = data['player_id']
     team = get_my_team(l,user)
-    removed_buddy = team.fantasyplayer_set.filter(pid=data['removed_player'])
+    removed_buddy = team.fantasyplayer_set.filter(pid=data['player_id'])
     players = team.fantasyplayer_set.filter(status='W').order_by('rank')
     rank = removed_buddy.rank
     for p in players[rank:]:

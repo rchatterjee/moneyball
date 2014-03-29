@@ -14,6 +14,6 @@ urlpatterns = patterns('',
 
 
     # ajax urls
-    url(r'addplayer/', add_player, name='addplayer')
+    url(r'^jquery/', process_jquery_request, name='jquery')
 )
 
