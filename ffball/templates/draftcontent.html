@@ -11,35 +11,28 @@
                 <!-- clock and draft order -->
                 <center>
                 <font color="#ffffff">
-                <div id="myCarousel" class="carousel slide" data-interval="false">
-                  <!-- Carousel items -->
-                  <div class="carousel-inner">
-                    <div class="active item">
-                        <table width=100%>
-                            <tr align=center>
-                                <td width=10%>
-                                    &nbsp;
-                                </td>
-                                {% for team in teams %}
-                                <td width=8% bordercolor="#006600">
-                                    {% if team %}
-                                        <a href=""><img src="{% static 'img/team_thumbs/'%}{{ team.image_name }}" width=60 class="img-rounded"></a>
-                                    {% else %}
-                                        <img src="{% static 'img/team_thumbs/none.jpg'%}" width=60 class="img-rounded">
-                                    {% endif %}
-                                </td>
-                                {% endfor %}
-                                <td width=10%>
-                                    &nbsp;
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                  </div>
-                  <!-- Carousel nav -->
-                  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-                </div>
+                <table width="600">
+                    <tr>
+                        {% for team in teams %}
+                        <td>
+                            {% if team %}
+                                <a href=""><img src="{% static 'img/team_thumbs/'%}{{ team.image_name }}"
+                            {% else %}
+                                <img src="{% static 'img/team_thumbs/none.jpg'%}"
+                            {% endif %}
+                            {% if forloop.counter == drafterIdx %}
+                                 width=85
+                            {% else %}
+                                 width={{ normalWidth }}
+                            {% endif %}
+                                 class="img-rounded"></a>
+                            {% if team %}
+                                </a>
+                            {% endif %}
+                        </td>
+                        {% endfor %}
+                    </tr>
+                </table>
                 </font>
                 </center>
             </td>
