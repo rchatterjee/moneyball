@@ -3,9 +3,17 @@
 <link href="{% static 'bootstrap/css/bootstrap-datetimepicker.min.css' %}" rel="stylesheet" media="screen">
 <script src="{% static 'bootstrap/js/bootstrap-datetimepicker.min.js' %}"></script>
 <script src="{% static 'bootstrap/js/jquery.slimscroll.min.js' %}"></script>
-<br>
 <center>
 	<table width=1000>
+        <tr>
+            <td colspan="100%">
+                <center>
+                    <div style="color:#ffffff">
+                        <h2>Welcome to "{{ thisLeague.name }}"</h2>
+                    </div>
+                </center>
+            </td>
+        </tr>
 		<tr >
 			<td Width=300 valign=top >
                 <div style="color:#0088CC" >
@@ -117,14 +125,17 @@
                                     {% csrf_token %}
 									<br>
                                     <div class="control-group">
-                                        <label class="control-label" for="lName" name="lName">League Name</label>
-                                        <div class="controls">
                                         {% if thisLeague.league_owner == me %}
-                                            <input type="text" id="lName" name="lName" value="{{ thisLeague.name}}">
+                                            <label class="control-label" for="lName" name="lName">League Name</label>
+                                            <div class="controls">
+                                                <input type="text" id="lName" name="lName" value="{{ thisLeague.name}}">
+                                            </div>
                                         {% else %}
-                                            <label class="control-label" id="lNameNE">{{ thisLeague.name}}</label>
+                                            <label class="control-label" for="lName" name="lName">League Owner</label>
+                                            <div class="controls">
+                                                <label class="control-label" id="lNameNE">{{ thisLeague.league_owner}}</label>
+                                            </div>
                                         {% endif %}
-                                        </div>
                                     </div>
                                     {% if thisLeague.password != "" %}
                                     {% if thisLeague.league_owner == me %}
