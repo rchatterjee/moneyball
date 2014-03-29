@@ -135,7 +135,7 @@
                                 {% for player in players|slice:":20" %}
                                 <tr>
                                     <td>
-                                        <button class="btn btn-mini btn-success" type="button"><i class="icon-plus icon-black"></i></button>
+                                        <button class="btn btn-mini btn-success" type="button" onclick="get_info('{{ player.pid }}')"><i class="icon-plus icon-black"></i></button>
                                     </td>
                                     <td>
                                         {{ forloop.counter }}
@@ -183,10 +183,10 @@
                 <font color="#999999">
                 <div class="accordion-group">
                     <center>
-                    <table width="180">
+                    <table width="180" id="selected_player">
                         <tr>
                            <td colspan="100%">
-                                <div style="color:#999999">
+                                <div style="color:#999999" name="name">
                                     <h4>&nbsp;Albert Einstein</h4>
                                 </div>
                            </td>
@@ -196,13 +196,13 @@
                                 <img src="{% static 'img/icon/defPlayer.png' %}" width="90" class="img-rounded accordion-group">
                             </td>
                             <td width="80">
-                                <div>
-                                    <h4>&nbsp;QB</h4>
+                                <div name="position">
+                                    &nbsp;<b>QB</b>
                                 </div>
-                                <div>
+                                <div name="team_name">
                                     &nbsp;Green Bay
                                 </div>
-                                <div>
+                                <div name="rank">
                                     &nbsp;Rank #1
                                 </div>
                             </td>
@@ -211,8 +211,8 @@
                            <td colspan="100%">
                                 <div align="center">
                                     <a href="#" id="moreOnPlayer" class="btn btn-primary btn-mini" rel="popover" data-placement="left" data-content="We can show more status and news here" data-original-title="Albert Einstein">More</a>
-                                    <button class="btn btn-primary btn-mini" name="addToQ">Queue</button>
-                                    <button class="btn btn-success btn-mini" name="addToTeam">Pick</button>
+                                    <button class="btn btn-primary btn-mini" name="addToQ" onclick="addToQ()">Queue</button>
+                                    <button class="btn btn-success btn-mini" name="addToTeam" onclick="addToTeam()">Add</button>
                                 </div>
                            </td>
                         </tr>
@@ -229,19 +229,19 @@
                     <div id="collapseOne" class="accordion-body collapse in">
                       <div class="accordion-inner">
                         <div id="listOfWatchPlayers" >
-                            {% if player %}
+                            {% if myteam_queue %}
                                 {% for player in myteam_queue %}
-                                <div class="dndcontainer" name="watchPlayers" id="watchplayer-{{ forloop.counter }}" draggable="true" >
+                                <div class="dndcontainer" name="watchPlayers" id="watchplayer-{{ player.player.pid }}" draggable="true" >
                                     <table width=100% >
                                         <tr>
                                             <td width="25">
                                                 #{{ forloop.counter }}
                                             </td>
                                             <td width=%>
-                                                <button class="btn btn-small btn-success" type="button" >player.player.name</button>
+                                                <button class="btn btn-small btn-success" type="button" > {{ player.player.name }} </button>
                                             </td>
                                             <td width="25" align="right">
-                                                <a href=""><i class='icon-minus icon-white'></i></a>
+                                                <a><i id="deletequeue-{{ player.player.pid }}" onclick="delete_from_watchlist(this)" class='icon-minus icon-white'></i></a>
                                             </td>
                                         </tr>
                                     </table>
@@ -610,5 +610,175 @@ function handleDragEnd(e) {
   col.addEventListener('drop', handleDrop, false);
   col.addEventListener('dragend', handleDragEnd, false);
 });
+
+
+
+// ------------------------------- jQuery/Ajax functions ---------------------------------------------------------
+// using jQuery
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+var csrftoken = getCookie('csrftoken');
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+
+function sameOrigin(url) {
+    // test that a given url is a same-origin URL
+    // url could be relative or scheme relative or absolute
+    var host = document.location.host; // host + port
+    var protocol = document.location.protocol;
+    var sr_origin = '//' + host;
+    var origin = protocol + sr_origin;
+    // Allow absolute or scheme relative URLs to same origin
+    return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+        (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+        // or any other URL that isn't scheme relative or absolute i.e relative.
+        !(/^(\/\/|http:|https:).*/.test(url));
+}
+
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+            // Send the token to same-origin, relative URLs only.
+            // Send the token only if the method warrants CSRF protection
+            // Using the CSRFToken value acquired earlier
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+
+
+current_selected = {
+'player_id': -1,
+'name'  : "",
+'league_id' : '{{ league_id }}'
+}
+added = [{% for p in myteam_queue %}'{{ p.player.pid }}',{% endfor %} 0 ];
+function get_info( pid ) {
+   res = { 'player_id' : pid,
+           'league_id' : current_selected['league_id'],
+           'func' : 'get_player_info'
+         };
+  $.ajax({
+    type: "POST",
+    url: "/jquery/",
+    dataType: "json",
+    data: {'data' : JSON.stringify(res)},
+    success: function (response) {
+       $('#selected_player [name=name]').html('<h4>&nbsp;' + response['msg']['name'] + '</h4>');
+       $('#selected_player [name=team_name]').html('&nbsp;' + response['msg']['team']);
+       $('#selected_player [name=position]').html('&nbsp;<b>' + response['msg']['position'] + '</b>');
+       $('#selected_player [name=rank]').html('&nbsp;Rank #' + response['msg']['rank']);
+       $('#moreOnPlayer').attr('data-content', response['msg']['more']);
+       $('#moreOnPlayer').attr('data-original-title', response['msg']['name']);
+       current_selected['player_id'] = pid;
+       current_selected['name'] = response['msg']['name'];
+       return true;
+    },
+    error: function (msg) {
+      //alert("Error while calling web service," + msg.Message);
+    }
+  });
+
+}
+
+function addToQ() {
+   res = { 'player_id' : current_selected['player_id'],
+           'league_id' : current_selected['league_id'],
+           'func' : 'add_player',
+           'status': 'W',
+         };
+  var a = added.indexOf(res['player_id']);
+  if ( a>=0 ) { alert(a); return true; }
+  $.ajax({
+    type: "POST",
+    url: "/jquery/",
+    dataType: "json",
+    data: {'data' : JSON.stringify(res)},
+    success: function (response) {
+       //alert(JSON.stringify(response));
+       div_elem = '<div class="dndcontainer" name="watchPlayers" id="watchplayer-' + current_selected['player_id'] + '" draggable="true" ><table width=100% ><tr><td width="25"> #' + response['msg']['rank'] +
+       '</td><td width=%><button class="btn btn-small btn-success" type="button" >' + response['msg']['name']+ '</button></td><td width="25" align="right">' +
+       '<a><i id="deletequeue-' + current_selected['player_id'] +'" onclick="delete_from_watchlist(this)" class="icon-minus icon-white"></i></a></td></tr></table></div>';
+       $(div_elem).appendTo('#listOfWatchPlayers')
+       added.push(current_selected['player_id'])
+       return true;
+    },
+    error: function (msg) {
+      //alert("Error while calling web service," + msg.Message);
+    }
+  });
+}
+
+
+function delete_from_watchlist( elem ) {
+   pid = elem.id.split('-')[1];
+   w_id = "#watchplayer-" + pid;
+   res = { 'player_id' : pid,
+           'league_id' : '{{ league_id }}',
+           'func'      : 'delete_from_queue'
+         }
+  $.ajax({
+    type: "POST",
+    url: "/jquery/",
+    dataType: "json",
+    data: {'data' : JSON.stringify(res)},
+    success: function (response) {
+       //alert('Done!Mother Fucker' + JSON.stringify(response) + w_id);
+       $(w_id).remove();
+       var a = added.indexOf(res['player_id']);
+       if ( a>=0 ) { added.splice(a, 1) }
+       return true;
+    },
+    error: function (msg) {
+      //alert("Error while calling web service," + msg.Message);
+    }
+  });
+
+}
+
+
+function add_to_watchlist( pid, position, status, rank ) {
+   res = { 'player_id' : pid,
+           'position'  : position,
+           'status'    : status || 'A',
+           'rank'      : rank || 0,
+           'league_id' : '{{ league_id }}'
+         }
+  $.ajax({
+    type: "POST",
+    url: "/jquery/",
+    dataType: "json",
+    data: {'data' : JSON.stringify(res)},
+    success: function (response) {
+       //alert('Done!Mother Fucker' + JSON.stringify(response));
+       $('#myplayers').append('<td width=%><button class="btn btn-small btn-success" width: 300px type="button">' + response['msg']['name']+'</button></td>');
+       return true;
+    },
+    error: function (msg) {
+      //alert("Error while calling web service," + msg.Message);
+    }
+  });
+
+}
+
+
+
+
 
 </script>

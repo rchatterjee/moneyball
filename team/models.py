@@ -47,7 +47,7 @@ class FantasyPlayer(m.Model):
     rank     = m.IntegerField(default=0, null=True) # only if he is in watchlist
 
     def __str__(self):
-        return "name: %s, team: %s, position: %s" % ( self.player.name, self.team.team_name, self.position )
+        return "Player: {name: %s, team: %s, position: %s, rank: %d}" % ( self.player.name, self.team.team_name, self.position, self.rank )
 
 
 
