@@ -6324,10 +6324,10 @@ a.badge:focus {
   position: fixed;
 }
 
-.srgtest{
+.dndcontainer{
     border-color: #999999
 }
-.srgtest over {
+.dndcontainer over {
   border-color: #999999
   border: 2px dashed #000;
 }

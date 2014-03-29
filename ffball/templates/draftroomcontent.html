@@ -8,20 +8,17 @@
 	<table width=1000>
 		<tr >
 			<td Width=300 valign=top >
+                <div style="color:#0088CC" >
+                    <h3>Draft Order
+                    {% if thisLeague.league_owner == me %}
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-primary" type="submit" formmethod="post" onclick="save_draftorder('{{ draft_room_id }}')" name="saveOrder" value="Save Order">SaveOrder</button>
+                    {% endif %}
+                    </h3>
+                </div>
 				<div id="listOfTeams" >
 					<font color="#999999">
 					<table width=100% valign=top >
-                        <tr style=" color:#0088CC" valign=top >
-                            <td colspan="100%">
-                                <h3>Draft Order
-                                {% if thisLeague.league_owner == me %}
-                                    &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <button class="btn btn-primary" type="submit" formmethod="post" onclick="save_draftorder('{{ draft_room_id }}')" name="saveOrder" value="Save Order">SaveOrder</button>
-                                    <h6 style=" color:#999999"><i>Drag and drop to change draft order</i></h6>
-                                {% endif %}
-                                </h3>
-                            </td>
-                        </tr>
                        {% for team in draft_order %}
                        <tr>
                            <td>
@@ -32,7 +29,7 @@
                            </td>
                            <td >
                            {% if thisLeague.league_owner == me %}
-                               <div class="srgtest" name="teams" id="team-{{ forloop.counter }}" draggable="true" >
+                               <div class="dndcontainer" name="teams" id="team-{{ forloop.counter }}" draggable="true" >
                            {% else %}
                                 <div name="teams" id="team-{{ forloop.counter }}">
                            {% endif %}
@@ -67,10 +64,14 @@
                            </td>
                        </tr>
                        {% endfor %}
-
 					</table>
 					</font>
 				</div>
+                <div>
+                    {% if thisLeague.league_owner == me %}
+                        <center><h6 style=" color:#999999"><i>Drag and drop to change draft order</i></h6></center>
+                    {% endif %}
+                </div>
 
             </td>
 			<td valign=top width=700>			
@@ -305,9 +306,10 @@
 <script type="text/javascript">
 
 var dragSrcEl = null;
+var cols = document.querySelectorAll('#listOfTeams .dndcontainer');
 
 function handleDragStart(e) {
-  //this.style.opacity = '0.4';  // this / e.target is the source node.
+  this.style.opacity = '0.4';  // this / e.target is the source node.
   dragSrcEl = this;
   e.dataTransfer.effectAllowed = 'move';
   e.dataTransfer.setData('text/html', this.innerHTML);
@@ -341,6 +343,8 @@ function handleDrop(e) {
     // Set the source column's HTML to the HTML of the column we dropped on.
     dragSrcEl.innerHTML = this.innerHTML;
     this.innerHTML = e.dataTransfer.getData('text/html');
+    this.style.opacity = '1.0';
+    dragSrcEl.style.opacity = '1.0';
   }
   $('button[name=saveOrder]').html('SaveOrder')
   return false;
@@ -348,14 +352,13 @@ function handleDrop(e) {
 
 function handleDragEnd(e) {
   // this/e.target is the source node.
-
   [].forEach.call(cols, function (col) {
     col.classList.remove('over');
+    col.style.opacity = '1.0';
   });
   $('button[name=saveOrder]').html('SaveOrder')
 }
 
-var cols = document.querySelectorAll('#listOfTeams .srgtest');
 [].forEach.call(cols, function(col) {
   col.addEventListener('dragstart', handleDragStart, false);
   col.addEventListener('dragenter', handleDragEnter, false);
@@ -377,7 +380,7 @@ var cols = document.querySelectorAll('#listOfTeams .srgtest');
 <script>
 $(function(){
     $('#listOfTeams').slimScroll({
-		height: '600px',
+		height: '500px',
 		width: 'auto',
 		alwaysVisible: false,
 		railVisible: true,
