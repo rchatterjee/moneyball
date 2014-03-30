@@ -777,8 +777,30 @@ function add_to_watchlist( pid, position, status, rank ) {
 
 }
 
+// Polling for draft transaction updates.
+last_poll_id = '-1'
 
+function TxnUpdatesProcessResponse(data)
+{
+}
 
-
+(function TxnUpdatesPoll(){
+    setTimeout(function() {
+        res = {'league_id': '{{ league_id }}',
+               'last': last_poll_id }
+        $.ajax({
+            type: "POST",
+            url: "/data/draft/updates",
+            dataType: "json",
+            data: {'data' : JSON.stringify(res)},
+            success: function(data){
+                // Process poll response
+                TxnUpdatesProcessResponse(data);
+            },
+            dataType: "json",
+            complete: TxnUpdatesPoll,
+            timeout: 3000 });
+        }, 3000);
+ })();
 
 </script>
