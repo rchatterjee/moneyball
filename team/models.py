@@ -20,7 +20,11 @@ class Team(m.Model):
     # FantasyPlayers with zero rank are already in my team
 
     def __str__(self):
-        return "(%d)%s - %s" % ( self.pk, self.team_name, self.league )
+        if self.pk:
+            return "(%d)%s - %s" % ( self.pk, self.team_name, self.league )
+        else:
+            return "(0)%s - %s" % ( self.team_name, self.league )
+            
 
 
 FANTASY_PLAYER_POSITION_CHOICES = (

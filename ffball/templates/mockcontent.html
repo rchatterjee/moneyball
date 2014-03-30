@@ -35,7 +35,7 @@ function isPartOfLeague(leagueId){
 			<br>	
 			<br>
 			{% endif %}
-			<a href="/draftroom/{{ random_league }}"> <button class="btn btn-large btn-primary" data-action="" type="button">Find Random</button></a>
+			<a {% if random_league %} href="/draftroom/{{ random_league }}" {% endif %}> <button class="btn btn-large btn-primary" data-action="" type="button">Find Random</button></a>
 			<br>	
 			<br>
 			<button class="btn btn-large btn-primary" type="button">Invite Others</button>	

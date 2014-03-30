@@ -58,7 +58,7 @@ def create_team(request, is_commissioner=0, league_id = ''):
              team_name=team_name,
              waiver_priority=waiver_priority,
              division=division,
-             is_commisionar=is_commissioner,
+             is_commissioner=is_commissioner,
              draft_pick_number=draft_pick_number)
     return t
 

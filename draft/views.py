@@ -1,11 +1,12 @@
+from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.db.models import Count
-import app, json
-from team.views import *
-from team.models import Team
+import app, json, random
+from team.views import Team
 from ffball.settings import errors
-import random
-
+from team.models import Team, FantasyPlayer
+from league.models import League
+from dodraft import *
 
 errors=''
 def join_league(request):
@@ -30,7 +31,8 @@ def mock_draft(request):
     context['next_page'] = request.get_full_path
     context['providers'] = ['facebook', 'yahoo', 'google', 'github']
     context['draftList'] = draftList
-    context['random_league'] = random.choice([x.league_id for x in draftList[:10]])
+    if len(draftList)>1:
+        context['random_league'] = random.choice([x.league_id for x in draftList[:10]])
     return render(request, 'mock.html', context)
 
 
@@ -136,7 +138,6 @@ def set_league_settings(league_id, set_dict):
 
 
 def draft(request, draft_id):
-    from dodraft import *
     context = app.helpers.user_template_dict(request)
     if not context or not context['logged_in']:
         return HttpResponseRedirect('/')
