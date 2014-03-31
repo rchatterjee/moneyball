@@ -179,8 +179,8 @@ def populate_draft_page(league_id, user):
     teams = [ None ] * num_team # add Bots if `you` want
     for t in rteams:
         teams[t.draft_pick_number-1] = t
-    # TODO
     players = Player.objects.filter()[:20]
+    players_size = Player.objects.filter().count()
     myteam  = l.team_set.filter(user=user)[0]
 
     allowed_player_types = ['QB', 'RB', 'WR', 'TE', 'FLEX', 'K', 'BN']
@@ -210,6 +210,7 @@ def populate_draft_page(league_id, user):
         'myteam_queue': myteam.fantasyplayer_set.filter(status='Q'),
         'myteam_players'  : myteam.fantasyplayer_set.filter(Q(status='A')| Q(status='B')),
         'players' : players,
+        'players_size': players_size,
         'league_id':league_id,
         'roster_settings' : roster_settings,
         'current_team' : curr_team,

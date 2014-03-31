@@ -104,10 +104,6 @@
                                     </td>
                                     <td align=right>
                                         <a href="javascript:void(0)"
-                                            onclick="GetPlayersByType('flex')">Flex</a>
-                                    </td>
-                                    <td align=right>
-                                        <a href="javascript:void(0)"
                                             onclick="GetPlayersByType('k')">K</a>
                                     </td>
                                     <td align=right>
@@ -792,7 +788,7 @@ function DraftStatusProcess(data)
 player_type = 'all';
 player_sort = 'name';
 player_page = 1;
-player_size = 0;
+player_size = {{ players_size }};
 
 function table_row(p, i)
 {
@@ -825,16 +821,25 @@ function RefreshPlayers(data)
 
 function RefreshPages(data)
 {
+    player_size = data;
+
     cur = player_page;
     total = Math.ceil(player_size/20);
+
+    console.log("Current: " + cur);
+    console.log("Total:   " + total);
+
     $('#player-pages').empty();
     $('#player-pages').append(
             '<li><a href="javascript:void(0)" ' +
             'onclick="LoadPage(' + 1  + ')">&laquo;</a></li>');
     for (i = cur-2; i <= cur+2; i++) {
-        if (i > 0) {
+        c = '';
+        if (i == cur)
+            c = ' class="active" ';
+        if (i > 0 && i <= total) {
             $('#player-pages').append(
-                    '<li><a href="javascript:void(0)" ' +
+                    '<li' + c + '><a href="javascript:void(0)" ' +
                     'onclick="LoadPage(' + i + ')">' + i + '</a></li>');
         }
     }
@@ -846,7 +851,7 @@ function RefreshPages(data)
 function GetPlayers()
 {
     url = "/data/proplayer/order?type=" + player_type + "&sort=" + player_sort;
-    url += "&start=" + (player_page*20) + "&length=20";
+    url += "&start=" + ((player_page-1)*20) + "&length=20";
     console.log(url);
     $.ajax({
         type: "GET",
@@ -860,6 +865,7 @@ function GetPlayers()
 function GetPlayerSize()
 {
     url = "/data/proplayer/order-size?type=" + player_type;
+    console.log(url);
     $.ajax({
         type: "GET",
         url: url,
@@ -891,7 +897,9 @@ function LoadPage(p)
     console.log("Load-page: "+p);
     player_page = p;
     GetPlayers();
-    RefreshPages();
+    RefreshPages(player_size);
 }
+
+RefreshPages(player_size);
 
 </script>

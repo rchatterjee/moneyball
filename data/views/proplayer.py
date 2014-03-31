@@ -31,7 +31,6 @@ FILTER_MAP = {
     'rb': Q(position = 'RB'),
     'wr': Q(position = 'WR'),
     'te': Q(position = 'TE'),
-    'flex': Q(position = 'Flex'),
     'k': Q(position = 'K'),
 }
 
