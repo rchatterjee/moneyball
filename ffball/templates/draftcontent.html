@@ -616,7 +616,7 @@ function addToQ( pid ) {
            'status': 'Q',
          };
   var a = addedQ.indexOf(res['player_id']);
-  if ( a>=0 ) { console.log("Already in the Queue!"); return true; }
+  if ( a>=0 ) { alert("Already in the Queue!"); return true; }
   sendJsonQuery ( res, function (response) {
        if ( response['result']!='success' ) {alert(response['msg']); return;}
        div_elem = '<div class="dndcontainer" name="watchPlayers" id="watchplayer-{player_id}" draggable="true"> \
@@ -647,23 +647,31 @@ function addToTeam( pid, player_name ) {
            'status': 'A',
          };
    var a = addedP.indexOf(res['player_id']);
-   if ( a>=0 ) { console.log("Already in the Queue!"); return true; }
+   if ( a>=0 ) { alert("Already in the Queue!"); return true; }
    r = confirm("Going to draft " + player_name +"! Lets do it?")
    if ( r == true ) {
        sendJsonQuery ( res, function (response) {
-           console.log(response);
+           console.log(JSON.stringify(response));
            if ( response['result']=='success') {
               if ( response['msg']['status'] == 'B' ) {
-                  a=$('#tr-BN'+ benchCount)
-                  b = a.clone()
-                  benchCount+=1;
+                  if ( benchCount > 0 ) {
+                      a=$('#tr-BN'+ benchCount)
+                  }
+                  else {
+                       console.log('first bench');
+                       a = $('#tr-K1');
+                  }
+                  b = a.clone();
+                  benchCount += 1;
+                  b.attr('id', 'tr-BN'+benchCount);
                   $(b).children().find('b').html('BN'+benchCount)
                   $(b).children().find('button').html(response['msg']['name'])
                   a.after(b)
               }
               else {
                   tdid = "#tr-{position}{rank}".format(response['msg'])
-                  $(tdid).html(response['msg']['name'])
+                  console.log(tdid);
+                  $(tdid).find('button').html(response['msg']['name'])
               }
               $('#watchplayer-{0}'.format({0:pid})).remove()
               addedP.push(pid)

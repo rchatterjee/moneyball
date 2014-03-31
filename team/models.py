@@ -24,7 +24,6 @@ class Team(m.Model):
             return "(%d)%s - %s" % ( self.pk, self.team_name, self.league )
         else:
             return "(0)%s - %s" % ( self.team_name, self.league )
-            
 
 
 FANTASY_PLAYER_POSITION_CHOICES = (

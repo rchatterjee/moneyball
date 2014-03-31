@@ -15,7 +15,6 @@ def pic_player(request):
 class MaxLimitException(Exception):
     pass
 
-
 def get_my_team(league_obj, user_obj):
     team = league_obj.team_set.filter(user=user_obj)
     if team and team[0]: 
@@ -52,6 +51,30 @@ def process_jquery_request(request):
             print "Why the fuck: ", msg
         return HttpResponse(json.dumps(result), content_type='application/json')
 
+# 1. check whether the player is available
+# 2. check position wise max limit
+# 3. check total team size is less than the max team size
+# 4. already in list
+def check_constraints(l, mt, p):
+    for t in l.team_set.all():
+        if t.fantasyplayer_set.filter(Q(player=p) & ~Q(status='Q')):
+            msg = "Player is not Available!"
+            return msg, False
+    s = l.settings
+    position_max = eval("s.count_%s_max" % p.position)
+    my_player_at_this_position = mt.fantasyplayer_set.filter(Q(position=p.position) & ~Q(status='Q'))
+    if len(t.fantasyplayer_set.all())>=s.size:
+        msg = "No space left in your team!"
+        return msg, False
+    if len(my_player_at_this_position)>=position_max:
+        if not t.fantasyplayer_set.filter(position="FLEX"):
+            msg = "Already selected %d '%s' players" % (len(my_player_at_this_position), p.position)
+        else:
+            msg = "Can be added to Flex!"
+        return msg, False
+    return len(my_player_at_this_position), True
+
+
 
 def add_player(data, user, l):
     pid = data['player_id']
@@ -63,20 +86,13 @@ def add_player(data, user, l):
     print 'Start1:', data
     s = l.settings
     if status != 'Q':
-        my_players = team.fantasyplayer_set.filter(~Q(status='Q'))
-        my_players_at_this_position = my_players.filter(position=position)
-        print my_players
-        allowed_num = eval('s.count_%s_max' % position)
-        if len(my_players_at_this_position)>=allowed_num:
-            msg = "Max allowed limit(%d) for %s is reached(%d)" % (allowed_num, position, len(my_players_at_this_position))
-            result={'result': 'error', 'msg': msg}
-            return result # should use custom exception
-                
+        msg, okay = check_constraints(l, team, player)
+        print msg, okay
+        if not okay:
+            return {'result': 'error', 'msg': msg}
         f, isnew = FantasyPlayer.objects.get_or_create(player=player, team=team)
-        if not isnew and f.status != 'Q':
-            return {'result': 'error', 'msg': "Already selected"}
         f.position = position
-        f.rank     = len(my_players_at_this_position)+1
+        f.rank     = msg+1
         if f.rank <= eval('s.count_%s_min' % position):
             f.status = 'A'
         else:
@@ -86,7 +102,7 @@ def add_player(data, user, l):
         num_players = team.fantasyplayer_set.filter(status='Q').count()
         f, isnew = FantasyPlayer.objects.get_or_create(player=player, team=team)
         if not isnew:
-            return {'result': 'error', 'msg': "Already in Queue selected"}
+            return {'result': 'error', 'msg': "Already in Queue or Selected"}
         f.position = position
         f.rank     = num_players+1
         f.status = 'Q'
@@ -117,6 +133,7 @@ def save_queue_order(data, user):
         p.rank = i+1
     return ""
 
+
 def get_player_info(data, user, league):
     print data
     player = Player.objects.get(pid=data['player_id'])
@@ -146,11 +163,9 @@ def delete_from_queue(data, user, l):
             p.rank = rank-1+i+1
             p.save()
     removed_buddy.delete()
-
-   #if len(players)>0:
-   #     assert players[-1].rank==len(players)-1
     msg= "Deleted %s" % removed_buddy
     return {'result': 'success', 'msg': msg}
+
 
 def auto_drafting(data, user):
     pass
@@ -187,7 +202,6 @@ def populate_draft_page(league_id, user):
                 curr_team['%s%d'%(a, n+1)] = this_type_player[n].player.name
             else:
                 curr_team['%s%d'%(a, n+1)] = '[EMPTY]'
-
 
     print "MY TEAM NAME:", myteam.team_name
     res = {
