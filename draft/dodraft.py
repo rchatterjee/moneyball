@@ -181,8 +181,8 @@ def populate_draft_page(league_id, user):
         teams[t.draft_pick_number-1] = t
     existing = FantasyPlayer.objects.filter(team__league__league_id =
                 league_id).values_list('player__pid', flat=True)
+    players_size = Player.objects.exclude(pid__in = existing).count()
     players = Player.objects.exclude(pid__in = existing)
-    players_size = Player.objects.filter().count()
     myteam  = l.team_set.filter(user=user)[0]
 
     allowed_player_types = ['QB', 'RB', 'WR', 'TE', 'FLEX', 'K', 'BN']

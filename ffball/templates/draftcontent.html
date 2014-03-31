@@ -789,6 +789,7 @@ player_type = 'all';
 player_sort = 'name';
 player_page = 1;
 player_size = {{ players_size }};
+player_league = '{{ league_id }}';
 
 function table_row(p, i)
 {
@@ -852,6 +853,7 @@ function GetPlayers()
 {
     url = "/data/proplayer/order?type=" + player_type + "&sort=" + player_sort;
     url += "&start=" + ((player_page-1)*20) + "&length=20";
+    url += "&league_id=" + player_league;
     console.log(url);
     $.ajax({
         type: "GET",
@@ -865,6 +867,7 @@ function GetPlayers()
 function GetPlayerSize()
 {
     url = "/data/proplayer/order-size?type=" + player_type;
+    url += "&league_id=" + player_league;
     console.log(url);
     $.ajax({
         type: "GET",
