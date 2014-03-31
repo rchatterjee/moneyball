@@ -142,6 +142,9 @@ class League(m.Model):
     league_id = m.CharField(max_length=50, blank=True)
     league_owner    = m.ForeignKey(User)
     password = m.CharField(max_length=15, default='', blank=True)
+    draft_current = m.ForeignKey('team.Team', related_name="draft_league",
+            null=True)
+    draft_timeout = m.DateTimeField("Timelimit for current drafter.", null=True)
     settings = m.ForeignKey(League_Settings)
 
     def __str__(self):

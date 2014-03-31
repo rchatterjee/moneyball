@@ -16,22 +16,17 @@
                 <center>
                 <font color="#ffffff">
                 <table width="600">
-                    <tr>
+                    <tr id="teams-images">
                         {% for team in teams %}
                         <td>
                             {% if team %}
-                                <a href=""><img src="{% static 'img/team_thumbs/'%}{{ team.image_name }}"
+                            <a href=""><img id="team-image-{{ team.id }}" class="img-rounded"
+                                src="{% static 'img/team_thumbs/'%}{{ team.image_name }}"
+                                    width=80></a>
                             {% else %}
-                                <img src="{% static 'img/team_thumbs/none.jpg'%}"
-                            {% endif %}
-                            {% if forloop.counter == drafterIdx %}
-                                 width=85
-                            {% else %}
-                                 width={{ normalWidth }}
-                            {% endif %}
-                                 class="img-rounded"></a>
-                            {% if team %}
-                                </a>
+                            <img class="img-rounded"
+                            src="{% static 'img/team_thumbs/none.jpg'%}"
+                            width=80>
                             {% endif %}
                         </td>
                         {% endfor %}
@@ -384,7 +379,7 @@
 //!!!!!!!!!!!this needs to change!
 // ie onclick="CounterInit(10); return false;"
 // this is where i got it from : http://www.jqueryscript.net/time-clock/Simple-jQuery-Digital-Countdown-Timer-Plugin.html
-CounterInit({{ thisLeague.settings.seconds_per_pick }}*10);
+//CounterInit(1);
 
 $(function ()
 { $("#moreOnPlayer").popover();
@@ -696,8 +691,64 @@ function delete_from_watchlist( elem ) {
     })
 }
 
+var team_ids = [{% spaceless %}
+    {% for t in teams %}
+        {% if t %}
+        {{ t.id }},
+        {% endif %}
+    {% endfor %}
+    {% endspaceless %}];
+function UpdateCurrentDrafter(team_id)
+{
+    // XXX: Should we change the "height" too?
+    for (i = 0; i < team_ids.length; i++) {
+        $('#team-image-' + team_ids[i]).width(80);
+    }
+    $('#team-image-' + team_id).width({{ normalWidth }});
+}
 
+function UpdateTimeout(timeout)
+{
+    var now = new Date();
+    var diff = Math.floor((timeout - now)/1000);
+    if (diff > 0) {
+        console.log("timeout in: " + diff);
+        CounterInit(diff);
+    }
+}
 
+// Polling for draft status.
 
+draft_current = '';
+draft_timeout = '';
+function DraftStatusProcess(data)
+{
+    //console.log(data);
+    if (draft_current != data['current']) {
+        console.log("current-drafter: " + data['current']);
+        draft_current = data['current'];
+        UpdateCurrentDrafter(draft_current);
+    }
+    if (draft_timeout != data['timeout'] && data['timeout'] != null) {
+        console.log("current-timeout: " + data['timeout']);
+        draft_timeout = data['timeout'];
+        UpdateTimeout(data['timeout']);
+    }
+}
+
+(function DraftStatusPoll(){
+    setTimeout(function() {
+        $.ajax({
+            type: "GET",
+            url: "/data/draft/{{ league_id }}/updates",
+            success: function(data){
+                // Process poll response
+                DraftStatusProcess(data);
+            },
+            dataType: "json",
+            complete: DraftStatusPoll,
+            timeout: 3000 });
+        }, 3000);
+ })();
 
 </script>
