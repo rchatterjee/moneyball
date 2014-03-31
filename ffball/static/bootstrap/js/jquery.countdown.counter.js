@@ -75,8 +75,8 @@ var switchItem = function(itemNumber, digit, capacity) {
 };
 
 var counterFinished = function() {
-    // SAIKAT: use this hook!
-    alert("time's up!");
+    // XXX: SAIKAT: use this hook!
+    // alert("time's up!");
 };
 
 var rollToEnd = function() {
