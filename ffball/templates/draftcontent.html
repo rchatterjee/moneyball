@@ -77,42 +77,56 @@
                             <table width=100%>
                                 <tr>
                                     <td align=left>
-                                        <input type="text" class="search-query span3" style="height:15px;" data-provide="typeahead" placeholder="Search Players">
+                                        <input type="text" class="search-query span2" style="height:15px;" data-provide="typeahead" placeholder="Search Players">
                                     </td>
                                     <td align=right>
                                         <b>Filter by position: </b>
                                     </td>
                                     <td align=right>
-                                        <a href="">QB</a>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersByType('all')">All</a>
                                     </td>
                                     <td align=right>
-                                        <a href="">RB</a>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersByType('qb')">QB</a>
                                     </td>
                                     <td align=right>
-                                        <a href="">WR</a>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersByType('rb')">RB</a>
                                     </td>
                                     <td align=right>
-                                        <a href="">TE</a>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersByType('wr')">WR</a>
                                     </td>
                                     <td align=right>
-                                        <a href="">Flex</a>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersByType('te')">TE</a>
                                     </td>
                                     <td align=right>
-                                        <a href="">K</a>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersByType('flex')">Flex</a>
                                     </td>
                                     <td align=right>
-                                        <a href="">Def</a>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersByType('k')">K</a>
                                     </td>
+                                    <td align=right>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersByType('def')">Def</a>
+                                    </td>
+                                    {% comment %}
                                     <td align=right>
                                         <button class="btn btn-mini" type="button"><i class="icon-cog icon-black"></i></button>
                                     </td>
+                                    {% endcomment %}
                                 </tr>
                             </table>
                         </td>
                     </tr>
                     <tr>
                         <td width=100%>
-                            <table  width=100% class="table table-condensed table-bordered">
+                            <table width=100% class="table table-condensed
+                                table-bordered" id="player-list">
 
                                 <tr bgcolor="#484848">
                                   <th><small>Add to Queue</small></th>
@@ -171,6 +185,20 @@
                             </table>
                         </td>
                     </tr>
+                    <tr>
+                        <td align="center">
+                            <div class="pagination">
+                                <ul id="player-pages">
+                                    <li><a href="javascript:void(0)"
+                                        onclick="LoadPage(1)">&laquo;</a></li>
+                                    <li><a href="javascript:void(0)"
+                                        onclick="LoadPage(1)">1</a></li>
+                                    <li><a href="javascript:void(0)"
+                                        onclick="LoadPage(2)">2</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    <tr>
                 </table>
                 </font>
             </td>
@@ -758,5 +786,112 @@ function DraftStatusProcess(data)
             timeout: 3000 });
         }, 3000);
  })();
+
+// Player listing.
+
+player_type = 'all';
+player_sort = 'name';
+player_page = 1;
+player_size = 0;
+
+function table_row(p, i)
+{
+    row = '<tr onclick="get_info(\'' + p.pk + '\')">' +
+          '<td><button class="btn btn-mini btn-success" type="button" ' +
+          'onclick="addToQ(\'' + p.pk + '\')">' +
+          '<i class="icon-plus icon-black"></i></button></td>' +
+    '<td>' + (i+1) + '</td>' +
+    '<td>' + p.fields.name + '</td>' +
+    '<td>' + p.fields.position + '</td>' +
+    '<td>' + p.fields.team + '</td>' +
+    '<td>' + 0 + '</td>' +
+    '<td>' + 0 + '</td>' +
+    '<td>' + 0 + '</td>' +
+    '<td>' + 0 + '</td>' +
+    '<td>' + 0 + '</td>' +
+    '<td>' + 0 + '</td>' +
+    '<td>' + 0 + '</td>' +
+    '</tr>';
+    return row;
+}
+
+function RefreshPlayers(data)
+{
+    $("#player-list").find("tr:gt(0)").remove();
+    for (i = 0; i < data.length; i++) {
+        $('#player-list tr:last').after(table_row(data[i], (player_page-1)*20 + i));
+    }
+}
+
+function RefreshPages(data)
+{
+    cur = player_page;
+    total = Math.ceil(player_size/20);
+    $('#player-pages').empty();
+    $('#player-pages').append(
+            '<li><a href="javascript:void(0)" ' +
+            'onclick="LoadPage(' + 1  + ')">&laquo;</a></li>');
+    for (i = cur-2; i <= cur+2; i++) {
+        if (i > 0) {
+            $('#player-pages').append(
+                    '<li><a href="javascript:void(0)" ' +
+                    'onclick="LoadPage(' + i + ')">' + i + '</a></li>');
+        }
+    }
+    $('#player-pages').append(
+            '<li><a href="javascript:void(0)" ' +
+        'onclick="LoadPage(' + total + ')">&raquo;</a></li>');
+}
+
+function GetPlayers()
+{
+    url = "/data/proplayer/order?type=" + player_type + "&sort=" + player_sort;
+    url += "&start=" + (player_page*20) + "&length=20";
+    console.log(url);
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: RefreshPlayers,
+        dataType: "json",
+        timeout: 10000,
+    });
+}
+
+function GetPlayerSize()
+{
+    url = "/data/proplayer/order-size?type=" + player_type;
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: RefreshPages,
+        dataType: "json",
+        timeout: 10000,
+    });
+
+}
+
+function GetPlayersByType(type)
+{
+    console.log("Type: " + type);
+    player_type = type;
+    player_page = 1;
+    GetPlayerSize();
+    GetPlayers();
+}
+
+function GetPlayersBySort(sort)
+{
+    console.log("Sort: " + sort);
+    player_sort = sort;
+    GetPlayers();
+}
+
+function LoadPage(p)
+{
+    console.log("Load-page: "+p);
+    player_page = p;
+    GetPlayers();
+    RefreshPages();
+}
 
 </script>
