@@ -788,9 +788,9 @@ player_size = 0;
 
 function table_row(p, i)
 {
-    row = '<tr>' +
+    row = '<tr onclick="get_info(\'' + p.pk + '\')">' +
           '<td><button class="btn btn-mini btn-success" type="button" ' +
-          'onclick="get_info(\" + p.pk + \")">' +
+          'onclick="addToQ(\'' + p.pk + '\')">' +
           '<i class="icon-plus icon-black"></i></button></td>' +
     '<td>' + (i+1) + '</td>' +
     '<td>' + p.fields.name + '</td>' +
