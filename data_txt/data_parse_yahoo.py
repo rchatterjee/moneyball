@@ -3,7 +3,7 @@
 import os, sys
 from bs4 import BeautifulSoup
 from urllib2 import urlopen
-import time
+import time, re
 
 def parse_n_print(f, writein, week=1, year=2001):
     s = BeautifulSoup(f.read())
@@ -18,6 +18,40 @@ def parse_n_print(f, writein, week=1, year=2001):
         writein.write('# %s\n' % ', '.join(heading2))
     writein.write("# Season:%d week:%d\n" % (year, week))
     for s in data: writein.write(', '.join(s) + "\n")
+
+
+def get_player_image( p_url ):
+    url = "http://sports.yahoo.com/"+p_url
+    urlfile = urlopen(url)
+    s = BeautifulSoup(urlfile.read())
+    div = s.find(class_='player-image')
+    r = r"background-image:url\('(.*)'\);"
+    img_url = re.match(r, str(div.img['style'])).group(1)
+    flname = os.path.basename(img_url)
+    open('new/%s' % flname, 'wb').write(urlopen(img_url).read())
+    print img_url
+
+import csv
+def download_player_pictures( position ):
+    url = "http://sports.yahoo.com/nfl/players?type=position&c=NFL&pos="
+    for p in position:
+        f = open('new/player_%s.csv' % p, 'wb')
+        csv_writer = csv.writer(f, delimiter=',')
+        urlfile = urlopen(url+p)
+        s = BeautifulSoup(urlfile.read())
+        player_list = s.find_all(class_='ysprow1')
+        player_list.extend(s.find_all(class_='ysprow2'))
+        print len(player_list)
+        for p in player_list:
+            try:
+                row = p.find_all('td')
+                pid = row[0].a['href']
+                tid = row[2].a['href']
+                name, pos, team = [p.text.strip() for p in row]
+                csv_writer.writerow([os.path.basename(pid), name, pos, tid])
+                get_player_image( pid )
+            except:
+                print p
 
 
 def espn_download():
@@ -112,7 +146,6 @@ def modifyDataFiles():
     position = ["QB", "RB", "WR", "TE", "DE", "DT", "NT", "LB", "CB", "S", "K", "P"]
     position = ["QB", "RB", "WR", "TE", "K"]
 
-
     for p in position:
         players={}
         fplayrer = open('AllPlayers.csv')
@@ -165,6 +198,9 @@ def parse_nfl_pbp_data():
         t1, t2 = d[1].split('@')
         
 #modifyDataFiles()
-#download()
+download()
 #getAllPlayers();
-espn_download()
+#espn_download()
+#position = ["QB", "RB", "WR", "TE", "DE", "K"]
+#download_player_pictures( sys.argv[1:] )
+#get_player_image('/nfl/players/8780')
