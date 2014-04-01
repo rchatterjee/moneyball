@@ -383,23 +383,33 @@ player_sort = 'name';
 player_page = 1;
 player_size = 0;
 
+function field(s)
+{
+    if (s  == null) {
+        return '-';
+    } else if (typeof s == 'number') {
+        return s.toFixed(1);
+    }
+    return s;
+}
+
 function table_row(p, i)
 {
     row = '<tr onclick="get_info(\'' + p.pk + '\')">' +
           '<td><button class="btn btn-mini btn-success" type="button" ' +
-          'onclick="addToQ(\'' + p.pk + '\', \''+ p.fields.name + '\')">' +
+          'onclick="addToQ(\'' + p.pk + '\', \''+ p.fields.player__name + '\')">' +
           '<i class="icon-plus icon-black"></i></button></td>' +
     '<td>' + (i+1) + '</td>' +
-    '<td>' + p.fields.name + '</td>' +
-    '<td>' + p.fields.position + '</td>' +
-    '<td>' + p.fields.team + '</td>' +
+    '<td>' + field(p.fields.player__name) + '</td>' +
+    '<td>' + field(p.fields.player__position) + '</td>' +
+    '<td>' + field(p.fields.player__team) + '</td>' +
     '<td>' + 0 + '</td>' +
-    '<td>' + 0 + '</td>' +
-    '<td>' + 0 + '</td>' +
-    '<td>' + 0 + '</td>' +
-    '<td>' + 0 + '</td>' +
-    '<td>' + 0 + '</td>' +
-    '<td>' + 0 + '</td>' +
+    '<td>' + field(p.fields.pass_att) + '</td>' +
+    '<td>' + field(p.fields.pass_comp) + '</td>' +
+    '<td>' + field(p.fields.pass_td) + '</td>' +
+    '<td>' + field(p.fields.run_yds) + '</td>' +
+    '<td>' + field(p.fields.run_att) + '</td>' +
+    '<td>' + field(p.fields.run_td) + '</td>' +
     '</tr>';
     return row;
 }
