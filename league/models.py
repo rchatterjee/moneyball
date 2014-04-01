@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 from django.db import models as m
 from django.contrib.auth.models import User
 from django.utils import timezone
+import sys
 
 class Vendor(m.Model):
     name    = m.CharField(max_length=40, blank=False, unique=True)
@@ -143,9 +144,56 @@ class League(m.Model):
     league_owner    = m.ForeignKey(User)
     password = m.CharField(max_length=15, default='', blank=True)
     draft_current = m.ForeignKey('team.Team', related_name="draft_league",
-            null=True)
+                                 null=True, blank=True)
     draft_timeout = m.DateTimeField("Timelimit for current drafter.", null=True)
     settings = m.ForeignKey(League_Settings)
+
+    def update_the_next_drafter_info(self, team=None):
+        print __name__, sys._getframe().f_code.co_name
+        league_teams = self.team_set.all().order_by('draft_pick_number')
+        i=0
+        if team:
+            if team != self.draft_current or league_teams.filter(team=team):
+                return False
+            i = (league_teams.index(team)+1)%len(league_teams)
+        print league_teams[i]
+        while league_teams[i].auto_draft_player():
+            print "-->Autodrafting for <", i, league_teams[i], ">"
+            i = (i+1) % len(league_teams)
+        print "None to Autodraft!"
+        if league_teams[i].is_full(): # End the drafting
+            self.draft_current = None
+            self.draft_timeout = timezone.now()
+            self.settings.is_draft_done = 2      # draft done
+            self.settings.save()
+            self.save()
+        else:
+            self.draft_current = league_teams[i]
+            self.draft_timeout = timezone.now() + timezone.timedelta(seconds=self.settings.seconds_per_pick);
+            print "next_timeout:", self.draft_timeout
+            self.save()
+        return True;
+
+
+    def start_draft(self):
+        if self.settings.is_draft_done==1:
+            if not self.draft_current:
+                self.update_the_next_drafter_info()
+            return True;
+        print __name__, sys._getframe().f_code.co_name
+        tnow = timezone.now()
+        draft_starttime = self.settings.draft_date
+        total_draft_time = timezone.timedelta(seconds=((self.settings.number_of_teams+1)*self.settings.seconds_per_pick))
+        draft_endtime  = draft_starttime+total_draft_time
+        print tnow, draft_starttime, draft_endtime
+        if (tnow > draft_starttime) and (tnow < draft_endtime) and (self.settings.is_draft_done == 0):
+            self.settings.is_draft_done = 1          # started
+            self.settings.save();
+            print "------- Satrting the draft!! --------"
+            return self.update_the_next_drafter_info()
+        print tnow, draft_starttime, draft_endtime
+        return False
+
 
     def __str__(self):
         #return str(self.__dict__)
