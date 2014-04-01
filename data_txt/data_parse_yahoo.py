@@ -3,7 +3,7 @@
 import os, sys
 from bs4 import BeautifulSoup
 from urllib2 import urlopen
-import time
+import time, re
 
 def parse_n_print(f, writein, week=1, year=2001):
     s = BeautifulSoup(f.read())
@@ -18,6 +18,59 @@ def parse_n_print(f, writein, week=1, year=2001):
         writein.write('# %s\n' % ', '.join(heading2))
     writein.write("# Season:%d week:%d\n" % (year, week))
     for s in data: writein.write(', '.join(s) + "\n")
+
+
+def get_player_image( p_url ):
+    pid = os.path.basename(p_url)
+    if os.path.exists('img/'+ pid +'.png'):
+        return "Exists"
+    url = "http://sports.yahoo.com/"+p_url
+    print url
+    urlfile = urlopen(url)
+    s = BeautifulSoup(urlfile.read())
+    div = s.find(class_='player-image')
+    r = r"background-image:url\('(.*)'\);"
+    img_url = ''
+    if div and div.img:
+        if div.img['src'].find(pid+'.png')>=0:
+            img_url = div.img['src']
+        else:
+            if div.img.get('style', ''):
+                m = re.match(r, str(div.img['style']))
+                if m:
+                    img_url = m.group(1)
+    if img_url:
+        flname = os.path.basename(img_url)
+        open('img/%s' % flname, 'wb').write(urlopen(img_url).read())
+    else:
+        "ERROR===>", p_url, img_url
+
+import csv, string
+def download_player_pictures( range_=None ):
+    if not range_: range_=[0,26]
+    range_ = [int(range_[0]), int(range_[1])]
+    lastnames = string.ascii_uppercase[range_[0]:range_[1]]
+    url = "http://sports.yahoo.com/nfl/players?type=lastname&query="
+    for p in lastnames:
+        print "------> Running for", p
+        f = open('new/Allplayer_imageinfo.csv', 'a')
+        csv_writer = csv.writer(f, delimiter=',')
+        urlfile = urlopen(url+p)
+        s = BeautifulSoup(urlfile.read())
+        player_list = s.find_all(class_='ysprow1')
+        player_list.extend(s.find_all(class_='ysprow1'))
+        for p in player_list:
+            row = p.find_all(u'td')
+            if not row or len(row)<3:
+                print "ERROR" , p 
+                continue
+            p_image_url = row[0].a[u'href']
+            pid = row[0].a[u'href'].replace('/nfl/teams/', '').upper()
+            tid = row[2].a[u'href'].replace('/nfl/teams/', '').upper()
+            name, pos, team = [x.text.strip() for x in row]
+            csv_writer.writerow([os.path.basename(pid), name, pos, tid])
+            get_player_image( p_image_url )
+        f.close()
 
 
 def espn_download():
@@ -112,7 +165,6 @@ def modifyDataFiles():
     position = ["QB", "RB", "WR", "TE", "DE", "DT", "NT", "LB", "CB", "S", "K", "P"]
     position = ["QB", "RB", "WR", "TE", "K"]
 
-
     for p in position:
         players={}
         fplayrer = open('AllPlayers.csv')
@@ -167,4 +219,7 @@ def parse_nfl_pbp_data():
 #modifyDataFiles()
 #download()
 #getAllPlayers();
-espn_download()
+#espn_download()
+#position = ["QB", "RB", "WR", "TE", "DE", "K"]
+download_player_pictures( sys.argv[1:] )
+#get_player_image('/nfl/players/8780')
