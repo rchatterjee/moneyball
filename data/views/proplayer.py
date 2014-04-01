@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import Context, loader
 from django.shortcuts import render, render_to_response
 from data.models import Player, Team
+from team.models import FantasyPlayer
 from django.core import serializers
 from django.db.models import Q
 import json
@@ -31,7 +32,6 @@ FILTER_MAP = {
     'rb': Q(position = 'RB'),
     'wr': Q(position = 'WR'),
     'te': Q(position = 'TE'),
-    'flex': Q(position = 'Flex'),
     'k': Q(position = 'K'),
 }
 
@@ -43,9 +43,14 @@ ORDER_BY_MAP = {
 
 def order_size(request):
     f = request.GET.get('type', 'all')
+    id = request.GET.get('league_id', '')
     if not FILTER_MAP.has_key(f):
         f = 'all'
-    size = Player.objects.filter(FILTER_MAP[f]).count()
+    existing = FantasyPlayer.objects \
+            .filter(team__league__league_id = id) \
+            .values_list('player__pid', flat=True)
+    size = Player.objects.exclude(pid__in = existing) \
+            .filter(FILTER_MAP[f]).count()
     return HttpResponse(json.dumps(size),
         content_type="application/json")
 
@@ -54,14 +59,20 @@ def order(request):
     o = request.GET.get('sort', 'name')
     s = int(request.GET.get('start', '0'))
     l = int(request.GET.get('length', '20'))
+    id = request.GET.get('league_id', '');
     if not FILTER_MAP.has_key(f):
         f = 'all'
     if not ORDER_BY_MAP.has_key(o):
         o = 'name'
     s = max(0, s)
     l = max(0, l); l = min(50, l)
+
+    existing = FantasyPlayer.objects \
+            .filter(team__league__league_id = id) \
+            .values_list('player__pid', flat=True)
     return HttpResponse(serializers.serialize("json",
-        Player.objects.filter(FILTER_MAP[f]) \
+        Player.objects.exclude(pid__in = existing) \
+            .filter(FILTER_MAP[f]) \
             .order_by(ORDER_BY_MAP[o])[s:s+l], indent=2),
             content_type="application/json")
 

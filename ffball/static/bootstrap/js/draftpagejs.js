@@ -482,3 +482,5 @@ function LoadPage(p)
     GetPlayers();
     RefreshPages();
 }
+
+RefreshPages(player_size);

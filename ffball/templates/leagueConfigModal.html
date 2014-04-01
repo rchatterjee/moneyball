@@ -8,7 +8,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
         <h3 id="myModalLabel">Create Mock Draft Room</h3>
     </div>
-    <form class="form-horizontal" action="create/" method="post">
+    <form class="form-horizontal" action="create/" id="create_league_form" method="post">
       {% csrf_token %}
       <br>
         <div class="control-group">
@@ -100,22 +100,23 @@
         </div>
         <div class="modal-footer" align="right">
             <div class="controls">
-                <button type="submit" class="btn btn-primary" formmethod="post">Create Room</button>
+                <button type="submit" class="btn btn-primary" onclick="$('input[name=draftDateName]')" formmethod="post">Create Room</button>
             </div>
         </div>
     </form>
 </div>
 
 <script type="text/javascript">
-  $(function() {
+$(function() {
     $('#draftTime').datetimepicker({
       language: 'en',
-      pick12HourFormat: true
-    });
+      pick12HourFormat: false,
+      pickSeconds: false,
+      maskInput: true,
+      startDate: new Date()
   });
-</script>
+});
 
-<script>
 $(document).ready(function(){
 
 	$('#leagueConfig').on('show', function () {
