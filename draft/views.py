@@ -139,14 +139,24 @@ def set_league_settings(league_id, set_dict):
 
 def draft(request, draft_id):
     context = app.helpers.user_template_dict(request)
+    msg=''
     if not context or not context['logged_in']:
         return HttpResponseRedirect('/')
-    myLeague = League.objects.filter(league_id = draft_id)
-    thisLeague = myLeague[0]
+    try:
+        myLeague = League.objects.get(league_id = draft_id)
+    except:
+        msg = "you are not part of this league."
+        context['msg'] = msg;
+        return HttpResponseRedirect('/')
+    if not myLeague.start_draft():
+        msg = "Draft has not started. You will not be able to add any player to your team!"
+        msg+=  "But you can add to your Queue"
+
+    thisLeague = myLeague
     totTeamCount = thisLeague.settings.number_of_teams
     middleIdx = totTeamCount/2
     W=(600-130)/(totTeamCount-1)
-    myTeamList = Team.objects.filter(user = request.user).only('league')
+    myTeamList = Team.objects.filter(user=request.user).only('league')
     context['next_page'] = request.get_full_path
     context['me'] = request.user
     context['thisLeague'] = thisLeague
@@ -154,5 +164,6 @@ def draft(request, draft_id):
     context['normalWidth'] = W
     context['drafterIdx'] = middleIdx
     context.update(populate_draft_page(draft_id, request.user))
+    context['msg'] = msg
     return render(request, 'draft.html', context)
 

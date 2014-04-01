@@ -44,36 +44,49 @@ def process_jquery_request(request):
                 result['result'] = 'success';
             print "Sending THis result:", result
         except KeyError:
-            print request.POST
+            print 'POST-request:', request.POST
             print 'ERROR:', data
-            result = 'error'
             if not msg: msg = 'Some player information is not sent! Cannot save the player.'
             print "Why the fuck: ", msg
+            result = {'result': 'error', 'msg': msg}
         return HttpResponse(json.dumps(result), content_type='application/json')
+
 
 # 1. check whether the player is available
 # 2. check position wise max limit
 # 3. check total team size is less than the max team size
 # 4. already in list
+# 5. check whether its your time or not.
+import sys
 def check_constraints(l, mt, p):
-    for t in l.team_set.all():
-        if t.fantasyplayer_set.filter(Q(player=p) & ~Q(status='Q')):
-            msg = "Player is not Available!"
-            return msg, False
+    print __name__, sys._getframe().f_code.co_name, l.settings.is_draft_done
+    if not l.start_draft():
+        return "Drafting has not started!", False
+    elif l.settings.is_draft_done==2:
+        return "Drafting has been done!", False
+
+    if l.draft_current != mt:
+        print "draft_current:", l.draft_current
+        msg = "You are not allowed to draft now"
+        return msg, False
+    print "Draft is on!"
+    if FantasyPlayer.objects.filter(team__league__league_id=l.league_id).filter(player=p):
+        msg = "Player is not Available!"
+        return msg, False
+    print "Adding is good."
     s = l.settings
     position_max = eval("s.count_%s_max" % p.position)
-    my_player_at_this_position = mt.fantasyplayer_set.filter(Q(position=p.position) & ~Q(status='Q'))
-    if len(t.fantasyplayer_set.all())>=s.size:
+    num_player_at_this_position = mt.fantasyplayer_set.filter(Q(position=p.position) & ~Q(status='Q')).count()
+    if mt.fantasyplayer_set.all().count()>=s.size:
         msg = "No space left in your team!"
         return msg, False
-    if len(my_player_at_this_position)>=position_max:
-        if not t.fantasyplayer_set.filter(position="FLEX"):
-            msg = "Already selected %d '%s' players" % (len(my_player_at_this_position), p.position)
+    if num_player_at_this_position>=position_max:
+        if not mt.fantasyplayer_set.filter(position="FLEX"):
+            msg = "Already selected %d '%s' players" % (num_player_at_this_position, p.position)
         else:
             msg = "Can be added to Flex!"
         return msg, False
-    return len(my_player_at_this_position), True
-
+    return num_player_at_this_position, True
 
 
 def add_player(data, user, l):
@@ -82,38 +95,35 @@ def add_player(data, user, l):
     player = Player.objects.get(pid=pid)
     position=player.position
     team = get_my_team(l, user)
-    # check constraints
+
     print 'Start1:', data
     s = l.settings
+    f = None
     if status != 'Q':
+        # check constraints
         msg, okay = check_constraints(l, team, player)
-        print msg, okay
+        print "After Constraints Check: ", msg, okay
         if not okay:
             return {'result': 'error', 'msg': msg}
-        f, isnew = FantasyPlayer.objects.get_or_create(player=player, team=team)
-        f.position = position
-        f.rank     = msg+1
-        if f.rank <= eval('s.count_%s_min' % position):
-            f.status = 'A'
-        else:
-            f.status = 'B'
-        f.save()
-    else:
-        num_players = team.fantasyplayer_set.filter(status='Q').count()
-        f, isnew = FantasyPlayer.objects.get_or_create(player=player, team=team)
-        if not isnew:
-            return {'result': 'error', 'msg': "Already in Queue or Selected"}
-        f.position = position
-        f.rank     = num_players+1
-        f.status = 'Q'
-        f.save()
+        f = team.add_player_to_team(player)
+        if not f: return {"result": "error", "msg": "Somethig went wrong. Not sure what!"}
+        if not l.update_the_next_drafter_info(team):
+            return {"result": "error", "msg": "You are not allowed to draft now"}
 
-    msg = {'name': f.player.name,
+    else:
+        f = team.add_player_to_Q(player)
+        if not f:
+            return {'result': 'error', 'msg': "Already in Queue or Selected"}
+
+    if not f:
+        msg = "Could not add Player!"
+        return {'result': 'error', 'msg': "Already in Queue or Selected"}
+    msg = {'name': player.name,
            'player_id': pid,
-           'rank': f.rank,
+           'rank':  f.rank,
            'position': f.position,
            'status': f.status
-    }
+           }
     result = {'result': 'success', 'msg': msg}
     return result
 
@@ -186,7 +196,7 @@ def populate_draft_page(league_id, user):
     myteam  = l.team_set.filter(user=user)[0]
 
     allowed_player_types = ['QB', 'RB', 'WR', 'TE', 'FLEX', 'K', 'BN']
-    roster_settings = {'size' : s.size, 'starters':s.starters, 'benched': s.benched}
+    roster_settings = {'size': s.size, 'starters':s.starters, 'benched': s.benched}
     curr_team = OrderedDict()
     myplayer_set = myteam.fantasyplayer_set.all()
 
@@ -216,7 +226,7 @@ def populate_draft_page(league_id, user):
         'league_id':league_id,
         'roster_settings' : roster_settings,
         'current_team' : curr_team,
-        'bench_count'  : bench_count
+        'bench_count'  : bench_count,
     }
     return res
 
