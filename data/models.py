@@ -84,6 +84,25 @@ class Stat(models.Model):
         managed = False
         db_table = 'STATS'
 
+class AggStat(models.Model):
+    player = models.OneToOneField(Player, primary_key=True, db_column='PID') # Field name made lowercase.
+    rating = models.FloatField(db_column='Rating', blank=True, null=True) # Field name made lowercase.
+    pass_att = models.IntegerField(db_column='PASS_Att', blank=True, null=True) # Field name made lowercase.
+    pass_comp = models.IntegerField(db_column='PASS_Comp', blank=True, null=True) # Field name made lowercase.
+    pass_td = models.IntegerField(db_column='PASS_TD', blank=True, null=True) # Field name made lowercase.
+    pass_yds = models.IntegerField(db_column='PASS_Yds', blank=True, null=True) # Field name made lowercase.
+    run_att = models.IntegerField(db_column='RUN_Att', blank=True, null=True) # Field name made lowercase.
+    run_lng = models.IntegerField(db_column='RUN_Lng', blank=True, null=True) # Field name made lowercase.
+    run_td = models.IntegerField(db_column='RUN_TD', blank=True, null=True) # Field name made lowercase.
+    run_yds = models.IntegerField(db_column='RUN_Yds', blank=True, null=True) # Field name made lowercase.
+
+    def __str__(self):
+        return self.player.name
+
+    class Meta:
+        managed = False
+        db_table = 'AGG_STATS'
+
 class Team(models.Model):
     tid = models.CharField(db_column='TID', primary_key=True, max_length=3) # Field name made lowercase.
     name = models.CharField(db_column='NAME', max_length=50, blank=True) # Field name made lowercase.
