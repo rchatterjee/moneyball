@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import Context, loader
 from django.shortcuts import render, render_to_response
-from data.models import Player, Team
+from data.models import Player, Team, AggStat
 from team.models import FantasyPlayer
 from django.core import serializers
 from django.db.models import Q
@@ -28,17 +28,17 @@ def index(request):
 
 FILTER_MAP = {
     'all': Q(),
-    'qb': Q(position = 'QB'),
-    'rb': Q(position = 'RB'),
-    'wr': Q(position = 'WR'),
-    'te': Q(position = 'TE'),
-    'k': Q(position = 'K'),
+    'qb': Q(player__position = 'QB'),
+    'rb': Q(player__position = 'RB'),
+    'wr': Q(player__position = 'WR'),
+    'te': Q(player__position = 'TE'),
+    'k': Q(player__position = 'K'),
 }
 
 ORDER_BY_MAP = {
-    'name': 'name',
-    'position':'position',
-    'team':'team',
+    'name': 'player__name',
+    'position':'player__position',
+    'team':'player__team',
 }
 
 def order_size(request):
@@ -49,10 +49,33 @@ def order_size(request):
     existing = FantasyPlayer.objects \
             .filter(team__league__league_id = id) \
             .values_list('player__pid', flat=True)
-    size = Player.objects.exclude(pid__in = existing) \
+    size = AggStat.objects.exclude(player__pid__in = existing) \
             .filter(FILTER_MAP[f]).count()
     return HttpResponse(json.dumps(size),
         content_type="application/json")
+
+STATS_FIELD = [
+    'player__pid',
+    'player__team',
+    'player__position',
+    'player__name',
+    'run_yds',
+    'run_att',
+    'pass_td',
+    'pass_comp',
+    'pass_yds',
+    'pass_att',
+    'run_td',
+    'run_lng']
+
+def stats_serialize(a):
+    l = []
+    for v in a.values(*STATS_FIELD):
+        l.append({'pk': '',
+                'model': 'data.aggstat',
+                'fields': v})
+    return HttpResponse(json.dumps(l, indent=2),
+            content_type="application/json")
 
 def order(request):
     f = request.GET.get('type', 'all')
@@ -70,11 +93,10 @@ def order(request):
     existing = FantasyPlayer.objects \
             .filter(team__league__league_id = id) \
             .values_list('player__pid', flat=True)
-    return HttpResponse(serializers.serialize("json",
-        Player.objects.exclude(pid__in = existing) \
-            .filter(FILTER_MAP[f]) \
-            .order_by(ORDER_BY_MAP[o])[s:s+l], indent=2),
-            content_type="application/json")
+    a = AggStat.objects.exclude(player__pid__in = existing) \
+            .select_related('player').filter(FILTER_MAP[f]) \
+            .order_by(ORDER_BY_MAP[o])[s:s+l]
+    return stats_serialize(a)
 
 def info(request, player_id):
     return HttpResponse(serializers.serialize("json",
