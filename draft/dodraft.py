@@ -2,7 +2,7 @@
 All drafting related Super Olympic logics and shits are kept here.
 """
 from django.http import HttpResponse, HttpResponseRedirect
-from data.models import  Player
+from data.models import  Player, AggStat
 from league.models import League
 from team.models import  *
 import json
@@ -191,8 +191,8 @@ def populate_draft_page(league_id, user):
         teams[t.draft_pick_number-1] = t
     existing = FantasyPlayer.objects.filter(team__league__league_id =
                 league_id).values_list('player__pid', flat=True)
-    players_size = Player.objects.exclude(pid__in = existing).count()
-    players = Player.objects.exclude(pid__in = existing)
+    players_size = AggStat.objects.exclude(player__pid__in = existing).count()
+    players = AggStat.objects.exclude(player__pid__in = existing)
     myteam  = l.team_set.filter(user=user)[0]
 
     allowed_player_types = ['QB', 'RB', 'WR', 'TE', 'FLEX', 'K', 'BN']
@@ -223,7 +223,7 @@ def populate_draft_page(league_id, user):
         'myteam_players'  : myteam.fantasyplayer_set.filter(Q(status='A')| Q(status='B')),
         'players' : players,
         'players_size': players_size,
-        'league_id':league_id,
+        'league_id': league_id,
         'roster_settings' : roster_settings,
         'current_team' : curr_team,
         'bench_count'  : bench_count,

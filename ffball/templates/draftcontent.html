@@ -1,5 +1,18 @@
 {% load static from staticfiles %}
 {% load mytemplatetags %}
+<script type="text/javascript">
+
+// Player listing.
+player_type = 'all';
+player_sort = 'name';
+player_page = 1;
+player_size = {{ players_size }};
+
+// Polling for draft status.
+draft_current = '';
+draft_timeout = '';
+
+</script>
 <script src="{% static 'bootstrap/js/jquery.slimscroll.min.js' %}"></script>
 <script src="{% static 'bootstrap/js/jquery.timeout.interval.idle.js' %}" type="text/javascript"></script>
 <script src="{% static 'bootstrap/js/jquery.countdown.counter.js' %}" type="text/javascript"></script>
@@ -149,34 +162,34 @@
                                         {{ forloop.counter }}
                                     </td>
                                     <td>
-                                        {{ player.name }}
+                                        {{ player.player.name }}
                                     </td>
                                     <td>
-                                        {{ player.position }}
+                                        {{ player.player.position }}
                                     </td>
                                     <td>
-                                        {{ player.team.tid }}
+                                        {{ player.player.team.tid }}
                                     </td>
                                     <td>
-                                        345
+                                        0
                                     </td>
                                     <td>
-                                        3452
+                                        {{ player.pass_att|floatformat|default:"-" }}
                                     </td>
                                     <td>
-                                        544
+                                        {{ player.pass_comp|floatformat|default:"-" }}
                                     </td>
                                     <td>
-                                        23
+                                        {{ player.pass_td|floatformat|default:"-" }}
                                     </td>
                                     <td>
-                                        45
+                                        {{ player.run_yds|floatformat|default:"-" }}
                                     </td>
                                     <td>
-                                        3
+                                        {{ player.run_att|floatformat|default:"-" }}
                                     </td>
                                     <td>
-                                        3
+                                        {{ player.run_td|floatformat|default:"-" }}
                                     </td>
                                 </tr>
                                 {% endfor %}
@@ -187,12 +200,6 @@
                         <td align="center">
                             <div class="pagination">
                                 <ul id="player-pages">
-                                    <li><a href="javascript:void(0)"
-                                        onclick="LoadPage(1)">&laquo;</a></li>
-                                    <li><a href="javascript:void(0)"
-                                        onclick="LoadPage(1)">1</a></li>
-                                    <li><a href="javascript:void(0)"
-                                        onclick="LoadPage(2)">2</a></li>
                                 </ul>
                             </div>
                         </td>
@@ -210,7 +217,7 @@
                         <tr>
                            <td colspan="100%">
                                 <div style="color:#999999" name="name">
-                                    <h4>&nbsp;{{ first_player.name }}</h4>
+                                    <h4>&nbsp;{{ first_player.player.name }}</h4>
                                 </div>
                            </td>
                         </tr>
@@ -220,10 +227,10 @@
                             </td>
                             <td width="80">
                                 <div name="position">
-                                    &nbsp;<b>{{ first_player.position }}</b>
+                                    &nbsp;<b>{{ first_player.player.position }}</b>
                                 </div>
                                 <div name="team_name">
-                                    &nbsp;{{ first_player.team.name }}
+                                    &nbsp;{{ first_player.player.team.name }}
                                 </div>
                                 <div name="rank">
                                     &nbsp;Rank #1
@@ -234,8 +241,11 @@
                            <td colspan="100%">
                                 <div align="center">
                                     <a href="#" id="moreOnPlayer" class="btn btn-primary btn-mini" rel="popover" data-placement="left" data-content="We can show more status and news here" data-original-title="Albert Einstein">More</a>
-                                    <button class="btn btn-primary btn-mini" name="addToQ" onclick="addToQ('{{ first_player.pid }}')">Queue</button>
-                                    <button class="btn btn-success btn-mini" name="addToTeam" onclick="addToTeam('{{ first_player.pid }}', '{{ first_player.name }}' )">Add</button>
+                                    <button class="btn btn-primary btn-mini"
+                                        name="addToQ" onclick="addToQ('{{ first_player.player.pid }}')">Queue</button>
+                                    <button class="btn btn-success btn-mini"
+                                        name="addToTeam" onclick="addToTeam('{{
+                                        first_player.player.pid }}', '{{ first_player.player.name }}' )">Add</button>
                                 </div>
                            </td>
                         </tr>
@@ -259,7 +269,7 @@
                                     <table width=100% >
                                         <tr>
                                             <td width="25">
-                                                <b>{{ player.position }}</b>
+                                                <b>{{ player.player.position }}</b>
                                             </td>
                                             <td width=%>
                                                 <button class="btn btn-small btn-success" onclick="addToTeam('{{ player.player.pid }}', '{{ player.player.name }}')" type="button" > {{ player.player.name }} </button>
@@ -420,6 +430,9 @@ var team_ids = [{% spaceless %}
            {% endspaceless %}];
 normalWidth = {{ normalWidth }}
 
-RefreshPages(player_size);
+$( document ).ready(function() {
+    console.log("page-loaded.");
+    RefreshPages(player_size);
+});
 
 </script>

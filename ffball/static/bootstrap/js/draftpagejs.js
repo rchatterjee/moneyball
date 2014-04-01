@@ -342,10 +342,6 @@ function UpdateTimeout(timeout)
     }
 }
 
-// Polling for draft status.
-
-draft_current = '';
-draft_timeout = '';
 function DraftStatusProcess(data)
 {
     //console.log(data);
@@ -375,13 +371,6 @@ function DraftStatusProcess(data)
 		    timeout: 3000 });
         }, 3000 );
 })();
-
-// Player listing.
-
-player_type = 'all';
-player_sort = 'name';
-player_page = 1;
-player_size = 0;
 
 function field(s)
 {
@@ -492,5 +481,3 @@ function LoadPage(p)
     GetPlayers();
     RefreshPages();
 }
-
-RefreshPages(player_size);
