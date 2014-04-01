@@ -8,6 +8,7 @@ from team.models import  *
 import json
 from django.db.models import Q
 from collections import OrderedDict
+from ffball.settings import  STATIC_URL
 
 def pic_player(request):
     return "joy bangla"
@@ -147,13 +148,17 @@ def save_queue_order(data, user):
 def get_player_info(data, user, league):
     print data
     player = Player.objects.get(pid=data['player_id'])
+    print player.yahooid
+    if not player.yahooid: player.yahooid='defPlayer'
     msg = {
         'position': player.position,
         'name'    : player.name,
         'team'    : player.team.name,
         'rank'    : 1,
+        'img_url' : STATIC_URL + 'img/small/'+player.yahooid + '_small.png',
         'more'    : "This player is the only player in the world you should choose next. Otherwise the world will fall!!"
     }
+    print msg;
     return {'result':'success', 'msg': msg};
 
 

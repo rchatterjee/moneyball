@@ -185,6 +185,7 @@ function get_info( pid ) {
        $('#selected_player [name=rank]').html('&nbsp;Rank #' + response['msg']['rank']);
        $('#moreOnPlayer').attr('data-content', response['msg']['more']);
        $('#moreOnPlayer').attr('data-original-title', response['msg']['name']);
+       $('#player-image').attr('src', response['msg']['img_url']);
        $('button[name=addToTeam]').attr('onclick', "addToTeam('{pid}', '{name}')".format({'pid' : pid, 'name': response['msg']['name'] }))
        $('button[name=addToQ]').attr('onclick', "addToQ('{pid}', '{name}')".format({'pid' : pid, 'name': response['msg']['name'] }))
        current_selected['player_id'] = pid;
@@ -395,9 +396,9 @@ function field(s)
 
 function table_row(p, i)
 {
-    row = '<tr onclick="get_info(\'' + p.pk + '\')">' +
+    row = '<tr onclick="get_info(\'' + p.fields.player__pid + '\')">' +
           '<td><button class="btn btn-mini btn-success" type="button" ' +
-          'onclick="addToQ(\'' + p.pk + '\', \''+ p.fields.player__name + '\')">' +
+          'onclick="addToQ(\'' + p.fields.player__pid + '\')">' +
           '<i class="icon-plus icon-black"></i></button></td>' +
     '<td>' + (i+1) + '</td>' +
     '<td>' + field(p.fields.player__name) + '</td>' +
