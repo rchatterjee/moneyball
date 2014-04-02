@@ -347,9 +347,11 @@ function UpdateTimeout(timeout)
 
 draft_current = '';
 draft_timeout = '';
+last_transaction   = 0;
 function DraftStatusProcess(data)
 {
     //console.log(data);
+    last_update = data['last_update']
     if (draft_current != data['current']) {
         console.log("current-drafter: " + data['current']);
         draft_current = data['current'];
@@ -360,13 +362,20 @@ function DraftStatusProcess(data)
         draft_timeout = data['timeout'];
         UpdateTimeout(data['timeout']);
     }
+    if ( data['remove-pid'] ) {
+	for(p in data['removed_pids']){
+	    w_id = "#watchplayer-" + p;
+	    $(w_id).remove();
+	}
+	last_transaction = data['last_transaction'];
+    }	
 }
 
 (function DraftStatusPoll(){
     setTimeout(function() {
         $.ajax({
             type: "GET",
-		    url: "/data/draft/{league_id}/updates".format({'league_id':league_id}),
+		    url: "/data/draft/{league_id}/updates?last_transaction={last_transaction}".format({'league_id':league_id, 'last_transaction':last_transaction}),
 		    success: function(data){
 		    // Process poll response
 		    DraftStatusProcess(data);
