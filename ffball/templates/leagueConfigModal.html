@@ -90,7 +90,7 @@
             <label class="control-label" for="draftTime">Draft Time</label>
             <div class="controls">
                 <div id="draftTime" class="input-append">
-                    <input name="draftDateName" data-format="yyyy-MM-dd HH:MM:ss" type="text"/>
+                    <input id="draftTimeInput" name="draftDateName" data-format="yyyy-MM-dd HH:MM:ss" type="text"/>
                     <span class="add-on">
                       <i data-time-icon="icon-time" data-date-icon="icon-calendar">
                       </i>
@@ -133,10 +133,30 @@ $(document).ready(function(){
 });
 
 $('#create_league_form').submit(function() {
-  var txt = $('#draftDateName');
+  var input = $('#draftTimeInput').val();
   console.log(txt.getDate());
-  return false;
+  input = convertToUTC(input);
+  $('#draftTimeInput').val(input);
+  return true;
 });
+
+
+function convertToUtc(str) {
+   var date = new Date(str);
+   var year = date.getUTCFullYear();
+   var month = date.getUTCMonth()+1;
+   var dd = dategetUTCDate();
+   var hh = date.getUTCHours(); 
+   var mi = date.getUTCMinutes();
+   var sec = date.getUTCSeconds();
+   
+   // 2010-11-12T13:14:15Z
+   
+   theDate = year + "-" + (month [1] ? month : "0" + month [0]) + "-" + 
+   (dd[1] ? dd : "0" + dd[0]);
+   theTime = (hh[1] ? hh : "0" + hh[0]) + ":" + (mi[1] ? mi : "0" + mi[0]);
+   return [ theDate, theTime ].join("T");
+}
 
 </script>
 <!-- ###### Modal login end ###### -->

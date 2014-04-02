@@ -31,6 +31,8 @@ class Team(m.Model):
         else:  # TODO add flex
             f.status = 'B'
         f.save()
+        t = Transaction(team=self, action='A', player1=player)
+        t.save()
         return True
 
     def add_player_to_Q(self, player=None, pid=None):
@@ -109,14 +111,16 @@ TRANSACTION_ACTION_CHOICES = (
     ('ADD', 'Add Player'),
     ('DEL', 'Delete Player'),
     ('TRD', 'Trade Player'),
-
 )
+
 # TODO
 class Transaction(m.Model):
+    team = m.ForeignKey(Team, blank=True, default='')
     created_at = m.DateTimeField(auto_now_add=True)
     action     = m.CharField(max_length=4, choices=TRANSACTION_ACTION_CHOICES)
     player1    = m.ForeignKey(FantasyPlayer, null=True, blank=True)
     player1    = m.ForeignKey(FantasyPlayer, null=True, blank=True)
 
     def __str__(self):
-        return "%s (%s)" % ( self.player.name )
+        return "%s by %s on %s" % (self.action, self.team, self.player1.player.name)
+

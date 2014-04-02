@@ -129,9 +129,9 @@ draft_timeout = '';
                 </thead>
                 <tbody>
                     {% for player in players|slice:":20" %}
-                    <tr onclick="get_info('{{ player.pid }}')">
+                    <tr onclick="get_info('{{ player.player.pid }}')">
                         <td>
-                            <a href="javascript:void(0)" onclick="addToQ('{{ player.pid }}', '{{ player.name }}')"><i class="icon-plus icon-black"></i></a>
+                            <a href="javascript:void(0)" onclick="addToQ('{{ player.player.pid }}')"><i class="icon-plus icon-black"></i></a>
                         </td>
                         <td>
                             {{ forloop.counter }}

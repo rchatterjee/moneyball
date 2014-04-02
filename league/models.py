@@ -2,7 +2,10 @@ from __future__ import unicode_literals
 from django.db import models as m
 from django.contrib.auth.models import User
 from django.utils import timezone
+import team
+from django.db.models import Q
 import sys
+
 
 class Vendor(m.Model):
     name    = m.CharField(max_length=40, blank=False, unique=True)
@@ -174,6 +177,12 @@ class League(m.Model):
             self.save()
         return True;
 
+    def remove_player_from_otherslist(self, player):
+        for p in team.models.FantasyPlayer.objects.filter(Q(team__league__league_id=self.league_id) & \
+                                              Q(player=player) & Q(status='Q')):
+                p.delete()
+
+
 
     def start_draft(self):
         if self.settings.is_draft_done==1:
@@ -193,6 +202,16 @@ class League(m.Model):
             return self.update_the_next_drafter_info()
         print tnow, draft_starttime, draft_endtime
         return False
+
+
+    def get_transactions_since(self, after_trid=0, after_time=0):
+        tns = team.models.Transaction.objects.filter(Q(team__league=self) & Q(id__gt=after_trid)).only('player1__player__pid', 'id')
+        pids, last_trid = [], -1
+        if tns:
+            pids = [t[0] for t in tns.values_list('player1__player__pid')]
+            last_trid = tns.all().reverse()[0].id
+        # TODO - sends only add player transactinos
+        return pids, last_trid
 
 
     def __str__(self):

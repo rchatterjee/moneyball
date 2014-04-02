@@ -71,7 +71,7 @@ def check_constraints(l, mt, p):
         msg = "You are not allowed to draft now"
         return msg, False
     print "Draft is on!"
-    if FantasyPlayer.objects.filter(team__league__league_id=l.league_id).filter(player=p):
+    if FantasyPlayer.objects.filter(Q(team__league__league_id=l.league_id) & ~Q(status='Q')).filter(player=p):
         msg = "Player is not Available!"
         return msg, False
     print "Adding is good."

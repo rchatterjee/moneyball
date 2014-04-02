@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.db.models import Count
 import app, json, random
-from team.views import Team
+from team.views import *
 from ffball.settings import errors
 from team.models import Team, FantasyPlayer
 from league.models import League
