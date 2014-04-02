@@ -2,7 +2,6 @@
 {% load mytemplatetags %}
 <script type="text/javascript">
 
-
 // Polling for draft status.
 draft_current = '';
 draft_timeout = '';
@@ -80,7 +79,6 @@ draft_timeout = '';
         <tr valign="top">
             <td width="600">
                 <!-- table -->
-                <font color="#999999">
                 <table width=100%>
                     <tr>
                         <td>
@@ -131,10 +129,9 @@ draft_timeout = '';
                     </tr>
                     <tr>
                         <td width=100%>
-                            <table width=100% class="table table-condensed
-                                table-bordered" id="player-list">
-
-                                <tr bgcolor="#484848">
+                            <table width=100% class="table table-condensed table-hover table-striped" id="player-list">
+                                <thead>
+                                <tr>
                                   <th><small>Add to Queue</small></th>
                                   <th>Rank</th>
                                   <th>Name</th>
@@ -148,6 +145,8 @@ draft_timeout = '';
                                   <th>Rush Attp.</th>
                                   <th>Rush TD.</th>
                                 </tr>
+                                </thead>
+                                <tbody>
                                 {% for player in players|slice:":20" %}
                                 <tr onclick="get_info('{{ player.pid }}')">
                                     <td>
@@ -188,6 +187,7 @@ draft_timeout = '';
                                     </td>
                                 </tr>
                                 {% endfor %}
+                            </tbody>
                             </table>
                         </td>
                     </tr>
@@ -200,7 +200,6 @@ draft_timeout = '';
                         </td>
                     <tr>
                 </table>
-                </font>
             </td>
             <td width="200">
                 <!-- watchlist -->

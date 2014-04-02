@@ -3,33 +3,34 @@
 <html lang="en" style="min-height: 100%">
     <head>
         <title>{% block title %}Welcome to Moneyball - Django Version{% endblock title %}</title>
-        <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet" media="screen">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static 'bootstrap-orig/css/bootstrap.css' %}" rel="stylesheet" media="screen">
     </head>
-    <!--<body style="background-color:#000000">-->
-    <body style="background:linear-gradient(#052203, black)" >
-            <script src="http://code.jquery.com/jquery.js"></script>
-            <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>		
-			<div id="fb-root"></div>
-			<script>(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=254311618073113";
-			  fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));</script>		
-            <div id="header">
-                {% include "layout/header.html" %}
-            </div>
-			<div id="context">
-                {% block content %}{% endblock content %}
-            </div>
-            <br>
-            {% comment %}
-			<div id="footer">
-                {% include "layout/footer.html" %}
-            </div>	
-			{% endcomment %}
-			{% include "layout/loginmodal.html" %}
-        </body>
-    </html>
-    <!-- {{ debug|safe }} -->
+    <body>
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="{% static 'bootstrap-orig/js/bootstrap.js' %}"></script>		
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=254311618073113";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>		
+        <div id="header">
+            {% include "layout/header.html" %}
+        </div>
+        <div id="context">
+            {% block content %}{% endblock content %}
+        </div>
+        <br>
+        {% comment %}
+        <div id="footer">
+            {% include "layout/footer.html" %}
+        </div>	
+        {% endcomment %}
+        {% include "layout/loginmodal.html" %}
+    </body>
+</html>
+<!-- {{ debug|safe }} -->
