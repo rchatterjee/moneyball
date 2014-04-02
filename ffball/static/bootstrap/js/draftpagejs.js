@@ -537,3 +537,43 @@ CheckAddPlayer = function() {
     }
     return false;
 }
+
+// Player search
+PlayerSearch = function(ta, q) {
+    console.log("Typeahead: " + q);
+    $.ajax({
+        url: "/data/proplayer/search?q=" + q + "&league_id=" + league_id,
+        dataType: "JSON",
+        async: false,
+        success: function(results) {
+            var players = new Array;
+            $.map(results, function(data) {
+                var group;
+                group = {
+                    name: data.fields.player__name,
+                    id: data.pk,
+                    toString: function () {
+                        return this.name;
+                    },
+                    toLowerCase: function () {
+                        return this.name.toLowerCase();
+                    },
+                    indexOf: function (string) {
+                        return String.prototype.indexOf.apply(this.name, arguments);
+                    },
+                    replace: function (string) {
+                        return String.prototype.replace.apply(this.name, arguments);
+                    }
+                };
+                players.push(group);
+            });
+            ta.process(players);
+        },
+    });
+}
+
+PlayerSearchUpdater = function(obj) {
+    //console.log("Selected player: " + obj.id);
+    // TODO: Add code to show player info.
+    return obj;
+}

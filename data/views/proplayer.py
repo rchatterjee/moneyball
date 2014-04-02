@@ -92,6 +92,29 @@ def order(request):
             .order_by(ORDER_BY_MAP[o])[s:s+l]
     return stats_serialize(a, fields)
 
+SEARCH_FIELDS = ['player__name', 'player__pid']
+def search_serialize(a):
+    l = []
+    for v in a.values(*SEARCH_FIELDS):
+        l.append({'pk': v['player__pid'],
+                'model': 'data.aggstat',
+                'fields': v})
+    return HttpResponse(json.dumps(l, indent=2),
+            content_type="application/json")
+
+def search(request):
+    q = request.GET.get('q', '')
+    id = request.GET.get('league_id', '');
+    print (q, id)
+    existing = FantasyPlayer.objects \
+            .filter(team__league__league_id = id) \
+            .values_list('player__pid', flat=True)
+    a = AggStat.objects.exclude(player__pid__in = existing) \
+            .select_related('player') \
+            .filter(player__name__contains=q) \
+            .order_by('player__name')[:10]
+    return search_serialize(a)
+
 def info(request, player_id):
     return HttpResponse(serializers.serialize("json",
         [Player.objects.get(pk=player_id)], indent=2),
