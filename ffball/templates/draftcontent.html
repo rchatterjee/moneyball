@@ -2,11 +2,6 @@
 {% load mytemplatetags %}
 <script type="text/javascript">
 
-// Player listing.
-player_type = 'all';
-player_sort = 'name';
-player_page = 1;
-player_size = {{ players_size }};
 
 // Polling for draft status.
 draft_current = '';
@@ -430,7 +425,13 @@ var team_ids = [{% spaceless %}
            {% endspaceless %}];
 normalWidth = {{ normalWidth }}
 
-$( document ).ready(function() {
+// Player listing
+var player_type = 'all';
+var player_sort = 'name';
+var player_page = 1;
+var player_size = {{ players_size }};
+
+$(window).ready(function() {
     console.log("page-loaded.");
     RefreshPages(player_size);
 });

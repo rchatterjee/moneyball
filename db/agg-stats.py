@@ -1,6 +1,15 @@
 #!/usr/bin/env python
 
-F = [('KR', 'float'), ('KR_Avg', 'float'),
+
+F = [   ('K_0_19_Att', 'float'), ('K_20_29_Att', 'float'),
+        ('K_30_39_Att', 'float'), ('K_40_49_Att', 'float'),
+        ('K_50_Att', 'float'), ('K_0_19_made', 'float'),
+        ('K_20_29_made', 'float'), ('K_30_39_made', 'float'),
+        ('K_40_49_made', 'float'), ('K_50_made', 'float'),
+        ('K_FGA', 'float'), ('K_FGM', 'float'), ('K_Lng', 'float'),
+        ('K_FG_PCT', 'float'), ('K_Pts', 'float'), ('K_XPA', 'float'),
+        ('K_XPM', 'float'),
+        ('KR', 'float'), ('KR_Avg', 'float'),
         ('KR_Long', 'float'), ('KR_TD','float'), ('KR_Yds', 'float'),
         ('PASS_Att', 'float'), ('PASS_Comp', 'float'),
         ('PASS_Int', 'float'), ('PASS_Lng', 'float'),
