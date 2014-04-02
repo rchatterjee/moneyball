@@ -1,55 +1,50 @@
-<!-- ###### Navigation bar begin ###### -->
-<div class="bs-docs-example">
-    <div class="navbar navbar-inverse">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <a class="brand" style="font-size:16px" href="/"><b><i>{% block brandname %}Moneyball{% endblock brandname%}</i></b></a>
-                <div class="nav-collapse collapse navbar-responsive-collapse">
-                    <ul class="nav" style="font-size:14px">
-                        <li class="divider-vertical"></li>
-			            {% if logged_in %}
-                            <li><a href="/"><i class="icon-home icon-black"></i>&nbsp;&nbsp;Home</a></li>
-                            <li class="divider-vertical"></li>
-                            <li><a href="/mockdraft"><i class="icon-th-list icon-black"></i>&nbsp;&nbsp;Mock Draft</a></li>
-                            <li class="divider-vertical"></li>
-                            <li><a href="#"><i class="icon-tasks icon-black"></i>&nbsp;&nbsp;My Teams</a></li>
-                            <!--<li class="divider-vertical"></li>
-                            <li><a href="#"><i class="icon-bell icon-black"></i>&nbsp;&nbsp;Pick'em</a></li> -->
-                            <li class="divider-vertical"></li>
-                        {% else %}
-                            <li><a href="/mockdraft"><i class="icon-th-list icon-black"></i>&nbsp;&nbsp;Mock Draft</a></li>
-                            <li class="divider-vertical"></li>
-                            <li><a href="#"><i class="icon-play icon-black"></i>&nbsp;&nbsp;Demo</a></li>
-                            <li class="divider-vertical"></li>
-                        {% endif %}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" style="font-size:16px" href="/"><b><i>{% block brandname %}Moneyball{% endblock brandname%}</i></b></a>
+            <div class="nav-collapse collapse navbar-responsive-collapse">
+                <ul class="nav" style="font-size:14px">
+                    <li class="divider-vertical"></li>
+                    {% if logged_in %}
+                    <li><a href="/"><i class="icon-home icon-black"></i>&nbsp;&nbsp;Home</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="/mockdraft"><i class="icon-th-list icon-black"></i>&nbsp;&nbsp;Mock Draft</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#"><i class="icon-tasks icon-black"></i>&nbsp;&nbsp;My Teams</a></li>
+                    <!--<li class="divider-vertical"></li>
+                    <li><a href="#"><i class="icon-bell icon-black"></i>&nbsp;&nbsp;Pick'em</a></li> -->
+                    <li class="divider-vertical"></li>
+                    {% else %}
+                    <li><a href="/mockdraft"><i class="icon-th-list icon-black"></i>&nbsp;&nbsp;Mock Draft</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#"><i class="icon-play icon-black"></i>&nbsp;&nbsp;Demo</a></li>
+                    <li class="divider-vertical"></li>
+                    {% endif %}
+                </ul>
+                <ul class="nav pull-right" style="font-size:14px">
+                    {% if logged_in %}
+                    <li class="dropdown" align=right>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i><b>{{ user.name }}</b></i>&nbsp;
+                        <img src="{{ user.avatar }}" height=10% width=10%>
+                        &nbsp;&nbsp;<i class="icon-cog icon-black">
+                    </i><b class="caret"></b></a>
+                    <ul class="dropdown-menu dropdown-menu-inverse">
+                        <li><a href="/settings" align=left><i class="icon-wrench icon-black"></i>&nbsp;&nbsp;My Account</a></li>
+                        <li><a href="#" align=left><i class="icon-wrench icon-black"></i>&nbsp;&nbsp;Change Theme</a></li>
+                        <li><a href="/logout" align=left><i class="icon-off icon-black"></i>&nbsp;&nbsp;Sign Out</a></li>
                     </ul>
-                    <ul class="nav pull-right" style="font-size:14px">
-                        {% if logged_in %}
-                        <li class="dropdown" align=right>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i><b>{{ user.name }}</b></i>&nbsp;
-                            <img src="{{ user.avatar }}" height=10% width=10%>
-                            &nbsp;&nbsp;<i class="icon-cog icon-black">
-                        </i><b class="caret"></b></a>
-                        <ul class="dropdown-menu dropdown-menu-inverse">
-                            <li><a href="/settings" align=left><i class="icon-wrench icon-black"></i>&nbsp;&nbsp;My Account</a></li>
-                            <li><a href="#" align=left><i class="icon-wrench icon-black"></i>&nbsp;&nbsp;Change Theme</a></li>
-                            <li><a href="/logout" align=left><i class="icon-off icon-black"></i>&nbsp;&nbsp;Sign Out</a></li>
-                        </ul>
-                        {% else %}
-                        <li><a href="#myModal" data-toggle="modal">Sign In&nbsp;&nbsp;<i class="icon-off icon-black"></i></a></li>
-                        {% endif %}
-                        </li>
-                    </ul>
-                </div>
+                    {% else %}
+                    <li><a href="#myModal" data-toggle="modal">Sign In&nbsp;&nbsp;<i class="icon-off icon-black"></i></a></li>
+                    {% endif %}
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
-<!-- ###### Navigation bar end ###### -->	
-

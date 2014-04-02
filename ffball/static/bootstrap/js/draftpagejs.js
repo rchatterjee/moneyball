@@ -422,12 +422,12 @@ function field(s)
 function table_header(p)
 {
     row = '<tr bgcolor="#484848">' +
-          '<th><small>Add to Queue</small></th>' +
-          '<th>Rank</th>' +
-          '<th>Player</th>' +
-          '<th>Position</th>' +
+          '<th>Add</th>' +
+          '<th>#</th>' +
+          '<th>Name</th>' +
+          '<th>Pos.</th>' +
           '<th>Team</th>' +
-          '<th>Prj-Pts</th>';
+          '<th>Pts</th>';
     for (var i = 0, l = p.length; i < l; i++) {
         row += '<th>' + type_name[p[i]] + '</th>';
     }
@@ -438,9 +438,9 @@ function table_header(p)
 function table_row(p, i)
 {
     row = '<tr onclick="get_info(\'' + p.fields.player__pid + '\')">' +
-          '<td><button class="btn btn-mini btn-success" type="button" ' +
+          '<td><a href="javascript:void(0) ' +
           'onclick="addToQ(\'' + p.fields.player__pid + '\')">' +
-          '<i class="icon-plus icon-black"></i></button></td>' +
+          '<i class="icon-plus icon-black"></i></a></td>' +
     '<td>' + (i+1) + '</td>' +
     '<td>' + field(p.fields.player__name) + '</td>' +
     '<td>' + field(p.fields.player__position) + '</td>' +

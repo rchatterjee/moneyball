@@ -5,6 +5,7 @@
         <title>{% block title %}Welcome to Moneyball - Django Version{% endblock title %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="{% static 'bootstrap-orig/css/bootstrap.css' %}" rel="stylesheet" media="screen">
+        <link href="{% static 'custom/css/main.css' %}" rel="stylesheet" media="screen">
     </head>
     <body>
         <script src="http://code.jquery.com/jquery.js"></script>
@@ -17,7 +18,7 @@
             js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=254311618073113";
             fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
-        </script>		
+        </script>
         <div id="header">
             {% include "layout/header.html" %}
         </div>
