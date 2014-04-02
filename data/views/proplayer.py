@@ -6,7 +6,7 @@ from data.models import Player, Team, AggStat
 from team.models import FantasyPlayer
 from django.core import serializers
 from django.db.models import Q
-import json
+import json, pprint
 
 PLAYERS_FIELDS = ('name', 'team', 'position')
 def index(request):
@@ -58,19 +58,11 @@ STATS_FIELD = [
     'player__pid',
     'player__team',
     'player__position',
-    'player__name',
-    'run_yds',
-    'run_att',
-    'pass_td',
-    'pass_comp',
-    'pass_yds',
-    'pass_att',
-    'run_td',
-    'run_lng']
+    'player__name' ]
 
-def stats_serialize(a):
+def stats_serialize(a, fields):
     l = []
-    for v in a.values(*STATS_FIELD):
+    for v in a.values(*(STATS_FIELD + fields)):
         l.append({'pk': '',
                 'model': 'data.aggstat',
                 'fields': v})
@@ -83,6 +75,8 @@ def order(request):
     s = int(request.GET.get('start', '0'))
     l = int(request.GET.get('length', '20'))
     id = request.GET.get('league_id', '');
+    fields = request.GET.get('fields', '')
+    fields = fields.split(',')
     if not FILTER_MAP.has_key(f):
         f = 'all'
     if not ORDER_BY_MAP.has_key(o):
@@ -96,7 +90,7 @@ def order(request):
     a = AggStat.objects.exclude(player__pid__in = existing) \
             .select_related('player').filter(FILTER_MAP[f]) \
             .order_by(ORDER_BY_MAP[o])[s:s+l]
-    return stats_serialize(a)
+    return stats_serialize(a, fields)
 
 def info(request, player_id):
     return HttpResponse(serializers.serialize("json",

@@ -373,25 +373,54 @@ function DraftStatusProcess(data)
 
 (function DraftStatusPoll(){
     setTimeout(function() {
-        $.ajax({
-            type: "GET",
-		    url: "/data/draft/{league_id}/updates?last_transaction={last_transaction}".format({'league_id':league_id, 'last_transaction':last_transaction}),
-		    success: function(data){
-		    // Process poll response
-		    DraftStatusProcess(data);
-		},
-		    dataType: "json",
-		    complete: DraftStatusPoll,
-		    timeout: 3000 });
+	    $.ajax({
+		    type: "GET",
+			url: "/data/draft/{league_id}/updates?last_transaction={last_transaction}".format({'league_id':league_id, 'last_transaction':last_transaction}),
+			success: function(data){
+			// Process poll response
+			DraftStatusProcess(data);
+		    },
+			dataType: "json",
+			complete: DraftStatusPoll,
+			timeout: 3000 });
         }, 3000 );
 })();
 
 // Player listing.
-
-player_type = 'all';
-player_sort = 'name';
-player_page = 1;
-player_size = 0;
+var player_type_fields = {
+    'all': ['pass_comp', 'pass_td', 'run_yds', 'run_td',
+            'rec_yds', 'rec_td', 'kr_yds', 'kr_td'],
+    'qb':  ['pass_att', 'pass_comp', 'pass_td',
+            'run_yds', 'run_att', 'run_td'],
+    'rb': ['run_yds', 'run_att', 'run_td',
+           'rec', 'rec_yds', 'rec_td'],
+    'wr': ['rec', 'rec_yds', 'rec_td',
+           'kr', 'kr_yds', 'kr_td'],
+    'te': ['run_yds', 'run_att', 'run_td',
+           'rec', 'rec_yds', 'rec_td'],
+    'k': ['k_fgm', 'k_fga', 'k_pts', 'k_xpm', 'k_xpa' ],
+    'def':  ['pass_att', 'pass_comp', 'pass_td',
+            'run_yds', 'run_att', 'run_td'], // TODO: Fix this.
+};
+var type_name = {
+    'pass_att': 'PA',
+    'pass_comp': 'PC',
+    'pass_td': 'PTD',
+    'run_yds': 'Ru-Yds',
+    'run_att': 'Ru-A',
+    'run_td': 'Ru-TD',
+    'rec': 'Recs',
+    'rec_yds': 'Rec-Yds',
+    'rec_td': 'Rec-TD',
+    'kr': 'KR',
+    'kr_yds': 'KR-Yds',
+    'kr_td': 'KR-TD',
+    'k_fgm': 'K-FGM',
+    'k_fga': 'K-FGA',
+    'k_pts': 'K-Pts',
+    'k_xpm': 'K-XPM',
+    'k_xpa': 'K-XPA',
+};
 
 function field(s)
 {
@@ -403,47 +432,67 @@ function field(s)
     return s;
 }
 
+function table_header(p)
+{
+    row = '<tr bgcolor="#484848">' +
+          '<th>Add</th>' +
+          '<th>#</th>' +
+          '<th>Name</th>' +
+          '<th>Pos.</th>' +
+          '<th>Team</th>' +
+          '<th>Pts</th>';
+    for (var i = 0, l = p.length; i < l; i++) {
+        row += '<th>' + type_name[p[i]] + '</th>';
+    }
+    row += '</tr>';
+    return row;
+}
+
 function table_row(p, i)
 {
     row = '<tr onclick="get_info(\'' + p.fields.player__pid + '\')">' +
-          '<td><button class="btn btn-mini btn-success" type="button" ' +
+          '<td><a href="javascript:void(0)" ' +
           'onclick="addToQ(\'' + p.fields.player__pid + '\')">' +
-          '<i class="icon-plus icon-black"></i></button></td>' +
+          '<i class="icon-plus icon-black"></i></a></td>' +
     '<td>' + (i+1) + '</td>' +
     '<td>' + field(p.fields.player__name) + '</td>' +
     '<td>' + field(p.fields.player__position) + '</td>' +
     '<td>' + field(p.fields.player__team) + '</td>' +
-    '<td>' + 0 + '</td>' +
-    '<td>' + field(p.fields.pass_att) + '</td>' +
-    '<td>' + field(p.fields.pass_comp) + '</td>' +
-    '<td>' + field(p.fields.pass_td) + '</td>' +
-    '<td>' + field(p.fields.run_yds) + '</td>' +
-    '<td>' + field(p.fields.run_att) + '</td>' +
-    '<td>' + field(p.fields.run_td) + '</td>' +
-    '</tr>';
+    '<td>' + 0 + '</td>';
+    for (var i = 0, l = player_type_fields[player_type].length; i < l; i ++) {
+        row += '<td>' + field(p.fields[player_type_fields[player_type][i]]) + '</td>';
+    }
+    row += '</tr>';
     return row;
 }
 
 function RefreshPlayers(data)
 {
-    $("#player-list").find("tr:gt(0)").remove();
+    $("#player-list").find("tr").remove();
+    $("#player-list").append(table_header(player_type_fields[player_type]));
     for (i = 0; i < data.length; i++) {
-        $('#player-list tr:last').after(table_row(data[i], (player_page-1)*20 + i));
+        $('#player-list').append(table_row(data[i], (player_page-1)*20 + i));
     }
 }
 
 function RefreshPages(data)
 {
+    player_size = data;
+    console.log("player_size: " + player_size);
     cur = player_page;
     total = Math.ceil(player_size/20);
     $('#player-pages').empty();
     $('#player-pages').append(
             '<li><a href="javascript:void(0)" ' +
             'onclick="LoadPage(' + 1  + ')">&laquo;</a></li>');
-    for (i = cur-2; i <= cur+2; i++) {
+    for (i = cur-2; i <= cur+2 && i <= total; i++) {
+        c = "";
+        if (i == cur) {
+            c = " class='active'";
+        }
         if (i > 0) {
             $('#player-pages').append(
-                    '<li><a href="javascript:void(0)" ' +
+                    '<li' + c + '><a href="javascript:void(0)" ' +
                     'onclick="LoadPage(' + i + ')">' + i + '</a></li>');
         }
     }
@@ -455,7 +504,8 @@ function RefreshPages(data)
 function GetPlayers()
 {
     url = "/data/proplayer/order?type=" + player_type + "&sort=" + player_sort;
-    url += "&start=" + (player_page*20) + "&length=20";
+    url += "&start=" + ((player_page-1)*20) + "&length=20";
+    url += "&fields=" + player_type_fields[player_type].join();
     console.log(url);
     $.ajax({
         type: "GET",
@@ -469,6 +519,7 @@ function GetPlayers()
 function GetPlayerSize()
 {
     url = "/data/proplayer/order-size?type=" + player_type;
+    console.log(url);
     $.ajax({
         type: "GET",
         url: url,
@@ -500,7 +551,5 @@ function LoadPage(p)
     console.log("Load-page: "+p);
     player_page = p;
     GetPlayers();
-    RefreshPages();
+    RefreshPages(player_size);
 }
-
-RefreshPages(player_size);

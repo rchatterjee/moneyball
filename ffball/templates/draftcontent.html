@@ -1,229 +1,203 @@
 {% load static from staticfiles %}
 {% load mytemplatetags %}
+<script type="text/javascript">
+
+// Polling for draft status.
+draft_current = '';
+draft_timeout = '';
+
+</script>
 <script src="{% static 'bootstrap/js/jquery.slimscroll.min.js' %}"></script>
 <script src="{% static 'bootstrap/js/jquery.timeout.interval.idle.js' %}" type="text/javascript"></script>
 <script src="{% static 'bootstrap/js/jquery.countdown.counter.js' %}" type="text/javascript"></script>
 <script src="{% static 'bootstrap/js/draftpagejs.js' %}" type="text/javascript"></script>
-
 <link rel="stylesheet" href="{% static 'bootstrap/css/jquery.countdown.timer.css' %}" type="text/css" />
-<center>
-<table width="1000" height="700" >
-<tr valign="top">
-<td width="800">
-<!-- col1 -->
-    <table width="100%">
-        <tr height="100">
-            <td width="600">
-                <!-- clock and draft order -->
-                <center>
-                <font color="#ffffff">
-                <table width="600">
-                    <tr id="teams-images">
-                        {% for team in teams %}
-                        <td>
-                            {% if team %}
-                            <a href=""><img id="team-image-{{ team.id }}" class="img-rounded"
-                                src="{% static 'img/team_thumbs/'%}{{ team.image_name }}"
-                                    width=80></a>
-                            {% else %}
-                            <img class="img-rounded"
-                            src="{% static 'img/team_thumbs/none.jpg'%}"
-                            width=80>
-                            {% endif %}
-                        </td>
-                        {% endfor %}
-                    </tr>
-                </table>
-                </font>
-                </center>
-            </td>
-            <td width="200" valign="top">
-                <div >
-                    <center>
-                        <div id="centered_div">
-                            <div id="counter">
-                            <div id="counter_item1" class="counter_item">
-                            <div class="front"></div>
-                            <div class="digit digit0"></div>
-                            </div>
-                            <div id="counter_item2" class="counter_item">
-                            <div class="front"></div>
-                            <div class="digit digit0"></div>
-                            </div>
-                            <div id="counter_item3" class="counter_item">
-                            <div class="front"></div>
-                            <div class="digit digit_colon"></div>
-                            </div>
-                            <div id="counter_item4" class="counter_item">
-                            <div class="front"></div>
-                            <div class="digit digit0"></div>
-                            </div>
-                            <div id="counter_item5" class="counter_item">
-                            <div class="front"></div>
-                            <div class="digit digit0"></div>
-                            </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br>
-                </div>
-            </td>
-        </tr>
-        <tr valign="top">
-            <td width="600">
-                <!-- table -->
-                <font color="#999999">
-                <table width=100%>
-                    <tr>
-                        <td>
-                            <table width=100%>
-                                <tr>
-                                    <td align=left>
-                                        <input type="text" class="search-query span2" style="height:15px;" data-provide="typeahead" placeholder="Search Players">
-                                    </td>
-                                    <td align=right>
-                                        <b>Filter by position: </b>
-                                    </td>
-                                    <td align=right>
-                                        <a href="javascript:void(0)"
-                                            onclick="GetPlayersByType('all')">All</a>
-                                    </td>
-                                    <td align=right>
-                                        <a href="javascript:void(0)"
-                                            onclick="GetPlayersByType('qb')">QB</a>
-                                    </td>
-                                    <td align=right>
-                                        <a href="javascript:void(0)"
-                                            onclick="GetPlayersByType('rb')">RB</a>
-                                    </td>
-                                    <td align=right>
-                                        <a href="javascript:void(0)"
-                                            onclick="GetPlayersByType('wr')">WR</a>
-                                    </td>
-                                    <td align=right>
-                                        <a href="javascript:void(0)"
-                                            onclick="GetPlayersByType('te')">TE</a>
-                                    </td>
-                                    <td align=right>
-                                        <a href="javascript:void(0)"
-                                            onclick="GetPlayersByType('k')">K</a>
-                                    </td>
-                                    <td align=right>
-                                        <a href="javascript:void(0)"
-                                            onclick="GetPlayersByType('def')">Def</a>
-                                    </td>
-                                    {% comment %}
-                                    <td align=right>
-                                        <button class="btn btn-mini" type="button"><i class="icon-cog icon-black"></i></button>
-                                    </td>
-                                    {% endcomment %}
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width=100%>
-                            <table width=100% class="table table-condensed
-                                table-bordered" id="player-list">
 
-                                <tr bgcolor="#484848">
-                                  <th><small>Add to Queue</small></th>
-                                  <th>Rank</th>
-                                  <th>Name</th>
-                                  <th>Position</th>
-                                  <th>Team</th>
-                                  <th>Prj. Pts</th>
-                                  <th>Pass Attp.</th>
-                                  <th>Pass Cmpd.</th>
-                                  <th>Pass TD.</th>
-                                  <th>Rush Yrds.</th>
-                                  <th>Rush Attp.</th>
-                                  <th>Rush TD.</th>
-                                </tr>
-                                {% for player in players|slice:":20" %}
-                                <tr onclick="get_info('{{ player.pid }}')">
-                                    <td>
-                                        <button class="btn btn-mini btn-success" type="button" onclick="addToQ('{{ player.pid }}', '{{ player.name }}')"><i class="icon-plus icon-black"></i></button>
-                                    </td>
-                                    <td>
-                                        {{ forloop.counter }}
-                                    </td>
-                                    <td>
-                                        {{ player.name }}
-                                    </td>
-                                    <td>
-                                        {{ player.position }}
-                                    </td>
-                                    <td>
-                                        {{ player.team.tid }}
-                                    </td>
-                                    <td>
-                                        345
-                                    </td>
-                                    <td>
-                                        3452
-                                    </td>
-                                    <td>
-                                        544
-                                    </td>
-                                    <td>
-                                        23
-                                    </td>
-                                    <td>
-                                        45
-                                    </td>
-                                    <td>
-                                        3
-                                    </td>
-                                    <td>
-                                        3
-                                    </td>
-                                </tr>
-                                {% endfor %}
-                            </table>
+<div class="container">
+    <div class="row">
+        <div class="span9">
+            <table width="100%">
+                <tr id="teams-images">
+                    {% for team in teams %}
+                    <td>
+                        {% if team %}
+                        <a href=""><img id="team-image-{{ team.id }}" class="img-rounded"
+                            src="{% static 'img/team_thumbs/'%}{{ team.image_name }}"
+                            width=80></a>
+                        {% else %}
+                        <img class="img-rounded"
+                        src="{% static 'img/team_thumbs/none.jpg'%}"
+                        width=80>
+                        {% endif %}
+                    </td>
+                    {% endfor %}
+                </tr>
+            </table>
+        </div>
+        <div class="span3">
+            <div id="centered_div">
+                <div id="counter">
+                    <div id="counter_item1" class="counter_item">
+                        <div class="front"></div>
+                        <div class="digit digit0"></div>
+                    </div>
+                    <div id="counter_item2" class="counter_item">
+                        <div class="front"></div>
+                        <div class="digit digit0"></div>
+                    </div>
+                    <div id="counter_item3" class="counter_item">
+                        <div class="front"></div>
+                        <div class="digit digit_colon"></div>
+                    </div>
+                    <div id="counter_item4" class="counter_item">
+                        <div class="front"></div>
+                        <div class="digit digit0"></div>
+                    </div>
+                    <div id="counter_item5" class="counter_item">
+                        <div class="front"></div>
+                        <div class="digit digit0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span6">
+            <table width=100%>
+                <tr>
+                    <td align=left>
+                        <input type="text" class="search-query span2" style="height:15px;" data-provide="typeahead" placeholder="Search Players">
+                    </td>
+                    <td align=right>
+                        <b>Filter by position: </b>
+                    </td>
+                    <td align=right>
+                        <a href="javascript:void(0)"
+                            onclick="GetPlayersByType('all')">All</a>
+                    </td>
+                    <td align=right>
+                        <a href="javascript:void(0)"
+                            onclick="GetPlayersByType('qb')">QB</a>
+                    </td>
+                    <td align=right>
+                        <a href="javascript:void(0)"
+                            onclick="GetPlayersByType('rb')">RB</a>
+                    </td>
+                    <td align=right>
+                        <a href="javascript:void(0)"
+                            onclick="GetPlayersByType('wr')">WR</a>
+                    </td>
+                    <td align=right>
+                        <a href="javascript:void(0)"
+                            onclick="GetPlayersByType('te')">TE</a>
+                    </td>
+                    <td align=right>
+                        <a href="javascript:void(0)"
+                            onclick="GetPlayersByType('k')">K</a>
+                    </td>
+                    <td align=right>
+                        <a href="javascript:void(0)"
+                            onclick="GetPlayersByType('def')">Def</a>
+                    </td>
+                    {% comment %}
+                    <td align=right>
+                        <button class="btn btn-mini" type="button"><i class="icon-cog icon-black"></i></button>
+                    </td>
+                    {% endcomment %}
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span6" style="font-size:8pt">
+            <table width=100% class="table table-condensed table-hover table-striped" id="player-list" style="overflow:auto">
+                <thead>
+                    <tr>
+                        <th>Add</th>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Pos.</th>
+                        <th>Team</th>
+                        <th>Pts</th>
+                        <th>Pass Attp.</th>
+                        <th>Pass Cmpd.</th>
+                        <th>Pass TD.</th>
+                        <th>Rush Yrds.</th>
+                        <th>Rush Attp.</th>
+                        <th>Rush TD.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for player in players|slice:":20" %}
+                    <tr onclick="get_info('{{ player.player.pid }}')">
+                        <td>
+                            <a href="javascript:void(0)" onclick="addToQ('{{ player.player.pid }}')"><i class="icon-plus icon-black"></i></a>
+                        </td>
+                        <td>
+                            {{ forloop.counter }}
+                        </td>
+                        <td>
+                            {{ player.player.name }}
+                        </td>
+                        <td>
+                            {{ player.player.position }}
+                        </td>
+                        <td>
+                            {{ player.player.team.tid }}
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            {{ player.pass_att|floatformat|default:"-" }}
+                        </td>
+                        <td>
+                            {{ player.pass_comp|floatformat|default:"-" }}
+                        </td>
+                        <td>
+                            {{ player.pass_td|floatformat|default:"-" }}
+                        </td>
+                        <td>
+                            {{ player.run_yds|floatformat|default:"-" }}
+                        </td>
+                        <td>
+                            {{ player.run_att|floatformat|default:"-" }}
+                        </td>
+                        <td>
+                            {{ player.run_td|floatformat|default:"-" }}
                         </td>
                     </tr>
-                    <tr>
-                        <td align="center">
-                            <div class="pagination">
-                                <ul id="player-pages">
-                                    <li><a href="javascript:void(0)"
-                                        onclick="LoadPage(1)">&laquo;</a></li>
-                                    <li><a href="javascript:void(0)"
-                                        onclick="LoadPage(1)">1</a></li>
-                                    <li><a href="javascript:void(0)"
-                                        onclick="LoadPage(2)">2</a></li>
-                                </ul>
-                            </div>
-                        </td>
-                    <tr>
-                </table>
-                </font>
-            </td>
-            <td width="200">
-                <!-- watchlist -->
-                {% with players|first as first_player %}
-                <font color="#999999">
-                <div class="accordion-group">
-                    <center>
-                    <table width="180" id="selected_player">
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="pagination pagination-centered">
+                <ul id="player-pages">
+                </ul>
+            </div>
+        </div>
+        <div class="span3">
+            <!-- watchlist -->
+            {% with players|first as first_player %}
+            <div class="accordion-group">
+                <center>
+                    <table width="100%" id="selected_player">
                         <tr>
-                           <td colspan="100%">
+                            <td colspan="100%">
                                 <div style="color:#999999" name="name">
-                                    <h4>&nbsp;{{ first_player.name }}</h4>
+                                    <h4>&nbsp;{{ first_player.player.name }}</h4>
                                 </div>
-                           </td>
+                            </td>
                         </tr>
                         <tr>
-                            <td width="90">
+                            <td>
                                 <img id="player-image" src="{% static 'img/icon/defPlayer.png' %}" width="90" class="img-rounded accordion-group">
                             </td>
-                            <td width="80">
+                            <td>
                                 <div name="position">
-                                    &nbsp;<b>{{ first_player.position }}</b>
+                                    &nbsp;<b>{{ first_player.player.position }}</b>
                                 </div>
                                 <div name="team_name">
-                                    &nbsp;{{ first_player.team.name }}
+                                    &nbsp;{{ first_player.player.team.name }}
                                 </div>
                                 <div name="rank">
                                     &nbsp;Rank #1
@@ -231,35 +205,38 @@
                             </td>
                         </tr>
                         <tr>
-                           <td colspan="100%">
+                            <td colspan="100%">
                                 <div align="center">
                                     <a href="#" id="moreOnPlayer" class="btn btn-primary btn-mini" rel="popover" data-placement="left" data-content="We can show more status and news here" data-original-title="Albert Einstein">More</a>
-                                    <button class="btn btn-primary btn-mini" name="addToQ" onclick="addToQ('{{ first_player.pid }}')">Queue</button>
-                                    <button class="btn btn-success btn-mini" name="addToTeam" onclick="addToTeam('{{ first_player.pid }}', '{{ first_player.name }}' )">Add</button>
+                                    <button class="btn btn-primary btn-mini"
+                                        name="addToQ" onclick="addToQ('{{ first_player.player.pid }}')">Queue</button>
+                                    <button class="btn btn-success btn-mini"
+                                        name="addToTeam" onclick="addToTeam('{{
+                                        first_player.player.pid }}', '{{ first_player.player.name }}' )">Add</button>
                                 </div>
-                           </td>
+                            </td>
                         </tr>
                     </table>
-                    </center>
-                </div>
-                {% endwith %}
-                <div class="accordion" id="accordion2">
-                  <div class="accordion-group">
+                </center>
+            </div>
+            {% endwith %}
+            <div class="accordion" id="accordion2">
+                <div class="accordion-group">
                     <div class="accordion-heading">
-                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                        <h4><center>My Queue</center></h4>
-                      </a>
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                            <h4><center>My Queue</center></h4>
+                        </a>
                     </div>
                     <div id="collapseOne" class="accordion-body collapse in">
-                      <div class="accordion-inner">
-                        <div id="listOfWatchPlayers" >
-                            {% if myteam_queue %}
+                        <div class="accordion-inner">
+                            <div id="listOfWatchPlayers" >
+                                {% if myteam_queue %}
                                 {% for player in myteam_queue %}
                                 <div class="dndcontainer" name="watchPlayers" id="watchplayer-{{ player.player.pid }}" draggable=true >
                                     <table width=100% >
                                         <tr>
                                             <td width="25">
-                                                <b>{{ player.position }}</b>
+                                                <b>{{ player.player.position }}</b>
                                             </td>
                                             <td width=%>
                                                 <button class="btn btn-small btn-success" onclick="addToTeam('{{ player.player.pid }}', '{{ player.player.name }}')" type="button" > {{ player.player.name }} </button>
@@ -271,133 +248,124 @@
                                     </table>
                                 </div>
                                 {% endfor %}
-                            {% else %}
+                                {% else %}
                                 <div align="center">
                                     Queue is empty!
                                 </div>
-                            {% endif %}
+                                {% endif %}
+                            </div>
                         </div>
-                      </div>
                     </div>
-                  </div>
-                  <div class="accordion-group">
+                </div>
+                <div class="accordion-group">
                     <div class="accordion-heading">
-                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                        <h5>News</h5>
-                      </a>
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                            <h5>News</h5>
+                        </a>
                     </div>
                     <div id="collapseTwo" class="accordion-body collapse">
-                      <div class="accordion-inner">
-                        <div id="newsbox">
-                        There's a temptation to overreact when a player as charismatic and furious as Steve Smith changes teams. And now that he's joined a squad that won the Super Bowl just a season ago, watch out. But having reviewed his 2013 game tape, I have to say: I'm underwhelmed.
-                        <br>
-                        I should preface this by saying Smith has been one of my favorite players for years. It's borderline ridiculous that a 5-foot-9 (ahem: he's shorter than that), 185-pound receiver has seven 1,000-yard seasons and 67 career TDs operating almost exclusively on the outside. He has been a force of nature. But he's also slowing down. He still has the power and frenzy to get off the line against most corners, but he isn't open as frequently, especially deep. He didn't gain more than 23 yards on any reception until Week 11, and I couldn't find a single play out of his 64 grabs where he produced more than about 15 yards after the catch.
-                        </div>
+                        <div class="accordion-inner">
+                            <div id="newsbox">
+                                There's a temptation to overreact when a player as charismatic and furious as Steve Smith changes teams. And now that he's joined a squad that won the Super Bowl just a season ago, watch out. But having reviewed his 2013 game tape, I have to say: I'm underwhelmed.
+                                <br>
+                                I should preface this by saying Smith has been one of my favorite players for years. It's borderline ridiculous that a 5-foot-9 (ahem: he's shorter than that), 185-pound receiver has seven 1,000-yard seasons and 67 career TDs operating almost exclusively on the outside. He has been a force of nature. But he's also slowing down. He still has the power and frenzy to get off the line against most corners, but he isn't open as frequently, especially deep. He didn't gain more than 23 yards on any reception until Week 11, and I couldn't find a single play out of his 64 grabs where he produced more than about 15 yards after the catch.
+                            </div>
 
-                      </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="accordion-group">
+                </div>
+                <div class="accordion-group">
                     <div class="accordion-heading">
-                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                        <h5>Transactions</h5>
-                      </a>
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                            <h5>Transactions</h5>
+                        </a>
                     </div>
                     <div id="collapseThree" class="accordion-body collapse">
-                      <div class="accordion-inner">
-                        <div id="newsbox2">
-                            <p class="muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
-                            <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
-                            <p class="text-error">Donec ullamcorper nulla non metus auctor fringilla.</p>
-                            <p class="text-info">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.</p>
-                            <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                        <div class="accordion-inner">
+                            <div id="newsbox2">
+                                <p class="muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+                                <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+                                <p class="text-error">Donec ullamcorper nulla non metus auctor fringilla.</p>
+                                <p class="text-info">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.</p>
+                                <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                            </div>
                         </div>
-                      </div>
                     </div>
-                  </div>
                 </div>
-                </font>
-            </td>
-        </tr>
-    </table>
-<!-- col1 -->
-</td>
-<td width="200">
-<!-- col2 teaminfo-->
-    <table width="100%">
-        <tr align="right">
-            <td>
-                <div class="btn-group">
-                  <button class="btn btn-small btn-inverse">{{ thisLeague.name }}</button>
-                  <button class="btn btn-small dropdown-toggle btn-inverse" data-toggle="dropdown">
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-inverse pull-right btn-inverse">
-                      {% for oneTeam in myTeamList %}
-                        <li><a href="/draft/{{ oneTeam.league.league_id }}"><b>{{ oneTeam.team_name }}</b> [{{ oneTeam.league.name }}]</a></li>
-                      {% endfor %}
-                  </ul>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                  <label class="checkbox">
-                      <input type="checkbox"><h4><font color="#ffffff">Autodraft</font></h4>
-                  </label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-				<font color="#ffffff">
-                <div class="accordion-group">
-				<table id="srgTable" width=100%>
-					<tr>
-						<td>
-							<table width=100%>
-								<tr>
-									<td>
-										<img src="{% static 'img/team_thumbs/'%}{{ myteam.image_name }}" width=40 class="img-rounded">
-									</td>
-									<td width=%>
-										<h4>{{ myteam.team_name }}</h4>
-									</td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<table  width=100% cellpadding=0 cellspacing=0>
-								<tr style="height:10px;">
-									<td colspan="100%">
-									</td>
-								</tr>
-                                {% for pos, name in current_team.items %}
-								<tr style="height:30px;" id="tr-{{pos}}">
-									<td>
-										&nbsp;
-                                        <font color="#999999"><b>{{ pos }}</b></font>
-									</td>
-									<td width=% >
-										<button class="btn btn-small" style="width:120px" type="button"> {{ name }}</button>
-									</td>
-								</tr>
+            </div>
+        </div>
+        <div class="span3">
+            <table width="100%">
+                <tr align="right">
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-small btn-inverse">{{ thisLeague.name }}</button>
+                            <button class="btn btn-small dropdown-toggle btn-inverse" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-inverse pull-right btn-inverse">
+                                {% for oneTeam in myTeamList %}
+                                <li><a href="/draft/{{ oneTeam.league.league_id }}"><b>{{ oneTeam.team_name }}</b> [{{ oneTeam.league.name }}]</a></li>
                                 {% endfor %}
-							</table>
-							<br>
-						</td>
-					</tr>
-				</table>
-				</div>
-                </font>
-            </td>
-        </tr>
-    </table>
-<!-- col2 teaminfo-->
-</td>
-</tr>
-</table>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="checkbox">
+                            <input type="checkbox"><h4>Autodraft</h4>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                            <div class="accordion-group">
+                                <table id="srgTable" width=100%>
+                                    <tr>
+                                        <td>
+                                            <table width=100%>
+                                                <tr>
+                                                    <td>
+                                                        <img src="{% static 'img/team_thumbs/'%}{{ myteam.image_name }}" width=40 class="img-rounded">
+                                                    </td>
+                                                    <td width=%>
+                                                        <h4>{{ myteam.team_name }}</h4>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table  width=100% cellpadding=0 cellspacing=0>
+                                                <tr style="height:10px;">
+                                                    <td colspan="100%">
+                                                    </td>
+                                                </tr>
+                                                {% for pos, name in current_team.items %}
+                                                <tr style="height:30px;" id="tr-{{pos}}">
+                                                    <td>
+                                                        &nbsp;
+                                                        <font color="#999999"><b>{{ pos }}</b></font>
+                                                    </td>
+                                                    <td width="100%">
+                                                        <button class="btn btn-small" style="width:120px" type="button"> {{ name }}</button>
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                            </table>
+                                            <br>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript">
 
@@ -420,6 +388,15 @@ var team_ids = [{% spaceless %}
            {% endspaceless %}];
 normalWidth = {{ normalWidth }}
 
-RefreshPages(player_size);
+// Player listing
+var player_type = 'all';
+var player_sort = 'name';
+var player_page = 1;
+var player_size = {{ players_size }};
+
+$(window).ready(function() {
+    console.log("page-loaded.");
+    RefreshPages(player_size);
+});
 
 </script>
