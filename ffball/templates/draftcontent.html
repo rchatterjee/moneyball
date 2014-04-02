@@ -15,7 +15,7 @@ draft_timeout = '';
 
 <div class="container">
     <div class="row">
-        <div class="span9">
+        <div class="span9" style="padding-bottom: 30px">
             <table width="100%">
                 <tr id="teams-images">
                     {% for team in teams %}
@@ -61,51 +61,33 @@ draft_timeout = '';
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="span6">
-            <table width=100%>
-                <tr>
-                    <td align=left>
-                        <input type="text" class="search-query span2" style="height:15px;" data-provide="typeahead" placeholder="Search Players">
-                    </td>
-                    <td align=right>
-                        <b>Filter by position: </b>
-                    </td>
-                    <td align=right>
-                        <a href="javascript:void(0)"
-                            onclick="GetPlayersByType('all')">All</a>
-                    </td>
-                    <td align=right>
-                        <a href="javascript:void(0)"
-                            onclick="GetPlayersByType('qb')">QB</a>
-                    </td>
-                    <td align=right>
-                        <a href="javascript:void(0)"
-                            onclick="GetPlayersByType('rb')">RB</a>
-                    </td>
-                    <td align=right>
-                        <a href="javascript:void(0)"
-                            onclick="GetPlayersByType('wr')">WR</a>
-                    </td>
-                    <td align=right>
-                        <a href="javascript:void(0)"
-                            onclick="GetPlayersByType('te')">TE</a>
-                    </td>
-                    <td align=right>
-                        <a href="javascript:void(0)"
-                            onclick="GetPlayersByType('k')">K</a>
-                    </td>
-                    <td align=right>
-                        <a href="javascript:void(0)"
-                            onclick="GetPlayersByType('def')">Def</a>
-                    </td>
-                    {% comment %}
-                    <td align=right>
-                        <button class="btn btn-mini" type="button"><i class="icon-cog icon-black"></i></button>
-                    </td>
-                    {% endcomment %}
-                </tr>
-            </table>
+    <div class="row" style="padding-bottom: 10px">
+        <div class="span2">
+            <input type="text" class="search-query span2" style="height:15px;" data-provide="typeahead" placeholder="Search Players">
+        </div>
+        <div class="span4 text-right">
+            <b>Filter by position: </b>
+            <div class="btn-group" id="filter-pos" data-toggle="buttons-radio">
+                <button type="button" class="btn btn-primary btn-mini active"
+                    onclick="GetPlayersByType('all', this)">All</button>
+                <button type="button" class="btn btn-primary btn-mini"
+                    onclick="GetPlayersByType('qb', this)">QB </button>
+                <button type="button" class="btn btn-primary btn-mini"
+                    onclick="GetPlayersByType('rb', this)">RB </button>
+                <button type="button" class="btn btn-primary btn-mini"
+                    onclick="GetPlayersByType('wr', this)">WR</button>
+                <button type="button" class="btn btn-primary btn-mini"
+                    onclick="GetPlayersByType('te', this)">TE</button>
+                <button type="button" class="btn btn-primary btn-mini"
+                    onclick="GetPlayersByType('k', this)">K</button>
+                <button type="button" class="btn btn-primary btn-mini"
+                    onclick="GetPlayersByType('def', this)">Def</button>
+            </div>
+            {% comment %}
+            <td align=right>
+                <button class="btn btn-mini" type="button"><i class="icon-cog icon-black"></i></button>
+            </td>
+            {% endcomment %}
         </div>
     </div>
     <div class="row">

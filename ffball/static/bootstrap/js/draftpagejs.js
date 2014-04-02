@@ -497,12 +497,13 @@ function GetPlayers(page)
     });
 }
 
-function GetPlayersByType(type)
+function GetPlayersByType(type, t)
 {
     if (player_query)
         return;
+    $('div#filter-pos button.active').removeClass('active');
+    $(t).addClass('active');
     player_query = true;
-    console.log("Type: " + type);
     player_type = type;
     player_page = 1;
     GetPlayers(player_page);
