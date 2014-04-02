@@ -468,88 +468,71 @@ function table_row(p, i)
 
 function RefreshPlayers(data)
 {
-    $("#player-list").find("tr").remove();
-    $("#player-list").append(table_header(player_type_fields[player_type]));
+    console.log("RefreshPlayer: Page: " + this.page);
+    if (this.page == 1) {
+        // Clear all rows.
+        $("#player-list").find("tr").remove();
+        $("#player-list").append(table_header(player_type_fields[player_type]));
+    }
     for (i = 0; i < data.length; i++) {
         $('#player-list').append(table_row(data[i], (player_page-1)*20 + i));
     }
+    player_query = false;
+    CheckAddPlayer();
 }
 
-function RefreshPages(data)
-{
-    player_size = data;
-    console.log("player_size: " + player_size);
-    cur = player_page;
-    total = Math.ceil(player_size/20);
-    $('#player-pages').empty();
-    $('#player-pages').append(
-            '<li><a href="javascript:void(0)" ' +
-            'onclick="LoadPage(' + 1  + ')">&laquo;</a></li>');
-    for (i = cur-2; i <= cur+2 && i <= total; i++) {
-        c = "";
-        if (i == cur) {
-            c = " class='active'";
-        }
-        if (i > 0) {
-            $('#player-pages').append(
-                    '<li' + c + '><a href="javascript:void(0)" ' +
-                    'onclick="LoadPage(' + i + ')">' + i + '</a></li>');
-        }
-    }
-    $('#player-pages').append(
-            '<li><a href="javascript:void(0)" ' +
-        'onclick="LoadPage(' + total + ')">&raquo;</a></li>');
-}
-
-function GetPlayers()
+function GetPlayers(page)
 {
     url = "/data/proplayer/order?type=" + player_type + "&sort=" + player_sort;
-    url += "&start=" + ((player_page-1)*20) + "&length=20";
+    url += "&start=" + ((page-1)*20) + "&length=20";
     url += "&fields=" + player_type_fields[player_type].join();
     console.log(url);
     $.ajax({
         type: "GET",
         url: url,
         success: RefreshPlayers,
+        context: {'page': page},
         dataType: "json",
         timeout: 10000,
     });
-}
-
-function GetPlayerSize()
-{
-    url = "/data/proplayer/order-size?type=" + player_type;
-    console.log(url);
-    $.ajax({
-        type: "GET",
-        url: url,
-        success: RefreshPages,
-        dataType: "json",
-        timeout: 10000,
-    });
-
 }
 
 function GetPlayersByType(type)
 {
+    if (player_query)
+        return;
+    player_query = true;
     console.log("Type: " + type);
     player_type = type;
     player_page = 1;
-    GetPlayerSize();
-    GetPlayers();
+    GetPlayers(player_page);
 }
 
 function GetPlayersBySort(sort)
 {
+    if (player_query)
+        return;
+    player_query = true;
     console.log("Sort: " + sort);
     player_sort = sort;
-    GetPlayers();
+    GetPlayers(player_page, 'new');
 }
 
-function LoadPage(p)
-{
-    console.log("Load-page: "+p);
-    player_page = p;
-    GetPlayers();
-    RefreshPages(player_size);
+AddPlayers = function () {
+    console.log("add-player");
+    if (player_query)
+        return;
+    player_query = true;
+    player_page++;
+    console.log("Add-player: " + player_page);
+    GetPlayers(player_page, 'add');
+}
+
+CheckAddPlayer = function() {
+    console.log("Scroll-event.");
+    if($(window).scrollTop() >= $(document).height() - $(window).height() -100) {
+        AddPlayers();
+        return true;
+    }
+    return false;
 }

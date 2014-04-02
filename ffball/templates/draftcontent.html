@@ -389,14 +389,18 @@ var team_ids = [{% spaceless %}
 normalWidth = {{ normalWidth }}
 
 // Player listing
+var player_query = false;
 var player_type = 'all';
 var player_sort = 'name';
 var player_page = 1;
-var player_size = {{ players_size }};
 
 $(window).ready(function() {
     console.log("page-loaded.");
-    RefreshPages(player_size);
+    // Endless Scroll.
+    $(window).scroll(function() {
+        CheckAddPlayer();
+    })
+    CheckAddPlayer();
 });
 
 </script>
