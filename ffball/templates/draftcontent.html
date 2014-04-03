@@ -14,9 +14,22 @@ draft_timeout = '';
 <script src="{% static 'bootstrap/js/draftpagejs.js' %}" type="text/javascript"></script>
 <link rel="stylesheet" href="{% static 'bootstrap/css/jquery.countdown.timer.css' %}" type="text/css" />
 
-<div class="container">
+<div class="container" valign="top" style="padding-top: 0px">
+    <div class="row" align="right"  style="padding-top: 0px">
+        <div class="btn-group">
+            <button class="btn btn-small btn-inverse">{{ thisLeague.name }}</button>
+            <button class="btn btn-small dropdown-toggle btn-inverse" data-toggle="dropdown">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-inverse pull-right btn-inverse">
+                {% for oneTeam in myTeamList %}
+                    <li><a href="/draft/{{ oneTeam.league.league_id }}"><b>{{ oneTeam.team_name }}</b> [{{ oneTeam.league.name }}]</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
     <div class="row">
-        <div class="span9" style="padding-bottom: 30px">
+        <div class="span9">
             <table width="100%">
                 <tr id="teams-images">
                     {% for team in teams %}
@@ -59,10 +72,15 @@ draft_timeout = '';
                         <div class="digit digit0"></div>
                     </div>
                 </div>
+                <div>
+                    <label class="checkbox">
+                        <input type="checkbox"><h4>Autodraft</h4>
+                    </label>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row" style="padding-bottom: 10px">
+    <div class="row" style="padding-bottom: 0px">
         <div class="span2">
             <form class="form-search">
                 <div class="input-append">
@@ -71,7 +89,7 @@ draft_timeout = '';
                 </div>
             </form>
         </div>
-        <div class="span4 text-right">
+        <div class="span7 text-right">
             <b>Filter by position: </b>
             <div class="btn-group" id="filter-pos" data-toggle="buttons-radio">
                 <button type="button" class="btn btn-primary btn-mini active"
@@ -97,8 +115,8 @@ draft_timeout = '';
         </div>
     </div>
     <div class="row">
-        <div class="span6" style="font-size:8pt">
-            <table class="table table-condensed table-hover table-striped" id="player-list">
+        <div class="span9" style="font-size:8pt">
+            <table width=100% class="table table-condensed table-hover table-striped" id="player-list" style="overflow:auto">
                 <thead>
                     <tr>
                         <th>Add</th>
@@ -165,197 +183,174 @@ draft_timeout = '';
                 </ul>
             </div>
         </div>
+
         <div class="span3">
-            <!-- watchlist -->
-            {% with players|first as first_player %}
-            <div class="accordion-group">
-                <center>
-                    <table width="100%" id="selected_player">
-                        <tr>
-                            <td colspan="100%">
-                                <div style="color:#999999" name="name">
-                                    <h4>&nbsp;{{ first_player.player.name }}</h4>
-                                </div>
+            <div class="tabbable"> <!-- Only required for left/right tabs -->
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab1" data-toggle="tab">My Team</a></li>
+                <li><a href="#tab2" data-toggle="tab">Queue</a></li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle"
+                       data-toggle="dropdown"
+                       href="#">
+                        Teams
+                        <b class="caret"></b>
+                      </a>
+                    <ul class="dropdown-menu">
+                      <!-- links -->
+                    </ul>
+                  </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <table width="100%">
+                        <tr align="right">
+                            <td>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <img id="player-image" src="{% static 'img/icon/defPlayer.png' %}" width="90" class="img-rounded accordion-group">
-                            </td>
-                            <td>
-                                <div name="position">
-                                    &nbsp;<b>{{ first_player.player.position }}</b>
-                                </div>
-                                <div name="team_name">
-                                    &nbsp;{{ first_player.player.team.name }}
-                                </div>
-                                <div name="rank">
-                                    &nbsp;Rank #1
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="100%">
-                                <div align="center">
-                                    <a href="#" id="moreOnPlayer" class="btn btn-primary btn-mini" rel="popover" data-placement="left" data-content="We can show more status and news here" data-original-title="Albert Einstein">More</a>
-                                    <button class="btn btn-primary btn-mini"
-                                        name="addToQ" onclick="addToQ('{{ first_player.player.pid }}')">Queue</button>
-                                    <button class="btn btn-success btn-mini"
-                                        name="addToTeam" onclick="addToTeam('{{
-                                        first_player.player.pid }}', '{{ first_player.player.name }}' )">Add</button>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </center>
-            </div>
-            {% endwith %}
-            <div class="accordion" id="accordion2">
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                            <h4><center>My Queue</center></h4>
-                        </a>
-                    </div>
-                    <div id="collapseOne" class="accordion-body collapse in">
-                        <div class="accordion-inner">
-                            <div id="listOfWatchPlayers" >
-                                {% if myteam_queue %}
-                                {% for player in myteam_queue %}
-                                <div class="dndcontainer" name="watchPlayers" id="watchplayer-{{ player.player.pid }}" draggable=true >
-                                    <table width=100% >
+                                <div>
+                                    <table id="srgTable" width=100%>
                                         <tr>
-                                            <td width="25">
-                                                <b>{{ player.player.position }}</b>
+                                            <td>
+                                                <table width=100%>
+                                                    <tr>
+                                                        <td>
+                                                            <img src="{% static 'img/team_thumbs/'%}{{ myteam.image_name }}" width=40 class="img-rounded">
+                                                        </td>
+                                                        <td width=%>
+                                                            <h4>{{ myteam.team_name }}</h4>
+                                                        </td>
+                                                    </tr>
+                                                </table>
                                             </td>
-                                            <td width=%>
-                                                <button class="btn btn-small btn-success" onclick="addToTeam('{{ player.player.pid }}', '{{ player.player.name }}')" type="button" > {{ player.player.name }} </button>
-                                            </td>
-                                            <td width="25" align="right">
-                                                <a><i id="deletequeue-{{ player.player.pid }}" onclick="delete_from_watchlist(this)" class='icon-minus icon-white'></i></a>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <table  width=100% cellpadding=0 cellspacing=0>
+                                                    <tr style="height:10px;">
+                                                        <td colspan="100%">
+                                                        </td>
+                                                    </tr>
+                                                    {% for pos, name in current_team.items %}
+                                                    <tr style="height:30px;" id="tr-{{pos}}">
+                                                        <td>
+                                                            &nbsp;
+                                                            <font color="#999999"><b>{{ pos }}</b></font>
+                                                        </td>
+                                                        <td width="100%">
+                                                            <button class="btn btn-small" style="width:120px" type="button"> {{ name }}</button>
+                                                        </td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </table>
+                                                <br>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
-                                {% endfor %}
-                                {% else %}
-                                <div align="center">
-                                    Queue is empty!
-                                </div>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                            <h5>News</h5>
-                        </a>
-                    </div>
-                    <div id="collapseTwo" class="accordion-body collapse">
-                        <div class="accordion-inner">
-                            <div id="newsbox">
-                                There's a temptation to overreact when a player as charismatic and furious as Steve Smith changes teams. And now that he's joined a squad that won the Super Bowl just a season ago, watch out. But having reviewed his 2013 game tape, I have to say: I'm underwhelmed.
-                                <br>
-                                I should preface this by saying Smith has been one of my favorite players for years. It's borderline ridiculous that a 5-foot-9 (ahem: he's shorter than that), 185-pound receiver has seven 1,000-yard seasons and 67 career TDs operating almost exclusively on the outside. He has been a force of nature. But he's also slowing down. He still has the power and frenzy to get off the line against most corners, but he isn't open as frequently, especially deep. He didn't gain more than 23 yards on any reception until Week 11, and I couldn't find a single play out of his 64 grabs where he produced more than about 15 yards after the catch.
-                            </div>
+                        </td>
+                    </tr>
+                </table>
 
-                        </div>
-                    </div>
                 </div>
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                            <h5>Transactions</h5>
-                        </a>
+                <div class="tab-pane" id="tab2">
+                <div class="span3">
+                    <!-- watchlist -->
+                    {% with players|first as first_player %}
+                    <div class="accordion-group">
+                        <center>
+                            <table width="" id="selected_player">
+                                <tr>
+                                    <td colspan="100%">
+                                        <div style="color:#999999" name="name">
+                                            <h4>&nbsp;{{ first_player.player.name }}</h4>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img id="player-image" src="{% static 'img/icon/defPlayer.png' %}" width="90" class="img-rounded accordion-group">
+                                    </td>
+                                    <td>
+                                        <div name="position">
+                                            &nbsp;<b>{{ first_player.player.position }}</b>
+                                        </div>
+                                        <div name="team_name">
+                                            &nbsp;{{ first_player.player.team.name }}
+                                        </div>
+                                        <div name="rank">
+                                            &nbsp;Rank #1
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="100%">
+                                        <div align="center">
+                                            <a href="#" id="moreOnPlayer" class="btn btn-primary btn-mini" rel="popover" data-placement="left" data-content="We can show more status and news here" data-original-title="Albert Einstein">More</a>
+                                            <button class="btn btn-primary btn-mini"
+                                                name="addToQ" onclick="addToQ('{{ first_player.player.pid }}')">Queue</button>
+                                            <button class="btn btn-success btn-mini"
+                                                name="addToTeam" onclick="addToTeam('{{
+                                                first_player.player.pid }}', '{{ first_player.player.name }}' )">Add</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </center>
                     </div>
-                    <div id="collapseThree" class="accordion-body collapse">
-                        <div class="accordion-inner">
-                            <div id="newsbox2">
-                                <p class="muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
-                                <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
-                                <p class="text-error">Donec ullamcorper nulla non metus auctor fringilla.</p>
-                                <p class="text-info">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis.</p>
-                                <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                    {% endwith %}
+                    <div class="accordion" id="accordion2">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                    <h4><center>My Queue</center></h4>
+                                </a>
+                            </div>
+                            <div id="collapseOne" class="accordion-body collapse in">
+                                <div class="accordion-inner">
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                  <div id="listOfWatchPlayers" >
+                    {% if myteam_queue %}
+                    {% for player in myteam_queue %}
+                    <div class="dndcontainer" name="watchPlayers" id="watchplayer-{{ player.player.pid }}" draggable=true >
+                        <table width=100% >
+                            <tr>
+                                <td width="25">
+                                    <b>{{ player.player.position }}</b>
+                                </td>
+                                <td width=%>
+                                    <button class="btn btn-small btn-success" onclick="addToTeam('{{ player.player.pid }}', '{{ player.player.name }}')" type="button" > {{ player.player.name }} </button>
+                                </td>
+                                <td width="25" align="right">
+                                    <a><i id="deletequeue-{{ player.player.pid }}" onclick="delete_from_watchlist(this)" class='icon-minus icon-white'></i></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <div align="center">
+                        Queue is empty!
+                    </div>
+                    {% endif %}
+                </div>
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="span3">
-            <table width="100%">
-                <tr align="right">
-                    <td>
-                        <div class="btn-group">
-                            <button class="btn btn-small btn-inverse">{{ thisLeague.name }}</button>
-                            <button class="btn btn-small dropdown-toggle btn-inverse" data-toggle="dropdown">
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-inverse pull-right btn-inverse">
-                                {% for oneTeam in myTeamList %}
-                                <li><a href="/draft/{{ oneTeam.league.league_id }}"><b>{{ oneTeam.team_name }}</b> [{{ oneTeam.league.name }}]</a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label class="checkbox">
-                            <input type="checkbox"><h4>Autodraft</h4>
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                            <div class="accordion-group">
-                                <table id="srgTable" width=100%>
-                                    <tr>
-                                        <td>
-                                            <table width=100%>
-                                                <tr>
-                                                    <td>
-                                                        <img src="{% static 'img/team_thumbs/'%}{{ myteam.image_name }}" width=40 class="img-rounded">
-                                                    </td>
-                                                    <td width=%>
-                                                        <h4>{{ myteam.team_name }}</h4>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <table  width=100% cellpadding=0 cellspacing=0>
-                                                <tr style="height:10px;">
-                                                    <td colspan="100%">
-                                                    </td>
-                                                </tr>
-                                                {% for pos, name in current_team.items %}
-                                                <tr style="height:30px;" id="tr-{{pos}}">
-                                                    <td>
-                                                        &nbsp;
-                                                        <font color="#999999"><b>{{ pos }}</b></font>
-                                                    </td>
-                                                    <td width="100%">
-                                                        <button class="btn btn-small" style="width:120px" type="button"> {{ name }}</button>
-                                                    </td>
-                                                </tr>
-                                                {% endfor %}
-                                            </table>
-                                            <br>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                    </td>
-                </tr>
-            </table>
         </div>
     </div>
 </div>
+
+
+
+
 
 <script type="text/javascript">
 
