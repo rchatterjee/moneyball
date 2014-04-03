@@ -494,6 +494,19 @@ function GetPlayers(page, async)
     });
 }
 
+function CheckSize()
+{
+    d = $('#player-list');
+    t = $('#player-list table');
+    while (d.height() > t.height()) {
+        old = t.height();
+        AddPlayers('', '', 'next');
+        if (old <= t.height()) {
+            break;
+        }
+    }
+}
+
 function GetPlayersByType(type, t)
 {
     if (player_query)
@@ -503,7 +516,8 @@ function GetPlayersByType(type, t)
     player_query = true;
     player_type = type;
     player_page = 1;
-    GetPlayers(player_page, true);
+    GetPlayers(player_page, false);
+    CheckSize();
 }
 
 function GetPlayersBySort(sort)
@@ -513,7 +527,8 @@ function GetPlayersBySort(sort)
     player_query = true;
     console.log("Sort: " + sort);
     player_sort = sort;
-    GetPlayers(player_page, true);
+    GetPlayers(player_page, false);
+    CheckSize();
 }
 
 AddPlayers = function (fseq, pseq, dir) {

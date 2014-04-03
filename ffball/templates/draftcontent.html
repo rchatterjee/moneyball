@@ -387,6 +387,8 @@ $(window).ready(function() {
     p.slimScroll({height: h+'px'});
     p.animate({scrollTop: 40});
     w.height(w.height()-h+h_old);
+
+    CheckSize();
     p.endlessScroll({
         fireOnce: true,
         fireDelay: 500,
