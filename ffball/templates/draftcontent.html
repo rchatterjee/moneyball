@@ -80,18 +80,54 @@ draft_timeout = '';
                         <table width=100% class="table table-condensed table-hover table-striped">
                             <thead>
                                 <tr>
-                                    <th>Add</th>
-                                    <th>#</th>
-                                    <th>Name, Pos., Tream</th>
-                                    <th>Pts</th>
-                                    <th>P-C</th>
-                                    <th>P-TD</th>
-                                    <th>Ru-Yds</th>
-                                    <th>Ru-TD</th>
-                                    <th>Rec-Yds</th>
-                                    <th>Rec-TD</th>
-                                    <th>KR-Yds</th>
-                                    <th>KR-TD</th>
+                                    <th width="15px">Add</th>
+                                    <th width="15px">#</th>
+                                    <th width="200px">Name, Pos, Team</th>
+                                    <th>
+                                        <a href="javascript:void(0)"
+                                            onclick="">
+                                            Pts </a>
+                                    </th>
+                                    <th>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersBySort('pass_comp','dec')">
+                                            P-C</a>
+                                    </th>
+                                    <th>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersBySort('pass_td','dec')">
+                                            P-TD</a>
+                                    </th>
+                                    <th>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersBySort('run_yds','dec')">
+                                            Ru-Yds</a>
+                                    </th>
+                                    <th>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersBySort('run_td','dec')">
+                                            Ru-TD</a>
+                                    </th>
+                                    <th>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersBySort('rec_yds','dec')">
+                                            Rec-Yds</a>
+                                    </th>
+                                    <th>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersBySort('rec_td','dec')">
+                                            Rec-TD</a>
+                                    </th>
+                                    <th>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersBySort('kr_yds','dec')">
+                                            KR-Yds</a>
+                                    </th>
+                                    <th>
+                                        <a href="javascript:void(0)"
+                                            onclick="GetPlayersBySort('kr_td','dec')">
+                                            KR-TD</a>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -379,7 +415,8 @@ normalWidth = {{ normalWidth }}
 // Player listing
 var player_query = false;
 var player_type = 'all';
-var player_sort = 'name';
+var player_sort = 'player__name';
+var player_sort_order = 'inc';
 var player_page = 1;
 
 $(window).ready(function() {
