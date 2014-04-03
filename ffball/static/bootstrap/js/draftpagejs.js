@@ -48,6 +48,17 @@ $(function(){
 		railColor: '#999999',
 		disableFadeOut: false
     });
+
+    $('#playerInfo').slimScroll({
+		height: '100px',
+		width: 'auto',
+		alwaysVisible: false,
+		railVisible: true,
+		size: '9px',
+		color: '#ffffff',
+		railColor: '#999999',
+		disableFadeOut: false
+    });
 });
 
 

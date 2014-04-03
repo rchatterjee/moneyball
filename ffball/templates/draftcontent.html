@@ -114,7 +114,7 @@ draft_timeout = '';
                                         {{ forloop.counter }}
                                     </td>
                                     <td>
-                                        {{ player.player.name }},
+                                        <a href="#" id="playerPopover" rel="popover" data-original-title="Player Name">{{ player.player.name }}</a>,
                                         {{ player.player.position }},
                                         {{ player.player.team.tid }}
                                     </td>
@@ -309,7 +309,7 @@ draft_timeout = '';
                                                      <tr>
                                                        <td width="25"><b>{{ player.player.position }}</b></td>
                                                        <td width="200">
-                                                         {{ player.player.name }}
+                                                         <a href="#" id="playerPopover" rel="popover" data-original-title="A Title 3">{{ player.player.name }}</a>
                                                        </td>
                                                        <td width="25" align="right">
                                                          <a id="deletequeue-{{ player.player.pid }}" onclick="addToTeam('{{player.player.pid}}', '{{ player.player.name }}')">&nbsp;&nbsp;Add</a>
@@ -338,6 +338,8 @@ draft_timeout = '';
     </div>
 </div>
 
+
+        <a href="#" id="playerPopover" rel="popover" data-original-title="A Title 3">popover 3</a>
 
 
                     {% with players|first as first_player %}
@@ -385,6 +387,7 @@ draft_timeout = '';
                     {% endwith %}
 
 
+{% include "layout/playerPop.html" %}
 <script type="text/javascript">
 
 $(function() {
@@ -394,6 +397,22 @@ $(function() {
     });
     $( "#myQ" ).disableSelection();
   });
+
+$(function(){
+
+    // pop up .popover-test
+    $('.popover-test').popover();
+
+    // pop up #example1, #example2, #playerPopover with same content
+    $('[rel=popover]').popover({
+        html : true,
+        content: function() {
+          return $('#player_popover').html();
+        }
+    });
+
+});
+
 
 current_selected = {
 'player_id': -1,
