@@ -76,7 +76,7 @@ draft_timeout = '';
             </div>
             <div class="row" align="right">
                 <div class="span9" style="font-size:8pt">
-                    <div id="player-list" style="height: 400px; overflow-y: scroll; padding-top: 40px;">
+                    <div id="player-list" style="height: 400px; overflow-y: scroll;">
                         <table width=100% class="table table-condensed table-hover table-striped">
                             <thead>
                                 <tr>
@@ -383,7 +383,6 @@ var player_sort = 'name';
 var player_page = 1;
 
 $(window).ready(function() {
-
     p = $('#player-list')
     w = $(window)
     h_old = p.height();
@@ -391,16 +390,16 @@ $(window).ready(function() {
 
     //p.height(h);
     p.slimScroll({height: h+'px'});
-    p.animate({scrollTop: 40});
     w.height(w.height()-h+h_old);
-
     CheckSize();
-    p.endlessScroll({
-        fireOnce: true,
-        fireDelay: 500,
-        content: AddPlayers,
-        ceaseFireOnEmpty: false,
-        loader: '',
+
+    $('#player-list').scroll(function() {
+        h = $('#player-list table').height() - $(this).height() - 40;
+        if($(this).scrollTop() >= h) {
+            //Do something
+            //console.log('Insert now. Offset: ' + $(this).scrollTop());
+            AddPlayers('','','next');
+        }
     });
 
     // Typeahead.
