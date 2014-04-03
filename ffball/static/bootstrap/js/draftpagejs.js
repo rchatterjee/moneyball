@@ -437,9 +437,7 @@ function table_header(p)
     row = '<tr>' +
           '<th>Add</th>' +
           '<th>#</th>' +
-          '<th>Name</th>' +
-          '<th>Pos.</th>' +
-          '<th>Team</th>' +
+          '<th>Name, Pos, Team</th>' +
           '<th>Pts</th>';
     for (var i = 0, l = p.length; i < l; i++) {
         row += '<th>' + type_name[p[i]] + '</th>';
@@ -454,10 +452,9 @@ function table_row(p, i)
           '<td><a href="javascript:void(0)" ' +
           'onclick="addToQ(\'' + p.fields.player__pid + '\')">' +
           '<i class="icon-plus icon-black"></i></a></td>' +
-    '<td>' + (i+1) + '</td>' +
-    '<td>' + field(p.fields.player__name) + '</td>' +
-    '<td>' + field(p.fields.player__position) + '</td>' +
-    '<td>' + field(p.fields.player__team) + '</td>' +
+    '<td>' + (i+1) + '</td>' + 
+    '<td>' + field(p.fields.player__name) + ', ' + field(p.fields.player__position) +
+    ', ' + field(p.fields.player__team) + '</td>' +
     '<td>' + 0 + '</td>';
     for (var i = 0, l = player_type_fields[player_type].length; i < l; i ++) {
         row += '<td>' + field(p.fields[player_type_fields[player_type][i]]) + '</td>';
@@ -471,18 +468,17 @@ function RefreshPlayers(data)
     console.log("RefreshPlayer: Page: " + this.page);
     if (this.page == 1) {
         // Clear all rows.
-        $("#player-list thead").find("tr").remove();
-        $("#player-list thead").append(table_header(player_type_fields[player_type]));
-        $("#player-list tbody").find("tr").remove();
+        $("#player-list table thead").find("tr").remove();
+        $("#player-list table thead").append(table_header(player_type_fields[player_type]));
+        $("#player-list table tbody").find("tr").remove();
     }
     for (i = 0; i < data.length; i++) {
-        $('#player-list tbody').append(table_row(data[i], (player_page-1)*20 + i));
+        $('#player-list table tbody').append(table_row(data[i], (player_page-1)*20 + i));
     }
     player_query = false;
-    CheckAddPlayer();
 }
 
-function GetPlayers(page)
+function GetPlayers(page, async)
 {
     url = "/data/proplayer/order?type=" + player_type + "&sort=" + player_sort;
     url += "&start=" + ((page-1)*20) + "&length=20";
@@ -507,7 +503,7 @@ function GetPlayersByType(type, t)
     player_query = true;
     player_type = type;
     player_page = 1;
-    GetPlayers(player_page);
+    GetPlayers(player_page, true);
 }
 
 function GetPlayersBySort(sort)
@@ -517,26 +513,19 @@ function GetPlayersBySort(sort)
     player_query = true;
     console.log("Sort: " + sort);
     player_sort = sort;
-    GetPlayers(player_page, 'new');
+    GetPlayers(player_page, true);
 }
 
-AddPlayers = function () {
+AddPlayers = function (fseq, pseq, dir) {
+    if (dir != 'next') return '';
     console.log("add-player");
     if (player_query)
-        return;
+        return '';
     player_query = true;
     player_page++;
     console.log("Add-player: " + player_page);
-    GetPlayers(player_page, 'add');
-}
-
-CheckAddPlayer = function() {
-    console.log("Scroll-event.");
-    if($(window).scrollTop() >= $(document).height() - $(window).height() -100) {
-        AddPlayers();
-        return true;
-    }
-    return false;
+    GetPlayers(player_page, false);
+    return '';
 }
 
 // Player search
