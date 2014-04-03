@@ -140,7 +140,7 @@ draft_timeout = '';
                                         {{ forloop.counter }}
                                     </td>
                                     <td>
-                                        {{ player.player.name }},
+                                        <a href="#" id="playerPopover" rel="popover" data-original-title="Player Name">{{ player.player.name }}</a>,
                                         {{ player.player.position }},
                                         {{ player.player.team.tid }}
                                     </td>
@@ -222,9 +222,6 @@ draft_timeout = '';
                     </div>
                 </div>
             </div>
-
-
-
             <div class="row" style="padding: 0px">
                 <div class="span3">
                     <label class="checkbox">
@@ -236,28 +233,26 @@ draft_timeout = '';
                 <div class="span3">
                     <div class="tabbable"> <!-- Only required for left/right tabs -->
                       <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab1" data-toggle="tab">Team</a></li>
-                        <li><a href="#tab2" data-toggle="tab">Queue</a></li>
+                        <li class="active"><a href="#myTeamTab" data-toggle="tab">Team</a></li>
+                        <li><a href="#myQueueTab" data-toggle="tab">Queue</a></li>
                           <li class="dropdown">
-                            <a class="dropdown-toggle"
-                               data-toggle="dropdown"
-                               href="#">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                 Others
                                 <b class="caret"></b>
-                              </a>
+                            </a>
                             <ul class="dropdown-menu">
                                 {% for team in teams %}
                                     {% if team %}
-                                    <li><a href="#">{{ team.team_name }}</a></li>
+                                        <li><a href="#">{{ team.team_name }}</a></li>
                                     {% else %}
-                                    <vacant>
+                                        <vacant>
                                     {% endif %}
                                 {% endfor %}
                             </ul>
                           </li>
                       </ul>
                       <div class="tab-content">
-                        <div class="tab-pane active" id="tab1">
+                        <div class="tab-pane active" id="myTeamTab">
                             <table width=100% >
                                 <tr align="right">
                                     <td>
@@ -301,38 +296,41 @@ draft_timeout = '';
                                                 </tr>
                                             </table>
                                         </div>
-                                </td>
-                            </tr>
-                        </table>
+                                    </td>
+                                </tr>
+                            </table>
 
                         </div>
-                        <div class="tab-pane" id="tab2">
-                        <div class="span3">
-                            <!-- watchlist -->
-                            </div>
-                              <div id="listOfWatchPlayers" >
+                        <div class="tab-pane" id="myQueueTab">
+                                <!-- watchlist -->
+                            <div class="row">
                                 {% if myteam_queue %}
-                                {% for player in myteam_queue %}
-                                <div class="dndcontainer" name="watchPlayers" id="watchplayer-{{ player.player.pid }}" draggable=true >
-                                    <table width=100% >
-                                        <tr>
-                                            <td width="25">
-                                                <b>{{ player.player.position }}</b>
-                                            </td>
-                                            <td width=%>
-                                                <button class="btn btn-small btn-success" onclick="addToTeam('{{ player.player.pid }}', '{{ player.player.name }}')" type="button" > {{ player.player.name }} </button>
-                                            </td>
-                                            <td width="25" align="right">
-                                                <a><i id="deletequeue-{{ player.player.pid }}" onclick="delete_from_watchlist(this)" class='icon-minus icon-white'></i></a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                {% endfor %}
+                                    <div class="span3">
+                                        <div id="listOfWatchPlayers" align="left">
+                                            {% for player in myteam_queue %}
+                                                <div class="dndcontainer"  name="watchPlayers" id="watchplayer-{{ player.player.pid }}" draggable=true >
+                                                    <table >
+                                                     <tr>
+                                                       <td width="25"><b>{{ player.player.position }}</b></td>
+                                                       <td width="200">
+                                                         <a href="#" id="playerPopover" rel="popover" data-original-title="A Title 3">{{ player.player.name }}</a>
+                                                       </td>
+                                                       <td width="25" align="right">
+                                                         <a id="deletequeue-{{ player.player.pid }}" onclick="addToTeam('{{player.player.pid}}', '{{ player.player.name }}')">&nbsp;&nbsp;Add</a>
+                                                       </td>
+                                                       <td width="25" align="right">
+                                                         <a><i id="deletequeue-{{ player.player.pid }}" onclick="delete_from_watchlist(this)" class='icon-minus'></i></a>
+                                                       </td>
+                                                     </tr>
+                                                   </table>
+                                                </div>
+                                            {% endfor %}
+                                     </div>
+                                    </div>
                                 {% else %}
-                                <div align="center">
-                                    Queue is empty!
-                                </div>
+                                    <div align="center">
+                                        Queue is empty!
+                                    </div>
                                 {% endif %}
                             </div>
                         </div>
@@ -344,6 +342,8 @@ draft_timeout = '';
     </div>
 </div>
 
+
+        <a href="#" id="playerPopover" rel="popover" data-original-title="A Title 3">popover 3</a>
 
 
                     {% with players|first as first_player %}
@@ -391,7 +391,23 @@ draft_timeout = '';
                     {% endwith %}
 
 
+{% include "layout/playerPop.html" %}
 <script type="text/javascript">
+
+$(function(){
+
+    // pop up .popover-test
+    $('.popover-test').popover();
+
+    // pop up #example1, #example2, #playerPopover with same content
+    $('[rel=popover]').popover({
+        html : true,
+        content: function() {
+          return $('#player_popover').html();
+        }
+    });
+
+});
 
 current_selected = {
 'player_id': -1,
@@ -447,6 +463,70 @@ $(window).ready(function() {
         items: 10,
         onselect: PlayerSearchUpdater,
     });
+});
+
+
+var dragSrcEl = null;
+var cols = document.querySelectorAll('#listOfWatchPlayers .dndcontainer');
+
+function handleDragStart(e) {
+  this.style.opacity = '0.4';  // this / e.target is the source node.
+  dragSrcEl = this;
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/html', this.innerHTML);
+}
+
+function handleDragOver(e) {
+  if (e.preventDefault) {
+    e.preventDefault(); // Necessary. Allows us to drop.
+  }
+  e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
+  return false;
+}
+
+function handleDragEnter(e) {
+  // this / e.target is the current hover target.
+  this.classList.add('over');
+}
+
+function handleDragLeave(e) {
+  this.classList.remove('over');  // this / e.target is previous target element.
+  update_Q();
+}
+
+function handleDrop(e) {
+  // this/e.target is current target element.
+
+  if (e.stopPropagation) {
+    e.stopPropagation(); // Stops some browsers from redirecting.
+  }
+
+  // Don't do anything if dropping the same column we're dragging.
+  if (dragSrcEl != this) {
+    // Set the source column's HTML to the HTML of the column we dropped on.
+    dragSrcEl.innerHTML = this.innerHTML;
+    this.innerHTML = e.dataTransfer.getData('text/html');
+    this.style.opacity = '1.0';
+    dragSrcEl.style.opacity = '1.0';
+  }
+  return false;
+}
+
+function handleDragEnd(e) {
+  // this/e.target is the source node.
+  [].forEach.call(cols, function (col) {
+    col.classList.remove('over');
+    col.style.opacity = '1.0';
+  });
+}
+
+[].forEach.call(cols, function(col) {
+  col.addEventListener('dragstart', handleDragStart, false);
+  col.addEventListener('dragenter', handleDragEnter, false);
+  col.addEventListener('dragover', handleDragOver, false);
+  col.addEventListener('dragleave', handleDragLeave, false);
+  col.addEventListener('drop', handleDrop, false);
+  col.addEventListener('dragend', handleDragEnd, false);
 });
 
 </script>
