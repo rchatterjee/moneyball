@@ -62,9 +62,9 @@ class Team(m.Model):
                     self.add_player_to_Q(p)
             return self.pop_first_player_inQ()
 
-    def auto_draft_player(self):
+    def auto_draft_player(self, force=False):
         print __name__, sys._getframe().f_code.co_name
-        if not self.auto_draft: return False;
+        if not force and not self.auto_draft: return False;
         if not self.add_player_to_team(self.pop_first_player_inQ()):      # try once more
             self.add_player_to_team(self.pop_first_player_inQ())
         return True;

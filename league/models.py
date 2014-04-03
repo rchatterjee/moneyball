@@ -151,6 +151,19 @@ class League(m.Model):
     draft_timeout = m.DateTimeField("Timelimit for current drafter.", null=True)
     settings = m.ForeignKey(League_Settings)
 
+
+    def finish_draft(self):
+        self.draft_current = None
+        self.draft_timeout = timezone.now()
+        self.settings.is_draft_done = 2      # draft done
+        self.settings.save()
+        self.save()        
+
+    def timeout(self):
+        if self.draft_timeout<=timezone.now():
+            self.draft_current.auto_draft_player(force=True)
+            self.update_the_next_drafter_info(draft_current)
+
     def update_the_next_drafter_info(self, team=None):
         print __name__, sys._getframe().f_code.co_name
         league_teams = self.team_set.all().order_by('draft_pick_number')
@@ -165,17 +178,14 @@ class League(m.Model):
             i = (i+1) % len(league_teams)
         print "None to Autodraft!"
         if league_teams[i].is_full(): # End the drafting
-            self.draft_current = None
-            self.draft_timeout = timezone.now()
-            self.settings.is_draft_done = 2      # draft done
-            self.settings.save()
-            self.save()
-        else:
-            self.draft_current = league_teams[i]
-            self.draft_timeout = timezone.now() + timezone.timedelta(seconds=self.settings.seconds_per_pick);
-            print "next_timeout:", self.draft_timeout
-            self.save()
+            self.finish_draft()
+            return False
+        self.draft_current = league_teams[i]
+        self.draft_timeout = timezone.now() + timezone.timedelta(seconds=self.settings.seconds_per_pick);
+        print "next_timeout:", self.draft_timeout
+        self.save()
         return True;
+
 
     def remove_player_from_otherslist(self, player):
         for p in team.models.FantasyPlayer.objects.filter(Q(team__league__league_id=self.league_id) & \
@@ -187,8 +197,10 @@ class League(m.Model):
     def start_draft(self):
         if self.settings.is_draft_done==1:
             if not self.draft_current:
-                self.update_the_next_drafter_info()
-            return True;
+                return self.update_the_next_drafter_info()
+            return True
+        if self.settings.is_draft_done==2:
+            return False;
         print __name__, sys._getframe().f_code.co_name
         tnow = timezone.now()
         draft_starttime = self.settings.draft_date
