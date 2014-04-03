@@ -403,9 +403,9 @@ var player_type_fields = {
             'run_yds', 'run_att', 'run_td'], // TODO: Fix this.
 };
 var type_name = {
-    'pass_att': 'PA',
-    'pass_comp': 'PC',
-    'pass_td': 'PTD',
+    'pass_att': 'P-A',
+    'pass_comp': 'P-C',
+    'pass_td': 'P-TD',
     'run_yds': 'Ru-Yds',
     'run_att': 'Ru-A',
     'run_td': 'Ru-TD',
@@ -434,7 +434,7 @@ function field(s)
 
 function table_header(p)
 {
-    row = '<tr bgcolor="#484848">' +
+    row = '<tr>' +
           '<th>Add</th>' +
           '<th>#</th>' +
           '<th>Name</th>' +
@@ -471,11 +471,12 @@ function RefreshPlayers(data)
     console.log("RefreshPlayer: Page: " + this.page);
     if (this.page == 1) {
         // Clear all rows.
-        $("#player-list").find("tr").remove();
-        $("#player-list").append(table_header(player_type_fields[player_type]));
+        $("#player-list thead").find("tr").remove();
+        $("#player-list thead").append(table_header(player_type_fields[player_type]));
+        $("#player-list tbody").find("tr").remove();
     }
     for (i = 0; i < data.length; i++) {
-        $('#player-list').append(table_row(data[i], (player_page-1)*20 + i));
+        $('#player-list tbody').append(table_row(data[i], (player_page-1)*20 + i));
     }
     player_query = false;
     CheckAddPlayer();

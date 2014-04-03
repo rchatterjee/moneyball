@@ -98,21 +98,21 @@ draft_timeout = '';
     </div>
     <div class="row">
         <div class="span6" style="font-size:8pt">
-            <table width=100% class="table table-condensed table-hover table-striped" id="player-list" style="overflow:auto">
+            <table class="table table-condensed table-hover table-striped" id="player-list">
                 <thead>
                     <tr>
                         <th>Add</th>
                         <th>#</th>
-                        <th>Name</th>
-                        <th>Pos.</th>
-                        <th>Team</th>
+                        <th>Name, Pos., Tream</th>
                         <th>Pts</th>
-                        <th>Pass Attp.</th>
-                        <th>Pass Cmpd.</th>
-                        <th>Pass TD.</th>
-                        <th>Rush Yrds.</th>
-                        <th>Rush Attp.</th>
-                        <th>Rush TD.</th>
+                        <th>P-C</th>
+                        <th>P-TD</th>
+                        <th>Ru-Yds</th>
+                        <th>Ru-TD</th>
+                        <th>Rec-Yds</th>
+                        <th>Rec-TD</th>
+                        <th>KR-Yds</th>
+                        <th>KR-TD</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -125,19 +125,12 @@ draft_timeout = '';
                             {{ forloop.counter }}
                         </td>
                         <td>
-                            {{ player.player.name }}
-                        </td>
-                        <td>
-                            {{ player.player.position }}
-                        </td>
-                        <td>
+                            {{ player.player.name }},
+                            {{ player.player.position }},
                             {{ player.player.team.tid }}
                         </td>
                         <td>
                             0
-                        </td>
-                        <td>
-                            {{ player.pass_att|floatformat|default:"-" }}
                         </td>
                         <td>
                             {{ player.pass_comp|floatformat|default:"-" }}
@@ -149,10 +142,19 @@ draft_timeout = '';
                             {{ player.run_yds|floatformat|default:"-" }}
                         </td>
                         <td>
-                            {{ player.run_att|floatformat|default:"-" }}
+                            {{ player.run_td|floatformat|default:"-" }}
                         </td>
                         <td>
-                            {{ player.run_td|floatformat|default:"-" }}
+                            {{ player.rec_yds|floatformat|default:"-" }}
+                        </td>
+                        <td>
+                            {{ player.rec_td|floatformat|default:"-" }}
+                        </td>
+                        <td>
+                            {{ player.kr_yds|floatformat|default:"-" }}
+                        </td>
+                        <td>
+                            {{ player.kr_td|floatformat|default:"-" }}
                         </td>
                     </tr>
                     {% endfor %}
@@ -384,12 +386,17 @@ var player_page = 1;
 
 $(window).ready(function() {
     console.log("page-loaded.");
+    // Set height of table.
+    console.log($(window).height());
+    console.log($('#player-list-scroll').height());
 
+    /*
     // Endless Scroll.
     $(window).scroll(function() {
         CheckAddPlayer();
     })
     CheckAddPlayer();
+    */
 
     // Typeahead.
     $('#ps_query').typeahead({
