@@ -48,6 +48,17 @@ $(function(){
 		railColor: '#999999',
 		disableFadeOut: false
     });
+
+    $('#playerInfo').slimScroll({
+		height: '100px',
+		width: 'auto',
+		alwaysVisible: false,
+		railVisible: true,
+		size: '9px',
+		color: '#ffffff',
+		railColor: '#999999',
+		disableFadeOut: false
+    });
 });
 
 
@@ -240,22 +251,25 @@ function addToQ( pid ) {
                    <table width=100% > \
                      <tr> \
                        <td width="25"><b>{position}</b></td> \
-                       <td width=%> \
-                         <button class="btn btn-small btn-success" onclick="addToTeam(\'{player_id}\', \'{name}\')" type="button" > {name} </button> \
+                       <td width="200"> \
+                          {name} \
                        </td> \
                        <td width="25" align="right"> \
-                         <a><i id="deletequeue-{player_id}" onclick="delete_from_watchlist(this)" class="icon-minus icon-white"></i></a> \
+                         <a id="deletequeue-{player_id}" onclick="addToTeam(\'{player_id}\', \'{name}\')">&nbsp;&nbsp;Add</a>\
+                       </td> \
+                       <td width="25" align="right"> \
+                         <a><i id="deletequeue-{player_id}" onclick="delete_from_watchlist(this)" class="icon-minus "></i></a> \
                        </td> \
                      </tr> \
                    </table> \
                 </div>'.format(response['msg']);
+	    $(div_elem).appendTo('#listOfWatchPlayers');
 	    $(div_elem).on('dragstart', handleDragStart, false);
 	    $(div_elem).on('dragenter', handleDragEnter, false);
 	    $(div_elem).on('dragover', handleDragOver, false);
 	    $(div_elem).on('dragleave', handleDragLeave, false);
 	    $(div_elem).on('drop', handleDrop, false);
 	    $(div_elem).on('dragend', handleDragEnd, false);
-	    $(div_elem).appendTo('#listOfWatchPlayers');
 	    addedQ.push(pid);
 	});
 }
