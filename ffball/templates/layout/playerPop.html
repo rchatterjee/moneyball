@@ -1,0 +1,30 @@
+{% load static from staticfiles %}
+<!-- ###### Player Pop-over begin ###### -->
+<div id="player_popover" style="display: none">
+    <table width="250">
+        <tr>
+            <td width="100">
+                <img src="{% static 'img/small/4256_small.png'%}">
+            </td>
+            <td>
+                <b>Position:</b><br>
+                <b>Team:</b><br>
+                <b>Rank:</b><br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="playerInfo">
+                    stuff here
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="btn btn-primary btn-mini" name="addToQ" onclick="addToQ('{{ first_player.player.pid }}')">Queue</button>
+                <button class="btn btn-success btn-mini" name="addToTeam" onclick="addToTeam('{{first_player.player.pid }}', '{{ first_player.player.name }}' )">Add</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<!-- ###### Player Pop-over end ###### -->
