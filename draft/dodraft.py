@@ -27,6 +27,7 @@ def get_my_team(league_obj, user_obj):
 
 def process_jquery_request(request):
     if request.is_ajax() and request.POST:
+        print request.POST
         result = ''
         msg=""
         try:
@@ -129,20 +130,20 @@ def add_player(data, user, l):
     return result
 
 
-def save_queue_order(data, user):
+def save_queue_order(data, user, l):
     """
     { 'league_id': league_id, 'queue':queue }
     """
     # TODO: improve
-    league_id = data['league_id']
     my_queue_order = data['queue']
-    l = League.objects.get(league_id=league_id)
     team = get_my_team(l, user)
     my_queue = team.fantasyplayer_set.filter(status='Q')
     for p in my_queue:
-        i = my_queue_order.index(p.id)
+        i = my_queue_order.index(p.player.pid)
         p.rank = i+1
-    return ""
+        print i, p.player.name, p.rank
+        p.save()
+    return {"result": "success", 'msg': "Saved"}
 
 
 def get_player_info(data, user, league):
@@ -224,7 +225,7 @@ def populate_draft_page(league_id, user):
     res = {
         'teams' :  teams,
         'myteam': myteam,
-        'myteam_queue': myteam.fantasyplayer_set.filter(status='Q'),
+        'myteam_queue': myteam.fantasyplayer_set.filter(status='Q').order_by('rank'),
         'myteam_players'  : myteam.fantasyplayer_set.filter(Q(status='A')| Q(status='B')),
         'players' : players,
         'players_size': players_size,

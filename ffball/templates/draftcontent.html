@@ -7,6 +7,8 @@ draft_current = '';
 draft_timeout = '';
 
 </script>
+<script src="{% static 'jquery-ui/js/jquery-1.10.2.js' %}"></script>
+<script src="{% static 'jquery-ui/js/jquery-ui-1.10.4.custom.js' %}"></script>
 <script src="{% static 'bootstrap/js/jquery.slimscroll.min.js' %}"></script>
 <script src="{% static 'bootstrap/js/jquery.timeout.interval.idle.js' %}" type="text/javascript"></script>
 <script src="{% static 'bootstrap/js/jquery.countdown.counter.js' %}" type="text/javascript"></script>
@@ -14,7 +16,15 @@ draft_timeout = '';
 <script src="{% static 'custom/js/bootstrap-typeahead-custom.js' %}" type="text/javascript"></script>
 <script src="{% static 'bootstrap/js/draftpagejs.js' %}" type="text/javascript"></script>
 <link rel="stylesheet" href="{% static 'bootstrap/css/jquery.countdown.timer.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'jquery-ui/css/smoothness/jquery-ui-1.10.4.custom.css' %}" type="text/css"/>
+<style>
+    #myQ { list-style-type: none; margin: 0; padding: 0; width: 100%}
+    #myQ li { margin: 5px 5px 0px 0px; height: 1.5em; }
+    html>body #myQ li { height: 1.3em; line-height: 1.5em; cursor: move }
+    .ui-state-highlight { height: 1.3em; line-height: 1.5em; }
+</style>
 
+<link rel="stylesheet" href="{% static 'bootstrap/css/jquery.countdown.timer.css' %}" type="text/css" />
 <div class="container" valign="top" style="padding: 0px">
     <div class="row" align="right"  style="padding: 0px">
         <div class="span9">
@@ -265,9 +275,31 @@ draft_timeout = '';
                             </table>
 
                         </div>
-                        <div class="tab-pane" id="myQueueTab">
-                                <!-- watchlist -->
-                            <div class="row">
+                        <div class="tab-pane" id="myQueueTab" align="left">
+                            <!-- watchlist -->
+                            <div>
+                                {% if myteam_queue %}
+                            <ul id="myQ" style="float:left" >
+                                {% for player in myteam_queue %}
+                                <li id="li-{{ player.player.pid }}" >
+                                    <span style="width:100px"> <b>{{ player.player.position }}</b>
+                                    {{ player.player.name }}</span>
+                                    <span style="float:right"><a id="addteam-{{ player.player.pid }}" onclick="addToTeam(this)" class='icon-plus'></a>
+                                    <a><i id="deletequeue-{{ player.player.pid }}" onclick="delete_from_watchlist(this)" class='icon-minus'></i></a></span>
+                                </li>
+                                {% endfor %}
+
+                            </ul>
+                                {% else %}
+                                    <div align="center">
+                                        Queue is empty!
+                                    </div>
+                                {% endif %}
+                            </div>
+
+
+
+                            <!--div class="row">
                                 {% if myteam_queue %}
                                     <div class="span3">
                                         <div id="listOfWatchPlayers" align="left">
@@ -296,7 +328,7 @@ draft_timeout = '';
                                         Queue is empty!
                                     </div>
                                 {% endif %}
-                            </div>
+                            </div-->
                         </div>
                       </div>
                     </div>
@@ -355,6 +387,14 @@ draft_timeout = '';
 
 <script type="text/javascript">
 
+$(function() {
+    $( "#myQ" ).sortable({
+       placeholder: "ui-state-highlight",
+       stop: update_Q
+    });
+    $( "#myQ" ).disableSelection();
+  });
+
 current_selected = {
 'player_id': -1,
 'name'  : "",
@@ -411,67 +451,6 @@ $(window).ready(function() {
 });
 
 
-var dragSrcEl = null;
-var cols = document.querySelectorAll('#listOfWatchPlayers .dndcontainer');
 
-function handleDragStart(e) {
-  this.style.opacity = '0.4';  // this / e.target is the source node.
-  dragSrcEl = this;
-  e.dataTransfer.effectAllowed = 'move';
-  e.dataTransfer.setData('text/html', this.innerHTML);
-}
-
-function handleDragOver(e) {
-  if (e.preventDefault) {
-    e.preventDefault(); // Necessary. Allows us to drop.
-  }
-  e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
-  return false;
-}
-
-function handleDragEnter(e) {
-  // this / e.target is the current hover target.
-  this.classList.add('over');
-}
-
-function handleDragLeave(e) {
-  this.classList.remove('over');  // this / e.target is previous target element.
-  update_Q();
-}
-
-function handleDrop(e) {
-  // this/e.target is current target element.
-
-  if (e.stopPropagation) {
-    e.stopPropagation(); // Stops some browsers from redirecting.
-  }
-
-  // Don't do anything if dropping the same column we're dragging.
-  if (dragSrcEl != this) {
-    // Set the source column's HTML to the HTML of the column we dropped on.
-    dragSrcEl.innerHTML = this.innerHTML;
-    this.innerHTML = e.dataTransfer.getData('text/html');
-    this.style.opacity = '1.0';
-    dragSrcEl.style.opacity = '1.0';
-  }
-  return false;
-}
-
-function handleDragEnd(e) {
-  // this/e.target is the source node.
-  [].forEach.call(cols, function (col) {
-    col.classList.remove('over');
-    col.style.opacity = '1.0';
-  });
-}
-
-[].forEach.call(cols, function(col) {
-  col.addEventListener('dragstart', handleDragStart, false);
-  col.addEventListener('dragenter', handleDragEnter, false);
-  col.addEventListener('dragover', handleDragOver, false);
-  col.addEventListener('dragleave', handleDragLeave, false);
-  col.addEventListener('drop', handleDrop, false);
-  col.addEventListener('dragend', handleDragEnd, false);
-});
 
 </script>

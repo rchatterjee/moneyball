@@ -3,11 +3,11 @@
 // ie onclick="CounterInit(10); return false;"
 // this is where i got it from : http://www.jqueryscript.net/time-clock/Simple-jQuery-Digital-Countdown-Timer-Plugin.html
 //CounterInit(1);
-
+/*
 $(function ()
 { $("#moreOnPlayer").popover();
 });
-
+*/
 $(function() {
     $('tr').bind('click', function (e) { });
     $('button').bind('click', function(e) {
@@ -49,71 +49,6 @@ $(function(){
 		disableFadeOut: false
     });
 });
-
-
-var dragSrcEl = null;
-var cols = document.querySelectorAll('#listOfWatchPlayers .dndcontainer');
-
-function handleDragStart(e) {
-  this.style.opacity = '0.4';  // this / e.target is the source node.
-  dragSrcEl = this;
-  e.dataTransfer.effectAllowed = 'move';
-  e.dataTransfer.setData('text/html', this.innerHTML);
-}
-
-function handleDragOver(e) {
-  if (e.preventDefault) {
-    e.preventDefault(); // Necessary. Allows us to drop.
-  }
-  e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
-  return false;
-}
-
-function handleDragEnter(e) {
-  // this / e.target is the current hover target.
-  this.classList.add('over');
-}
-
-function handleDragLeave(e) {
-  this.classList.remove('over');  // this / e.target is previous target element.
-  update_Q();
-}
-
-function handleDrop(e) {
-  // this/e.target is current target element.
-
-  if (e.stopPropagation) {
-    e.stopPropagation(); // Stops some browsers from redirecting.
-  }
-
-  // Don't do anything if dropping the same column we're dragging.
-  if (dragSrcEl != this) {
-    // Set the source column's HTML to the HTML of the column we dropped on.
-    dragSrcEl.innerHTML = this.innerHTML;
-    this.innerHTML = e.dataTransfer.getData('text/html');
-    this.style.opacity = '1.0';
-    dragSrcEl.style.opacity = '1.0';
-  }
-  return false;
-}
-
-function handleDragEnd(e) {
-  // this/e.target is the source node.
-  [].forEach.call(cols, function (col) {
-    col.classList.remove('over');
-    col.style.opacity = '1.0';
-  });
-}
-
-[].forEach.call(cols, function(col) {
-  col.addEventListener('dragstart', handleDragStart, false);
-  col.addEventListener('dragenter', handleDragEnter, false);
-  col.addEventListener('dragover', handleDragOver, false);
-  col.addEventListener('dragleave', handleDragLeave, false);
-  col.addEventListener('drop', handleDrop, false);
-  col.addEventListener('dragend', handleDragEnd, false);
-});
-
 
 
 // ------------------------------- jQuery/Ajax functions ---------------------------------------------------------
@@ -186,8 +121,8 @@ function get_info( pid ) {
        $('#moreOnPlayer').attr('data-content', response['msg']['more']);
        $('#moreOnPlayer').attr('data-original-title', response['msg']['name']);
        $('#player-image').attr('src', response['msg']['img_url']);
-       $('button[name=addToTeam]').attr('onclick', "addToTeam('{pid}', '{name}')".format({'pid' : pid, 'name': response['msg']['name'] }))
-       $('button[name=addToQ]').attr('onclick', "addToQ('{pid}', '{name}')".format({'pid' : pid, 'name': response['msg']['name'] }))
+       $('button[name=addToTeam]').attr('onclick', "addToTeam(this, '{pid}')".format({'pid' : pid }))
+       $('button[name=addToQ]').attr('onclick', "addToQ('{pid}')".format({'pid' : pid }))
        current_selected['player_id'] = pid;
        current_selected['name'] = response['msg']['name'];
        return true;
@@ -236,84 +171,76 @@ function addToQ( pid ) {
     if ( a>=0 ) { alert("Already in the Queue!"); return true; }
     sendJsonQuery ( res, function (response) {
 	    if ( response['result']!='success' ) {alert(response['msg']); return;}
-	    div_elem = '<div class="dndcontainer" name="watchPlayers" id="watchplayer-{player_id}" draggable="true"> \
-                   <table width=100% > \
-                     <tr> \
-                       <td width="25"><b>{position}</b></td> \
-                       <td width="200"> \
-                          {name} \
-                       </td> \
-                       <td width="25" align="right"> \
-                         <a id="deletequeue-{player_id}" onclick="addToTeam(\'{player_id}\', \'{name}\')">&nbsp;&nbsp;Add</a>\
-                       </td> \
-                       <td width="25" align="right"> \
-                         <a><i id="deletequeue-{player_id}" onclick="delete_from_watchlist(this)" class="icon-minus "></i></a> \
-                       </td> \
-                     </tr> \
-                   </table> \
-                </div>'.format(response['msg']);
-	    $(div_elem).appendTo('#listOfWatchPlayers');
-	    $(div_elem).on('dragstart', handleDragStart, false);
-	    $(div_elem).on('dragenter', handleDragEnter, false);
-	    $(div_elem).on('dragover', handleDragOver, false);
-	    $(div_elem).on('dragleave', handleDragLeave, false);
-	    $(div_elem).on('drop', handleDrop, false);
-	    $(div_elem).on('dragend', handleDragEnd, false);
+        li_elem='<li id="li-{player_id}"> \
+                   <span style="width:100px"> <b>{position}</b>  {name}</span> \
+                   <span style="float:right"> \
+                       <a id="addteam-{player_id}" onclick="addToTeam(this)" class="icon-plus"></a> \
+                       <a><i id="deletequeue-{player_id}" onclick="delete_from_watchlist(this)" class="icon-minus"></i></a> \
+                   </span> \
+                   </li>'.format(response['msg'])
+	    $(li_elem).appendTo('#myQ');
 	    addedQ.push(pid);
 	});
 }
 
 
-function addToTeam( pid, player_name ) {
-   res = { 'player_id' : pid || current_selected['player_id'],
-           'league_id' : league_id,
-           'func' : 'add_player',
-           'status': 'A',
-         };
+function addToTeam( elem, pid ) {
+    if (!pid ) pid = elem.id.split('-')[1];
+    res = { 'player_id' : pid || current_selected['player_id'],
+	    'league_id' : league_id,
+	    'func' : 'add_player',
+	    'status': 'A',
+    };
    var a = addedP.indexOf(res['player_id']);
    if ( a>=0 ) { alert("Already in the Queue!"); return true; }
-   r = confirm("Going to draft " + player_name +"! Lets do it?")
-   if ( r == true ) {
-       sendJsonQuery ( res, function (response) {
-           console.log(JSON.stringify(response));
-           if ( response['result']=='success') {
-              if ( response['msg']['status'] == 'B' ) {
-                  if ( benchCount > 0 ) {
-                      a=$('#tr-BN'+ benchCount)
-                  }
-                  else {
-                       console.log('first bench');
-                       a = $('#tr-K1');
-                  }
-                  b = a.clone();
-                  benchCount += 1;
-                  b.attr('id', 'tr-BN'+benchCount);
-                  $(b).children().find('b').html('BN'+benchCount)
-                  $(b).children().find('button').html(response['msg']['name'])
-                  a.after(b)
+   sendJsonQuery ( res, function (response) {
+       console.log(JSON.stringify(response));
+       if ( response['result']=='success') {
+          if ( response['msg']['status'] == 'B' ) {
+              if ( benchCount > 0 ) {
+                  a=$('#tr-BN'+ benchCount)
               }
               else {
-                  tdid = "#tr-{position}{rank}".format(response['msg'])
-                  console.log(tdid);
-                  $(tdid).find('button').html(response['msg']['name'])
+                   console.log('first bench');
+                   a = $('#tr-K1');
               }
-              $('#watchplayer-{0}'.format({0:pid})).remove()
-              addedP.push(pid)
-           }
-           else {
-              alert('ERROR!:' + response['msg']);
-           }
-       })
-   }
+              b = a.clone();
+              benchCount += 1;
+              b.attr('id', 'tr-BN'+benchCount);
+              $(b).children().find('b').html('BN'+benchCount)
+              $(b).children().find('button').html(response['msg']['name'])
+          }
+          else {
+              tdid = "#tr-{position}{rank}".format(response['msg'])
+              console.log(tdid);
+              $(tdid).find('button').html(response['msg']['name'])
+          }
+          $('#watchplayer-{0}'.format({0:pid})).remove()
+          addedP.push(pid)
+       }
+       else {
+          alert('ERROR!:' + response['msg']);
+       }
+   })
 }
 
-function update_Q(){
-    list = $(cols)
+function update_Q(event, ui){
+    var data = [];
+    $("#myQ li").each(function(i, el){
+	    pid = el.id.split('-')[1];
+	    data.push(pid);		
+        });
+    res = {
+	'queue': data,
+	'league_id': league_id,
+	'func': 'save_queue_order'
+    }
+    sendJsonQuery( res, function(response) { } );
 }
 
 function delete_from_watchlist( elem ) {
    pid = elem.id.split('-')[1];
-   w_id = "#watchplayer-" + pid;
+   w_id = "#li-" + pid;
    res = { 'player_id' : pid,
            'league_id' : league_id,
            'func'      : 'delete_from_queue'
