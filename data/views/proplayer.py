@@ -71,7 +71,7 @@ def stats_serialize(a, fields):
 
 def order(request):
     f = request.GET.get('type', 'all')
-    o = request.GET.get('sort', 'name')
+    o = request.GET.get('sort', 'player__name')
     s = int(request.GET.get('start', '0'))
     l = int(request.GET.get('length', '20'))
     id = request.GET.get('league_id', '');
@@ -79,8 +79,6 @@ def order(request):
     fields = fields.split(',')
     if not FILTER_MAP.has_key(f):
         f = 'all'
-    if not ORDER_BY_MAP.has_key(o):
-        o = 'name'
     s = max(0, s)
     l = max(0, l); l = min(50, l)
 
@@ -89,7 +87,7 @@ def order(request):
             .values_list('player__pid', flat=True)
     a = AggStat.objects.exclude(player__pid__in = existing) \
             .select_related('player').filter(FILTER_MAP[f]) \
-            .order_by(ORDER_BY_MAP[o])[s:s+l]
+            .order_by(o)[s:s+l]
     return stats_serialize(a, fields)
 
 SEARCH_FIELDS = ['player__name', 'player__pid']

@@ -294,12 +294,12 @@ function DraftStatusProcess(data)
     //console.log(data);
     last_update = data['last_update']
     if (draft_current != data['current']) {
-        console.log("current-drafter: " + data['current']);
+        //console.log("current-drafter: " + data['current']);
         draft_current = data['current'];
         UpdateCurrentDrafter(draft_current);
     }
     if (draft_timeout != data['timeout'] && data['timeout'] != null) {
-        console.log("current-timeout: " + data['timeout']);
+        //console.log("current-timeout: " + data['timeout']);
         draft_timeout = data['timeout'];
         UpdateTimeout(data['timeout']);
     }
@@ -376,12 +376,25 @@ function field(s)
 function table_header(p)
 {
     row = '<tr>' +
-          '<th>Add</th>' +
-          '<th>#</th>' +
-          '<th>Name, Pos, Team</th>' +
+          '<th width="15px">Add</th>' +
+          '<th width="15px">#</th>' +
+          '<th width="200px">Name, Pos, Team</th>' +
           '<th>Pts</th>';
     for (var i = 0, l = p.length; i < l; i++) {
-        row += '<th>' + type_name[p[i]] + '</th>';
+        icon = '';
+        order = '\'dec\'';
+        if (player_sort == p[i]) {
+            if (player_sort_order == 'dec') {
+                order = '\'inc\'';
+                icon = ' <i class="icon-circle-arrow-down"></i>';
+            } else {
+                icon = ' <i class="icon-circle-arrow-up"></i>';
+            }
+        }
+        row += '<th><a href="javascript:void(0)" ' +
+            'onclick="GetPlayersBySort(\'' + p[i] + '\', ' +
+            order + ')">' +
+            type_name[p[i]] + icon + '</a></th>';
     }
     row += '</tr>';
     return row;
@@ -406,7 +419,7 @@ function table_row(p, i)
 
 function RefreshPlayers(data)
 {
-    console.log("RefreshPlayer: Page: " + this.page);
+    //console.log("RefreshPlayer: Page: " + this.page);
     if (this.page == 1) {
         // Clear all rows.
         $("#player-list table thead").find("tr").remove();
@@ -421,10 +434,12 @@ function RefreshPlayers(data)
 
 function GetPlayers(page, async)
 {
-    url = "/data/proplayer/order?type=" + player_type + "&sort=" + player_sort;
+    sort = player_sort;
+    if (player_sort_order == 'dec')
+        sort = "-" + sort;
+    url = "/data/proplayer/order?type=" + player_type + "&sort=" + sort;
     url += "&start=" + ((page-1)*20) + "&length=20";
     url += "&fields=" + player_type_fields[player_type].join();
-    console.log(url);
     $.ajax({
         type: "GET",
         url: url,
@@ -455,38 +470,42 @@ function GetPlayersByType(type, t)
     $('div#filter-pos button.active').removeClass('active');
     $(t).addClass('active');
     player_query = true;
+    player_sort = 'player__name';
+    player_sort_order ='inc';
     player_type = type;
     player_page = 1;
     GetPlayers(player_page, false);
     CheckSize();
 }
 
-function GetPlayersBySort(sort)
+function GetPlayersBySort(sort, order)
 {
     if (player_query)
         return;
+    //console.log('GetPlayersBySort(' + sort + ', ' + order + ')');
     player_query = true;
-    console.log("Sort: " + sort);
     player_sort = sort;
+    player_sort_order = order;
+    player_page = 1;
     GetPlayers(player_page, false);
     CheckSize();
 }
 
 AddPlayers = function (fseq, pseq, dir) {
     if (dir != 'next') return '';
-    console.log("add-player");
+    //console.log("add-player");
     if (player_query)
         return '';
     player_query = true;
     player_page++;
-    console.log("Add-player: " + player_page);
+    //console.log("Add-player: " + player_page);
     GetPlayers(player_page, false);
     return '';
 }
 
 // Player search
 PlayerSearch = function(ta, q) {
-    console.log("Typeahead: " + q);
+    //console.log("Typeahead: " + q);
     $.ajax({
         url: "/data/proplayer/search?q=" + q + "&league_id=" + league_id,
         dataType: "JSON",

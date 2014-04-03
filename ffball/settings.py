@@ -119,7 +119,6 @@ WSGI_APPLICATION = 'ffball.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
 DATABASES = {
     'test': {
         'ENGINE': 'django_mysqlpool.backends.mysqlpool',
@@ -141,9 +140,13 @@ DATABASES = {
     # }
 }
 
+import dj_database_url
+if os.getcwd() == "/app":
+    DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+    
 # DATABASE_APP_MAPPING = { 'ffball': 'default', 'yahoo' : 'mongo_db' }
 # DATABASE_ROUTERS = ['ffball.db_router.DbRouter']
-
+    
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
