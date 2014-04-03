@@ -27,3 +27,4 @@ mywebsite.com 127.0.0.1
 * run the server in port 80, need super user permit
 $ python manage.py runserver 80
 * in facebook, allowed site(mobile site) I have added 'mywebsite.com'
+=======
