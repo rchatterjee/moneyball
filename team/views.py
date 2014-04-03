@@ -12,11 +12,11 @@ def index(request):
     return HttpResponse("<h1>Teams:<h1>%s<hr/>%s" % ( '<br/><hr/>'.join(context['teams']) ))
 
 
-def get_draft_pick_number( l ):
+def get_draft_pick_number(l):
     teams_dpn = [t.draft_pick_number for t in l.team_set.all()]
     teams_dpn.sort()
     for i in range(1, l.settings.number_of_teams+1):
-        if i>=len(teams_dpn) or i<teams_dpn[i]:
+        if i>len(teams_dpn) or i<teams_dpn[i]:
             return i    
 
 
@@ -39,7 +39,7 @@ def create_team(request, is_commissioner=0, league_id = ''):
         errors.append("<br/> - Password did not match!")
     if l.settings.number_of_teams <= len(teams):
         errors.append("<br/> - league is already full!")
-        print error, l.settings.number_of_teams, teams 
+        print errors, l.settings.number_of_teams, teams
     if user in [t.user for t in teams]:
         errors.append("<br/> - you (%s) already have a team in this league! click inside the league to know about it." % request.user)
         print errors, user, [t.user for t in teams]
@@ -64,14 +64,15 @@ def create_team(request, is_commissioner=0, league_id = ''):
 
 
 def delete(request):
+    global errors
     t_id = request.POST.get('id', 0)
     team = request.user.Teams.all(id=t_id)
     if request.user.is_authenticated() and team:
         team.delete()
         h = HttpResponse()
-        messages.success(request, "<b>Successfully deleted the team %s" % team.name)
+        errors = "<b>Successfully deleted the team %s" % team.name
         context = []
-        return render(request, h, messages)
+        return render(request, h, {'errors':errors})
     else:
         return HttpResponse("<error>Sorry Dude! Tumse na ho payega!!.<error>")
     
